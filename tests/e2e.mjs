@@ -5,11 +5,12 @@ const { chromium } = createRequire(import.meta.url)("playwright"); // global ins
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
+import { validateLead } from "./getwec-lead-contract.mjs";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../site");
 const out = process.argv[2] || "shots";
 fs.mkdirSync(out, { recursive: true });
-const types = { ".html": "text/html", ".css": "text/css", ".svg": "image/svg+xml", ".xml": "application/xml" };
+const types = { ".html": "text/html", ".css": "text/css", ".svg": "image/svg+xml", ".xml": "application/xml", ".js": "text/javascript" };
 const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split("?")[0]);
   const cands = p === "/" ? ["index.html"] : [p, p + ".html", path.join(p, "index.html")];
@@ -26,7 +27,7 @@ const server = http.createServer((req, res) => {
 const base = `http://127.0.0.1:${server.address().port}`;
 
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
-const urls = ["/", "/blog", "/no-such-page", ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", "/no-such-page", "/contact-us", "/charter-application", ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {
@@ -46,6 +47,51 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     }
   }
   if (errors.length) { fails++; console.log(`✗ ${name} JS errors: ${errors.join(" | ")}`); }
+  // Lead forms: empty submit shows errors; valid submit passes the GetWec contract (preview = not sent)
+  for (const [u, fill] of [
+    ["/contact-us", async () => { await page.fill("#c-name", "Test Sample"); await page.fill("#c-email", "test.sample@example.com");
+      await page.selectOption("#c-loc", "australia"); await page.selectOption("#c-topic", { index: 1 }); await page.fill("#c-msg", "Sample question about care courses."); }],
+    ["/charter-application", async () => { await page.fill("#a-name", "Test Sample"); await page.fill("#a-phone", "0400 000 000");
+      await page.selectOption("#a-field", { index: 1 }); await page.selectOption("#a-level", { index: 2 }); await page.fill("#a-start", "2027-02");
+      await page.selectOption("#a-city", "Sydney"); await page.fill("#a-msg", "x".repeat(800)); }],
+  ]) {
+    await page.goto(base + u, { waitUntil: "load" });
+    const note = await page.textContent(".form-status");
+    await page.click("form.lead button[type=submit]");
+    const errs = await page.locator(".err:not(:empty)").count();
+    await fill();
+    await page.check("input[name=consent]");
+    await page.click("form.lead button[type=submit]");
+    const payload = await page.evaluate(() => window.__lastLeadPayload);
+    const res = payload ? validateLead(payload) : { ok: false, errors: { none: "no payload" } };
+    const ok = /Preview/.test(note) && errs >= 2 && res.ok && /Preview check passed/.test(await page.textContent(".form-status"));
+    if (!ok) { fails++; console.log(`✗ ${name} form ${u} note=${note} errs=${errs} contract=${JSON.stringify(res.errors)}`); }
+    await page.screenshot({ path: `${out}/${name}-form-${u.slice(1)}.png`, fullPage: true });
+  }
+  // Live mode (endpoint + key injected, network mocked): POST body/headers and success message
+  {
+    const seen = [];
+    await page.route("https://getwec.test/fn", async r => {
+      seen.push({ body: JSON.parse(r.request().postData()), h: r.request().headers() });
+      await r.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" }, body: '{"ok":true}' });
+    });
+    await page.route(base + "/contact-us", async r => {
+      const res = await r.fetch(); const html = (await res.text()).replace("</head>",
+        '<meta name="getwec-endpoint" content="https://getwec.test/fn"><meta name="getwec-key" content="anon-test"></head>');
+      await r.fulfill({ response: res, body: html });
+    });
+    await page.goto(base + "/contact-us", { waitUntil: "load" });
+    await page.fill("#c-name", "Test Sample"); await page.fill("#c-email", "test.sample@example.com"); await page.check("input[name=consent]");
+    await page.click("form.lead button[type=submit]");
+    await page.waitForFunction(() => document.querySelector(".form-status").className.includes("ok"), null, { timeout: 5000 }).catch(() => {});
+    const msg = await page.textContent(".form-status");
+    const good = seen.length === 1 && seen[0].h.apikey === "anon-test" && validateLead(seen[0].body).ok && /got your details/.test(msg)
+      && (await page.inputValue("#c-name")) === "";
+    if (!good) { fails++; console.log(`✗ ${name} live form: posts=${seen.length} msg=${msg}`); }
+    await page.unrouteAll();
+  }
+  console.log(`✓ ${name}: lead forms checked (preview + live mock)`);
+
   for (const [u, f] of [["/", "home"], ["/blog", "blog"], [`/post/${slugs.find(s => s.startsWith("oshc"))}`, "post"]]) {
     await page.goto(base + u, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(300);

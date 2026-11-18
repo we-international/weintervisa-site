@@ -10,4 +10,7 @@ Owner: We International Education & Visa Pty Ltd · Team: Web & CRM.
 - Tests: `python3 tests/test_site.py` (URLs, links, no personal data, no trackers, legal footer, feed, sitemap) and `node tests/e2e.mjs` (phone + desktop, all URLs, no sideways scroll, screenshots).
 - Rules: no cookies/analytics until the privacy page says so · no personal names or emails (only info@weintervisa.com) · QEAC shows the number only · we are not a migration agent (refer to a registered migration agent) · never change DNS or close Wix ourselves — propose to the owner.
 
-Still to build (from the migration map): 18 static pages (`tests/pending-pages.json`), lead forms posting to GetWec, privacy policy update, local copies of images.
+- `pages.py` — static pages. Built so far: `/contact-us` (enquiry form) and `/charter-application` (study application form).
+- `assets/forms.js` — lead forms → GetWec `mia` Edge Function `action: "lead"` (contract copy: `tests/getwec-lead-contract.mjs`). Sends only in a `--production` build with `getwec_anon_key` set in `config.json`; preview never sends. Skill: `.claude/skills/website-lead-forms`.
+
+Still to build: 16 static pages (`tests/pending-pages.json` — page text needed from the live site), privacy policy update (data in GetWec, Sydney), local copies of images.

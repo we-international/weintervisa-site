@@ -62,7 +62,23 @@ check(re.search(r"QEAC \d+</p>", home) is not None, "QEAC shows the number only"
 # 7. Feed + sitemap
 feed = (SITE / "blog-feed.xml").read_text()
 check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items (same path as Wix)")
-check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2, "sitemap lists home, blog and every post")
+check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + 2, "sitemap lists home, blog, contact, application and every post")
+
+# 8. Lead forms (→ GetWec "lead" contract) — never connected in a preview build
+for rel in ("contact-us", "charter-application"):
+    s = (SITE / f"{rel}.html").read_text()
+    check('data-lead-form=' in s and '/assets/forms.js' in s, f"/{rel} has a lead form")
+    check('name="consent" required' in s and 'href="/privacy-policy"' in s, f"/{rel} asks consent + links privacy")
+    check('name="website"' in s, f"/{rel} has the honeypot field")
+    check('registered migration agent' in s, f"/{rel} says visa questions go to a registered migration agent")
+    check('getwec-key' not in s, f"/{rel} is not connected in preview")
+    check(not re.search(r"passport (no|number)\b[^.]*<input|type=\"file\"", s, re.I), f"/{rel} asks for no passport number or uploads")
+    check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee", s, re.I), f"/{rel} makes no unapproved promises")
+# The production build connects only when the public key is set
+import importlib.util, os
+cfg = json.loads((ROOT / "config.json").read_text())
+check(cfg.get("getwec_endpoint", "").startswith("https://") and cfg["getwec_endpoint"].endswith("/functions/v1/mia"),
+      "GetWec endpoint configured (mia Edge Function)")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
