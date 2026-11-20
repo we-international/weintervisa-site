@@ -1,0 +1,163 @@
+{
+ "_about": "Schools that replied to us and sent their own files (WEI-SCHOOL-BACKLOG-1120 step 4). Use only what the school sent. 'approved': false = preview only; the production build leaves the school out until the owner approves. Add a school = add one object.",
+ "schools": [
+  {
+   "slug": "alana-kaye-college",
+   "name": "Alana Kaye College",
+   "approved": false,
+   "summary": "Care, early childhood, community services, business and building courses on two campuses.",
+   "campuses": [
+    "Gold Coast (Southport, QLD)",
+    "Darwin (NT)"
+   ],
+   "cricos": "03675K",
+   "rto": "70056",
+   "website": "https://alanakaye.edu.au",
+   "intakes": "Third Monday of every month",
+   "fee_columns": [
+    "Gold Coast",
+    "Darwin"
+   ],
+   "fee_note": "Total course fee in AUD, including the A$300 application fee and the A$200 resource fee. Payment plans are available (first payment A$1,500, then payments each term).",
+   "source": {
+    "file": "International - Student Courses Price List 2026.pdf",
+    "received": "2026-11-09",
+    "year": "2026"
+   },
+   "courses": [
+    {
+     "code": "CHC30121",
+     "name": "Certificate III in Early Childhood Education and Care",
+     "cricos": "108124B",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 10500,
+      "Darwin": 10500
+     }
+    },
+    {
+     "code": "CHC50121",
+     "name": "Diploma of Early Childhood Education and Care",
+     "cricos": "108125A",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 12500,
+      "Darwin": 13500
+     }
+    },
+    {
+     "code": "CHC33021",
+     "name": "Certificate III in Individual Support",
+     "cricos": "113979A",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 9000,
+      "Darwin": 11000
+     }
+    },
+    {
+     "code": "CHC43015",
+     "name": "Certificate IV in Ageing Support",
+     "cricos": "097995E",
+     "weeks": 74,
+     "fees": {
+      "Gold Coast": 10000,
+      "Darwin": 15000
+     }
+    },
+    {
+     "code": "CHC52021",
+     "name": "Diploma of Community Services",
+     "cricos": "113980H",
+     "weeks": 74,
+     "fees": {
+      "Gold Coast": 15000,
+      "Darwin": 18000
+     }
+    },
+    {
+     "code": "CHC62015",
+     "name": "Advanced Diploma of Community Sector Management",
+     "cricos": "110332J",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 16000,
+      "Darwin": 19000
+     }
+    },
+    {
+     "code": "BSB50420",
+     "name": "Diploma of Leadership and Management",
+     "cricos": "104363H",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 8500,
+      "Darwin": 9000
+     }
+    },
+    {
+     "code": "BSB60420",
+     "name": "Advanced Diploma of Leadership and Management",
+     "cricos": "106429A",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 9000,
+      "Darwin": 9500
+     }
+    },
+    {
+     "code": "BSB50820",
+     "name": "Diploma of Project Management",
+     "cricos": "104089K",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 10000,
+      "Darwin": 11000
+     }
+    },
+    {
+     "code": "BSB80120",
+     "name": "Graduate Diploma of Management (Learning)",
+     "cricos": "106430H",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 20000,
+      "Darwin": 22000
+     }
+    },
+    {
+     "code": "CPC40120",
+     "name": "Certificate IV in Building and Construction",
+     "cricos": "110354C",
+     "weeks": 52,
+     "fees": {
+      "Gold Coast": 10000,
+      "Darwin": 13000
+     }
+    }
+   ]
+  },
+  {
+   "slug": "frontier-education",
+   "name": "Frontier Education",
+   "approved": false,
+   "summary": "Vocational college with campuses in Brisbane and Cairns.",
+   "campuses": [
+    "Brisbane (QLD)",
+    "Cairns (QLD)"
+   ],
+   "cricos": "03520G",
+   "rto": "110080",
+   "website": "https://www.frontiereducation.edu.au",
+   "intakes": "November 2026 intake open (school update, 17 Nov 2026)",
+   "fee_columns": [],
+   "fee_note": "2027 fees are coming soon. Ask us for the current course list and 2026 fees.",
+   "source": {
+    "file": "School emails of 9 and 17 Nov 2026 (2026 marketing material sent for promotion)",
+    "received": "2026-11-17",
+    "year": "2026"
+   },
+   "courses": []
+  }
+ ]
+}
