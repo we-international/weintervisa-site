@@ -212,7 +212,7 @@ Access is limited to our team, by role. Our email is provided by Google Workspac
 <h2>See or correct your information</h2>
 <p>Email <a href="mailto:info@weintervisa.com?subject=Privacy">info@weintervisa.com</a> to see your information, ask for a correction or deletion, or raise a privacy concern.
 If you are not happy with our reply, you can contact the Office of the Australian Information Commissioner (OAIC).</p>
-<p class="hint">Draft for owner review, November 2026.</p>
+<p class="hint">Last updated: 20 November 2026.</p>
 </section>"""
 
 CONTENT_PAGES = {

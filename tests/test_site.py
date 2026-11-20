@@ -95,6 +95,7 @@ check("CRICOS" in c and "not a promise" in c, "/courses explains the list is not
 check('"FAQPage"' in (SITE / "frequently-asked-questions.html").read_text(), "FAQ page has FAQPage structured data")
 pv = (SITE / "privacy-policy.html").read_text()
 check("Sydney" in pv and "cookies" in pv and "AI" in pv, "privacy notice covers GetWec in Sydney, no cookies, the AI assistant")
+check("Draft for owner review" not in pv and "Last updated:" in pv, "privacy notice is the approved version (no draft label, has a date)")
 # 10. Home page — from the CMS home draft; every study-area group links to its section on /courses
 hd = json.loads((ROOT / "content/home.json").read_text())
 check(hd["heading"] in html_unescape(home) and home.count("<h1>") == 1, "home uses the CMS heading as its one h1")
