@@ -7,6 +7,7 @@ migration agent; no partner is named until the agreement is verified.
 """
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -109,13 +110,49 @@ oshc_body = simple(
      ("Read the policy", "Before you buy, compare the start and end dates, who is covered, what is not covered and the terms in the insurer's documents.")],
     cta_text="Ask about health cover.")
 
-migration_body = simple(
-    "Migration support",
-    "Study help and visa advice are different jobs. We help with study, and we point you to the right person for visa questions.",
-    [("What we do", "Course questions, booking times to talk and handling study documents for your school application."),
-     ("Visa advice", "Visa eligibility, visa strategy and visa applications must be handled by a registered migration agent or lawyer. Our AI assistant is not a migration agent."),
-     ("Referral details", "We will add checked referral details once the arrangement is confirmed. No visa outcome is guaranteed.")],
-    note=True, cta_text="Ask about a referral.")
+PARTNER_FORM = "https://getwec.pages.dev/partners/migration/"
+
+
+def partner_cards(partners):
+    """Cards for registered migration agents (GetWec, status 'listed' only). Every value is escaped;
+    links must be https; the agent's personal name is never part of the data."""
+    out = []
+    for p in partners:
+        url = p.get("url") or ""
+        if not (p.get("name") and p.get("marn") and url.startswith("https://")):
+            continue
+        langs = ", ".join(p.get("languages") or [])
+        where = e(p.get("city") or "") + (" · online across Australia" if p.get("online_au") else "")
+        contact = []
+        if p.get("email"):
+            contact.append(f'<a href="mailto:{e(p["email"])}">{e(p["email"])}</a>')
+        if p.get("phone"):
+            contact.append(f'<a href="tel:{e(re.sub(r"[^0-9+]", "", p["phone"]))}">{e(p["phone"])}</a>')
+        rows = [("MARN", e(p["marn"])), ("Where", where), ("Languages", e(langs)), ("Clients from", e(p.get("markets") or "")),
+                ("Visa types", e(", ".join(p.get("visa_types") or []))), ("Contact", " · ".join(contact))]
+        dl = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows if v)
+        intro = f'<p>{e(p["intro"])}</p>' if p.get("intro") else ""
+        out.append(f'<li class="agent"><h3>{e(p["name"])}</h3>{intro}<dl>{dl}</dl>'
+                   f'<a class="btn ghost" href="{e(url)}" target="_blank" rel="noopener nofollow">Visit their migration page</a></li>')
+    if not out:
+        return ('<p class="note-box"><strong>List coming soon.</strong> We are checking the first agents now. '
+                'Until then, <a href="/contact-us">ask us for a referral</a>.</p>')
+    return f'<ul class="agents">{"".join(out)}</ul>'
+
+
+MIGRATION_PARTNERS = json.loads((ROOT / "content/migration-partners.json").read_text()).get("partners", [])
+
+migration_body = f"""<section class="wrap narrow"><h1>Migration support</h1>
+<p class="lead">Study help and visa advice are different jobs. We help with study. For visa questions, choose a registered migration agent.</p>
+{sections([("What we do", "Course questions, booking times to talk and handling study documents for your school application."),
+           ("Visa advice", "Visa eligibility, visa strategy and visa applications must be handled by a registered migration agent or lawyer. Our AI assistant is not a migration agent.")])}
+<h2 id="agents">Registered migration agents</h2>
+<p>We are not a migration agent. To give you more choices, we list registered migration agents who do migration work only.
+<strong>We don't receive any commission or benefit from listed agents.</strong> Each agent gave us these details and asked to be listed.
+We check every MARN on the official register before we list an agent, but please check it yourself too and talk to the agent directly. No visa outcome is guaranteed.</p>
+{partner_cards(MIGRATION_PARTNERS)}
+<p class="small">Are you a registered migration agent who only does migration work? <a href="{PARTNER_FORM}" target="_blank" rel="noopener">List your practice for free</a>.</p>
+{VISA_NOTE}{cta("Not sure who to ask? Send us a message and we point you to a registered migration agent.")}</section>"""
 
 partners_body = simple(
     "Partner with us",
@@ -193,7 +230,7 @@ CONTENT_PAGES = {
     "oshc": ("Overseas Student Health Cover (OSHC) | We International",
         "Plan your Overseas Student Health Cover and ask our team about current options.", oshc_body),
     "migration-support": ("Migration support | We International",
-        "We help with study and refer visa questions to a registered migration agent.", migration_body),
+        "We help with study. Find a registered migration agent for visa questions — we receive no commission from listed agents.", migration_body),
     "referral-partners": ("Partner with us | We International",
         "Schools, colleges and student service providers can talk to We International about working together.", partners_body),
     "frequently-asked-questions": ("FAQs | We International",

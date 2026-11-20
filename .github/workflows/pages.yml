@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "17 */6 * * *"   # pick up migration agents staff listed in GetWec (every 6 hours)
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -16,6 +19,19 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install markdown==3.7
+      # Registered migration agents that staff checked and pressed "show on website" in GetWec.
+      # Public fields only; if GetWec does not answer, the committed snapshot is kept.
+      - name: Fetch listed migration agents from GetWec
+        if: github.ref == 'refs/heads/main'
+        run: |
+          ep=$(python3 -c "import json;print(json.load(open('config.json'))['getwec_endpoint'])")
+          if curl -fsS --max-time 20 "$ep?action=migration_partners" -o /tmp/mp.json && \
+             python3 -c "import json;d=json.load(open('/tmp/mp.json'));assert isinstance(d['partners'],list)"; then
+            python3 -c "import json;d=json.load(open('/tmp/mp.json'));json.dump({'partners':d['partners'],'_note':'Written by CI from GetWec (listed agents only). Do not edit by hand.'},open('content/migration-partners.json','w'),indent=1)"
+            echo "listed agents: $(python3 -c "import json;print(len(json.load(open('content/migration-partners.json'))['partners']))")"
+          else
+            echo "::warning::GetWec list not available; keeping the committed snapshot"
+          fi
       - run: python3 tests/test_site.py
       # Preview host is a project page under /weintervisa-site/: rebuild with that base path
       # for the upload only (tests above run on the plain build). Remove when the DNS moves.
