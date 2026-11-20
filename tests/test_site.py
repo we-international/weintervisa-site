@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Site checks — run: python3 tests/test_site.py  (exit 1 on any failure)."""
 import json, re, subprocess, sys
+from html import unescape as html_unescape
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -93,6 +94,16 @@ check("CRICOS" in c and "not a promise" in c, "/courses explains the list is not
 check('"FAQPage"' in (SITE / "frequently-asked-questions.html").read_text(), "FAQ page has FAQPage structured data")
 pv = (SITE / "privacy-policy.html").read_text()
 check("Sydney" in pv and "cookies" in pv and "AI" in pv, "privacy notice covers GetWec in Sydney, no cookies, the AI assistant")
+# 10. Home page — from the CMS home draft; every study-area group links to its section on /courses
+hd = json.loads((ROOT / "content/home.json").read_text())
+check(hd["heading"] in html_unescape(home) and home.count("<h1>") == 1, "home uses the CMS heading as its one h1")
+check(f'<title>{hd["seoTitle"]}</title>' in html_unescape(home) and hd["seoDescription"] in html_unescape(home), "home has the CMS SEO title + description")
+for anchor in set(re.findall(r'href="/courses#([\w-]+)"', home)):
+    check(f'id="{anchor}"' in c, f"home chip /courses#{anchor} has a matching section")
+check(len(re.findall(r'href="/courses#', home)) == len({a["group"] for a in json.loads((ROOT / "content/study-areas.json").read_text())}), "home links every study-area group")
+check("registered migration agent" in home.split("<footer")[0], "home body refers visa questions to a registered migration agent")
+check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee(d)? (place|visa|job)|100% |best price", home, re.I), "home makes no unapproved promises")
+check('"WebSite"' in home and '"Organization"' in home, "home has Organization + WebSite structured data")
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())

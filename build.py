@@ -162,23 +162,11 @@ def build():
           f'<ul class="cards">{cards}</ul></section>', path="/blog",
           description="Guides on courses, working holidays and student life in Australia."))
 
-    # Home (skeleton; full content comes from the Wix page export)
-    latest = "".join(f'<li><a href="/post/{p["slug"]}">{esc(p["title"])}</a></li>' for p in posts[:5])
-    home = f"""<section class="hero"><div class="wrap">
-<h1>Study and work in Australia, made simple</h1>
-<p class="lead">Courses, fast-track options and student services, explained in plain English.</p>
-<p><a class="btn" href="/courses">Explore courses</a> <a class="btn ghost" href="/contact-us">Ask us a question</a></p>
-</div></section>
-<section class="wrap grid3">
-<a class="tile" href="/courses"><strong>Courses</strong><span>Care, nursing pathways, early childhood and more.</span></a>
-<a class="tile" href="/fast-track-courses"><strong>Fast-track</strong><span>Shorter study plans for working holiday makers.</span></a>
-<a class="tile" href="/student-services"><strong>Student services</strong><span>Homestay, OSHC and support while you study.</span></a>
-</section>
-<section class="wrap"><h2>Latest from the blog</h2><ul class="list">{latest}</ul><p><a href="/blog">All posts</a></p></section>"""
-    org = {"@context": "https://schema.org", "@type": "Organization", "name": html.unescape(COMPANY),
-           "url": SITE, "email": "info@weintervisa.com"}
-    write("index.html", page("We International | Study in Australia", home, path="/",
-          description="Courses, fast-track study and student services in Australia.", jsonld=org))
+    # Home — from the CMS home draft (content/home.json), see home_page.py
+    import home_page
+    write("index.html", page(home_page.HOME["seoTitle"], home_page.render(posts, fmt_date), path="/",
+          description=home_page.HOME["seoDescription"],
+          jsonld=home_page.jsonld(SITE, html.unescape(COMPANY), posts)))
 
     # Redirects (static: meta refresh + canonical). /welcome was the Wix home; /games moved.
     redirects = {"welcome": "/", "games": "https://weintergames.com/",

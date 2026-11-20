@@ -24,5 +24,11 @@ description: Use when a Wix page's text is needed for the new weintervisa.com bu
 - Privacy notice must match what the new site really does (forms + chat → GetWec in Sydney, no cookies, AI assistant) and is marked "draft for owner review".
 - Tests: each content page exists, one h1, SEO description, no unapproved promises; visa pages say "registered migration agent"; sitemap count = posts + 2 + static pages; remove built paths from `tests/pending-pages.json`.
 
+## Home page (20 Nov 2026)
+- The home draft is `WEIWebsitePages` slug `home` (kind home: heading, intro, cta + ctaTarget, 4 sections, seoTitle/Description). Query the collection once and filter by slug in code; return only content fields (drop `_owner`, `_id`).
+- Save it as `content/home.json` and render from that file (never hard-code the copy) so a later CMS re-export is a one-file change.
+- Link study-area groups to `/courses#<group-id>` and test that every chip has a matching `id` on /courses (same slug function on both pages).
+- The live home is at `/welcome`; the new home is `/` and `/welcome` redirects there. Wix cover images still point at static.wixstatic.com (blocked from the cloud run) → cards show the empty frame until `tools/fetch_images.py` runs in CI.
+
 ## Left for the owner
 Wix-app pages cannot be copied as static pages: /partner-portal (Members + Partner* collections), /schedule (Bookings), /videos (Wix Video), /challenges (Online Programs). Ask the owner: rebuild in GetWec, link out, or drop with a redirect.

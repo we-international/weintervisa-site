@@ -131,3 +131,27 @@ form.lead .btn:disabled { opacity: .6; }
 details.faq { border-bottom: 1px solid #e3e6ea; padding: .8rem 0; }
 details.faq summary { cursor: pointer; font-weight: 600; }
 details.faq p { margin: .5rem 0 0; }
+/* home */
+.kicker { text-transform: uppercase; letter-spacing: .08em; font-size: 14px; font-weight: 700; color: var(--brand); margin: 0; }
+.hero h1 { font-size: 32px; max-width: 18em; }
+.actions .btn { margin: 4px 6px 4px 0; }
+.chips { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--line);
+  border-radius: 999px; background: var(--card); text-decoration: none; color: var(--ink); font-weight: 600; }
+.chips span { background: #e9f2f1; color: var(--brand); border-radius: 999px; padding: 0 8px; font-size: 14px; }
+.why { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.why li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.why strong { display: block; font-size: 19px; margin-bottom: 4px; }
+.why span, .flow span { color: var(--muted); }
+.flow { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; counter-reset: step; }
+.flow li { counter-increment: step; position: relative; padding: 4px 0 4px 52px; min-height: 40px; }
+.flow li::before { content: counter(step); position: absolute; left: 0; top: 2px; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--brand); color: var(--brand-ink); font-weight: 800; display: grid; place-items: center; }
+.flow strong { display: block; }
+.grid3 + .note-box { margin-top: 20px; }
+@media (min-width: 720px) {
+  .hero h1 { font-size: 42px; }
+  .why { grid-template-columns: repeat(3, 1fr); }
+  .flow { grid-template-columns: repeat(4, 1fr); }
+  .flow li { padding: 52px 0 0; }
+}
