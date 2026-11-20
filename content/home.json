@@ -8,9 +8,22 @@
   "cta": "Explore courses",
   "ctaTarget": "courses",
   "sections": [
-    {"heading": "A course that fits you", "body": "Start with your interests, previous study, preferred city and budget. We help you compare suitable options when current provider information is available."},
-    {"heading": "Clear choices. Honest support.", "body": "Understand what is confirmed, what needs checking and what happens next. You stay in control of your study decision."},
-    {"heading": "Support wherever you are", "body": "Start your conversation online. Tell us your preferred language so we can arrange suitable support."},
-    {"heading": "A simpler way forward", "body": "Explore a study area, ask about current options, compare the details, and proceed only when you are ready."}
-  ]
+    {
+      "heading": "A course that fits you",
+      "body": "Start with your interests, previous study, preferred city and budget. We help you compare suitable options when current provider information is available."
+    },
+    {
+      "heading": "Clear choices. Honest support.",
+      "body": "Understand what is confirmed, what needs checking and what happens next. You stay in control of your study decision."
+    },
+    {
+      "heading": "Support in your language",
+      "body": "Chat with Mia, our AI assistant, in your own language any time. Our team replies in Thai or English."
+    },
+    {
+      "heading": "A simpler way forward",
+      "body": "Explore a study area, ask about current options, compare the details, and proceed only when you are ready."
+    }
+  ],
+  "_edits": "20 Nov 2026 (owner): section 3 changed from the CMS draft — our team speaks Thai and English only; Mia (AI) chats in many languages."
 }

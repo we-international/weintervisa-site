@@ -137,6 +137,11 @@ check(subprocess.run([sys.executable, "-c", "import sys; sys.argv=['x','--produc
                       "sys.exit(0 if all(s.get('approved') for s in schools.SCHOOLS) else 1)"], cwd=ROOT).returncode == 0,
       "production build includes only owner-approved schools")
 check(("/schools" in (SITE / "courses.html").read_text()) == bool(_sc.SCHOOLS), "/courses links /schools only when a school is shown")
+# 13. Languages (owner 20 Nov 2026): team = Thai + English only; Mia (AI) chats in many languages
+for rel in ("index", "frequently-asked-questions"):
+    s_ = (SITE / f"{rel}.html").read_text()
+    check("Thai and English" in s_ or "Thai or English" in s_, f"/{rel} says our team speaks Thai and English")
+check(not any(re.search(r"preferred language so we can arrange|any language you (like|want) with our team", s_, re.I) for s_ in pages.values()), "no page promises human support in other languages")
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())
