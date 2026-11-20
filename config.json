@@ -1,5 +1,8 @@
 {
   "qeac": "11964",
   "abn": "",
-  "cname": "www.weintervisa.com"
+  "cname": "www.weintervisa.com",
+  "getwec_endpoint": "https://plcgzfgzwstezvugboqk.supabase.co/functions/v1/mia",
+  "getwec_anon_key": "",
+  "_forms_note": "Forms send to GetWec only in a --production build AND when getwec_anon_key is set (public anon key, safe in pages; the owner adds it on the DNS day). Preview builds never send."
 }

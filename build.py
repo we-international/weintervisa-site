@@ -15,6 +15,8 @@ from pathlib import Path
 
 import markdown
 
+sys.path.insert(0, str(Path(__file__).parent))
+
 ROOT = Path(__file__).parent
 OUT = ROOT / "site"
 SITE = "https://www.weintervisa.com"
@@ -69,6 +71,12 @@ def render_md(md):
 
 
 def page(title, body, *, path, description="", og_image="", jsonld=None, extra_head=""):
+    if 'data-lead-form' in body:  # lead forms → GetWec; connected only in production with the public key
+        if not PREVIEW and CONFIG.get("getwec_endpoint") and CONFIG.get("getwec_anon_key"):
+            extra_head += (f'<meta name="getwec-endpoint" content="{esc(CONFIG["getwec_endpoint"])}">'
+                           f'<meta name="getwec-key" content="{esc(CONFIG["getwec_anon_key"])}">')
+        body += '<script src="/assets/forms.js" defer></script>'
+
     canonical = SITE + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex, nofollow">' if PREVIEW else ""
     nav = "".join(f'<a href="{p}"{" aria-current=page" if path.startswith(p) else ""}>{l}</a>' for l, p in NAV)
@@ -122,6 +130,7 @@ def build():
     (OUT / "post").mkdir(parents=True)
     shutil.copytree(ROOT / "assets", OUT / "assets")
     posts = load_posts()
+    urls_extra = []
     write = lambda rel, s: (OUT / rel).write_text(s)
 
     # Posts — exact Wix path /post/<slug>
@@ -178,6 +187,11 @@ def build():
               f'<link rel="canonical" href="{target}"><meta name="robots" content="noindex">'
               f'<meta http-equiv="refresh" content="0; url={target}"><a href="{target}">{target}</a>')
 
+    import pages
+    for rel, (title, desc, body) in pages.PAGES.items():
+        write(f"{rel}.html", page(title, body, path="/" + rel, description=desc))
+        urls_extra.append("/" + rel)
+
     write("404.html", page("Page not found | We International", '<section class="wrap"><h1>Page not found</h1>'
           '<p>This page has moved or no longer exists.</p><p><a class="btn" href="/">Home</a> '
           '<a class="btn ghost" href="/blog">Blog</a></p></section>', path="/404"))
@@ -190,7 +204,7 @@ def build():
           f'<title>We International blog</title><link>{SITE}/blog</link>'
           f'<description>Guides on study and life in Australia</description>{items}</channel></rss>')
 
-    urls = ["/", "/blog"] + [f"/post/{p['slug']}" for p in posts]
+    urls = ["/", "/blog"] + urls_extra + [f"/post/{p['slug']}" for p in posts]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
           + "".join(f"<url><loc>{SITE}{'' if u == '/' else u}</loc></url>" for u in urls) + "</urlset>")
     write("robots.txt", "User-agent: *\nDisallow: /\n" if PREVIEW else f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
