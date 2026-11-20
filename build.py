@@ -131,7 +131,9 @@ def build():
     shutil.copytree(ROOT / "assets", OUT / "assets")
     posts = load_posts()
     urls_extra = []
-    write = lambda rel, s: (OUT / rel).write_text(s)
+    def write(rel, s):
+        (OUT / rel).parent.mkdir(parents=True, exist_ok=True)
+        (OUT / rel).write_text(s)
 
     # Posts — exact Wix path /post/<slug>
     for p in posts:
@@ -187,9 +189,9 @@ def build():
               f'<link rel="canonical" href="{target}"><meta name="robots" content="noindex">'
               f'<meta http-equiv="refresh" content="0; url={target}"><a href="{target}">{target}</a>')
 
-    import pages
-    for rel, (title, desc, body) in pages.PAGES.items():
-        write(f"{rel}.html", page(title, body, path="/" + rel, description=desc))
+    import pages, content_pages
+    for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES}.items():
+        write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, jsonld=content_pages.JSONLD.get(rel)))
         urls_extra.append("/" + rel)
 
     write("404.html", page("Page not found | We International", '<section class="wrap"><h1>Page not found</h1>'

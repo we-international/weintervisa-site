@@ -2,6 +2,7 @@
 """Site checks — run: python3 tests/test_site.py  (exit 1 on any failure)."""
 import json, re, subprocess, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -62,7 +63,9 @@ check(re.search(r"QEAC \d+</p>", home) is not None, "QEAC shows the number only"
 # 7. Feed + sitemap
 feed = (SITE / "blog-feed.xml").read_text()
 check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items (same path as Wix)")
-check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + 2, "sitemap lists home, blog, contact, application and every post")
+import pages as _p, content_pages as _cp
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES)
+check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages and every post")
 
 # 8. Lead forms (→ GetWec "lead" contract) — never connected in a preview build
 for rel in ("contact-us", "charter-application"):
@@ -74,6 +77,22 @@ for rel in ("contact-us", "charter-application"):
     check('getwec-key' not in s, f"/{rel} is not connected in preview")
     check(not re.search(r"passport (no|number)\b[^.]*<input|type=\"file\"", s, re.I), f"/{rel} asks for no passport number or uploads")
     check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee", s, re.I), f"/{rel} makes no unapproved promises")
+# 9. Content pages (same Wix paths) — honest, no unapproved promises, visa → registered migration agent
+for rel in _cp.CONTENT_PAGES:
+    f = SITE / f"{rel}.html"
+    check(f.exists(), f"/{rel} exists")
+    s = f.read_text()
+    check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guaranteed (place|visa|job)|100% |best price", s, re.I), f"/{rel} makes no unapproved promises")
+    check('<meta name="description" content="' in s and '<meta name="description" content="">' not in s, f"/{rel} has an SEO description")
+    check(s.count("<h1>") == 1, f"/{rel} has one h1")
+for rel in ("migration-support", "fast-track-courses", "courses/nursing-pathways-australia", "english-practice"):
+    check("registered migration agent" in (SITE / f"{rel}.html").read_text(), f"/{rel} refers visa questions to a registered migration agent")
+c = (SITE / "courses.html").read_text()
+check(c.count("<li><strong>") >= 45, "/courses lists every study area from the CMS export")
+check("CRICOS" in c and "not a promise" in c, "/courses explains the list is not a promise")
+check('"FAQPage"' in (SITE / "frequently-asked-questions.html").read_text(), "FAQ page has FAQPage structured data")
+pv = (SITE / "privacy-policy.html").read_text()
+check("Sydney" in pv and "cookies" in pv and "AI" in pv, "privacy notice covers GetWec in Sydney, no cookies, the AI assistant")
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())

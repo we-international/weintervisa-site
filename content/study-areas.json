@@ -1,0 +1,272 @@
+[
+ {
+  "title": "General English",
+  "slug": "general-english",
+  "group": "English & Pathways",
+  "description": "Build everyday English for study, work and daily life."
+ },
+ {
+  "title": "IELTS Preparation",
+  "slug": "ielts-preparation",
+  "group": "English & Pathways",
+  "description": "Explore preparation for the IELTS test and your next study step."
+ },
+ {
+  "title": "PTE Preparation",
+  "slug": "pte-preparation",
+  "group": "English & Pathways",
+  "description": "Explore English test preparation and study options."
+ },
+ {
+  "title": "Academic English",
+  "slug": "academic-english",
+  "group": "English & Pathways",
+  "description": "Prepare for the language demands of further study."
+ },
+ {
+  "title": "Foundation & University Pathways",
+  "slug": "foundation-university-pathways",
+  "group": "English & Pathways",
+  "description": "Explore preparation and pathway study before a degree."
+ },
+ {
+  "title": "Business & Leadership",
+  "slug": "business-leadership",
+  "group": "Business & Technology",
+  "description": "Explore business operations, management and leadership study."
+ },
+ {
+  "title": "Accounting & Finance",
+  "slug": "accounting-finance",
+  "group": "Business & Technology",
+  "description": "Explore accounting, bookkeeping and finance study areas."
+ },
+ {
+  "title": "Marketing & Digital Media",
+  "slug": "marketing-digital-media",
+  "group": "Business & Technology",
+  "description": "Explore marketing, communication and digital campaigns."
+ },
+ {
+  "title": "Project Management",
+  "slug": "project-management",
+  "group": "Business & Technology",
+  "description": "Explore the planning and coordination of projects."
+ },
+ {
+  "title": "Human Resources",
+  "slug": "human-resources",
+  "group": "Business & Technology",
+  "description": "Explore people, recruitment and workplace management."
+ },
+ {
+  "title": "Information Technology",
+  "slug": "information-technology",
+  "group": "Business & Technology",
+  "description": "Explore computing, networks and technology support."
+ },
+ {
+  "title": "Software & Web Development",
+  "slug": "software-web-development",
+  "group": "Business & Technology",
+  "description": "Explore programming, software and web development."
+ },
+ {
+  "title": "Cybersecurity",
+  "slug": "cybersecurity",
+  "group": "Business & Technology",
+  "description": "Explore information security and cyber defence study."
+ },
+ {
+  "title": "Data & Artificial Intelligence",
+  "slug": "data-artificial-intelligence",
+  "group": "Business & Technology",
+  "description": "Explore analytics, data science and artificial intelligence."
+ },
+ {
+  "title": "Supply Chain & Logistics",
+  "slug": "supply-chain-logistics",
+  "group": "Business & Technology",
+  "description": "Explore transport, procurement and supply chain operations."
+ },
+ {
+  "title": "Early Childhood Education",
+  "slug": "early-childhood-education",
+  "group": "Care & Community",
+  "description": "Explore learning and care for young children."
+ },
+ {
+  "title": "Individual Support",
+  "slug": "individual-support",
+  "group": "Care & Community",
+  "description": "Explore support for people in care and community settings."
+ },
+ {
+  "title": "Ageing Support",
+  "slug": "ageing-support",
+  "group": "Care & Community",
+  "description": "Explore services and support for older people."
+ },
+ {
+  "title": "Disability Support",
+  "slug": "disability-support",
+  "group": "Care & Community",
+  "description": "Explore disability support and person-centred services."
+ },
+ {
+  "title": "Community Services",
+  "slug": "community-services",
+  "group": "Care & Community",
+  "description": "Explore community support, case coordination and service delivery."
+ },
+ {
+  "title": "Health Services Assistance",
+  "slug": "health-services-assistance",
+  "group": "Care & Community",
+  "description": "Explore support roles and learning in health service environments."
+ },
+ {
+  "title": "Nursing",
+  "slug": "nursing",
+  "group": "Care & Community",
+  "description": "Explore nursing study and check course-specific admission and registration requirements."
+ },
+ {
+  "title": "Allied Health",
+  "slug": "allied-health",
+  "group": "Care & Community",
+  "description": "Explore study across allied health disciplines."
+ },
+ {
+  "title": "Social Work & Counselling",
+  "slug": "social-work-counselling",
+  "group": "Care & Community",
+  "description": "Explore social work, wellbeing and counselling study."
+ },
+ {
+  "title": "Education & Teaching",
+  "slug": "education-teaching",
+  "group": "Care & Community",
+  "description": "Explore education studies and teaching qualifications."
+ },
+ {
+  "title": "Commercial Cookery",
+  "slug": "commercial-cookery",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore practical cookery and kitchen operations study."
+ },
+ {
+  "title": "Patisserie & Baking",
+  "slug": "patisserie-baking",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore pastry, baking and food production study."
+ },
+ {
+  "title": "Hospitality Management",
+  "slug": "hospitality-management",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore hospitality operations, guest experience and management."
+ },
+ {
+  "title": "Tourism & Events",
+  "slug": "tourism-events",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore travel, tourism and event coordination."
+ },
+ {
+  "title": "Beauty & Hairdressing",
+  "slug": "beauty-hairdressing",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore beauty services, hairdressing and salon study."
+ },
+ {
+  "title": "Fitness & Sport",
+  "slug": "fitness-sport",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore fitness, sport and recreation study."
+ },
+ {
+  "title": "Massage & Wellness",
+  "slug": "massage-wellness",
+  "group": "Hospitality & Lifestyle",
+  "description": "Explore massage and wellness study options."
+ },
+ {
+  "title": "Automotive",
+  "slug": "automotive",
+  "group": "Trades & Built Environment",
+  "description": "Explore automotive technology, servicing and repair."
+ },
+ {
+  "title": "Carpentry & Construction",
+  "slug": "carpentry-construction",
+  "group": "Trades & Built Environment",
+  "description": "Explore building, carpentry and construction study."
+ },
+ {
+  "title": "Electrical & Engineering Trades",
+  "slug": "electrical-engineering-trades",
+  "group": "Trades & Built Environment",
+  "description": "Explore engineering and electrical trades study."
+ },
+ {
+  "title": "Engineering",
+  "slug": "engineering",
+  "group": "Trades & Built Environment",
+  "description": "Explore engineering disciplines and technical study."
+ },
+ {
+  "title": "Architecture & Design",
+  "slug": "architecture-design",
+  "group": "Trades & Built Environment",
+  "description": "Explore architecture, building design and interiors."
+ },
+ {
+  "title": "Arts & Creative Design",
+  "slug": "arts-creative-design",
+  "group": "Creative & Other Studies",
+  "description": "Explore visual arts, graphic design and creative practice."
+ },
+ {
+  "title": "Film, Animation & Games",
+  "slug": "film-animation-games",
+  "group": "Creative & Other Studies",
+  "description": "Explore film, animation, interactive media and game study."
+ },
+ {
+  "title": "Music & Performing Arts",
+  "slug": "music-performing-arts",
+  "group": "Creative & Other Studies",
+  "description": "Explore music, performance and production study."
+ },
+ {
+  "title": "Science & Environment",
+  "slug": "science-environment",
+  "group": "Creative & Other Studies",
+  "description": "Explore science, sustainability and environmental study."
+ },
+ {
+  "title": "Agriculture & Animal Care",
+  "slug": "agriculture-animal-care",
+  "group": "Creative & Other Studies",
+  "description": "Explore agriculture, horticulture and animal-related study."
+ },
+ {
+  "title": "Law & Social Sciences",
+  "slug": "law-social-sciences",
+  "group": "Creative & Other Studies",
+  "description": "Explore law, society and the social sciences."
+ },
+ {
+  "title": "Research & Postgraduate Study",
+  "slug": "research-postgraduate-study",
+  "group": "Creative & Other Studies",
+  "description": "Explore advanced study and research pathways."
+ },
+ {
+  "title": "Schools & Other Study Options",
+  "slug": "schools-other-study-options",
+  "group": "Creative & Other Studies",
+  "description": "Ask about school education, specialised courses or a subject not listed."
+ }
+]

@@ -123,3 +123,11 @@ form.lead .btn:disabled { opacity: .6; }
 .form-status.bad { color: #b3261e; font-weight: 700; }
 @media (min-width: 600px) { .row2 { grid-template-columns: 1fr 1fr; } form.lead { padding: 24px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* content pages */
+.areas { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: .6rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.areas li { border: 1px solid #e3e6ea; border-radius: 10px; padding: .75rem .9rem; display: flex; flex-direction: column; gap: .2rem; }
+.areas span { color: #555; font-size: .95rem; }
+details.faq { border-bottom: 1px solid #e3e6ea; padding: .8rem 0; }
+details.faq summary { cursor: pointer; font-weight: 600; }
+details.faq p { margin: .5rem 0 0; }
