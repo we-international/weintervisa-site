@@ -36,6 +36,7 @@
     if (msg) lines.push('Message: ' + msg);
     return {
       action: 'lead',
+      form: kind, // GetWec saves the contact as source "form:<kind>" (not chat)
       full_name: val(f, 'full_name'),
       email: val(f, 'email').toLowerCase(),
       phone: val(f, 'phone'),
