@@ -12,6 +12,7 @@ Owner: We International Education & Visa Pty Ltd · Team: Web & CRM.
 
 - `pages.py` — form pages: `/contact-us` (enquiry form) and `/charter-application` (study application form).
 - `content_pages.py` — 12 content pages at the Wix paths (about, courses + 45 study areas, nursing pathways, fast-track, English, student services, homestay, OSHC, migration support, referral partners, FAQ, privacy). Source: the Wix CMS drafts `WEIWebsitePages` + `WEICourseCategories` (read-only export → `content/study-areas.json`). Skill: `.claude/skills/wix-cms-page-export`.
+- `home_page.py` — home page `/` from the Wix CMS home draft (`content/home.json`, read-only export 20 Nov 2026): hero + CTA, study-area groups → `/courses#<group>`, how we help, 4-step flow, popular pages, visa note, latest 3 posts, Organization + WebSite schema.
 - `assets/forms.js` — lead forms → GetWec `mia` Edge Function `action: "lead"` (contract copy: `tests/getwec-lead-contract.mjs`). Sends only in a `--production` build with `getwec_anon_key` set in `config.json`; preview never sends. Skill: `.claude/skills/website-lead-forms`.
 
 Still to decide (owner): 4 Wix-app pages in `tests/pending-pages.json` — /partner-portal, /schedule, /videos, /challenges. Privacy notice is a draft for owner review. Local copies of images still to do.
