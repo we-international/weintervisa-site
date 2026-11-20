@@ -172,7 +172,7 @@ faq = [
     ("Do you give visa advice?", "No. We are not a migration agent. For visa advice we refer you to a registered migration agent."),
     ("Can I visit your office?", "We work online. Send us a message and we will arrange a time to talk."),
     ("Can I send my documents now?", "Please start with a short message. Send passports or other private documents only when we give you a secure way to do it."),
-    ("Can I talk in my own language?", "Tell us your preferred language and we will confirm the support we can offer."),
+    ("Can I talk in my own language?", "Yes, with Mia, our AI assistant: she can chat in many languages. Our team speaks Thai and English, so a reply from a person will be in Thai or English."),
     ("Is the chat assistant a person?", "Our website assistant is an AI. It answers general questions and passes your message to our team."),
 ]
 faq_body = (f'<section class="wrap narrow"><h1>Frequently asked questions</h1>'
