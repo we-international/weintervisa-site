@@ -204,5 +204,27 @@ def build():
     print(f"built {len(posts)} posts → {OUT} ({'preview/noindex' if PREVIEW else 'production'})")
 
 
+def apply_base_path():
+    """Preview host is a project page (we-international.github.io/weintervisa-site/), so
+    root-relative links like /assets/site.css need the repo path in front. Set SITE_BASE
+    (e.g. /weintervisa-site) only for that preview deploy; local tests and the production
+    build (custom domain at the root) leave it empty and nothing changes."""
+    import os
+    base = os.environ.get("SITE_BASE", "").rstrip("/")
+    if not base or not PREVIEW:
+        return
+    pat = re.compile(r'((?:href|src|action)=["\'])/(?!/)')
+    for f in OUT.rglob("*"):
+        if f.suffix in (".html", ".js", ".css") and f.is_file():
+            t = f.read_text()
+            t2 = pat.sub(lambda m: m.group(1) + base + "/", t)
+            if f.suffix in (".js", ".css"):
+                t2 = re.sub(r'url\(\s*(["\']?)/(?!/)', lambda m: "url(" + m.group(1) + base + "/", t2)
+            if t2 != t:
+                f.write_text(t2)
+    print(f"preview base path {base} applied")
+
+
 if __name__ == "__main__":
     build()
+    apply_base_path()

@@ -24,3 +24,5 @@ description: Use when moving weintervisa.com (or any Wix site) to a free static 
 ## Checks (tests/test_site.py + tests/e2e.mjs)
 All Wix slugs exist · no broken internal links (pages still to build listed separately) · no personal name/email, only info@weintervisa.com · no trackers/cookies · footer: company name, QEAC number only, "not a migration agent" · feed/sitemap counts · phone 375px + desktop: status, one h1, no sideways scroll.
 - In ESM tests, load the global Playwright with `createRequire(import.meta.url)("playwright")` (NODE_PATH does not work for `import`).
+
+- 2026-11-20: the preview lives at a project page (we-international.github.io/weintervisa-site/), so root-relative links (/assets/site.css, /post/...) broke and the page showed unstyled. The Pages workflow now rebuilds with `SITE_BASE=/weintervisa-site` before upload (build.py `apply_base_path`, preview only). Tests still run on the plain build. Drop the step on the DNS day (custom domain serves from the root).

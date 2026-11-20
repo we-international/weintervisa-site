@@ -17,6 +17,10 @@ jobs:
           python-version: "3.12"
       - run: pip install markdown==3.7
       - run: python3 tests/test_site.py
+      # Preview host is a project page under /weintervisa-site/: rebuild with that base path
+      # for the upload only (tests above run on the plain build). Remove when the DNS moves.
+      - run: SITE_BASE=/weintervisa-site python3 build.py
+        if: github.ref == 'refs/heads/main'
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:
