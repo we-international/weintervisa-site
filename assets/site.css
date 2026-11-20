@@ -155,3 +155,13 @@ details.faq p { margin: .5rem 0 0; }
   .flow { grid-template-columns: repeat(4, 1fr); }
   .flow li { padding: 52px 0 0; }
 }
+/* Registered migration agents (from GetWec, MARN-checked) */
+.agents { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 14px; }
+.agent { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.agent h3 { margin: 0 0 6px; font-size: 19px; }
+.agent p { margin: 0 0 8px; }
+.agent dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; margin: 0 0 12px; font-size: 15px; }
+.agent dt { color: var(--muted); }
+.agent dd { margin: 0; overflow-wrap: anywhere; }
+.small { font-size: 15px; color: var(--muted); }
+@media (max-width: 480px) { .agent dl { grid-template-columns: 1fr; } .agent dt { margin-top: 6px; } }

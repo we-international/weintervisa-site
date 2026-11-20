@@ -43,7 +43,8 @@ bad_words = re.compile(r"jarinrit|gmail\.com|\bBen\b", re.I)
 hits = [str(p.relative_to(SITE)) for p, s in pages.items() if bad_words.search(s)]
 check(not hits, "no personal name/email in pages" + (f" — {hits}" if hits else ""))
 emails = set(e for s in pages.values() for e in re.findall(r"[\w.+-]+@[\w-]+\.[\w.]+", s))
-check(emails <= {"info@weintervisa.com"}, f"only info@weintervisa.com appears (found {sorted(emails)})")
+partner_emails = {p.get("email") for p in json.loads((ROOT / "content/migration-partners.json").read_text()).get("partners", [])}
+check(emails <= {"info@weintervisa.com"} | partner_emails, f"only info@weintervisa.com (and listed agents' own contact emails) appear (found {sorted(emails)})")
 
 # 4. No trackers / cookies
 trackers = re.compile(r"googletagmanager|google-analytics|gtag\(|fbq\(|connect\.facebook|hotjar|document\.cookie", re.I)
@@ -104,6 +105,20 @@ check(len(re.findall(r'href="/courses#', home)) == len({a["group"] for a in json
 check("registered migration agent" in home.split("<footer")[0], "home body refers visa questions to a registered migration agent")
 check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee(d)? (place|visa|job)|100% |best price", home, re.I), "home makes no unapproved promises")
 check('"WebSite"' in home and '"Organization"' in home, "home has Organization + WebSite structured data")
+# 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
+ms = (SITE / "migration-support.html").read_text()
+check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")
+check("We are not a migration agent" in ms and "official register" in ms, "/migration-support says we are not a migration agent + check the MARN")
+check(_cp.PARTNER_FORM in ms, "/migration-support links the GetWec Migration Partner form")
+sample = [{"name": "Harbour <b>Visa</b> (sample)", "marn": "1234567", "url": "https://harbour.example/migration", "email": "a@harbour.example",
+           "phone": "+61 2 0000 0000", "city": "Sydney", "online_au": True, "languages": ["English", "Thai"], "markets": "Thailand",
+           "visa_types": ["Student (500)"], "intro": "<script>x</script>"},
+          {"name": "Bad link (sample)", "marn": "7654321", "url": "javascript:alert(1)"}]
+cards = _cp.partner_cards(sample)
+check(cards.count('class="agent"') == 1, "agent cards skip entries without an https link")
+check("<b>" not in cards and "<script>" not in cards and "&lt;script&gt;" in cards, "agent card text is escaped")
+check('rel="noopener nofollow"' in cards and "MARN" in cards and "online across Australia" in cards, "agent card shows MARN, place and a nofollow link")
+check("List coming soon" in _cp.partner_cards([]), "empty list shows 'coming soon' + referral link")
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())
