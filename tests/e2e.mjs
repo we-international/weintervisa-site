@@ -86,7 +86,7 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     await page.click("form.lead button[type=submit]");
     await page.waitForFunction(() => document.querySelector(".form-status").className.includes("ok"), null, { timeout: 5000 }).catch(() => {});
     const msg = await page.textContent(".form-status");
-    const good = seen.length === 1 && seen[0].h.apikey === "anon-test" && validateLead(seen[0].body).ok && /got your details/.test(msg)
+    const good = seen.length === 1 && seen[0].h.apikey === "anon-test" && seen[0].body.form === "enquiry" && validateLead(seen[0].body).ok && /got your details/.test(msg)
       && (await page.inputValue("#c-name")) === "";
     if (!good) { fails++; console.log(`✗ ${name} live form: posts=${seen.length} msg=${msg}`); }
     await page.unrouteAll();
