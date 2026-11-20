@@ -66,8 +66,9 @@ check(re.search(r"QEAC \d+</p>", home) is not None, "QEAC shows the number only"
 feed = (SITE / "blog-feed.xml").read_text()
 check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items (same path as Wix)")
 import pages as _p, content_pages as _cp
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES)
-check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages and every post")
+import thai_pages as _tp
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + 1 + len(_tp.TH_PAGES)  # + Thai home and Thai pages
+check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
 # 8. Lead forms (→ GetWec "lead" contract) — never connected in a preview build
 for rel in ("contact-us", "charter-application"):
@@ -142,6 +143,26 @@ for rel in ("index", "frequently-asked-questions"):
     s_ = (SITE / f"{rel}.html").read_text()
     check("Thai and English" in s_ or "Thai or English" in s_, f"/{rel} says our team speaks Thai and English")
 check(not any(re.search(r"preferred language so we can arrange|any language you (like|want) with our team", s_, re.I) for s_ in pages.values()), "no page promises human support in other languages")
+# 14. Thai pages (owner 20 Nov 2026): /th/..., html lang, hreflang both ways, switch on every page, Thai text
+TH_CHARS = re.compile(r"[\u0E00-\u0E7F]")
+for en_path, th_path in _tp.TH_OF.items():
+    th_file = SITE / (th_path.strip("/") + ("/index.html" if th_path.endswith("/") else ".html"))
+    en_file = SITE / ("index.html" if en_path == "/" else en_path.strip("/") + ".html")
+    ts, es_ = th_file.read_text(), en_file.read_text()
+    check('<html lang="th">' in ts and '<html lang="en">' in es_, f"{th_path} is lang=th, {en_path} is lang=en")
+    for s_ in (ts, es_):
+        check(f'hreflang="th" href="https://www.weintervisa.com{th_path}"' in s_ and 'hreflang="x-default"' in s_, f"{th_path} ↔ {en_path} hreflang pair")
+    check(f'class="lang" href="{en_path}"' in ts and f'class="lang" href="{th_path}"' in es_, f"{th_path} ↔ {en_path} language switch")
+    main_ = ts.split('<main id="main">')[1].split("</main>")[0]
+    visible = re.sub(r"<[^>]+>", " ", main_)
+    words = re.findall(r"[A-Za-z]{4,}", visible)
+    check(len(TH_CHARS.findall(visible)) > 4 * len("".join(words)), f"{th_path} body is mainly Thai")
+    check("registered migration agent" in ts and "ไม่ใช่ migration agent" in ts, f"{th_path} refers visa questions to a registered migration agent")
+    check(not re.search(r"รับประกัน(ผล|ที่เรียน|วีซ่า|งาน)(?!ได้)|ฟรี|ภายใน 24 ชั่วโมง|ถูกที่สุด", main_.replace("ไม่มีใครรับประกันผลวีซ่าได้", "")), f"{th_path} makes no unapproved promises")
+check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
+check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
+check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/index.html").read_text(), "Thai home says our team replies in Thai or English")
+
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())

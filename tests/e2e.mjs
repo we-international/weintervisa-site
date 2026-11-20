@@ -28,7 +28,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
 const content = ["/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
-const urls = ["/", "/blog", "/no-such-page", "/contact-us", "/charter-application", ...content, ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", ...content, ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {
@@ -50,6 +50,8 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
   if (errors.length) { fails++; console.log(`✗ ${name} JS errors: ${errors.join(" | ")}`); }
   // Lead forms: empty submit shows errors; valid submit passes the GetWec contract (preview = not sent)
   for (const [u, fill] of [
+    ["/th/contact-us", async () => { await page.fill("#c-name", "ทดสอบ ตัวอย่าง"); await page.fill("#c-phone", "LINE: sample_test");
+      await page.selectOption("#c-topic", { index: 1 }); await page.fill("#c-msg", "คำถามตัวอย่างเรื่องคอร์สภาษา"); }],
     ["/contact-us", async () => { await page.fill("#c-name", "Test Sample"); await page.fill("#c-email", "test.sample@example.com");
       await page.selectOption("#c-loc", "australia"); await page.selectOption("#c-topic", { index: 1 }); await page.fill("#c-msg", "Sample question about care courses."); }],
     ["/charter-application", async () => { await page.fill("#a-name", "Test Sample"); await page.fill("#a-phone", "0400 000 000");
@@ -65,6 +67,7 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     await page.click("form.lead button[type=submit]");
     const payload = await page.evaluate(() => window.__lastLeadPayload);
     const res = payload ? validateLead(payload) : { ok: false, errors: { none: "no payload" } };
+    if (payload && payload.lang !== (u.startsWith("/th/") ? "th" : "en")) res.ok = false, res.errors = { lang: payload.lang };
     const ok = /Preview/.test(note) && errs >= 2 && res.ok && /Preview check passed/.test(await page.textContent(".form-status"));
     if (!ok) { fails++; console.log(`✗ ${name} form ${u} note=${note} errs=${errs} contract=${JSON.stringify(res.errors)}`); }
     await page.screenshot({ path: `${out}/${name}-form-${u.slice(1)}.png`, fullPage: true });
@@ -93,7 +96,7 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
   }
   console.log(`✓ ${name}: lead forms checked (preview + live mock)`);
 
-  for (const [u, f] of [["/", "home"], ["/blog", "blog"], [`/post/${slugs.find(s => s.startsWith("oshc"))}`, "post"]]) {
+  for (const [u, f] of [["/", "home"], ["/th/", "home-th"], ["/th/contact-us", "contact-th"], ["/blog", "blog"], [`/post/${slugs.find(s => s.startsWith("oshc"))}`, "post"]]) {
     await page.goto(base + u, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(300);
     await page.screenshot({ path: `${out}/${name}-${f}.png`, fullPage: f !== "blog" });

@@ -70,20 +70,43 @@ def render_md(md):
     return re.sub(r'<a href="(https?://[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', out)
 
 
-def page(title, body, *, path, description="", og_image="", jsonld=None, extra_head=""):
+def lang_links(path, lang):
+    """hreflang alternates + the header language switch (owner 20 Nov 2026: English + Thai on every page)."""
+    import thai_pages as tp
+    en = tp.EN_OF.get(path, path) if lang == "th" else path
+    th = tp.TH_OF.get(en)
+    head = ""
+    if th:
+        head = (f'<link rel="alternate" hreflang="en" href="{SITE}{"" if en == "/" else en}">'
+                f'<link rel="alternate" hreflang="th" href="{SITE}{th}">'
+                f'<link rel="alternate" hreflang="x-default" href="{SITE}{"" if en == "/" else en}">')
+    if lang == "th":
+        switch = f'<a class="lang" href="{en}" hreflang="en" lang="en">English</a>'
+    else:  # no Thai version yet → Thai home
+        switch = f'<a class="lang" href="{th or "/th/"}" hreflang="th" lang="th">ไทย</a>'
+    return head, switch
+
+
+def page(title, body, *, path, description="", og_image="", jsonld=None, extra_head="", lang="en"):
     if 'data-lead-form' in body:  # lead forms → GetWec; connected only in production with the public key
         if not PREVIEW and CONFIG.get("getwec_endpoint") and CONFIG.get("getwec_anon_key"):
             extra_head += (f'<meta name="getwec-endpoint" content="{esc(CONFIG["getwec_endpoint"])}">'
                            f'<meta name="getwec-key" content="{esc(CONFIG["getwec_anon_key"])}">')
         body += '<script src="/assets/forms.js" defer></script>'
 
+    import thai_pages as tp
     canonical = SITE + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex, nofollow">' if PREVIEW else ""
-    nav = "".join(f'<a href="{p}"{" aria-current=page" if path.startswith(p) else ""}>{l}</a>' for l, p in NAV)
+    nav_items = tp.NAV_TH if lang == "th" else NAV
+    nav = "".join(f'<a href="{p}"{" aria-current=page" if path.startswith(p) else ""}>{l}</a>' for l, p in nav_items)
+    alt_head, switch = lang_links(path, lang)
+    extra_head = alt_head + extra_head
+    th = lang == "th"
+    home_href = "/th/" if th else "/"
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -101,10 +124,11 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
 {ld}{extra_head}
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">{"ข้ามไปที่เนื้อหา" if th else "Skip to content"}</a>
 <header class="top">
-  <a class="brand" href="/">We International</a>
-  <details class="menu"><summary aria-label="Menu">Menu</summary><nav>{nav}</nav></details>
+  <a class="brand" href="{home_href}">We International</a>
+  {switch}
+  <details class="menu"><summary aria-label="{"เมนู" if th else "Menu"}">{"เมนู" if th else "Menu"}</summary><nav>{nav}</nav></details>
   <nav class="wide">{nav}</nav>
 </header>
 <main id="main">
@@ -112,8 +136,8 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
 </main>
 <footer class="foot">
   <p><strong>{COMPANY}</strong>{(" · ABN " + esc(CONFIG["abn"])) if CONFIG.get("abn") else ""} · QEAC {esc(CONFIG["qeac"])}</p>
-  <p>We help with study and courses in Australia. We are not a migration agent: for visa advice we refer you to a registered migration agent.</p>
-  <p><a href="/contact-us">Contact</a> · <a href="/privacy-policy">Privacy</a> · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
+  <p>{tp.FOOT_TH if th else "We help with study and courses in Australia. We are not a migration agent: for visa advice we refer you to a registered migration agent."}</p>
+  <p><a href="{"/th/contact-us" if th else "/contact-us"}">{"ติดต่อเรา" if th else "Contact"}</a> · <a href="/privacy-policy">{"ความเป็นส่วนตัว" if th else "Privacy"}</a> · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
 </footer>
 </body>
 </html>
@@ -180,6 +204,15 @@ def build():
     import pages, content_pages
     for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES}.items():
         write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, jsonld=content_pages.JSONLD.get(rel)))
+        urls_extra.append("/" + rel)
+
+    # Thai pages (/th/...) — see thai_pages.py
+    import thai_pages
+    write("th/index.html", page(thai_pages.HOME_TITLE, thai_pages.home(posts, fmt_date), path="/th/",
+          description=thai_pages.HOME_DESC, lang="th"))
+    urls_extra.append("/th/")
+    for rel, (title, desc, body) in thai_pages.TH_PAGES.items():
+        write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, lang="th"))
         urls_extra.append("/" + rel)
 
     write("404.html", page("Page not found | We International", '<section class="wrap"><h1>Page not found</h1>'

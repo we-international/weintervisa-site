@@ -36,6 +36,10 @@ a { color: var(--brand); }
 .menu nav a, .wide a { padding: 10px 12px; text-decoration: none; color: var(--ink); border-radius: 6px; }
 .menu nav a[aria-current], .wide a[aria-current] { color: var(--brand); font-weight: 700; }
 .wide { display: none; }
+/* Language switch: always visible, next to the brand (owner 20 Nov 2026: EN + TH on every page) */
+.top .lang { margin-left: auto; margin-right: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
+  text-decoration: none; color: var(--ink); font-weight: 700; font-size: 15px; min-height: 40px; display: inline-flex; align-items: center; }
+:lang(th) body, html:lang(th) { line-height: 1.7; }
 
 main { min-height: 60vh; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px; }

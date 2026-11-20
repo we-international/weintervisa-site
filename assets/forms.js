@@ -12,6 +12,23 @@
   var key = meta('getwec-key');
   var live = !!(endpoint && key);
   var EMAIL_RE = /^[^@\s]{1,64}@[^@\s]{1,190}\.[a-z]{2,}$/i; // same as GetWec validateLead
+  // Thai pages (/th/...) have <html lang="th">: Thai messages, and GetWec stores preferred_lang "th".
+  var TH = (document.documentElement.lang || '').slice(0, 2) === 'th';
+  var M = TH ? {
+    name: 'กรุณาใส่ชื่อ', email: 'กรุณาเช็กอีเมลอีกครั้ง', contact: 'กรุณาใส่อีเมล หรือเบอร์โทร / LINE ที่ติดต่อได้',
+    consent: 'กรุณาติ๊กช่องยินยอม เพื่อให้เราติดต่อกลับได้', preview: 'Preview: ฟอร์มนี้ยังไม่ได้เชื่อมต่อ จะไม่มีการส่งข้อมูล',
+    thanksBot: 'ขอบคุณค่ะ เราจะติดต่อกลับเร็วๆ นี้', previewOk: 'Preview check passed — บนเว็บจริงข้อมูลจะส่งถึงทีมงาน',
+    sending: 'กำลังส่ง…', ok: 'ขอบคุณค่ะ เราได้รับข้อมูลแล้ว ทีมงานจะติดต่อกลับเร็วๆ นี้',
+    rate: 'ส่งหลายครั้งเกินไป กรุณาอีเมลมาที่ info@weintervisa.com แทน', bad: 'ข้อมูลบางช่องยังไม่ครบ กรุณาเช็กแล้วลองใหม่',
+    fail: 'ส่งไม่สำเร็จ กรุณาลองใหม่ หรืออีเมลมาที่ info@weintervisa.com',
+  } : {
+    name: 'Please add your name.', email: 'Please check your email address.', contact: 'Please add an email, or a phone / LINE we can use.',
+    consent: 'Please tick the box so we can contact you.', preview: 'Preview: this form is not connected yet. Nothing will be sent.',
+    thanksBot: 'Thanks! We will contact you soon.', previewOk: 'Preview check passed. In the live site this goes to our team.',
+    sending: 'Sending…', ok: 'Thanks! We got your details. Our team will contact you soon.',
+    rate: 'Too many tries. Please email info@weintervisa.com instead.', bad: 'Something was missing. Please check the form and try again.',
+    fail: 'Could not send. Please try again, or email info@weintervisa.com.',
+  };
 
   function val(f, name) {
     var el = f.elements[name];
@@ -45,7 +62,7 @@
       consent: val(f, 'consent') === true,
       marketing: val(f, 'marketing') === true,
       website: val(f, 'website'),
-      lang: 'en',
+      lang: TH ? 'th' : 'en',
       page: location.pathname,
       transcript: [{ role: 'user', text: lines.join('\n').slice(0, 1000) }],
     };
@@ -54,10 +71,10 @@
   // Same rules as GetWec validateLead, so people see problems before sending.
   function check(p) {
     var e = {};
-    if (p.full_name.length < 2) e.full_name = 'Please add your name.';
-    if (p.email && !EMAIL_RE.test(p.email)) e.email = 'Please check your email address.';
-    if (!p.email && p.phone.length < 5) e.email = 'Please add an email, or a phone / LINE we can use.';
-    if (!p.consent) e.consent = 'Please tick the box so we can contact you.';
+    if (p.full_name.length < 2) e.full_name = M.name;
+    if (p.email && !EMAIL_RE.test(p.email)) e.email = M.email;
+    if (!p.email && p.phone.length < 5) e.email = M.contact;
+    if (!p.consent) e.consent = M.consent;
     return e;
   }
 
@@ -75,19 +92,19 @@
   }
 
   function bind(f) {
-    if (!live) status(f, 'note', 'Preview: this form is not connected yet. Nothing will be sent.');
+    if (!live) status(f, 'note', M.preview);
     f.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var p = payload(f);
       var errors = check(p);
       show(f, errors);
       if (Object.keys(errors).length) return;
-      if (p.website) { status(f, 'ok', 'Thanks! We will contact you soon.'); return; } // bot: pretend
+      if (p.website) { status(f, 'ok', M.thanksBot); return; } // bot: pretend
       window.__lastLeadPayload = p; // for tests only; never stored
-      if (!live) { status(f, 'ok', 'Preview check passed. In the live site this goes to our team.'); return; }
+      if (!live) { status(f, 'ok', M.previewOk); return; }
       var btn = f.querySelector('button[type="submit"]');
       btn.disabled = true;
-      status(f, 'note', 'Sending…');
+      status(f, 'note', M.sending);
       fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', apikey: key, Authorization: 'Bearer ' + key },
@@ -97,14 +114,14 @@
       }).then(function (res) {
         if (res.ok && res.d.ok) {
           f.reset();
-          status(f, 'ok', 'Thanks! We got your details. Our team will contact you soon.');
+          status(f, 'ok', M.ok);
         } else if (res.d.errors && res.d.errors.rate) {
-          status(f, 'bad', 'Too many tries. Please email info@weintervisa.com instead.');
+          status(f, 'bad', M.rate);
         } else {
-          status(f, 'bad', 'Something was missing. Please check the form and try again.');
+          status(f, 'bad', M.bad);
         }
       }).catch(function () {
-        status(f, 'bad', 'Could not send. Please try again, or email info@weintervisa.com.');
+        status(f, 'bad', M.fail);
       }).then(function () { btn.disabled = false; });
     });
   }
