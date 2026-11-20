@@ -119,6 +119,23 @@ check(cards.count('class="agent"') == 1, "agent cards skip entries without an ht
 check("<b>" not in cards and "<script>" not in cards and "&lt;script&gt;" in cards, "agent card text is escaped")
 check('rel="noopener nofollow"' in cards and "MARN" in cards and "online across Australia" in cards, "agent card shows MARN, place and a nofollow link")
 check("List coming soon" in _cp.partner_cards([]), "empty list shows 'coming soon' + referral link")
+# 12. School pages (WEI-SCHOOL-BACKLOG-1120 step 4): only schools that sent us files; preview only until approved
+import schools as _sc, subprocess
+sd = json.loads((ROOT / "content/schools.json").read_text())["schools"]
+check(all(x.get("source", {}).get("file") and x.get("source", {}).get("received") for x in sd), "every school names the file it sent us + date")
+check(all(x["website"].startswith("https://") for x in sd), "school websites are https")
+for x in sd:
+    f = SITE / f"schools/{x['slug']}.html"
+    check(f.exists(), f"/schools/{x['slug']} built in preview")
+    s = f.read_text()
+    check(s.count("<h1>") == 1 and "registered migration agent" in s and "offer letter" in s, f"/schools/{x['slug']} has one h1, visa note and fee caveat")
+    check(not re.search(r"\bguarantee|best price|100% |free consultation|<img", s, re.I), f"/schools/{x['slug']} makes no promises and shows no unsupplied images")
+    for c in x["courses"]:
+        check(all(isinstance(c["fees"][col], int) for col in x["fee_columns"]) and c["cricos"] in s, f"{x['slug']} {c['code']} fee + CRICOS shown")
+check(subprocess.run([sys.executable, "-c", "import sys; sys.argv=['x','--production']; import schools; "
+                      "sys.exit(0 if all(s.get('approved') for s in schools.SCHOOLS) else 1)"], cwd=ROOT).returncode == 0,
+      "production build includes only owner-approved schools")
+check(("/schools" in (SITE / "courses.html").read_text()) == bool(_sc.SCHOOLS), "/courses links /schools only when a school is shown")
 # The production build connects only when the public key is set
 import importlib.util, os
 cfg = json.loads((ROOT / "config.json").read_text())

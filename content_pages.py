@@ -10,6 +10,8 @@ import json
 import re
 from pathlib import Path
 
+import schools
+
 ROOT = Path(__file__).resolve().parent
 e = html.escape
 
@@ -46,6 +48,7 @@ courses_body = f"""<section class="wrap">
 <p class="note-box"><strong>About this list.</strong> These are study areas, not a promise that every course is open through us.
 We share a course name, CRICOS code, fees, campus and start date only after we check them with the school.</p>
 <p><a class="btn" href="/charter-application">Tell us what you want to study</a> <a class="btn ghost" href="/courses/nursing-pathways-australia">Nursing pathways</a></p>
+{'<p>See courses and fees from <a href="/schools">schools that sent us their details</a>.</p>' if schools.SCHOOLS else ""}
 <h2>Study levels</h2>
 <ul class="list">
 <li><strong>English and pathways</strong> — language study or a foundation course before your next qualification.</li>
@@ -238,4 +241,5 @@ CONTENT_PAGES = {
     "privacy-policy": ("Privacy notice | We International",
         "How We International Education & Visa Pty Ltd collects, uses and protects your information.", privacy_body),
 }
+CONTENT_PAGES.update(schools.PAGES)
 JSONLD = {"frequently-asked-questions": faq_ld}
