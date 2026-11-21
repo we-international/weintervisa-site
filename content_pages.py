@@ -42,13 +42,13 @@ area_html = "".join(
     f'<h2 id="{e(g.lower().replace(" & ", "-").replace(" ", "-"))}">{e(g)}</h2><ul class="areas">'
     + "".join(f'<li><strong>{e(a["title"])}</strong><span>{e(a.get("description") or "")}</span></li>' for a in items)
     + "</ul>" for g, items in groups.items())
-courses_body = f"""<section class="wrap">
-<h1>Find a study area that feels like you</h1>
-<p class="lead">Browse {len(areas)} study areas, from English to care, business, trades and more. Tell us what you like and we look at current options with you.</p>
-<p class="note-box"><strong>About this list.</strong> These are study areas, not a promise that every course is open through us.
+import courses_page  # noqa: E402 — /courses rebuilt from the live Wix catalogue (22 Nov 2026)
+courses_body = courses_page.render(
+    f"""<section class="wrap">
+<p class="kicker">All study areas</p>
+<h2>Browse {len(areas)} study areas</h2>
+<p>From English to care, business, trades and more. These are study areas, not a promise that every course is open through us.
 We share a course name, CRICOS code, fees, campus and start date only after we check them with the school.</p>
-<p><a class="btn" href="/charter-application">Tell us what you want to study</a> <a class="btn ghost" href="/courses/nursing-pathways-australia">Nursing pathways</a></p>
-{'<p>See courses and fees from <a href="/schools">schools that sent us their details</a>.</p>' if schools.SCHOOLS else ""}
 <h2>Study levels</h2>
 <ul class="list">
 <li><strong>English and pathways</strong> — language study or a foundation course before your next qualification.</li>
@@ -57,7 +57,8 @@ We share a course name, CRICOS code, fees, campus and start date only after we c
 </ul>
 {area_html}
 {cta("Not sure which area fits? Tell us your interests, past study, city and budget.", "/contact-us")}
-</section>"""
+</section>""",
+    '<p>See courses and fees from <a href="/schools">schools that sent us their details</a>.</p>' if schools.SCHOOLS else "")
 
 import nursing_page  # noqa: E402 — rebuilt from the live Wix page (22 Nov 2026)
 nursing_body = nursing_page.render()
@@ -207,7 +208,7 @@ CONTENT_PAGES = {
     "about-we-international": ("About We International | Student first",
         "We International is a Sydney education agency that helps students explore study in Australia, with honest, student-first support.", about_body),
     "courses": ("Australian college and university courses | We International",
-        "Browse study areas in Australia, from English to care, business and trades, and ask our team about checked options, fees and start dates.", courses_body),
+        "Explore 97 Australian courses, from Certificate III in care and childcare to business, cookery, trades, IT and degrees, by interest or city, and ask us to compare colleges.", courses_body),
     "courses/nursing-pathways-australia": ("Nursing pathways in Australia | English and OBA preparation",
         "Nursing registration pathways in Australia and preparation for English, NCLEX-RN and OSCE. Ask We International about fees, dates and study options.", nursing_body),
     "fast-track-courses": ("Working Holiday courses (417/462) | We International",

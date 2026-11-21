@@ -178,6 +178,12 @@ check('href="/partner-portal"' in rp and "mailto:info@weintervisa.com?subject=Re
       "/referral-partners: apply by email (no student data), partner login → portal")
 cu, _ = _main_words("contact-us")
 check("https://m.me/113772648238480" in cu and 'href="/schedule"' in cu, "/contact-us: Messenger and booking links")
+co, n_co = _main_words("courses")
+_cj = json.loads((ROOT / "content/courses.json").read_text())
+check(len(_cj["courses"]) >= 97 and co.count('<details class="faq course-item"') == len(_cj["courses"]), f"/courses lists every course from the live catalogue ({len(_cj['courses'])}), each opens with <details>")
+check(n_co >= 950, f"/courses is as full as the live Wix page ({n_co} words, live ≈ 950)")
+check(all(f'id="{a}"' in co for a in re.findall(r'href="#([\w-]+)"', co)), "/courses: every in-page link (interests, cities, groups) has a target")
+check(not re.search(r"Charter Australia|Rosehill|KCA Education|Danford|Britts College|Brighton College|VIA Education", co), "/courses: neutral listing, no college names (owner rule 26 Oct 2026)")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")

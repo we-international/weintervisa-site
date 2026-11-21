@@ -1,0 +1,1765 @@
+{
+ "_source": "Live page www.weintervisa.com/courses (Wix custom embed): course data read on 22 Nov 2026 from the embed's inline script saved by the workflow 'Live Wix vs new site' (review/compare-44951219786) with tools/courses_from_live.py. Provider names left out on purpose (neutral listing).",
+ "courses": [
+  {
+   "id": "chc33021",
+   "code": "CHC33021",
+   "title": "Certificate III in Individual Support",
+   "topic": "care",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "6–18 months",
+   "focus": "Ageing and disability support options",
+   "campuses": "Sydney: North Sydney, Ultimo, Haymarket and CBD options. Brisbane: Eight Mile Plains campus. Live online classes within Australia may be offered, subject to eligibility, with in-person placement in Sydney, Brisbane or Gold Coast, subject to availability.",
+   "studyNote": "Classes may run on campus or live online, with a supervised work placement. We will confirm the timetable, entry requirements and placement with the provider before you apply.",
+   "options": 5
+  },
+  {
+   "id": "chc43015",
+   "code": "CHC43015",
+   "title": "Certificate IV in Ageing Support",
+   "topic": "care",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "6–12 months",
+   "focus": "Supporting older people and coordinating care",
+   "options": 3
+  },
+  {
+   "id": "chc43415",
+   "code": "CHC43415",
+   "title": "Certificate IV in Leisure and Health",
+   "topic": "care",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "Up to 12 months",
+   "focus": "Planning inclusive recreation and wellbeing activities",
+   "campuses": "North Sydney; delivery options discussed during consultation.",
+   "options": 1
+  },
+  {
+   "id": "hlt33115",
+   "code": "HLT33115",
+   "title": "Certificate III in Health Services Assistance",
+   "topic": "health",
+   "cities": [
+    "Sydney",
+    "Wagga Wagga"
+   ],
+   "duration": "6–12 months",
+   "focus": "Assisting health professionals and supporting patient care",
+   "campuses": "North Sydney and Wagga Wagga options; online delivery has separate eligibility conditions.",
+   "options": 2
+  },
+  {
+   "id": "chc52025",
+   "code": "CHC52025",
+   "title": "Diploma of Community Services",
+   "topic": "community",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "18–24 months",
+   "focus": "Case coordination and person-centred community support",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 6
+  },
+  {
+   "id": "chc30125",
+   "code": "CHC30125",
+   "title": "Certificate III in Early Childhood Education and Care",
+   "topic": "child",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12 months",
+   "focus": "Daily care, play and development in early learning settings",
+   "campuses": "North Sydney, Ultimo and Haymarket / Sydney CBD options.",
+   "options": 4
+  },
+  {
+   "id": "chc50125",
+   "code": "CHC50125",
+   "title": "Diploma of Early Childhood Education and Care",
+   "topic": "child",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "12–24 months",
+   "focus": "Learning programs, documentation and leading educator teams",
+   "campuses": "North Sydney, Ultimo and Haymarket / Sydney CBD options.",
+   "options": 4
+  },
+  {
+   "id": "bsb30120",
+   "code": "BSB30120",
+   "title": "Certificate III in Business",
+   "topic": "business",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "6–18 months",
+   "focus": "Workplace communication, documents and office support",
+   "options": 3
+  },
+  {
+   "id": "bsb40120",
+   "code": "BSB40120",
+   "title": "Certificate IV in Business",
+   "topic": "business",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "About 12 months",
+   "focus": "Business coordination, research and workplace problem solving",
+   "options": 5
+  },
+  {
+   "id": "bsb50120",
+   "code": "BSB50120",
+   "title": "Diploma of Business",
+   "topic": "business",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "About 12 months",
+   "focus": "Business operations; Digital and Data option in Sydney",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 5
+  },
+  {
+   "id": "bsb60120",
+   "code": "BSB60120",
+   "title": "Advanced Diploma of Business",
+   "topic": "business",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "About 12 months",
+   "focus": "Strategic business planning and organisational improvement",
+   "options": 2
+  },
+  {
+   "id": "bsb40520",
+   "code": "BSB40520",
+   "title": "Certificate IV in Leadership and Management",
+   "topic": "leadership",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12 months",
+   "focus": "First-line supervision and team performance",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 2
+  },
+  {
+   "id": "bsb50420",
+   "code": "BSB50420",
+   "title": "Diploma of Leadership and Management",
+   "topic": "leadership",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "12–18 months",
+   "focus": "People management and operational plans",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 7
+  },
+  {
+   "id": "bsb60420",
+   "code": "BSB60420",
+   "title": "Advanced Diploma of Leadership and Management",
+   "topic": "leadership",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "12–24 months",
+   "focus": "Strategic leadership and organisational change",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 8
+  },
+  {
+   "id": "bsb40820",
+   "code": "BSB40820",
+   "title": "Certificate IV in Marketing and Communication",
+   "topic": "marketing",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "About 12 months",
+   "focus": "Campaign support and digital communication",
+   "options": 4
+  },
+  {
+   "id": "bsb50620",
+   "code": "BSB50620",
+   "title": "Diploma of Marketing and Communication",
+   "topic": "marketing",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "12–18 months",
+   "focus": "Marketing plans, customer insights and campaign management",
+   "options": 4
+  },
+  {
+   "id": "bsb60520",
+   "code": "BSB60520",
+   "title": "Advanced Diploma of Marketing and Communication",
+   "topic": "marketing",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "12–24 months",
+   "focus": "Marketing strategy, research and integrated campaigns",
+   "options": 4
+  },
+  {
+   "id": "bsb40920",
+   "code": "BSB40920",
+   "title": "Certificate IV in Project Management Practice",
+   "topic": "project",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "About 12 months",
+   "focus": "Supporting scope, schedules, budgets and project documentation",
+   "options": 3
+  },
+  {
+   "id": "bsb50820",
+   "code": "BSB50820",
+   "title": "Diploma of Project Management",
+   "topic": "project",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "12–18 months",
+   "focus": "Managing a project from planning to delivery",
+   "options": 7
+  },
+  {
+   "id": "bsb60720",
+   "code": "BSB60720",
+   "title": "Advanced Diploma of Program Management",
+   "topic": "project",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "12–24 months",
+   "focus": "Coordinating related projects and program outcomes",
+   "options": 5
+  },
+  {
+   "id": "fns40222",
+   "code": "FNS40222",
+   "title": "Certificate IV in Accounting and Bookkeeping",
+   "topic": "accounting",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12 months",
+   "focus": "Accounts processing, payroll and bookkeeping",
+   "options": 1
+  },
+  {
+   "id": "fns50222",
+   "code": "FNS50222",
+   "title": "Diploma of Accounting",
+   "topic": "accounting",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 18 months",
+   "focus": "Financial reporting, budgets and accounting systems",
+   "options": 1
+  },
+  {
+   "id": "fns60222",
+   "code": "FNS60222",
+   "title": "Advanced Diploma of Accounting",
+   "topic": "accounting",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 9 months",
+   "focus": "Advanced reporting, analysis and management accounting",
+   "options": 1
+  },
+  {
+   "id": "bsb40420",
+   "code": "BSB40420",
+   "title": "Certificate IV in Human Resource Management",
+   "topic": "hr",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12–18 months",
+   "focus": "Recruitment, employee records and HR administration",
+   "options": 1
+  },
+  {
+   "id": "bsb50320",
+   "code": "BSB50320",
+   "title": "Diploma of Human Resource Management",
+   "topic": "hr",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12–18 months",
+   "focus": "Coordinating recruitment, workforce plans and employee development",
+   "options": 1
+  },
+  {
+   "id": "bsb60320",
+   "code": "BSB60320",
+   "title": "Advanced Diploma of Human Resource Management",
+   "topic": "hr",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12–18 months",
+   "focus": "HR strategy, workforce change and organisational capability",
+   "options": 1
+  },
+  {
+   "id": "sit30622",
+   "code": "SIT30622",
+   "title": "Certificate III in Hospitality",
+   "topic": "hospitality",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "About 18 months",
+   "focus": "Guest service and everyday hospitality operations",
+   "options": 1
+  },
+  {
+   "id": "sit40422",
+   "code": "SIT40422",
+   "title": "Certificate IV in Hospitality",
+   "topic": "hospitality",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 18 months",
+   "focus": "Hospitality supervision and service coordination",
+   "options": 1
+  },
+  {
+   "id": "sit50422",
+   "code": "SIT50422",
+   "title": "Diploma of Hospitality Management",
+   "topic": "hospitality",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "18–24 months",
+   "focus": "Managing service teams, budgets and guest experience",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 7
+  },
+  {
+   "id": "sit60322",
+   "code": "SIT60322",
+   "title": "Advanced Diploma of Hospitality Management",
+   "topic": "hospitality",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "24–36 months",
+   "focus": "Hospitality business strategy and senior operations",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 5
+  },
+  {
+   "id": "sit30821",
+   "code": "SIT30821",
+   "title": "Certificate III in Commercial Cookery",
+   "topic": "cookery",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "12–16 months",
+   "focus": "Practical cookery and commercial kitchen preparation",
+   "options": 3
+  },
+  {
+   "id": "sit40521",
+   "code": "SIT40521",
+   "title": "Certificate IV in Kitchen Management",
+   "topic": "cookery",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "12–24 months",
+   "focus": "Kitchen operations, menus, food safety and supervising cooks",
+   "campuses": "Sydney: Parramatta campus option.",
+   "studyNote": "A selected 12-month group-delivery option without a CoE may sometimes be available for eligible Temporary Graduate visa (subclass 485) holders. It depends on a viable cohort and must be confirmed before enrolment. This is not a four-month full-qualification option for Working Holiday visa holders.",
+   "options": 7
+  },
+  {
+   "id": "sit40721",
+   "code": "SIT40721",
+   "title": "Certificate IV in Patisserie",
+   "topic": "patisserie",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12–24 months",
+   "focus": "Pastry, desserts, presentation and pastry-kitchen supervision",
+   "campuses": "Darlinghurst, Sydney; classroom and training-kitchen locations may differ.",
+   "studyNote": "A selected 12-month group-delivery option without a CoE may sometimes be available for eligible Temporary Graduate visa (subclass 485) holders. It depends on a viable cohort and must be confirmed before enrolment. This is not a four-month full-qualification option for Working Holiday visa holders.",
+   "options": 1
+  },
+  {
+   "id": "sit50122",
+   "code": "SIT50122",
+   "title": "Diploma of Travel and Tourism Management",
+   "topic": "tourism",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "18–24 months",
+   "focus": "Tourism products, customer experience and operations",
+   "options": 1
+  },
+  {
+   "id": "sit60122",
+   "code": "SIT60122",
+   "title": "Advanced Diploma of Travel and Tourism Management",
+   "topic": "tourism",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "24–36 months",
+   "focus": "Tourism business planning and operational leadership",
+   "options": 2
+  },
+  {
+   "id": "ict50220",
+   "code": "ICT50220",
+   "title": "Diploma of Information Technology",
+   "topic": "it",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "12–24 months",
+   "focus": "General IT, Cyber Security and Telecommunications Network Engineering options",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 6
+  },
+  {
+   "id": "ict60220",
+   "code": "ICT60220",
+   "title": "Advanced Diploma of Information Technology",
+   "topic": "it",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "About 24 months",
+   "focus": "Cyber Security and Telecommunications Network Engineering options",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 5
+  },
+  {
+   "id": "11287nat",
+   "code": "11287NAT",
+   "title": "Diploma of Artificial Intelligence",
+   "topic": "ai",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 4 terms",
+   "focus": "Applying AI tools to practical business problems",
+   "campuses": "Sydney CBD / Sussex Street campus.",
+   "options": 1
+  },
+  {
+   "id": "11423nat",
+   "code": "11423NAT",
+   "title": "Advanced Diploma of Artificial Intelligence",
+   "topic": "ai",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 5 terms",
+   "focus": "Designing and coordinating more complex AI applications",
+   "campuses": "Sydney CBD / Sussex Street campus.",
+   "options": 1
+  },
+  {
+   "id": "cpc30220",
+   "code": "CPC30220 / CPC30326",
+   "title": "Certificate III in Carpentry",
+   "topic": "carpentry",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 12–24 months",
+   "focus": "Timber construction, measuring, framing and installation",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 2
+  },
+  {
+   "id": "cpc30620",
+   "code": "CPC30620",
+   "title": "Certificate III in Painting and Decorating",
+   "topic": "painting",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 12–24 months",
+   "focus": "Surface preparation, paint finishes and decorative techniques",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 3
+  },
+  {
+   "id": "cpc31320",
+   "code": "CPC31320",
+   "title": "Certificate III in Wall and Floor Tiling",
+   "topic": "tiling",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 24 months",
+   "focus": "Surface preparation, tile setting, finishing and repair",
+   "options": 1
+  },
+  {
+   "id": "cpc31020",
+   "code": "CPC31020",
+   "title": "Certificate III in Solid Plastering",
+   "topic": "plaster",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 12 months",
+   "focus": "Preparing surfaces and applying solid plaster finishes",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "cpc40120",
+   "code": "CPC40120",
+   "title": "Certificate IV in Building and Construction (Building)",
+   "topic": "building",
+   "cities": [
+    "Melbourne",
+    "Sydney"
+   ],
+   "duration": "About 12 months",
+   "focus": "Planning residential building work and coordinating sites",
+   "campuses": "Melbourne CBD / Flinders Street campus. Sydney: Parramatta campus option.",
+   "options": 2
+  },
+  {
+   "id": "cpc60220",
+   "code": "CPC60220",
+   "title": "Advanced Diploma of Building and Construction (Management)",
+   "topic": "building",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 24 months",
+   "focus": "Managing complex building projects and construction operations",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "cpc50220",
+   "code": "CPC50220",
+   "title": "Diploma of Building and Construction (Building)",
+   "topic": "building",
+   "cities": [
+    "Sydney",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "About 24 months",
+   "focus": "Building plans, estimating, contracts and site management",
+   "options": 1
+  },
+  {
+   "id": "22700vic",
+   "code": "22700VIC",
+   "title": "Advanced Diploma of Engineering Technology (Civil Engineering Design)",
+   "topic": "engineering",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 24 months",
+   "focus": "Civil design, drafting and engineering project documentation",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "rii60520",
+   "code": "RII60520",
+   "title": "Advanced Diploma of Civil Construction Design",
+   "topic": "engineering",
+   "cities": [
+    "Melbourne",
+    "Sydney"
+   ],
+   "duration": "About 24 months",
+   "focus": "Infrastructure design and civil construction documentation",
+   "campuses": "Melbourne CBD / Flinders Street campus. Sydney: Parramatta campus option.",
+   "options": 2
+  },
+  {
+   "id": "uee30820",
+   "code": "UEE30820",
+   "title": "Certificate III in Electrotechnology Electrician",
+   "topic": "electrical",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 24 months",
+   "focus": "Electrical systems, circuits, installation and safety",
+   "campuses": "Ultimo, Sydney.",
+   "options": 1
+  },
+  {
+   "id": "uee62122",
+   "code": "UEE62122",
+   "title": "Advanced Diploma of Engineering Technology – Electrical",
+   "topic": "electrical",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 24 months",
+   "focus": "Electrical engineering technology, design and technical systems",
+   "campuses": "Ultimo, Sydney.",
+   "options": 1
+  },
+  {
+   "id": "psp80116",
+   "code": "PSP80116",
+   "title": "Graduate Certificate in Strategic Procurement",
+   "topic": "procurement",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 12 months",
+   "focus": "Procurement planning, suppliers and strategic sourcing",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "general-english",
+   "title": "General English",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Melbourne",
+    "Adelaide"
+   ],
+   "duration": "1–17 week WHV plans / 1–60 weeks",
+   "focus": "Speaking, listening, reading and writing for everyday life",
+   "campuses": "Sydney: Parramatta campus option.",
+   "studyNote": "A provider-confirmed Working Holiday study plan within the four-month study limit is available. Exact level, campus, intake and timetable must be confirmed during consultation.",
+   "options": 7
+  },
+  {
+   "id": "ielts-preparation",
+   "title": "IELTS Preparation",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast",
+    "Adelaide"
+   ],
+   "duration": "About 2–15 weeks",
+   "focus": "Exam techniques, academic language and timed practice",
+   "studyNote": "A provider-confirmed Working Holiday study plan within the four-month study limit is available. Exact level, campus, intake and timetable must be confirmed during consultation.",
+   "options": 3
+  },
+  {
+   "id": "pte-preparation",
+   "title": "PTE Preparation",
+   "topic": "english",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "Flexible; discuss your study plan",
+   "focus": "Computer-based English test skills and timed practice",
+   "options": 1
+  },
+  {
+   "id": "english-for-academic-purposes",
+   "title": "English for Academic Purposes",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Adelaide"
+   ],
+   "duration": "Flexible; discuss your study plan",
+   "focus": "Academic reading, essays, presentations and study skills",
+   "campuses": "Sydney: Parramatta campus option.",
+   "options": 3
+  },
+  {
+   "id": "cambridge-b1-preliminary-pet-preparation",
+   "title": "Cambridge B1 Preliminary (PET) Preparation",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "About 12 weeks",
+   "focus": "Building confidence for a B1-level English examination",
+   "studyNote": "A provider-confirmed Working Holiday study plan within the four-month study limit is available. Exact level, campus, intake and timetable must be confirmed during consultation.",
+   "options": 1
+  },
+  {
+   "id": "cambridge-b2-first-fce-preparation",
+   "title": "Cambridge B2 First (FCE) Preparation",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "About 12 weeks",
+   "focus": "Developing independent English communication at B2 level",
+   "studyNote": "A provider-confirmed Working Holiday study plan within the four-month study limit is available. Exact level, campus, intake and timetable must be confirmed during consultation.",
+   "options": 1
+  },
+  {
+   "id": "cambridge-c1-advanced-cae-preparation",
+   "title": "Cambridge C1 Advanced (CAE) Preparation",
+   "topic": "english",
+   "cities": [
+    "Sydney",
+    "Brisbane",
+    "Gold Coast"
+   ],
+   "duration": "About 12 weeks",
+   "focus": "Advanced English for study and professional communication",
+   "studyNote": "A provider-confirmed Working Holiday study plan within the four-month study limit is available. Exact level, campus, intake and timetable must be confirmed during consultation.",
+   "options": 1
+  },
+  {
+   "id": "english-for-healthcare-and-nursing",
+   "title": "English for Healthcare and Nursing",
+   "topic": "healthenglish",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 10–20 weeks",
+   "focus": "Patient communication, handovers and healthcare vocabulary",
+   "options": 1
+  },
+  {
+   "id": "english-for-care-professionals",
+   "title": "English for Care Professionals",
+   "topic": "healthenglish",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "Up to 10 weeks",
+   "focus": "Practical communication in care workplaces",
+   "options": 1
+  },
+  {
+   "id": "online-foundation-english",
+   "title": "Online Foundation English",
+   "topic": "healthenglish",
+   "cities": [
+    "Online"
+   ],
+   "duration": "8–24 weeks",
+   "focus": "Online foundation language study for care pathways",
+   "options": 1
+  },
+  {
+   "id": "oet-preparation",
+   "title": "OET Preparation",
+   "topic": "healthenglish",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "8–24 weeks",
+   "focus": "Healthcare-focused language test preparation",
+   "options": 2
+  },
+  {
+   "id": "nclex-rn-success",
+   "title": "NCLEX-RN Success",
+   "topic": "nursingprep",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 3 months",
+   "focus": "Preparation for the NCLEX-RN examination",
+   "options": 1
+  },
+  {
+   "id": "osce-success",
+   "title": "OSCE Success",
+   "topic": "nursingprep",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 4 weeks",
+   "focus": "Practice for clinical stations and structured assessment",
+   "options": 1
+  },
+  {
+   "id": "nclex-rn-osce-preparation-package",
+   "title": "NCLEX-RN + OSCE Preparation Package",
+   "topic": "nursingprep",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 26 weeks",
+   "focus": "A combined examination-preparation study plan",
+   "options": 1
+  },
+  {
+   "id": "hltaid009/010/011",
+   "code": "HLTAID009/010/011",
+   "title": "First Aid and CPR",
+   "topic": "firstaid",
+   "cities": [
+    "Sydney"
+   ],
+   "duration": "About 1 day",
+   "focus": "CPR, basic emergency life support and first aid training",
+   "options": 1
+  },
+  {
+   "id": "diploma-of-business-higher-education",
+   "title": "Diploma of Business (Higher Education)",
+   "topic": "business",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 1 year",
+   "focus": "Higher education foundation in business and management",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "bachelor-of-business-accounting",
+   "title": "Bachelor of Business (Accounting)",
+   "topic": "accounting",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 3 years",
+   "focus": "Degree study in accounting, financial reporting and business",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "bachelor-of-business-digital-marketing",
+   "title": "Bachelor of Business (Digital Marketing)",
+   "topic": "marketing",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 3 years",
+   "focus": "Degree study in digital campaigns, consumer insights and business",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "bachelor-of-information-technology",
+   "title": "Bachelor of Information Technology",
+   "topic": "it",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 3 years",
+   "focus": "Degree study in computing, software, databases and networks",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "master-of-information-technology",
+   "title": "Master of Information Technology",
+   "topic": "it",
+   "cities": [
+    "Melbourne"
+   ],
+   "duration": "About 2 years",
+   "focus": "Postgraduate technology practice and complex IT projects",
+   "campuses": "Melbourne CBD / Flinders Street campus.",
+   "options": 1
+  },
+  {
+   "id": "graduate-certificate-in-business-administration",
+   "title": "Graduate Certificate in Business Administration",
+   "topic": "business",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 6 months",
+   "focus": "Postgraduate foundations in business administration",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "bachelor-of-accounting",
+   "title": "Bachelor of Accounting",
+   "topic": "accounting",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 3 years",
+   "focus": "Financial and management accounting, business and analysis",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "master-of-business-administration",
+   "title": "Master of Business Administration",
+   "topic": "leadership",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Business strategy; available specialisations depend on institution",
+   "options": 2
+  },
+  {
+   "id": "graduate-certificate-in-management",
+   "title": "Graduate Certificate in Management",
+   "topic": "leadership",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 6 months",
+   "focus": "Management, decision making and organisational practice",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "master-of-research",
+   "title": "Master of Research",
+   "topic": "research",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Research methods and a substantial supervised research project",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "doctor-of-business-administration",
+   "title": "Doctor of Business Administration",
+   "topic": "research",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 3 years",
+   "focus": "Applied doctoral research addressing a business problem",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "bachelor-of-agribusiness",
+   "title": "Bachelor of Agribusiness",
+   "topic": "agri",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 3 years",
+   "focus": "Agriculture, business and food supply chains",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "master-of-business-administration-agribusiness",
+   "title": "Master of Business Administration (Agribusiness)",
+   "topic": "agri",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Business leadership in agricultural and food enterprises",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "master-of-agricultural-information-management",
+   "title": "Master of Agricultural Information Management",
+   "topic": "agri",
+   "cities": [
+    "Sydney",
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Agricultural data, information systems and business decisions",
+   "campuses": "Sydney: Bankstown. Brisbane: campus location confirmed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "graduate-certificate-in-leadership",
+   "title": "Graduate Certificate in Leadership",
+   "topic": "leadership",
+   "cities": [
+    "Brisbane"
+   ],
+   "duration": "About 26 weeks",
+   "focus": "Leadership practice and organisational decision making",
+   "campuses": "Moorooka, Brisbane.",
+   "options": 1
+  },
+  {
+   "id": "graduate-certificate-in-leadership-cybersecurity",
+   "title": "Graduate Certificate in Leadership (Cybersecurity)",
+   "topic": "cyberlead",
+   "cities": [
+    "Brisbane"
+   ],
+   "duration": "About 26 weeks",
+   "focus": "Leading cybersecurity awareness, governance and risk responses",
+   "campuses": "Moorooka, Brisbane.",
+   "options": 1
+  },
+  {
+   "id": "master-of-police-leadership",
+   "title": "Master of Police Leadership",
+   "topic": "police",
+   "cities": [
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Leadership and organisational practice in policing contexts",
+   "campuses": "Moorooka, Brisbane.",
+   "options": 1
+  },
+  {
+   "id": "master-of-counterterrorism-leadership",
+   "title": "Master of Counterterrorism Leadership",
+   "topic": "security",
+   "cities": [
+    "Brisbane"
+   ],
+   "duration": "About 2 years",
+   "focus": "Strategic leadership, analysis and security coordination",
+   "campuses": "Moorooka, Brisbane.",
+   "options": 1
+  },
+  {
+   "id": "cpc33020",
+   "code": "CPC33020",
+   "title": "Certificate III in Bricklaying and Blocklaying",
+   "topic": "bricklaying",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 24 months",
+   "focus": "Brickwork, blockwork and construction-site practice",
+   "campuses": "Sydney: Parramatta. Melbourne campus option. Exact campus and delivery are discussed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "aur30320",
+   "code": "AUR30320",
+   "title": "Certificate III in Automotive Electrical Technology",
+   "topic": "auto-electrical",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 24 months",
+   "focus": "Vehicle electrical systems, testing and repair",
+   "campuses": "Sydney: Parramatta. Melbourne campus option. Exact campus and delivery are discussed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "aur30620",
+   "code": "AUR30620",
+   "title": "Certificate III in Light Vehicle Mechanical Technology",
+   "topic": "auto-mechanical",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 24 months",
+   "focus": "Servicing and repairing light vehicles",
+   "campuses": "Sydney: Parramatta. Melbourne campus option. Exact campus and delivery are discussed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "aur50116",
+   "code": "AUR50116",
+   "title": "Diploma of Automotive Management",
+   "topic": "auto-management",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 12 months",
+   "focus": "Workshop operations, teams and customer service",
+   "campuses": "Sydney: Parramatta. Melbourne campus option. Exact campus and delivery are discussed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "aur40216",
+   "code": "AUR40216",
+   "title": "Certificate IV in Automotive Mechanical Diagnosis",
+   "topic": "auto-diagnosis",
+   "cities": [
+    "Sydney",
+    "Melbourne"
+   ],
+   "duration": "About 12 months",
+   "focus": "Advanced diagnosis for learners with automotive experience",
+   "campuses": "Sydney: Parramatta. Melbourne campus option. Exact campus and delivery are discussed with your study plan.",
+   "options": 1
+  },
+  {
+   "id": "sithfab021",
+   "code": "SITHFAB021",
+   "title": "Provide responsible service of alcohol (RSA)",
+   "topic": "short-sithfab021",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "4 hours",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "sithgam022",
+   "code": "SITHGAM022",
+   "title": "Provide responsible gambling services (RSG/RCG)",
+   "topic": "short-sithgam022",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "4 hours",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "cpcwhs1001",
+   "code": "CPCWHS1001",
+   "title": "Construction safety induction (White Card)",
+   "topic": "short-cpcwhs1001",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "About 1 day; confirm any preparatory learning",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "hlthps006",
+   "code": "HLTHPS006",
+   "title": "Assist clients with medication",
+   "topic": "short-hlthps006",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "Online self-study + 3 hours face-to-face",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "hltwhs005",
+   "code": "HLTWHS005",
+   "title": "Conduct manual tasks safely",
+   "topic": "short-hltwhs005",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "Online self-study + 3 hours face-to-face",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "hltaid009",
+   "code": "HLTAID009",
+   "title": "Provide cardiopulmonary resuscitation (CPR)",
+   "topic": "short-hltaid009",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "Online self-study + 3 hours face-to-face",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "hltaid010",
+   "code": "HLTAID010",
+   "title": "Provide basic emergency life support",
+   "topic": "short-hltaid010",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "Online self-study + 3 hours face-to-face",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  },
+  {
+   "id": "hltaid011",
+   "code": "HLTAID011",
+   "title": "Provide first aid",
+   "topic": "short-hltaid011",
+   "cities": [
+    "Hobart"
+   ],
+   "duration": "Online self-study + 3 hours face-to-face",
+   "focus": "Single-unit workplace skills training",
+   "campuses": "Hobart: Level 2, 73–81 Murray Street.",
+   "studyNote": "Single-unit short course in the domestic delivery stream. Online preparation is additional to the face-to-face session where listed. Ask our team about entry requirements, the next class and whether this course fits your circumstances. Complete all learning and assessment requirements.",
+   "options": 1
+  }
+ ],
+ "topics": {
+  "care": {
+   "group": "Care & Community",
+   "image": "care",
+   "about": "Build practical skills to support people with daily living, independence and wellbeing.",
+   "skills": "Person-centred support • Safe work and communication • Supporting independence",
+   "suit": "People who are patient, dependable and enjoy helping others in practical ways.",
+   "use": "Apply what you learn in aged care, disability support or community support settings, depending on the qualification and placement.",
+   "jobs": "Personal care worker • Support worker • Activities assistant; experienced graduates may explore team coordination"
+  },
+  "health": {
+   "group": "Care & Community",
+   "image": "health",
+   "about": "Learn how to support patients and health professionals within a healthcare team.",
+   "skills": "Patient communication • Infection prevention • Safe assistance and teamwork",
+   "suit": "People who enjoy structured teamwork and practical support in health environments.",
+   "use": "Support daily patient care and ward activities within the responsibilities of an assistant role.",
+   "jobs": "Healthcare assistant • Patient support assistant • Assistant in nursing, where employer requirements are met"
+  },
+  "child": {
+   "group": "Care & Community",
+   "image": "child",
+   "about": "Explore how children learn through play and how educators create safe, inclusive early learning environments.",
+   "skills": "Child development • Play-based learning • Observation, safety and family communication",
+   "suit": "People who enjoy working with young children, are observant and can communicate warmly with families.",
+   "use": "Plan activities, document children's learning and support everyday care in early childhood services.",
+   "jobs": "Early childhood educator; diploma graduates may explore room leader roles with appropriate experience"
+  },
+  "community": {
+   "group": "Care & Community",
+   "image": "care",
+   "about": "Develop practical approaches to helping people access services and manage challenges in their lives.",
+   "skills": "Case coordination • Service referrals • Communication, inclusion and ethical practice",
+   "suit": "People who listen carefully and want to work with individuals, families and community organisations.",
+   "use": "Coordinate support plans and connect people with suitable community resources.",
+   "jobs": "Community services worker • Case support worker • Community program coordinator"
+  },
+  "business": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Learn how organisations run, from everyday administration to planning and improving business operations.",
+   "skills": "Business documents and data • Customer communication • Operations and problem solving",
+   "suit": "People who like organising work, solving practical problems or exploring a future business of their own.",
+   "use": "Coordinate office processes, prepare reports and improve how a team serves its customers.",
+   "jobs": "Administration assistant • Business support officer • Operations coordinator; management roles require experience"
+  },
+  "leadership": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Develop the judgement and people skills needed to guide teams and improve organisational performance.",
+   "skills": "Team communication • Operational or strategic planning • Performance, change and learning",
+   "suit": "Aspiring supervisors and experienced professionals looking to develop their management capability.",
+   "use": "Set priorities, coordinate people and resources, and evaluate improvements to workplace performance.",
+   "jobs": "Team leader • Operations coordinator • Business manager or learning coordinator, depending on experience"
+  },
+  "marketing": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Explore how brands understand customers and turn ideas into effective marketing communication.",
+   "skills": "Customer research • Content and campaigns • Digital channels and performance measurement",
+   "suit": "People who enjoy creative ideas, writing, social media and understanding why customers make decisions.",
+   "use": "Build campaign briefs, plan content and use results to improve marketing decisions.",
+   "jobs": "Marketing assistant • Digital marketing coordinator • Content coordinator • Campaign specialist"
+  },
+  "project": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Learn to turn an objective into an organised plan with clear tasks, resources, deadlines and outcomes.",
+   "skills": "Scope and scheduling • Budgets and risk • Stakeholder communication and delivery",
+   "suit": "People who like organising details, coordinating a team and keeping work moving toward a goal.",
+   "use": "Create schedules, track progress and coordinate projects or related programs across an organisation.",
+   "jobs": "Project administrator • Project coordinator • Project or program manager with relevant experience"
+  },
+  "accounting": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Build the skills to organise financial information and explain what the numbers mean for a business.",
+   "skills": "Financial records • Reporting and budgets • Accounting systems and analysis",
+   "suit": "Detail-focused people who enjoy numbers, accuracy and structured problem solving.",
+   "use": "Maintain accounts, prepare reports and support financial planning appropriate to your qualification.",
+   "jobs": "Accounts assistant • Bookkeeping officer • Assistant accountant • Accounting graduate roles"
+  },
+  "hr": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Study how organisations recruit, support and develop their people.",
+   "skills": "Recruitment support • Employee communication • Workforce planning and development",
+   "suit": "People who are organised, discreet and interested in how teams work.",
+   "use": "Coordinate recruitment, organise employee records and contribute to people-development projects.",
+   "jobs": "HR administrator • Recruitment coordinator • HR officer • People and culture adviser with experience"
+  },
+  "hospitality": {
+   "group": "Hospitality & Tourism",
+   "image": "cookery",
+   "about": "Explore the service, people and operational skills behind a positive guest experience.",
+   "skills": "Guest service • Team and roster coordination • Budgets and operations",
+   "suit": "People who enjoy meeting others, teamwork and a lively service environment.",
+   "use": "Improve service quality and coordinate hospitality operations in venues such as hotels and restaurants.",
+   "jobs": "Guest services team member • Hospitality supervisor • Restaurant or hotel operations coordinator"
+  },
+  "cookery": {
+   "group": "Hospitality & Tourism",
+   "image": "cookery",
+   "about": "Build practical kitchen skills and learn how food preparation connects with quality, safety and service.",
+   "skills": "Ingredients and cooking methods • Food safety • Menu preparation and kitchen teamwork",
+   "suit": "People who enjoy hands-on work, food and working with a team in a busy environment.",
+   "use": "Prepare dishes, organise a workstation and support consistent kitchen service; higher levels add supervision.",
+   "jobs": "Commercial cook • Commis chef • Chef de partie or kitchen supervisor with experience"
+  },
+  "patisserie": {
+   "group": "Hospitality & Tourism",
+   "image": "cookery",
+   "about": "Develop precise pastry and dessert skills, from preparation to presentation and kitchen coordination.",
+   "skills": "Pastry and dessert production • Decoration and presentation • Quality and kitchen organisation",
+   "suit": "Creative people who enjoy careful, repeatable hands-on work and attention to detail.",
+   "use": "Produce desserts and pastries for hospitality venues and plan consistent production workflows.",
+   "jobs": "Pastry cook • Patisserie team member • Pastry section supervisor with experience"
+  },
+  "tourism": {
+   "group": "Hospitality & Tourism",
+   "image": "city",
+   "about": "Learn how travel products, customer experiences and tourism businesses are planned and delivered.",
+   "skills": "Travel products • Customer experience • Tourism operations and business planning",
+   "suit": "People who enjoy destinations, customer service, planning and working across cultures.",
+   "use": "Coordinate itineraries and services, and support the operations of a travel or tourism business.",
+   "jobs": "Travel consultant • Tour coordinator • Tourism operations officer • Tourism manager with experience"
+  },
+  "it": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Develop skills for building, supporting or securing the digital systems organisations rely on.",
+   "skills": "Systems and networking • Data and software fundamentals • Technical problem solving",
+   "suit": "People who like technology, logical thinking and learning through practical projects.",
+   "use": "Support IT services or build specialist capability in networks, software or cybersecurity, depending on your stream.",
+   "jobs": "IT support officer • Network support technician • Junior developer or cybersecurity support roles, depending on specialisation"
+  },
+  "ai": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Explore practical ways to use artificial intelligence to solve problems and improve work processes.",
+   "skills": "AI concepts and tools • Data-informed problem solving • Responsible use and project communication",
+   "suit": "Curious people who enjoy technology and want to connect AI tools with practical business needs.",
+   "use": "Prototype AI-enabled workflows, assess tools and explain their practical benefits and limits.",
+   "jobs": "AI project assistant • Automation support officer • Digital solutions coordinator"
+  },
+  "carpentry": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Learn practical timber construction skills and how to work accurately from plans.",
+   "skills": "Measuring and set-out • Timber framing • Installation and safe tool use",
+   "suit": "People who enjoy physical, practical work and making things accurately.",
+   "use": "Apply construction methods to timber structures, fit-outs and building projects.",
+   "jobs": "Carpentry worker • Fit-out worker • Construction team member; licensing rules may apply"
+  },
+  "painting": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Build skills in preparing surfaces and applying durable, attractive finishes.",
+   "skills": "Surface preparation • Paint application • Finishes and safe work",
+   "suit": "People who enjoy practical work, colour and careful finishing.",
+   "use": "Prepare and finish surfaces in residential or commercial maintenance and construction.",
+   "jobs": "Painter and decorator • Painting team member • Maintenance painting worker"
+  },
+  "tiling": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Learn to prepare, set out and finish tiled surfaces with accuracy.",
+   "skills": "Surface preparation • Tile layout and installation • Grouting and finishing",
+   "suit": "People who enjoy hands-on work, measuring and detail-focused finishing.",
+   "use": "Apply tiling methods to bathrooms, kitchens and other building surfaces.",
+   "jobs": "Wall and floor tiler • Tiling installer • Renovation team member"
+  },
+  "plaster": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Develop practical skills for preparing and finishing walls with solid plaster.",
+   "skills": "Surface preparation • Plaster mixing and application • Finishing and repairs",
+   "suit": "People who enjoy physical work and producing neat, consistent finishes.",
+   "use": "Apply plastering techniques in construction, renovation and maintenance work.",
+   "jobs": "Solid plasterer • Rendering worker • Construction finishing team member"
+  },
+  "building": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Explore how building projects are planned, costed, coordinated and supervised.",
+   "skills": "Plans and specifications • Estimating and contracts • Site coordination and safety",
+   "suit": "People with an interest in construction planning and coordinating trades and resources.",
+   "use": "Support project costing and site planning, with broader management responsibilities at advanced levels.",
+   "jobs": "Construction administrator • Estimating assistant • Site or construction manager with experience and required licences"
+  },
+  "engineering": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Learn to turn civil infrastructure requirements into technical designs and project documentation.",
+   "skills": "Technical drawing • Civil design concepts • Design coordination and documentation",
+   "suit": "People who enjoy maths, spatial thinking, technical drawings and practical design problems.",
+   "use": "Support civil design and drafting teams working on infrastructure projects.",
+   "jobs": "Civil drafting officer • Engineering design technician • Design project coordinator"
+  },
+  "electrical": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Explore electrical systems, technical principles and safe approaches to electrical work.",
+   "skills": "Circuits and systems • Technical drawings • Electrical safety and problem solving",
+   "suit": "People who enjoy technical problem solving, maths and precise practical work.",
+   "use": "Develop a foundation for electrical trade or engineering-technology work, depending on the qualification.",
+   "jobs": "Electrical trade pathway • Electrical engineering technician • Technical design support; licensing requirements apply"
+  },
+  "procurement": {
+   "group": "Business & Technology",
+   "image": "business",
+   "about": "Develop a strategic approach to sourcing goods and services and managing supplier relationships.",
+   "skills": "Procurement strategy • Supplier evaluation • Negotiation, risk and contract planning",
+   "suit": "Professionals with an interest in purchasing, contracts and supply-chain decisions.",
+   "use": "Compare sourcing options and design procurement processes that support organisational goals.",
+   "jobs": "Procurement officer • Sourcing specialist • Contracts coordinator • Procurement manager with experience"
+  },
+  "english": {
+   "group": "English & Nursing Preparation",
+   "image": "classroom",
+   "about": "Build confidence using English and develop the language skills suited to your study goal.",
+   "skills": "Speaking and listening • Reading and writing • Vocabulary, study or test strategies",
+   "suit": "Students preparing for daily life, further study or an English test. The starting level depends on assessment.",
+   "use": "Communicate more confidently and prepare for the language demands of study and work.",
+   "jobs": "A supporting skill for many careers; this language course is not a vocational qualification or job placement."
+  },
+  "healthenglish": {
+   "group": "English & Nursing Preparation",
+   "image": "health",
+   "about": "Strengthen English communication for care, healthcare study or a healthcare language examination.",
+   "skills": "Healthcare vocabulary • Listening and clear communication • Reading, writing and task practice",
+   "suit": "Care students and healthcare professionals who want stronger English for their next study or professional step.",
+   "use": "Practise explaining care needs, understanding instructions and communicating in professional situations.",
+   "jobs": "Supports communication in an existing or future health role; it does not grant professional registration."
+  },
+  "nursingprep": {
+   "group": "English & Nursing Preparation",
+   "image": "health",
+   "about": "Prepare for nursing examinations through structured revision and practice appropriate to your selected program.",
+   "skills": "Exam strategy • Clinical reasoning revision • Structured practice and feedback",
+   "suit": "Overseas-qualified nurses exploring an examination pathway after checking their individual eligibility.",
+   "use": "Organise your examination preparation and identify areas that need more practice.",
+   "jobs": "Preparation toward a nursing pathway only; passing preparation does not itself confer nurse registration or employment."
+  },
+  "firstaid": {
+   "group": "Care & Community",
+   "image": "health",
+   "about": "Practise recognising emergencies and giving basic first aid and resuscitation support.",
+   "skills": "Emergency response • CPR practice • First aid scenarios",
+   "suit": "People who need workplace first aid skills or want greater confidence helping in an emergency.",
+   "use": "Support workplace safety and respond to emergencies within the scope of your training.",
+   "jobs": "Useful across care, hospitality, childcare and other workplaces; a short course rather than a standalone profession."
+  },
+  "research": {
+   "group": "Degrees & Research",
+   "image": "business",
+   "about": "Develop an original research project with a clear question, sound methods and evidence-based conclusions.",
+   "skills": "Research design • Critical reading and analysis • Academic writing and project management",
+   "suit": "Graduates or experienced professionals ready for sustained independent investigation.",
+   "use": "Investigate a business or disciplinary problem and turn findings into practical or scholarly contributions.",
+   "jobs": "Research officer • Business research analyst • Academic or consulting pathways with further requirements"
+  },
+  "agri": {
+   "group": "Degrees & Research",
+   "image": "business",
+   "about": "Connect business and information skills with the needs of agricultural and food enterprises.",
+   "skills": "Agribusiness decisions • Food supply chains • Data, planning and enterprise management",
+   "suit": "People interested in agriculture, food systems, business and practical use of information.",
+   "use": "Analyse agricultural operations and support better decisions across production and supply chains.",
+   "jobs": "Agribusiness coordinator • Agricultural business analyst • Food supply-chain or agricultural information officer"
+  },
+  "cyberlead": {
+   "group": "Degrees & Research",
+   "image": "business",
+   "about": "Explore how leaders manage cybersecurity risk, communication and organisational readiness.",
+   "skills": "Cyber risk awareness • Governance and leadership • Organisational response planning",
+   "suit": "Professionals who want to connect leadership responsibilities with cybersecurity concerns.",
+   "use": "Coordinate risk discussions and support security-aware decisions across teams.",
+   "jobs": "Cyber governance support • Risk coordinator • Security awareness coordinator"
+  },
+  "police": {
+   "group": "Degrees & Research",
+   "image": "business",
+   "about": "Study leadership, organisational challenges and decision making in policing environments.",
+   "skills": "Leadership and ethics • Organisational analysis • Evidence-informed decisions",
+   "suit": "Experienced professionals with an interest in leadership within policing or related public services.",
+   "use": "Apply leadership research to organisational improvement and professional practice.",
+   "jobs": "Leadership development within an existing public-safety career; this degree does not recruit you into a police force."
+  },
+  "security": {
+   "group": "Degrees & Research",
+   "image": "business",
+   "about": "Explore strategic leadership and organisational responses to complex security challenges.",
+   "skills": "Strategic analysis • Leadership and coordination • Research and policy evaluation",
+   "suit": "Professionals interested in public safety, security analysis and inter-organisational coordination.",
+   "use": "Contribute to research, policy discussion and coordinated organisational planning.",
+   "jobs": "Security research analyst • Policy support officer • Risk and resilience coordinator, subject to employer requirements"
+  },
+  "bricklaying": {
+   "group": "Trades & Engineering",
+   "image": "trades",
+   "about": "Learn to construct brick and block walls, read building plans and organise safe site work.",
+   "skills": "Setting out • Materials and mortar • Wall construction • Site safety",
+   "suit": "People who enjoy practical outdoor work, precision and building physical structures.",
+   "use": "Use these skills on residential or commercial masonry projects, working with site plans and a construction team.",
+   "jobs": "Bricklayer • Blocklayer • Masonry tradesperson, subject to experience and local requirements"
+  },
+  "auto-electrical": {
+   "group": "Trades & Engineering",
+   "image": "classroom",
+   "about": "Learn how vehicle electrical circuits work and how to test, diagnose and repair faults.",
+   "skills": "Electrical testing • Wiring • Starting and charging systems • Workshop safety",
+   "suit": "Hands-on learners who enjoy systematic problem-solving and vehicle technology.",
+   "use": "Apply diagnostic methods to vehicle servicing and electrical repair in automotive workshops.",
+   "jobs": "Automotive electrical technician • Vehicle service technician; requirements depend on the role"
+  },
+  "auto-mechanical": {
+   "group": "Trades & Engineering",
+   "image": "classroom",
+   "about": "Build skills to inspect, maintain and repair the mechanical systems of light vehicles.",
+   "skills": "Engines • Brakes • Steering and suspension • Diagnostic tools • Safe servicing",
+   "suit": "People interested in how cars work who enjoy practical tasks and careful fault-finding.",
+   "use": "Use workshop procedures for routine maintenance, component checks and mechanical repairs.",
+   "jobs": "Motor mechanic • Light vehicle repair technician • Vehicle service technician"
+  },
+  "auto-management": {
+   "group": "Trades & Engineering",
+   "image": "business",
+   "about": "Develop the operational and people-management skills used in an automotive service business.",
+   "skills": "Workshop planning • Team leadership • Customer service • Business operations",
+   "suit": "Learners seeking supervisory responsibilities or a pathway from technical work into management.",
+   "use": "Apply planning and communication skills to coordinate workshop staff and improve service operations. Package study options are available.",
+   "jobs": "Workshop supervisor • Service coordinator • Automotive business manager, with relevant experience"
+  },
+  "auto-diagnosis": {
+   "group": "Trades & Engineering",
+   "image": "classroom",
+   "about": "Develop a structured approach to diagnosing more complex automotive mechanical faults.",
+   "skills": "Diagnostic strategies • Test results • Complex faults • Technical reporting",
+   "suit": "Learners who have an automotive mechanical Certificate III or can demonstrate equivalent competency.",
+   "use": "Use advanced fault-finding methods to support repair decisions and technical work in a service workshop.",
+   "jobs": "Diagnostic technician • Senior automotive technician, depending on prior experience"
+  },
+  "short-sithfab021": {
+   "group": "Short Courses",
+   "image": "cookery",
+   "about": "Learn responsible alcohol service and how to recognise and respond to unsafe service situations.",
+   "skills": "Responsible service • Customer communication • State-specific responsibilities",
+   "suit": "Adults considering work in licensed hospitality or retail venues.",
+   "use": "Apply responsible service practices in venues that sell or supply alcohol.",
+   "jobs": "Hospitality service or licensed retail roles, subject to local licensing and employer requirements."
+  },
+  "short-sithgam022": {
+   "group": "Short Courses",
+   "image": "cookery",
+   "about": "Learn responsible gambling service practices and how to support customers who may be experiencing harm.",
+   "skills": "Responsible service • Recognising harm • Customer support procedures",
+   "suit": "Adults considering customer-facing roles in licensed gaming venues.",
+   "use": "Use venue procedures to assist customers and meet role-specific responsibilities.",
+   "jobs": "Gaming-area service roles in licensed venues; state requirements apply."
+  },
+  "short-cpcwhs1001": {
+   "group": "Short Courses",
+   "image": "trades",
+   "about": "Build basic construction-site safety awareness, including hazards, protective equipment and incident reporting.",
+   "skills": "Hazard recognition • Protective equipment • Emergency procedures",
+   "suit": "People preparing for work that requires construction induction training.",
+   "use": "Understand basic safe-work practices before entering construction environments.",
+   "jobs": "Construction-site roles with appropriate trade skills and required permissions."
+  },
+  "short-hlthps006": {
+   "group": "Short Courses",
+   "image": "health",
+   "about": "Explore medication assistance, supporting self-administration and completing related records within an authorised support role.",
+   "skills": "Preparing assistance • Supporting self-administration • Documentation",
+   "suit": "Health and community-service workers whose role permits medication assistance.",
+   "use": "Support an existing care role within workplace procedures and state requirements.",
+   "jobs": "A skill addition for authorised care roles; this unit does not confer nursing registration."
+  },
+  "short-hltwhs005": {
+   "group": "Short Courses",
+   "image": "care",
+   "about": "Recognise hazardous manual tasks and plan safer ways to prepare for and complete work.",
+   "skills": "Recognising hazards • Planning tasks • Safe work practices",
+   "suit": "Workers who perform manual handling as part of their duties.",
+   "use": "Apply safer task preparation and completion in an existing workplace role.",
+   "jobs": "Useful across care and other manual-work roles; additional role qualifications may be required."
+  },
+  "short-hltaid009": {
+   "group": "Short Courses",
+   "image": "health",
+   "about": "Develop practical CPR skills through a short unit with online preparation and supervised learning.",
+   "skills": "Emergency recognition • CPR practice • Responding within your training",
+   "suit": "People seeking CPR training for personal or workplace needs.",
+   "use": "Build confidence for emergency response within the scope of your training.",
+   "jobs": "A supporting skill for many workplace roles; it is not a standalone healthcare qualification."
+  },
+  "short-hltaid010": {
+   "group": "Short Courses",
+   "image": "health",
+   "about": "Explore basic emergency life-support skills through online preparation and practical learning.",
+   "skills": "Emergency response • Basic life support • Practical preparation",
+   "suit": "People who want basic emergency-response training for everyday or workplace settings.",
+   "use": "Support emergency preparedness alongside workplace response procedures.",
+   "jobs": "A supporting skill across workplace roles; it does not qualify a person as a paramedic."
+  },
+  "short-hltaid011": {
+   "group": "Short Courses",
+   "image": "health",
+   "about": "Build first-aid knowledge and practical response skills for everyday and workplace situations.",
+   "skills": "First-aid preparation • Practical response • Workplace readiness",
+   "suit": "People seeking first-aid skills or meeting role-specific training requirements.",
+   "use": "Support safer everyday and workplace environments within the scope of your training.",
+   "jobs": "A supporting skill for many jobs; additional occupational qualifications may be needed."
+  }
+ },
+ "images": {
+  "care": {
+   "wix": "https://static.wixstatic.com/media/187087_fb8fecc264b24c94b5bcc5cf7bd68590~mv2.webp",
+   "file": "187087_fb8fecc264b24c94b5bcc5cf7bd68590-mv2.webp",
+   "alt": "Care worker supporting an older person (illustrative image)"
+  },
+  "health": {
+   "wix": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp",
+   "file": "187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp",
+   "alt": "Healthcare students practising in a simulation room (illustrative image)"
+  },
+  "child": {
+   "wix": "https://static.wixstatic.com/media/187087_6a0c13f98da148da9ae816efb3a715e3~mv2.webp",
+   "file": "187087_6a0c13f98da148da9ae816efb3a715e3-mv2.webp",
+   "alt": "Early childhood educator with children (illustrative image)"
+  },
+  "classroom": {
+   "wix": "https://static.wixstatic.com/media/187087_ffb6404b938c4f989352725f9192b4fa~mv2.webp",
+   "file": "187087_ffb6404b938c4f989352725f9192b4fa-mv2.webp",
+   "alt": "International students studying together in a classroom (illustrative image)"
+  },
+  "city": {
+   "wix": "https://static.wixstatic.com/media/187087_06a16fca060b4349a173c070c44025ef~mv2.webp",
+   "file": "187087_06a16fca060b4349a173c070c44025ef-mv2.webp",
+   "alt": "Students in an Australian city (illustrative image)"
+  },
+  "business": {
+   "wix": "https://static.wixstatic.com/media/187087_da2e0e6896464e02a7170123e899a28b~mv2.png",
+   "file": "187087_da2e0e6896464e02a7170123e899a28b-mv2.webp",
+   "alt": "Business students working together (illustrative image)"
+  },
+  "cookery": {
+   "wix": "https://static.wixstatic.com/media/187087_29452fe1c6ef4fb6bf66e1d4a9222714~mv2.png",
+   "file": "187087_29452fe1c6ef4fb6bf66e1d4a9222714-mv2.webp",
+   "alt": "Cookery students in a commercial kitchen (illustrative image)"
+  },
+  "trades": {
+   "wix": "https://static.wixstatic.com/media/187087_cb886feb21c4494db6474e3f329159f2~mv2.png",
+   "file": "187087_cb886feb21c4494db6474e3f329159f2-mv2.webp",
+   "alt": "Trades student on a building site (illustrative image)"
+  }
+ }
+}
