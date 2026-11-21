@@ -80,13 +80,15 @@ async function measureOn(page, url, size, w) {
     // keep the markup of the frame with the most text (links, image sources, headings) for the rebuild
     if (t && t.length > (frameHtml.textLen || 0)) {
       const h = await f.evaluate(() => document.body.outerHTML).catch(() => "");
-      frameHtml = Object.assign(new String(h), { textLen: t.length });
+      // inline scripts of that frame hold data the page draws (e.g. the /courses catalogue) — saved as data, never run
+      const js = await f.evaluate(() => [...document.scripts].filter(s => !s.src).map(s => s.textContent).join("\n;\n")).catch(() => "");
+      frameHtml = Object.assign(new String(h), { textLen: t.length, js });
     }
   }
   m.allWords = frameText.join(" ").split(/\s+/).filter(Boolean).length;
   const img = await page.screenshot({ type: "jpeg", quality: 55, clip: { x: 0, y: 0, width: w,
     height: Math.min(MAXH[size], m.height) } }).catch(() => null);
-  return { status, loadMs, ...m, img, frameText, frameHtml: String(frameHtml) };
+  return { status, loadMs, ...m, img, frameText, frameHtml: String(frameHtml), frameJs: frameHtml.js || "" };
 }
 
 const name0 = p => p === "/" ? "home" : p.slice(1).replace(/\//g, "_");
@@ -95,14 +97,15 @@ const report = [];
 for (const [size, opts] of Object.entries(sizes)) {
   const ctx = await browser.newContext(opts);
   for (const p of pages) {
-    const { img: liveImg, frameText: liveText, frameHtml: liveHtml, ...live } = await measure(ctx, LIVE + p, size, opts.viewport.width);
+    const { img: liveImg, frameText: liveText, frameHtml: liveHtml, frameJs: liveJs, ...live } = await measure(ctx, LIVE + p, size, opts.viewport.width);
     if (size === "phone" && liveText && liveText.length) {
       fs.mkdirSync(path.join(out, "text"), { recursive: true });
       if (liveHtml) fs.writeFileSync(path.join(out, "text", name0(p) + ".html"), liveHtml.replace(/<script[\s\S]*?<\/script>/gi, "") + "\n");
+      if (liveJs && liveJs.length > 200) fs.writeFileSync(path.join(out, "text", name0(p) + ".inline.js.txt"), liveJs + "\n");
       fs.writeFileSync(path.join(out, "text", name0(p) + ".txt"), liveText.join("\n\n----- frame -----\n\n") + "\n");
     }
     await new Promise(r => setTimeout(r, 6000)); // go slowly on the live site
-    const { img: newImg, frameText: _nt, frameHtml: _nh, ...neu } = await measure(ctx, NEW + p, size, opts.viewport.width);
+    const { img: newImg, frameText: _nt, frameHtml: _nh, frameJs: _nj, ...neu } = await measure(ctx, NEW + p, size, opts.viewport.width);
     const name = (p === "/" ? "home" : p.slice(1).replace(/\//g, "_")) + "-" + size + ".jpg";
     const b64 = b => b ? `data:image/jpeg;base64,${b.toString("base64")}` : "";
     const w = opts.viewport.width;
