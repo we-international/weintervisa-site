@@ -18,4 +18,4 @@ Owner: We International Education & Visa Pty Ltd · Team: Web & CRM.
 
 - `thai_pages.py`, `thai_content.py`, `thai_more.py` — Thai pages `/th/...` (every page except `/privacy-policy` and post bodies). Skill: `.claude/skills/website-thai-pages`.
 
-Wix-app pages (owner 20 Nov 2026: rebuild in GetWec): /partner-portal → GetWec partner portal, /schedule → GetWec /book/ (redirects); still to build: /videos, /challenges (`tests/pending-pages.json`). Privacy notice approved by the owner on 20 Nov 2026. Local copies of images still to do.
+Wix-app pages (owner 20 Nov 2026: rebuild in GetWec): /partner-portal → GetWec partner portal, /schedule → GetWec /book/ (redirects); still to build: /videos, /challenges (`tests/pending-pages.json`). Privacy notice approved by the owner on 20 Nov 2026. Local copies of images: run the workflow "Copy Wix images into the repo" (pushes branch `claude/local-images-<run id>`, then PR + merge); the test prints how many Wix-hosted images are left (must be 0 before the DNS switch). /videos and /challenges: the Wix apps hold no content (0 programmes, no video library) → owner to choose redirect or a later GetWec feature.

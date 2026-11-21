@@ -1,0 +1,36 @@
+name: Copy Wix images into the repo
+# One-off helper (run by hand): the cloud team cannot reach static.wixstatic.com, the runner can.
+# Downloads every Wix-hosted image the blog posts use into assets/img/, points the posts at the
+# local copy, runs the tests and pushes the result to a NEW branch claude/local-images-<run id>.
+# A person or the team then opens a pull request from that branch (CI runs there) and merges it.
+# Nothing is pushed to main from here.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown==3.7
+      - run: python3 tools/fetch_images.py
+      - name: No Wix image links left
+        run: |
+          if grep -rl "static.wixstatic.com" content; then echo "::error::Wix image links left"; exit 1; fi
+      - run: python3 tests/test_site.py
+      - name: Push to a new branch
+        run: |
+          git config user.name "We International"
+          git config user.email "info@weintervisa.com"
+          b="claude/local-images-${{ github.run_id }}"
+          git checkout -b "$b"
+          git add assets/img content/posts
+          git commit -m "Local copies of the blog images (assets/img), posts no longer load images from Wix"
+          git push origin "$b"
+          echo "branch: $b" >> "$GITHUB_STEP_SUMMARY"

@@ -20,6 +20,9 @@ description: Use when moving weintervisa.com (or any Wix site) to a free static 
 ## Preview safety
 - Preview build: `<meta name=robots content=noindex>` on every page + `robots.txt Disallow: /`; no CNAME until the owner approves the DNS day. `--production` flips both.
 - Sandbox can't reach weintervisa.com or static.wixstatic.com (proxy 403) → images look broken in local screenshots; copy them with `tools/fetch_images.py` from CI before the switch (Wix media may stop after the plan ends).
+  - How (21 Nov 2026): workflow **"Copy Wix images into the repo"** (`.github/workflows/fetch-wix-images.yml`, `workflow_dispatch`, `contents: write`). The runner downloads the images, fails if any `static.wixstatic.com` link is left, runs the tests and pushes a NEW branch `claude/local-images-<run id>` committed as We International (never main). Then open a PR from that branch; a push made with `GITHUB_TOKEN` does not start CI, so add one small commit yourself (or re-run) so the PR checks run, then fast-forward main.
+  - A workflow file must be on main before `workflow_dispatch` can run it: merge the workflow first, trigger it second.
+  - `tests/test_site.py` counts Wix-hosted post images ("must be 0 before the DNS switch") and fails if a post points at a local image that is not in the repo.
 
 ## Checks (tests/test_site.py + tests/e2e.mjs)
 All Wix slugs exist · no broken internal links (pages still to build listed separately) · no personal name/email, only info@weintervisa.com · no trackers/cookies · footer: company name, QEAC number only, "not a migration agent" · feed/sitemap counts · phone 375px + desktop: status, one h1, no sideways scroll.
