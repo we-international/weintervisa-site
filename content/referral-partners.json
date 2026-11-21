@@ -1,0 +1,42 @@
+{
+  "_source": "Live page www.weintervisa.com/referral-partners (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183). FAQ answers from the live markup.",
+  "_edits": "22 Nov 2026: the live form is 'not open yet', so the new page asks for an email with the same fields (no student details); 'Partner login' goes to the GetWec partner portal (/partner-portal); the schools/providers section keeps the earlier page's text.",
+  "kicker": "Good connections. Meaningful next steps.",
+  "h1": "Help a student find their way.",
+  "lead": "You bring the connection. We bring the guidance, practical resources and a team to help students explore their study options.",
+  "small": "We are starting with a small group. Every application is reviewed personally.",
+  "role": [
+    ["Make an introduction", "Help a student connect with us, with their permission."],
+    ["Work with our team", "Use clear guides and checked information. You do not need to know every answer."],
+    ["Follow the next step", "Keep track of the students assigned to you and what they need next."]
+  ],
+  "support": [
+    ["Know where to start", "Practical guidance", "Simple onboarding, checklists and resources to help you introduce students responsibly."],
+    ["Stay informed", "Clear progress updates", "An approved partner account to follow your referrals, see next steps and reach our team."],
+    ["Keep it accurate", "Checked information", "Use course information checked by our team. Ask us when something needs clarification."]
+  ],
+  "applyIntro": "Share your background and how you would like to help students connect with We International. The online application form is being prepared; until it opens, send us an email with these details:",
+  "fields": [
+    "Your full name and email",
+    "Phone (optional)",
+    "Country or region",
+    "Your background and your student connections"
+  ],
+  "applyWarn": "Please do not include personal information about students. Sending us your details means we may use them to review your partner application and contact you about it. This is separate from student consent.",
+  "careful": [
+    "We welcome applications from people who can make thoughtful introductions and talk clearly with students.",
+    "Applying does not open a partner account. We review each application, talk about suitability and confirm approval before access is given.",
+    "Partners introduce students and help with communication. Early checks are not a visa guarantee. Partners do not give visa advice on our behalf."
+  ],
+  "faq": [
+    ["What happens after I apply?", "Your application goes into a review queue. Our team may contact you for more information. The owner makes the approval decision before partner access is turned on."],
+    ["How are referrals identified?", "Approved partners get their own referral reference and link. The student confirms the introduction, and our team checks existing records before assigning a case."],
+    ["How does compensation work?", "Compensation is confirmed with each partner in writing before it applies. Tuition payments, money our company actually receives, cancellations and refunds are taken into account. This page does not promise any rate or payment date."],
+    ["Can I send student documents now?", "No. Please do not put student details or documents in your partner application. Student information follows the consent and referral process we give you after approval."]
+  ],
+  "providers": [
+    ["Schools and colleges", "Send your school name, website, study areas and a partnership contact. We check the agreement and marketing permissions before we list anyone."],
+    ["Service providers", "Tell us what you do, where, and your credentials. Referral arrangements need checking first."],
+    ["Registered migration agents", "Do you only do migration work? You can list your practice for free on our migration support page."]
+  ]
+}

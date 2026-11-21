@@ -59,16 +59,8 @@ We share a course name, CRICOS code, fees, campus and start date only after we c
 {cta("Not sure which area fits? Tell us your interests, past study, city and budget.", "/contact-us")}
 </section>"""
 
-nursing_body = simple(
-    "Nursing pathways in Australia",
-    "Are you a nurse trained outside Australia? Learn the main steps to work as a nurse here, and ask us about preparation courses.",
-    [("Who decides registration", "Nurses in Australia must be registered with the Nursing and Midwifery Board of Australia (NMBA) through Ahpra. "
-      "They decide if you can register. We help with study and course choices, not with the registration decision."),
-     ("English first", "Most pathways need a recognised English test result. We can help you find English or test preparation courses."),
-     ("Outcomes-based assessment", "Many internationally qualified nurses take the NMBA outcomes-based assessment: the NCLEX-RN exam and then the OSCE. "
-      "Ask us about preparation options that fit your timeline."),
-     ("Check the official rules", "Rules change. Always check your own pathway on the official Ahpra and NMBA websites before you pay for a course.")],
-    note=True, cta_text="Ask us about fees, dates and study options for nursing preparation.")
+import nursing_page  # noqa: E402 — rebuilt from the live Wix page (22 Nov 2026)
+nursing_body = nursing_page.render()
 
 import fasttrack_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
 fast_track_body = fasttrack_page.render()
@@ -76,25 +68,45 @@ fast_track_body = fasttrack_page.render()
 import englishpractice_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
 english_body = englishpractice_page.render()
 
-services_body = simple(
-    "Student services",
-    "Help with the steps around your study: choosing a course, applying to a school and getting ready to start.",
-    [("Course advice", "Talk through your goals and compare checked course options."),
-     ("Application help", "We help you track your documents, your application status and replies from the school."),
-     ("Student support", "Ask us for help with orientation information, school contacts and support referrals."),
-     ("Your language", "Chat with Mia, our AI assistant, in many languages. Our team speaks Thai and English, so a reply from a person is in Thai or English."),
-     ("More help", "<a href=\"/homestay\">Homestay and places to live</a> · <a href=\"/oshc\">Student health cover (OSHC)</a> · <a href=\"/english-practice\">English study</a>")],
-    cta_text="Start a conversation with our team.")
+services_body = f"""<section class="hero home-hero"><div class="wrap">
+<p class="kicker">Student services</p>
+<h1>Support for the steps around your study</h1>
+<p class="lead">Get help understanding education options, organising your education application and getting ready for your next step.</p>
+<p class="actions"><a class="btn" href="/contact-us">Start a conversation</a> <a class="btn ghost" href="/schedule">Book a time to talk</a></p>
+</div></section>
+<section class="wrap">
+<p class="kicker">Support around your study</p>
+<h2>More clarity. Less guesswork.</h2>
+<ul class="paths">
+<li class="path"><h3>Course consultation</h3><p>Clarify your learning goals and compare confirmed education options.</p><a href="/courses">Browse study areas →</a></li>
+<li class="path"><h3>Admissions coordination</h3><p>We help you track the education documents you need, your application status and replies from the school.</p><a href="/charter-application">Tell us what you want to study →</a></li>
+<li class="path"><h3>Student support</h3><p>Ask us for help with orientation information, school contacts and support referrals.</p><a href="/contact-us">Ask our team →</a></li>
+<li class="path"><h3>Language support</h3><p>Mia, our AI assistant, chats in many languages. Our team speaks Thai and English, so a reply from a person is in Thai or English. Important course terms stay in English so nothing is lost.</p><a href="/english-practice">Free English practice →</a></li>
+</ul>
+</section>
+<section class="wrap">
+<p class="kicker">Before and after you arrive</p>
+<h2>Help with the practical things</h2>
+<ul class="paths">
+<li class="path"><h3>Homestay</h3><p>Start with a screened host family near your school, with our partner AHN.</p><a href="/homestay">Find a homestay →</a></li>
+<li class="path"><h3>Student health cover</h3><p>Compare OSHC providers and buy directly on our partner's website.</p><a href="/oshc">Compare OSHC →</a></li>
+<li class="path"><h3>Working Holiday courses</h3><p>Practical Certificate III courses for 417 and 462 visa holders.</p><a href="/fast-track-courses">See the courses →</a></li>
+<li class="path"><h3>Nursing pathways</h3><p>Understand registration steps, then English, NCLEX-RN and OSCE preparation.</p><a href="/courses/nursing-pathways-australia">Nursing pathways →</a></li>
+</ul>
+</section>
+<section class="wrap narrow">
+<h2>How it works</h2>
+<ol class="flow flow3"><li><strong>Tell us your plans</strong><span>What you want to study, where you are now and your budget.</span></li>
+<li><strong>Compare options</strong><span>We check current courses and details with schools.</span></li>
+<li><strong>Apply and get ready</strong><span>We help with the school application and your next steps.</span></li></ol>
+{VISA_NOTE}{cta("Your next step starts with a conversation. Tell us what you want to study.")}
+</section>"""
 
 import homestay_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
 homestay_body = homestay_page.render()
 
-oshc_body = simple(
-    "Student health cover (OSHC)",
-    "Most student visa holders need Overseas Student Health Cover. Plan it alongside your study.",
-    [("Ask us about options", "We are preparing checked referral links. Until then, ask the team about current options."),
-     ("Read the policy", "Before you buy, compare the start and end dates, who is covered, what is not covered and the terms in the insurer's documents.")],
-    cta_text="Ask about health cover.")
+import oshc_page  # noqa: E402 — rebuilt from the live Wix page (22 Nov 2026)
+oshc_body = oshc_page.render()
 
 PARTNER_FORM = "https://getwec.pages.dev/partners/migration/"
 
@@ -146,13 +158,8 @@ We check every MARN on the official register before we list an agent, but please
 <p class="small">Are you a registered migration agent who only does migration work? <a href="{PARTNER_FORM}" target="_blank" rel="noopener">List your practice for free</a>.</p>
 {VISA_NOTE}{cta("Not sure who to ask? Send us a message and we point you to a registered migration agent.")}</section>"""
 
-partners_body = simple(
-    "Partner with us",
-    "Schools, colleges and student service providers can talk to us about working together.",
-    [("Schools and colleges", "Send your school name, website, study areas and a partnership contact. We check the agreement and marketing permissions before we list anyone."),
-     ("Service providers", "Tell us what you do, where, and your credentials. Referral arrangements need checking first."),
-     ("How to reach us", "Email <a href=\"mailto:info@weintervisa.com?subject=Partnership%20enquiry\">info@weintervisa.com</a> with \"Partnership\" in the subject, or use the contact form and choose \"Partnership\".")],
-    cta_text="Ask about a partnership.")
+import about_page  # noqa: E402 — about + referral partners rebuilt from the live Wix pages (22 Nov 2026)
+partners_body = about_page.partners()
 
 faq = [
     ("Can I apply for every study area on this site?", "Not yet. Some areas are ones we are preparing to support. We tell you which courses are confirmed."),
@@ -171,15 +178,7 @@ faq_body = (f'<section class="wrap narrow"><h1>Frequently asked questions</h1>'
 faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
-about_body = simple(
-    "About We International",
-    "Honest advice, and a choice that is yours. We International Education &amp; Visa Pty Ltd is a Sydney education agency that helps students explore study in Australia.",
-    [("Student first", "Your goals, your situation and your questions lead the conversation."),
-     ("Clear and honest", "We check information, explain what is not yet confirmed, and the choice stays with you."),
-     ("Online service", "We work online. Send us a message to arrange a time to talk."),
-     ("People and AI", "AI may help our team with research, admin and messages. Important decisions stay with a person."),
-     ("Registered education agent", "We are listed as a Qualified Education Agent Counsellor (QEAC number in the footer). We are not a migration agent.")],
-    cta_text="Meet us through a conversation.")
+about_body = about_page.about()
 
 privacy_body = f"""<section class="wrap narrow">
 <h1>Privacy notice</h1>
@@ -220,7 +219,7 @@ CONTENT_PAGES = {
     "homestay": ("Homestay in Australia with AHN | We International",
         "Start with a homestay: a screened host family near your school, meals, bills and 24/7 support with our partner AHN. Steps, 2026/2027 prices and FAQs.", homestay_body),
     "oshc": ("Overseas Student Health Cover (OSHC) | We International",
-        "Plan your Overseas Student Health Cover and ask our team about current options.", oshc_body),
+        "Compare Allianz, Bupa, Medibank and AHM student health cover (OSHC) and buy directly on our partner's website. What OSHC is and what to check before you buy.", oshc_body),
     "migration-support": ("Migration support | We International",
         "We help with study. Find a registered migration agent for visa questions — we receive no commission from listed agents.", migration_body),
     "referral-partners": ("Partner with us | We International",

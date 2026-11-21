@@ -155,6 +155,29 @@ check(words_hs >= 1157, f"/homestay is as full as the live Wix page ({words_hs} 
 check("checked 26 October 2026" in hs and "can change" in hs, "/homestay: AHN prices are dated, sourced and say they can change")
 check(hs.count('href="https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa"') >= 3 and 'rel="noopener"' in hs, "/homestay: apply buttons use our AHN partner link, new tab")
 check("Don&#x27;t pay a stranger" in hs or "Don't pay a stranger" in hs, "/homestay warns about accommodation scams")
+# 10f. Pages rebuilt from the live Wix pages on 22 Nov 2026: main text at least as full as live, links kept
+def _main_words(rel):
+    s_ = (SITE / f"{rel}.html").read_text()
+    return s_, len(re.sub(r"<[^>]+>", " ", s_.split("<main")[1].split("</main>")[0]).split())
+for rel, live in (("courses/nursing-pathways-australia", 740), ("oshc", 180), ("about-we-international", 260),
+                  ("referral-partners", 390), ("student-services", 120), ("contact-us", 370)):
+    s_, n_ = _main_words(rel)
+    check(n_ >= live, f"/{rel} is as full as the live Wix page ({n_} words, live main text ≈ {live})")
+    check("utm_" not in s_, f"/{rel} has no tracking parameters")
+nu, _ = _main_words("courses/nursing-pathways-australia")
+check(nu.count('href="https://www.nursingmidwiferyboard.gov.au/') >= 4 and "ahpra.gov.au" in nu, "/nursing: links the official NMBA/Ahpra steps")
+check("not an Australian nursing qualification, a registration approval or a visa pathway" in nu, "/nursing: a course is not registration or a visa pathway")
+check(nu.count("mailto:info@weintervisa.com?subject=Nursing") >= 5 and "<script" not in nu.split("<main")[1].split("</main>")[0], "/nursing: email enquiry links per course interest, no script")
+os_, _ = _main_words("oshc")
+check(all(f"oshcstudents.com.au/client/{x}?affiliate=0JCJFK" in os_ for x in ("allianz", "bupa", "medibank", "ahm", "ovhc", "flywire")), "/oshc: same partner links as the live page")
+check("never take your payment" in os_ and "registered migration agent" in os_, "/oshc: we never take payment; visa questions → registered migration agent")
+ab, _ = _main_words("about-we-international")
+check("QEAC No. 11964" in ab and "2023" in ab and "not a migration agent" in ab, "/about: QEAC number, since 2023, not a migration agent")
+rp, _ = _main_words("referral-partners")
+check('href="/partner-portal"' in rp and "mailto:info@weintervisa.com?subject=Referral%20partner%20application" in rp and "do not include personal information about students" in rp.lower(),
+      "/referral-partners: apply by email (no student data), partner login → portal")
+cu, _ = _main_words("contact-us")
+check("https://m.me/113772648238480" in cu and 'href="/schedule"' in cu, "/contact-us: Messenger and booking links")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")

@@ -1,0 +1,54 @@
+{
+  "_source": "Live page www.weintervisa.com/courses/nursing-pathways-australia (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183). The live page says its information was reviewed on 28 September 2026.",
+  "_edits": "22 Nov 2026: tracking parameters dropped; the live stage/course picker (script that builds an email) became plain email links per course interest plus the contact form (no script); FAQ answers taken from the live markup; extra plain-English explanations only restate facts on the live page.",
+  "kicker": "Your next chapter in nursing",
+  "h1": "Your nursing experience. A new chapter in Australia.",
+  "lead": "Understand your registration pathway first, then choose preparation that fits your next step. We help you compare study and preparation options. Ahpra and the Nursing and Midwifery Board of Australia (NMBA) decide registration.",
+  "heroImage": {"wix": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp", "file": "187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp", "alt": "Healthcare students practising in a simulation room (illustrative image)"},
+  "heroNote": "Illustrative image — not a Charter classroom or a student endorsement.",
+  "stages": [
+    ["01", "Qualified overseas", "Your qualification, registration and practice history decide your assessment route. Not every overseas nurse needs the outcomes-based assessment (OBA).", "Understand the steps", "#pathway"],
+    ["02", "Preparing for English or OBA", "Already received Ahpra guidance? Explore English, NCLEX-RN and OSCE preparation for the stage you have reached.", "Explore preparation", "#prep"],
+    ["03", "Planning to study nursing", "Starting nursing, or thinking about further study? Ask about entry requirements and NMBA-approved nursing programs.", "Discuss study options", "#study"]
+  ],
+  "mapIntro": "Ahpra and the NMBA assess registration. We help you compare study and preparation options for the step you are on.",
+  "map": [
+    ["Check the route that applies to you", "Eligible internationally qualified registered nurses (IQRNs) may use the registration standard that took effect on 23 April 2025. Others follow the IQNM assessment process, which begins with Self-check.", "IQRN registration standard", "https://www.nursingmidwiferyboard.gov.au/Registration-Standards/General-registration-for-IQRN"],
+    ["Follow your Ahpra assessment", "On the IQNM route, Self-check places you in a stream and tells you the next steps. Complete the orientation and portfolio requirements that apply to you.", "Steps after Self-check", "https://www.nursingmidwiferyboard.gov.au/Accreditation/IQNM/Self-check-and-Portfolio/Steps-after-Self-check"],
+    ["If required: NCLEX-RN, then OSCE", "For relevant Stream B applicants, the multiple-choice exam (NCLEX-RN) comes before the clinical exam (OSCE). Preparation courses can support your study; they do not replace the official exams.", "Official exam information", "https://www.nursingmidwiferyboard.gov.au/Accreditation/IQNM/Examination/Multiple-choice-question-exam.aspx"],
+    ["Apply and meet every registration standard", "Passing the exams does not by itself give you registration. The NMBA assesses your application, including the English-language standard and the other registration standards that apply.", "Applying for registration", "https://www.nursingmidwiferyboard.gov.au/Accreditation/IQNM/Registration/Applying-for-registration.aspx"]
+  ],
+  "mapWarn": "A preparation course is not an Australian nursing qualification, a registration approval or a visa pathway. Registration and visa requirements are separate.",
+  "prepIntro": "Courses from Charter Australia. Ask us to check the latest fees, entry requirements, timetable and availability before you apply. Choose one course, or talk to us about a combined plan.",
+  "prep": [
+    ["Language preparation", "English and OET", "Options include English for Healthcare and Nursing, and OET preparation. A course's entry requirements are different from the NMBA's English requirements for registration.", "English / OET"],
+    ["Online preparation", "NCLEX-RN Success", "Structured preparation for the registered nurse multiple-choice exam. Confirm your assessment stage and exam eligibility first.", "NCLEX-RN"],
+    ["Clinical preparation", "OSCE Success", "Face-to-face clinical exam preparation in North Sydney. Confirm your eligibility and the course dates before you arrange travel.", "OSCE"],
+    ["A coordinated plan", "NCLEX-RN + OSCE", "Talk to us about combined preparation and any English study you need. The course schedule and the official exam schedule are separate.", "Combined NCLEX-RN / OSCE"]
+  ],
+  "prepNote": "Course availability and suitability need to be confirmed. Preparation fees, official exam and registration fees, and travel costs are separate unless a written quote says otherwise.",
+  "studyImage": {"wix": "https://static.wixstatic.com/media/187087_ffb6404b938c4f989352725f9192b4fa~mv2.webp", "file": "187087_ffb6404b938c4f989352725f9192b4fa-mv2.webp", "alt": "International students studying together in a classroom (illustrative image)"},
+  "study": "We can help you look into nursing study options. Before we suggest a course, we check the exact NMBA-approved program, campus, entry requirements and availability for your student group.",
+  "studyWarn": "An Individual Support or Health Services Assistance certificate does not qualify you as a registered nurse. These courses can be a good start in care work, but they are a different job.",
+  "checklist": [
+    "Which country you qualified in, and your nursing qualification",
+    "Where you are now (in Australia or overseas)",
+    "The stage Ahpra has told you about, if you know it",
+    "Which preparation or study you are interested in"
+  ],
+  "privacyNote": "For your first message, tell us only your qualification country, where you are now and the stage Ahpra has advised, if known. Please do not send passports, registration certificates or other private documents in a first message.",
+  "faq": [
+    ["Does every overseas nurse need OBA?", "No. Your registration route depends on your qualifications, registration and practice history. Check the current NMBA guidance before you choose preparation."],
+    ["Will a course guarantee registration or a job?", "No. Exam results, registration decisions, jobs and visa decisions are outside the course provider's control and ours."],
+    ["Can I get a confirmed fee quote?", "Yes. Ask our team for a current written quote before you decide. It should show tuition, compulsory fees, how long the quote is valid, delivery, timetable and anything not included."],
+    ["Can you tell me which visa I need?", "No. We are an education agency, not a migration agent. For visa advice we refer you to a registered migration agent."],
+    ["I have a Certificate III in Individual Support. Am I a nurse?", "No. That certificate is for care and support work. To work as a registered nurse you need registration with the NMBA through Ahpra."]
+  ],
+  "links": [
+    ["NMBA: approved programs", "https://www.nursingmidwiferyboard.gov.au/Nursing.aspx"],
+    ["Ahpra: English language standard", "https://www.ahpra.gov.au/Registration/Registration-Standards/English-language-skills/English-language-skills-registration-standard"],
+    ["Charter: preparation courses", "https://charter.edu.au/osce"]
+  ],
+  "reviewed": "Information on this page was reviewed on 28 September 2026. Official requirements and course availability can change; confirm them before you apply. This is general education information, not an individual registration or migration assessment.",
+  "disclaimer": "Images are illustrative and may be AI-generated. They do not show a specific provider, campus, registered nurse or student testimonial."
+}

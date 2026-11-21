@@ -1,0 +1,48 @@
+{
+  "_source": "Live page www.weintervisa.com/oshc (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183).",
+  "_edits": "22 Nov 2026: same partner links as the live page; the Wix translate widget is left out (the site has its own EN/TH switch); 'what to check' and 'cover types' explain the live page's 'review the policy' step in plain English without naming prices or promising cover.",
+  "kicker": "OSHC · student health cover",
+  "h1": "Your cover. Your student journey.",
+  "lead": "Browse student health cover and buy it directly on our partner's website. Compare the providers, read the policy, then continue with the plan that fits you.",
+  "partner": "https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09",
+  "steps": [
+    ["Choose a provider", "Explore your OSHC options below."],
+    ["Review the policy", "Check what is covered, the dates and the terms."],
+    ["Continue with our partner", "Buy on the partner website. We never take your payment."]
+  ],
+  "providers": [
+    ["Allianz OSHC", "https://oshcstudents.com.au/client/allianz?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"],
+    ["Bupa OSHC", "https://oshcstudents.com.au/client/bupa?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"],
+    ["Medibank OSHC", "https://oshcstudents.com.au/client/medibank?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"],
+    ["AHM OSHC", "https://oshcstudents.com.au/client/ahm?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"]
+  ],
+  "all": "https://oshcstudents.com.au/client?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09",
+  "what": "OSHC (Overseas Student Health Cover) is health insurance for international students in Australia. Student visa holders need to keep adequate health cover while they are in Australia, and OSHC is the usual way to do it. Many schools ask for it before they confirm your enrolment.",
+  "whatNote": "Health cover rules for visas are set by the Australian Government. Check the Department of Home Affairs website, or ask a registered migration agent about your own visa. We are not a migration agent.",
+  "check": [
+    "The start and end dates cover your whole visa, not only your course",
+    "Who is covered: just you, you and a partner, or your family",
+    "What is covered and what is not (exclusions)",
+    "Waiting periods before some services are covered",
+    "How to make a claim and how to contact the insurer",
+    "The full price, and whether you pay all at once"
+  ],
+  "types": [
+    ["Single", "Cover for one student."],
+    ["Couple", "You and your partner."],
+    ["Family", "You, your partner and your children."]
+  ],
+  "typesNote": "Each provider names and prices its plans in its own way. Compare them on the partner website.",
+  "other": [
+    ["OVHC", "Visitor health cover, for people in Australia on other visas (for example a visitor or working holiday visa).", "Explore OVHC", "https://oshcstudents.com.au/client/ovhc?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"],
+    ["Flywire", "International payments, for example to pay a school from overseas.", "Visit Flywire", "https://oshcstudents.com.au/client/flywire?affiliate=0JCJFK&uuid=26ed007c-3e1a-454e-9449-7df860f1ce09"]
+  ],
+  "faq": [
+    ["Do I buy OSHC from you?", "No. You buy it directly on our partner's website. We never take your payment for health cover."],
+    ["Which provider is best?", "It depends on what you need. Compare cover, exclusions, waiting periods and price for each provider, and read the policy before you buy."],
+    ["My school offered OSHC. Can I buy my own instead?", "Many schools let you choose your own provider. Check with your school before you buy, so you don't pay twice."],
+    ["Who answers questions about my policy?", "The insurer. For questions about cover, claims or your policy, contact the insurance provider directly."],
+    ["Will health cover affect my visa?", "Visa questions need a registered migration agent. We are an education agency and do not give visa advice."]
+  ],
+  "partnerNote": "You'll continue to our insurance partner's website. Check the cover, exclusions and policy terms there before you buy. For insurance questions, contact the partner or insurer directly."
+}

@@ -45,15 +45,42 @@ contact_form = f"""<form class="lead" data-lead-form="enquiry" novalidate>
 <p class="form-status" role="status" aria-live="polite"></p>
 </form>"""
 
-contact_body = f"""<section class="wrap narrow">
-<h1>Contact us</h1>
-<p class="lead">Ask about courses, schools, homestay or student health cover. Our team reads every message.</p>
+contact_body = f"""<section class="hero home-hero"><div class="wrap">
+<p class="kicker">Contact our team</p>
+<h1>Let's talk about your next chapter</h1>
+<p class="lead">A question is a good place to start. Tell us what you want to study, where you are now and the language you prefer.</p>
+<p class="actions"><a class="btn" href="#enquiry">Send an enquiry ↓</a> <a class="btn ghost" href="/schedule">Book a time to talk</a></p>
+</div></section>
+<section class="wrap">
+<h2>Ways to reach us</h2>
+<ul class="paths">
+<li class="path"><h3>Send a message</h3><p>Use the form on this page. You can write in Thai or English.</p><a href="#enquiry">Go to the form ↓</a></li>
+<li class="path"><h3>Chat on Messenger</h3><p>Message our Facebook page.</p><a href="https://m.me/113772648238480" target="_blank" rel="noopener">Open Messenger ↗</a></li>
+<li class="path"><h3>Start by email</h3><p>Write to us any time.</p><a href="mailto:info@weintervisa.com">info@weintervisa.com</a></li>
+<li class="path"><h3>Book a time to talk</h3><p>Pick a topic, a way to talk (phone, video, LINE or email) and the days that suit you. We confirm the time with you.</p><a href="/schedule">Book a time to talk →</a></li>
+</ul>
+<p><strong>Online, wherever you are.</strong> We work online and confirm a contact method and appointment time with you.
+Mia, our AI assistant, can chat in many languages. Our team speaks Thai and English, so a reply from a person is in Thai or English.</p>
+</section>
+<section class="wrap narrow" id="enquiry">
+<p class="kicker">Talk with our team</p>
+<p>Tell us about your plans. Please do not include passports, bank statements or visa documents: this is a study or service enquiry, not a visa application.
+Your enquiry is sent only when you submit the form and see the confirmation. Read our <a href="/privacy-policy">privacy policy</a> to see how we handle your details.</p>
+{contact_form}
+{VISA_NOTE}
+</section>
+<section class="wrap">
+<h2>Choose where to start</h2>
+<ul class="paths">
+<li class="path"><h3>A study question?</h3><p>We can help you explore education options.</p><a href="/courses">Browse study areas →</a></li>
+<li class="path"><h3>Working Holiday?</h3><p>Practical Certificate III courses for 417/462 visa holders.</p><a href="/fast-track-courses">See Working Holiday courses →</a></li>
+<li class="path"><h3>A provider enquiry?</h3><p>Tell us about your institution or service.</p><a href="/referral-partners">Partner with us →</a></li>
+<li class="path"><h3>Need an answer first?</h3><p>Start with common questions.</p><a href="/frequently-asked-questions">Explore FAQs →</a></li>
+</ul>
 <ul class="contact-list">
   <li><strong>Email</strong> <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></li>
   <li><strong>Blog</strong> <a href="/blog">Plain-English guides</a> on courses and life in Australia</li>
 </ul>
-{VISA_NOTE}
-{contact_form}
 </section>"""
 
 apply_form = f"""<form class="lead" data-lead-form="application" novalidate>
