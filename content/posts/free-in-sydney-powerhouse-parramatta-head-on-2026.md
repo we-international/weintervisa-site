@@ -7,7 +7,7 @@
  "excerpt": "Two free things to plan for in Sydney this November: the opening of Powerhouse Parramatta (from Sat 7 Nov) and the Head On Photo Festival (6–29 Nov).",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_92902997bb594e6d828f00176977fd05~mv2.jpg",
+ "cover": "/assets/img/187087_92902997bb594e6d828f00176977fd05-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

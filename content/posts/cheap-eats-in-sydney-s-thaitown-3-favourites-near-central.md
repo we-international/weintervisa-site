@@ -7,7 +7,7 @@
  "excerpt": "Three well-known spots in Haymarket's Thaitown for a tasty, budget-friendly meal — all a short walk from Central Station.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_484bc96f1ca84770ba2a135464ac6501~mv2.jpg",
+ "cover": "/assets/img/187087_484bc96f1ca84770ba2a135464ac6501-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

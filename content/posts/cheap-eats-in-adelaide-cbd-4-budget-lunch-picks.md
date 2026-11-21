@@ -7,7 +7,7 @@
  "excerpt": "Banh mi from $10, a $12 toastie and coffee at the Central Market, dumplings in Chinatown and vegan burgers: four budget lunch spots in Adelaide's CBD.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_43282268cf6244129702bd038df0f69f~mv2.jpg",
+ "cover": "/assets/img/187087_43282268cf6244129702bd038df0f69f-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

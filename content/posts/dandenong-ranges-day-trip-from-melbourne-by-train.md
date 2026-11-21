@@ -7,7 +7,7 @@
  "excerpt": "Tall forests, the 1000 Steps and Puffing Billy: how to visit the Dandenong Ranges from Melbourne without a car, plus tips to plan your day.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_28783dee8a414580a916940167ca252b~mv2.jpg",
+ "cover": "/assets/img/187087_28783dee8a414580a916940167ca252b-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

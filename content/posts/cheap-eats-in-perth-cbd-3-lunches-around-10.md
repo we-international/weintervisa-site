@@ -7,7 +7,7 @@
  "excerpt": "Three budget lunch spots in Perth's CBD: Japanese donburi, ramen with free miso soup, and roast duck lunch specials.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_d74795e174654f13a9e7d1c459853911~mv2.jpg",
+ "cover": "/assets/img/187087_d74795e174654f13a9e7d1c459853911-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

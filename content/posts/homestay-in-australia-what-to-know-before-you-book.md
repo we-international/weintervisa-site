@@ -7,7 +7,7 @@
  "excerpt": "Thinking about a homestay while you study in Australia? What it usually includes, questions to ask, and how to find a homestay with our partner AHN.",
  "seoTitle": "Homestay in Australia: What to Know Before You Book",
  "seoDescription": "Thinking about a homestay while you study in Australia? What it usually includes, questions to ask, and how to find a homestay with our partner AHN.",
- "cover": "https://static.wixstatic.com/media/187087_d56c2fe9aa554f66be3f5878e41c2509~mv2.jpg",
+ "cover": "/assets/img/187087_d56c2fe9aa554f66be3f5878e41c2509-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

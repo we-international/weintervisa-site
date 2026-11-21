@@ -7,7 +7,7 @@
  "excerpt": "How to do the Blue Mountains in one day from Sydney by train — getting there, getting around and tips for Working Holiday Makers.",
  "seoTitle": "Blue Mountains Day Trip from Sydney by Train (Budget Guide)",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_4235b5375e984abb9b30eae9a4170918~mv2.jpg",
+ "cover": "/assets/img/187087_4235b5375e984abb9b30eae9a4170918-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

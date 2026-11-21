@@ -7,7 +7,7 @@
  "excerpt": "Working Holiday Makers usually can't work more than 6 months for one employer. Here are the official exceptions since 1 January 2024.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_c3d7ad05ec7e4534a8b0d009e1afa083~mv2.jpg",
+ "cover": "/assets/img/187087_c3d7ad05ec7e4534a8b0d009e1afa083-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

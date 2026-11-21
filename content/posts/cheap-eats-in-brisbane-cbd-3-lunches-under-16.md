@@ -7,7 +7,7 @@
  "excerpt": "Three Brisbane CBD lunch spots that come in under $16, plus free city buses to get you there.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_89395f944b044e35a724031dbdb7a96c~mv2.jpg",
+ "cover": "/assets/img/187087_89395f944b044e35a724031dbdb7a96c-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

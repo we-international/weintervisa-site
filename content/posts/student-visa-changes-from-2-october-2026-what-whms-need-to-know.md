@@ -7,7 +7,7 @@
  "excerpt": "From 2 October 2026, most temporary visa holders, including Working Holiday Makers, can no longer apply for a Student visa while in Australia. Here's a neutral summary of the official guidance.",
  "seoTitle": "Student Visa Changes Oct 2026: What WHMs Need to Know",
  "seoDescription": "From 2 Oct 2026 most temporary visa holders, including Working Holiday Makers, can't apply for a Student visa onshore. Plain-English summary with sources.",
- "cover": "https://static.wixstatic.com/media/187087_7dccaf1397a845d58eed73948440c79b~mv2.jpg",
+ "cover": "/assets/img/187087_7dccaf1397a845d58eed73948440c79b-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

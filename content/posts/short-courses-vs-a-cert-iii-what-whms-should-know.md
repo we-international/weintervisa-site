@@ -7,7 +7,7 @@
  "excerpt": "RSA, White Card and First Aid can get you job-ready fast. A Certificate III is a full qualification. Here's how they differ.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_b065b4f1fc014915a93f36c22803f09c~mv2.jpg",
+ "cover": "/assets/img/187087_b065b4f1fc014915a93f36c22803f09c-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

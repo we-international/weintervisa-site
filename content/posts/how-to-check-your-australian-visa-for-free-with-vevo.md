@@ -7,7 +7,7 @@
  "excerpt": "VEVO lets you see your visa type, expiry date and conditions — and send proof to an employer. Here's how to use it safely.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_7dccaf1397a845d58eed73948440c79b~mv2.jpg",
+ "cover": "/assets/img/187087_7dccaf1397a845d58eed73948440c79b-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

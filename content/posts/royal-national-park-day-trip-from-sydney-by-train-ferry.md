@@ -7,7 +7,7 @@
  "excerpt": "Coastal walks, beaches and a 1930s ferry — how to visit Royal National Park from Sydney without a car, plus safety tips.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_d4b29e6a7ffc43f2973f227ce0e0be5d~mv2.jpg",
+ "cover": "/assets/img/187087_d4b29e6a7ffc43f2973f227ce0e0be5d-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

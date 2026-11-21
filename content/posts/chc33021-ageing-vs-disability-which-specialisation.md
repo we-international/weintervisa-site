@@ -7,7 +7,7 @@
  "excerpt": "Certificate III in Individual Support can be packaged with an Ageing, Disability or combined specialisation. Here's how they differ.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_3768624335284b37b7320a835c10a144~mv2.jpg",
+ "cover": "/assets/img/187087_3768624335284b37b7320a835c10a144-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

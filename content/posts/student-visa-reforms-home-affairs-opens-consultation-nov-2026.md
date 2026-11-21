@@ -7,7 +7,7 @@
  "excerpt": "Home Affairs has opened a consultation on possible changes to the Student visa Genuine Student requirement and financial capacity rules. Here's a neutral summary with sources.",
  "seoTitle": "Student Visa Reforms: Home Affairs Consultation (Nov 2026)",
  "seoDescription": "Home Affairs is consulting on Genuine Student and financial capacity rules. Submissions close 23 Nov 2026. No decisions yet; current rules apply.",
- "cover": "https://static.wixstatic.com/media/187087_8485f03ed6204d2fb6e41f0aaf140849~mv2.jpg",
+ "cover": "/assets/img/187087_8485f03ed6204d2fb6e41f0aaf140849-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

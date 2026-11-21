@@ -7,7 +7,7 @@
  "excerpt": "What the Certificate III in Early Childhood Education and Care covers: 17 units, 160 placement hours and how our Fast-track option works.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_3ee1fdcab9d042c897ed5a63384b4bee~mv2.jpg",
+ "cover": "/assets/img/187087_3ee1fdcab9d042c897ed5a63384b4bee-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "Just landed on a 417 or 462 visa? Here's a simple first-week checklist: TFN, bank account, SIM, super, VEVO and your work rights.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_966a5facfd6f4629887037675101b36d~mv2.jpg",
+ "cover": "/assets/img/187087_966a5facfd6f4629887037675101b36d-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

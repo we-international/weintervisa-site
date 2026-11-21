@@ -7,7 +7,7 @@
  "excerpt": "Christmas starts in Sydney: Martin Place tree lighting (26 Nov), Glebe Christmas Fair (28 Nov) and Martin Place Christmas Markets from 29 Nov 2026.",
  "seoTitle": "Free Christmas Events Sydney 2026: Late Nov Guide",
  "seoDescription": "Christmas starts in Sydney: Martin Place tree lighting (26 Nov), Glebe Christmas Fair (28 Nov) and Martin Place Christmas Markets from 29 Nov 2026.",
- "cover": "https://static.wixstatic.com/media/187087_0ae156a618af4a02be7c5f610629900e~mv2.jpg",
+ "cover": "/assets/img/187087_0ae156a618af4a02be7c5f610629900e-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

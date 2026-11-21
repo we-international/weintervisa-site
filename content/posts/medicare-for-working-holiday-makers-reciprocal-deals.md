@@ -7,7 +7,7 @@
  "excerpt": "Visitors from 11 countries can get some Medicare cover in Australia. Here's who's eligible, what's covered and what isn't.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_639d0657a0f54a31bce8ae1f3f6c89ab~mv2.jpg",
+ "cover": "/assets/img/187087_639d0657a0f54a31bce8ae1f3f6c89ab-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

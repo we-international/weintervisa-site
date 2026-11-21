@@ -7,7 +7,7 @@
  "excerpt": "A plain-English guide to the Certificate III in Individual Support — skills, work placement, job roles, and how our Fast-track option works.",
  "seoTitle": "CHC33021 Cert III in Individual Support: Course Guide",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_b07026486c7e4bf5a37c110fc73db206~mv2.jpg",
+ "cover": "/assets/img/187087_b07026486c7e4bf5a37c110fc73db206-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

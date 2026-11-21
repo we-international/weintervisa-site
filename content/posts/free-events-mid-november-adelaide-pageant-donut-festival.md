@@ -7,7 +7,7 @@
  "excerpt": "Free events 14–18 November 2026: the Adelaide Christmas Pageant (Sat 14 Nov) and the Head On Photo Festival in Sydney (until 29 Nov).",
  "seoTitle": "Free Events Mid-Nov 2026: Adelaide & Sydney",
  "seoDescription": "Free events 14–18 November 2026: the Adelaide Christmas Pageant (Sat 14 Nov) and the Head On Photo Festival in Sydney (until 29 Nov).",
- "cover": "https://static.wixstatic.com/media/187087_92902997bb594e6d828f00176977fd05~mv2.jpg",
+ "cover": "/assets/img/187087_92902997bb594e6d828f00176977fd05-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

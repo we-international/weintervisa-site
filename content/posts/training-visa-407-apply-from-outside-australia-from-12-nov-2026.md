@@ -7,7 +7,7 @@
  "excerpt": "From 12 November 2026, Training visa (subclass 407) applicants must be outside Australia when they apply and when the visa is granted. A neutral summary of the Home Affairs update.",
  "seoTitle": "Training Visa (407): Apply Offshore from 12 Nov 2026",
  "seoDescription": "From 12 Nov 2026, Training visa (subclass 407) applicants must be outside Australia to apply and at grant. A neutral summary of the Home Affairs update.",
- "cover": "https://static.wixstatic.com/media/187087_48992b6f14a447eebf6fc9b2d3e9b36c~mv2.jpg",
+ "cover": "/assets/img/187087_48992b6f14a447eebf6fc9b2d3e9b36c-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

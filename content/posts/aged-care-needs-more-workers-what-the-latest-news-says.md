@@ -7,7 +7,7 @@
  "excerpt": "Aged care groups are calling for an essential skills visa as the major parties propose migration cuts. Here's a neutral summary of the ABC's report and what it means if you're interested in care work.",
  "seoTitle": "Aged Care Workers & the Visa Debate: Latest News Explained",
  "seoDescription": "ABC News: aged care groups want an essential skills visa while parties propose migration cuts. Key numbers and what it means for care work.",
- "cover": "https://static.wixstatic.com/media/187087_3768624335284b37b7320a835c10a144~mv2.jpg",
+ "cover": "/assets/img/187087_3768624335284b37b7320a835c10a144-mv2.jpg",
  "minutesToRead": 3
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "The tax basics every 417/462 visa holder should know for 2026–27: getting a TFN, the WHM tax rates, and claiming your super when you leave.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_966a5facfd6f4629887037675101b36d~mv2.jpg",
+ "cover": "/assets/img/187087_966a5facfd6f4629887037675101b36d-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "Student, visitor or Working Holiday Maker? Here's a plain-English guide to OSHC, OVHC and travel insurance in Australia, and what to check.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_83ae7af12b5542e0b17628aa8f4348be~mv2.jpg",
+ "cover": "/assets/img/187087_83ae7af12b5542e0b17628aa8f4348be-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

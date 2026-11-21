@@ -7,7 +7,7 @@
  "excerpt": "Ferries, bikes, snorkelling and quokka rules: how to do Rottnest Island (Wadjemup) in one day from Perth or Fremantle.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_d84da63b6a7743bea7b1c43a78c7b897~mv2.jpg",
+ "cover": "/assets/img/187087_d84da63b6a7743bea7b1c43a78c7b897-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

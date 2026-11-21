@@ -7,7 +7,7 @@
  "excerpt": "On a 417 or 462 visa? Here's how our Fast-track Cert III courses work, step by step. Course length and intakes vary by provider.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_ffb6404b938c4f989352725f9192b4fa~mv2.webp",
+ "cover": "/assets/img/187087_ffb6404b938c4f989352725f9192b4fa-mv2.webp",
  "minutesToRead": 2
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "New regulations make condition 8503 standard on new ETA, eVisitor and Visitor visa applications from 28 November 2026. What it means if you plan to visit first and study later.",
  "seoTitle": "Visitor Visa Condition 8503 from 28 Nov 2026: What It Means",
  "seoDescription": "From 28 Nov 2026, condition 8503 becomes standard on new ETA, eVisitor and Visitor visa applications. What it means if you plan to visit, then study.",
- "cover": "https://static.wixstatic.com/media/187087_df8e3c61b873495f80205717e99d1bd6~mv2.jpg",
+ "cover": "/assets/img/187087_df8e3c61b873495f80205717e99d1bd6-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

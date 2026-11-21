@@ -7,7 +7,7 @@
  "excerpt": "Free festivals on 20–22 November 2026: African Music & Cultural Festival, Cachivaches Latin Market and the Philippine Christmas Festival.",
  "seoTitle": "Free Festivals 20–22 Nov 2026: Melbourne & Sydney",
  "seoDescription": "Free festivals on 20–22 November 2026: African Music & Cultural Festival, Cachivaches Latin Market and the Philippine Christmas Festival.",
- "cover": "https://static.wixstatic.com/media/187087_0ae156a618af4a02be7c5f610629900e~mv2.jpg",
+ "cover": "/assets/img/187087_0ae156a618af4a02be7c5f610629900e-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "Udon, bánh mì and Turkish pide — three budget-friendly lunch spots in Melbourne's CBD, plus a few extra snacks for under $5.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_43282268cf6244129702bd038df0f69f~mv2.jpg",
+ "cover": "/assets/img/187087_43282268cf6244129702bd038df0f69f-mv2.jpg",
  "minutesToRead": 1
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "How to visit North Stradbroke Island (Minjerribah) in a day from Brisbane: train, ferry, island bus, the North Gorge Walk and safety tips.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_37befb81f0144e0fbfe1e52ee7c0e8cf~mv2.jpg",
+ "cover": "/assets/img/187087_37befb81f0144e0fbfe1e52ee7c0e8cf-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

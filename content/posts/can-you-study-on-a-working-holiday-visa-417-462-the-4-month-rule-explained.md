@@ -7,7 +7,7 @@
  "excerpt": "Working Holiday Makers can study or train for up to 4 months per visa. Here's what that means and how to choose a course that fits.",
  "seoTitle": "Study on a Working Holiday Visa (417/462): The 4-Month Rule",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_19f6658473184ba2ba0bc4800c5b0c93~mv2.jpg",
+ "cover": "/assets/img/187087_19f6658473184ba2ba0bc4800c5b0c93-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

@@ -7,7 +7,7 @@
  "excerpt": "A quick tour of weintervisa.com: search courses, see options for Working Holiday Makers, compare OSHC, and send us an enquiry.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_d56c2fe9aa554f66be3f5878e41c2509~mv2.jpg",
+ "cover": "/assets/img/187087_d56c2fe9aa554f66be3f5878e41c2509-mv2.jpg",
  "minutesToRead": 2
 }
 meta-->

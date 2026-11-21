@@ -7,7 +7,7 @@
  "excerpt": "Certificate III in Health Services Assistance can be packaged with an operating theatre or acute care specialisation. Here's how they differ.",
  "seoTitle": "",
  "seoDescription": "",
- "cover": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp",
+ "cover": "/assets/img/187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp",
  "minutesToRead": 2
 }
 meta-->
