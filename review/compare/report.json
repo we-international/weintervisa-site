@@ -1,0 +1,1206 @@
+[
+ {
+  "path": "/",
+  "size": "phone",
+  "image": "home-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 466,
+   "title": "Sydney Education Agent — Study in Australia | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7750,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 28,
+   "title": "Study in Australia | We International Education & Visa",
+   "h1": [
+    "Your next chapter starts with a better choice."
+   ],
+   "words": 424,
+   "links": 30,
+   "buttons": 3,
+   "forms": 0,
+   "height": 4950,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/about-we-international",
+  "size": "phone",
+  "image": "about-we-international-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 357,
+   "title": "About We International Education & Visa | Student First",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2121,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 18,
+   "title": "About We International | Student first",
+   "h1": [
+    "About We International"
+   ],
+   "words": 172,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1479,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/courses",
+  "size": "phone",
+  "image": "courses-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 360,
+   "title": "Australian College & University Courses | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 5140,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 19,
+   "title": "Australian college and university courses | We International",
+   "h1": [
+    "Find a study area that feels like you"
+   ],
+   "words": 670,
+   "links": 15,
+   "buttons": 3,
+   "forms": 0,
+   "height": 7025,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/courses/nursing-pathways-australia",
+  "size": "phone",
+  "image": "courses_nursing-pathways-australia-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 390,
+   "title": "Nursing Pathways in Australia | English & OBA Preparation",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 4200,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Nursing pathways in Australia | English and OBA preparation",
+   "h1": [
+    "Nursing pathways in Australia"
+   ],
+   "words": 226,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1707,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/fast-track-courses",
+  "size": "phone",
+  "image": "fast-track-courses-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 184,
+   "title": "Working Holiday Visa Study Options | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7280,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Study on a working holiday visa | We International",
+   "h1": [
+    "Study during a working holiday"
+   ],
+   "words": 199,
+   "links": 14,
+   "buttons": 2,
+   "forms": 0,
+   "height": 1604,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/english-practice",
+  "size": "phone",
+  "image": "english-practice-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 347,
+   "title": "Free English Practice: Quiz, Videos & Games | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 4830,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 20,
+   "title": "English study in Australia | We International",
+   "h1": [
+    "English study"
+   ],
+   "words": 156,
+   "links": 13,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1239,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/student-services",
+  "size": "phone",
+  "image": "student-services-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 390,
+   "title": "Student Services — Course & Enrolment Help | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2121,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 19,
+   "title": "Student services | We International",
+   "h1": [
+    "Student services"
+   ],
+   "words": 161,
+   "links": 15,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1408,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/homestay",
+  "size": "phone",
+  "image": "homestay-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 382,
+   "title": "Homestay in Australia: Find a Host Family | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7080,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 17,
+   "title": "Homestay and student accommodation | We International",
+   "h1": [
+    "Homestay and places to live"
+   ],
+   "words": 151,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1319,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/oshc",
+  "size": "phone",
+  "image": "oshc-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 363,
+   "title": "OSHC — Compare & Buy Student Health Cover | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2220,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 20,
+   "title": "Overseas Student Health Cover (OSHC) | We International",
+   "h1": [
+    "Student health cover (OSHC)"
+   ],
+   "words": 116,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1005,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/migration-support",
+  "size": "phone",
+  "image": "migration-support-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 340,
+   "title": "Migration Support | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2121,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 20,
+   "title": "Migration support | We International",
+   "h1": [
+    "Migration support"
+   ],
+   "words": 271,
+   "links": 14,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1829,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/referral-partners",
+  "size": "phone",
+  "image": "referral-partners-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 1601,
+   "title": "Become a Referral Partner | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2440,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 18,
+   "title": "Partner with us | We International",
+   "h1": [
+    "Partner with us"
+   ],
+   "words": 130,
+   "links": 13,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1124,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/frequently-asked-questions",
+  "size": "phone",
+  "image": "frequently-asked-questions-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 1434,
+   "title": "Study in Australia FAQs | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2121,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 19,
+   "title": "FAQs | We International",
+   "h1": [
+    "Frequently asked questions"
+   ],
+   "words": 116,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1137,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/contact-us",
+  "size": "phone",
+  "image": "contact-us-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 260,
+   "title": "Contact Us | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 6,
+   "forms": 1,
+   "height": 2300,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 26,
+   "title": "Contact us | We International",
+   "h1": [
+    "Contact us"
+   ],
+   "words": 211,
+   "links": 14,
+   "buttons": 1,
+   "forms": 1,
+   "height": 1904,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/charter-application",
+  "size": "phone",
+  "image": "charter-application-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 1705,
+   "title": "Apply to Study | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2380,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 35,
+   "title": "Study application | We International",
+   "h1": [
+    "Study application"
+   ],
+   "words": 321,
+   "links": 12,
+   "buttons": 1,
+   "forms": 1,
+   "height": 2495,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/privacy-policy",
+  "size": "phone",
+  "image": "privacy-policy-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 356,
+   "title": "Privacy Policy | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 5300,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Privacy notice | We International",
+   "h1": [
+    "Privacy notice"
+   ],
+   "words": 327,
+   "links": 13,
+   "buttons": 0,
+   "forms": 0,
+   "height": 2039,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/blog",
+  "size": "phone",
+  "image": "blog-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 546,
+   "title": "Working Holiday & Study Tips Blog | We International",
+   "h1": [
+    "Education & Visa"
+   ],
+   "words": 344,
+   "links": 34,
+   "buttons": 11,
+   "forms": 0,
+   "height": 8179,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 20,
+   "title": "Blog | We International",
+   "h1": [
+    "Blog"
+   ],
+   "words": 1437,
+   "links": 53,
+   "buttons": 0,
+   "forms": 0,
+   "height": 16801,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/post/working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026",
+  "size": "phone",
+  "image": "post_working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 3155,
+   "title": "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026",
+   "h1": [
+    "Education & Visa",
+    "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026"
+   ],
+   "words": 546,
+   "links": 34,
+   "buttons": 11,
+   "forms": 0,
+   "height": 2392,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026",
+   "h1": [
+    "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026"
+   ],
+   "words": 461,
+   "links": 19,
+   "buttons": 1,
+   "forms": 0,
+   "height": 3338,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
+  "size": "phone",
+  "image": "post_aged-care-needs-more-workers-what-the-latest-news-says-phone.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 540,
+   "title": "Aged Care Workers & the Visa Debate: Latest News Explained",
+   "h1": [
+    "Education & Visa",
+    "Aged care needs more workers: what the latest news says"
+   ],
+   "words": 767,
+   "links": 32,
+   "buttons": 10,
+   "forms": 0,
+   "height": 2841,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 22,
+   "title": "Aged Care Workers & the Visa Debate: Latest News Explained",
+   "h1": [
+    "Aged care needs more workers: what the latest news says"
+   ],
+   "words": 653,
+   "links": 18,
+   "buttons": 1,
+   "forms": 0,
+   "height": 4147,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/",
+  "size": "desktop",
+  "image": "home-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 368,
+   "title": "Sydney Education Agent — Study in Australia | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7750,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 40,
+   "title": "Study in Australia | We International Education & Visa",
+   "h1": [
+    "Your next chapter starts with a better choice."
+   ],
+   "words": 429,
+   "links": 30,
+   "buttons": 3,
+   "forms": 0,
+   "height": 2530,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/about-we-international",
+  "size": "desktop",
+  "image": "about-we-international-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 378,
+   "title": "About We International Education & Visa | Student First",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1730,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 17,
+   "title": "About We International | Student first",
+   "h1": [
+    "About We International"
+   ],
+   "words": 177,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1164,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/courses",
+  "size": "desktop",
+  "image": "courses-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 378,
+   "title": "Australian College & University Courses | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 5140,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 40,
+   "title": "Australian college and university courses | We International",
+   "h1": [
+    "Find a study area that feels like you"
+   ],
+   "words": 675,
+   "links": 15,
+   "buttons": 3,
+   "forms": 0,
+   "height": 3453,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/courses/nursing-pathways-australia",
+  "size": "desktop",
+  "image": "courses_nursing-pathways-australia-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 352,
+   "title": "Nursing Pathways in Australia | English & OBA Preparation",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 4200,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Nursing pathways in Australia | English and OBA preparation",
+   "h1": [
+    "Nursing pathways in Australia"
+   ],
+   "words": 231,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1259,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/fast-track-courses",
+  "size": "desktop",
+  "image": "fast-track-courses-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 163,
+   "title": "Working Holiday Visa Study Options | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7280,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 19,
+   "title": "Study on a working holiday visa | We International",
+   "h1": [
+    "Study during a working holiday"
+   ],
+   "words": 204,
+   "links": 14,
+   "buttons": 2,
+   "forms": 0,
+   "height": 1151,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/english-practice",
+  "size": "desktop",
+  "image": "english-practice-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 315,
+   "title": "Free English Practice: Quiz, Videos & Games | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 4830,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 18,
+   "title": "English study in Australia | We International",
+   "h1": [
+    "English study"
+   ],
+   "words": 161,
+   "links": 13,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1022,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/student-services",
+  "size": "desktop",
+  "image": "student-services-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 384,
+   "title": "Student Services — Course & Enrolment Help | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1610,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Student services | We International",
+   "h1": [
+    "Student services"
+   ],
+   "words": 166,
+   "links": 15,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1134,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/homestay",
+  "size": "desktop",
+  "image": "homestay-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 343,
+   "title": "Homestay in Australia: Find a Host Family | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 7080,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 16,
+   "title": "Homestay and student accommodation | We International",
+   "h1": [
+    "Homestay and places to live"
+   ],
+   "words": 156,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1006,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/oshc",
+  "size": "desktop",
+  "image": "oshc-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 367,
+   "title": "OSHC — Compare & Buy Student Health Cover | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2220,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 21,
+   "title": "Overseas Student Health Cover (OSHC) | We International",
+   "h1": [
+    "Student health cover (OSHC)"
+   ],
+   "words": 121,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 860,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/migration-support",
+  "size": "desktop",
+  "image": "migration-support-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 317,
+   "title": "Migration Support | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1560,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 18,
+   "title": "Migration support | We International",
+   "h1": [
+    "Migration support"
+   ],
+   "words": 276,
+   "links": 14,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1341,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/referral-partners",
+  "size": "desktop",
+  "image": "referral-partners-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 362,
+   "title": "Become a Referral Partner | We International",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2440,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 18,
+   "title": "Partner with us | We International",
+   "h1": [
+    "Partner with us"
+   ],
+   "words": 135,
+   "links": 13,
+   "buttons": 1,
+   "forms": 0,
+   "height": 932,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/frequently-asked-questions",
+  "size": "desktop",
+  "image": "frequently-asked-questions-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 385,
+   "title": "Study in Australia FAQs | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 1560,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 35,
+   "title": "FAQs | We International",
+   "h1": [
+    "Frequently asked questions"
+   ],
+   "words": 121,
+   "links": 12,
+   "buttons": 1,
+   "forms": 0,
+   "height": 963,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/contact-us",
+  "size": "desktop",
+  "image": "contact-us-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 402,
+   "title": "Contact Us | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 6,
+   "forms": 1,
+   "height": 2300,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 37,
+   "title": "Contact us | We International",
+   "h1": [
+    "Contact us"
+   ],
+   "words": 216,
+   "links": 14,
+   "buttons": 1,
+   "forms": 1,
+   "height": 1546,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/charter-application",
+  "size": "desktop",
+  "image": "charter-application-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 350,
+   "title": "Apply to Study | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2380,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 48,
+   "title": "Study application | We International",
+   "h1": [
+    "Study application"
+   ],
+   "words": 326,
+   "links": 12,
+   "buttons": 1,
+   "forms": 1,
+   "height": 1885,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/privacy-policy",
+  "size": "desktop",
+  "image": "privacy-policy-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 161,
+   "title": "Privacy Policy | We International Education & Visa",
+   "h1": [],
+   "words": 3,
+   "links": 0,
+   "buttons": 1,
+   "forms": 0,
+   "height": 5300,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 17,
+   "title": "Privacy notice | We International",
+   "h1": [
+    "Privacy notice"
+   ],
+   "words": 332,
+   "links": 13,
+   "buttons": 0,
+   "forms": 0,
+   "height": 1434,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/blog",
+  "size": "desktop",
+  "image": "blog-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 267,
+   "title": "Working Holiday & Study Tips Blog | We International",
+   "h1": [
+    "Education & Visa"
+   ],
+   "words": 187,
+   "links": 25,
+   "buttons": 5,
+   "forms": 0,
+   "height": 8179,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 20,
+   "title": "Blog | We International",
+   "h1": [
+    "Blog"
+   ],
+   "words": 1442,
+   "links": 53,
+   "buttons": 0,
+   "forms": 0,
+   "height": 6084,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/post/working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026",
+  "size": "desktop",
+  "image": "post_working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 488,
+   "title": "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026",
+   "h1": [
+    "Education & Visa",
+    "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026"
+   ],
+   "words": 517,
+   "links": 34,
+   "buttons": 7,
+   "forms": 0,
+   "height": 2512,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 32,
+   "title": "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026",
+   "h1": [
+    "Working Holiday Visa: New Registration for 2nd and 3rd Visas from 1 Dec 2026"
+   ],
+   "words": 466,
+   "links": 19,
+   "buttons": 1,
+   "forms": 0,
+   "height": 2252,
+   "sideways": false,
+   "blocked": false
+  }
+ },
+ {
+  "path": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
+  "size": "desktop",
+  "image": "post_aged-care-needs-more-workers-what-the-latest-news-says-desktop.jpg",
+  "live": {
+   "status": 200,
+   "loadMs": 305,
+   "title": "Aged Care Workers & the Visa Debate: Latest News Explained",
+   "h1": [
+    "Education & Visa",
+    "Aged care needs more workers: what the latest news says"
+   ],
+   "words": 772,
+   "links": 32,
+   "buttons": 11,
+   "forms": 0,
+   "height": 2942,
+   "sideways": false,
+   "blocked": false
+  },
+  "new": {
+   "status": 200,
+   "loadMs": 35,
+   "title": "Aged Care Workers & the Visa Debate: Latest News Explained",
+   "h1": [
+    "Aged care needs more workers: what the latest news says"
+   ],
+   "words": 658,
+   "links": 18,
+   "buttons": 1,
+   "forms": 0,
+   "height": 3051,
+   "sideways": false,
+   "blocked": false
+  }
+ }
+]
