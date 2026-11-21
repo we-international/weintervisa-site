@@ -148,6 +148,13 @@ check(words_ep >= 746, f"/english-practice is as full as the live Wix page ({wor
 check(ep.count("Question ") >= 8 and ep.count("<details>") >= 8, "/english-practice: 8 quiz questions, answers in <details> (no script)")
 check("Puzora" not in ep and "https://weintergames.com/" in ep, "/english-practice: game studio under its current name (WE International Game Studio), no old name")
 check(not re.search(r'<(img|iframe)[^>]+src="https?://', ep), "/english-practice loads no third-party images or embeds")
+# 10e. /homestay — rebuilt from the live Wix page (21 Nov 2026)
+hs = (SITE / "homestay.html").read_text()
+words_hs = len(re.sub(r"<[^>]+>", " ", hs.split("<main")[1].split("</main>")[0]).split())
+check(words_hs >= 1157, f"/homestay is as full as the live Wix page ({words_hs} words, live ≈ 1,157)")
+check("checked 26 October 2026" in hs and "can change" in hs, "/homestay: AHN prices are dated, sourced and say they can change")
+check(hs.count('href="https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa"') >= 3 and 'rel="noopener"' in hs, "/homestay: apply buttons use our AHN partner link, new tab")
+check("Don&#x27;t pay a stranger" in hs or "Don't pay a stranger" in hs, "/homestay warns about accommodation scams")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")

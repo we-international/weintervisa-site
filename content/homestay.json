@@ -1,0 +1,55 @@
+{
+  "_source": "Live page www.weintervisa.com/homestay (Wix custom embed), text saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44890378030, text/homestay.txt). AHN facts and prices on the live page were checked by the company on AHN's website on 26 Oct 2026.",
+  "_edits": "21 Nov 2026: FAQ answers use only facts already on the live page (the hidden answers were not saved); refunds and family stays point to AHN's own terms instead of guessing. The Wix translate widget is replaced by the EN/TH switch.",
+  "apply": "https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa",
+  "kicker": "Homestay · with our partner AHN",
+  "h1": "New to Australia? Start with a homestay.",
+  "lead": "Your first weeks are easier with a local host family. Australian Homestay Network (AHN) matches you with a screened host near your school, with meals, bills and 24/7 emergency support included.",
+  "points": [["🛡️", "Hosts screened with background checks, in-home interviews and home inspections"], ["🛏️", "Private furnished room, meals, Wi-Fi, utilities and laundry in one weekly price"], ["📞", "Staffed 24/7 emergency contact centre with interpreters"], ["🚌", "Up to 1 hour from your school by public transport, in 17 cities and regions"]],
+  "applyNote": "You'll be taken to AHN's website to create your guest profile · Opens a new tab. AHN's website is in English. Need help with the form? Ask us — we're happy to help.",
+  "scams": {"h2": "Don't pay a stranger for a room you've never seen",
+    "body": "Some students send a bond or rent to someone online, then arrive in Australia and find there is no room. Booking a homestay through AHN helps you avoid this.",
+    "items": ["You pay AHN, an established homestay organisation — not a private person you found online", "Your host and address are confirmed in a placement report before you fly", "You can add airport pickup, so someone takes you straight to your new home", "Stay for your first month, set up your bank account, phone and transport, and inspect rentals in person — then move out when you're ready"],
+    "tip": "Planning to stay about 4 weeks? Tell AHN your plan when you apply and ask about the notice period."},
+  "why": [
+    ["🏡", "Someone looks out for you", "Your host helps with local customs, transport and your first trip to school, so you are not on your own on day one."],
+    ["🛡️", "Checked hosts and homes", "AHN hosts pass background checks, an in-home interview and a home inspection, and complete host training. Hosts of under-18s are specially trained and certified."],
+    ["📞", "Help any time", "A professionally staffed 24/7 critical-incident line with interpreters, plus your local AHN office in business hours."],
+    ["🍽️", "Meals sorted", "Choose Complete (3 meals, 7 days), Traditional (2 meals weekdays, 3 on weekends), Dinner Only or No Meals. Special diets may cost extra."],
+    ["💡", "No surprise bills", "The weekly fee covers your room, meal plan, utilities, internet, laundry, insurance, emergency support and administration. No bond and no lock-in contract."],
+    ["🗺️", "Time to find your feet", "AHN recommends at least 4 weeks for new students. Most stay about 3 months, and you can extend while you look for your next place."]
+  ],
+  "endorsed": "AHN says it was the first organisation endorsed under the Study NSW and NEAS Homestay Service Provider Standards (October 2023).",
+  "steps": [
+    "Get your details ready: your school name and campus, study dates and flight details.",
+    "Create your guest profile through the button on this page, with your preferences and dietary needs. Apply 2–4 weeks before you arrive (earlier gives you hosts closer to school).",
+    "Pay your first invoice: the matching fee plus your first 4 weeks. Pay at least 3 weeks before arrival, because AHN can only match you once payment is received.",
+    "AHN finds your host and sends you and your host a placement report. You can contact your host before you fly.",
+    "Confirm your arrival. Add airport pickup if you want someone waiting for you.",
+    "Settle in. After that, AHN invoices every 4 weeks."
+  ],
+  "applyBox": {"body": "The button opens AHN's guest application through our partner link. You fill in your details and send your request, then AHN's team matches you with a host family that suits you. Matching takes a little time, so apply 2–4 weeks before you arrive.",
+    "items": ["AHN knows you applied through us, so we can follow up with AHN for you", "You pay AHN directly — no money goes to a private person", "No need to sign up separately on AHN's own website — use the button here so we can look after you"],
+    "tip": "In \"Education Provider\", type your school name and campus exactly (e.g. \"School name – Sydney CBD campus\"). AHN uses it to choose a host near you."},
+  "prices": {"intro": "Weekly price per person, in AUD, private room / shared room. One-off matching fee: $350 (2026) or $370 (2027).",
+    "rows": [["Complete — 3 meals, 7 days", "$445 / $415", "$460 / $430"], ["Traditional — 2 meals weekdays, 3 weekends", "$410 / $380", "$425 / $395"], ["Dinner Only", "$380 / $350", "$395 / $365"], ["No Meals", "$340 / $310", "$355 / $325"], ["VIP add-on (private bathroom, if available)", "+$60", "+$70"], ["Airport pickup (one-off)", "$195", "$200"]],
+    "note": "Prices are as shown on AHN's website on 26 October 2026 and can change. They differ by city, age (under 18s pay more) and year. Your exact price is confirmed in AHN's quote after you apply. 2027 weekly ranges for other cities: Melbourne $355–$460, Brisbane $330–$430, Perth $330–$430, Adelaide $325–$415, Gold Coast $385–$440, Canberra $330–$425, Hobart $315–$415.",
+    "source": "Source: AHN's published prices (homestaynetwork.org), checked 26 October 2026."},
+  "know": [
+    ["Your stay", ["Minimum stay 4 weeks (28 nights)", "After the first 4 weeks, give 2 weeks' written notice to AHN and your host", "Pay by card, PayPal, AliPay or bank transfer"]],
+    ["House etiquette", ["Tell your host when you go out, when you'll be back and if you'll miss a meal", "Keep your room and bathroom tidy; showers 5–10 minutes", "Ask before inviting visitors; quiet after 10pm", "No charging e-bikes or power banks in the home"]],
+    ["Under 18?", ["Specially trained and certified hosts", "Home for dinner every night, no overnight stays away", "Under-18 prices and a code of conduct apply", "Guardianship is a separate package on request"]]
+  ],
+  "faq": [
+    ["What does the weekly fee include?", "Your room, meal plan, utilities, internet, laundry, insurance, emergency support and administration. There is no bond and no lock-in contract."],
+    ["Is there a one-off fee?", "Yes, a matching fee: $350 in 2026 or $370 in 2027 (Sydney example, as published by AHN). Airport pickup is optional and charged once."],
+    ["Can I get a refund?", "Refunds follow AHN's own terms. Please read them on AHN's website before you pay, or ask us and we'll check with AHN for you."],
+    ["Will I have my own room?", "You can choose a private room or a shared room (shared costs less). A private bathroom (VIP) is an add-on if available."],
+    ["How far will I live from school?", "AHN looks for a host up to 1 hour from your school by public transport. Apply early and type your campus exactly to get closer options."],
+    ["Which cities are covered?", "17 cities and regions, including Sydney, Melbourne, Brisbane, Perth, Adelaide, Gold Coast, Canberra and Hobart."],
+    ["Can my partner or parents stay with me?", "Ask AHN when you apply: options depend on the host and AHN's terms. We can ask for you."],
+    ["Who do I contact once I'm placed?", "Your host and your local AHN office in business hours, and AHN's 24/7 emergency line any time. You can also contact us, because AHN knows you applied through us."]
+  ],
+  "faqNote": "Information from AHN's website (homestaynetwork.org), checked 26 October 2026. AHN sets its own prices, terms and policies — please read them on AHN's site before you pay.",
+  "characters": "Maya and Kenji are fictional, AI-generated characters."
+}

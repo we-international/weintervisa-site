@@ -86,14 +86,8 @@ services_body = simple(
      ("More help", "<a href=\"/homestay\">Homestay and places to live</a> · <a href=\"/oshc\">Student health cover (OSHC)</a> · <a href=\"/english-practice\">English study</a>")],
     cta_text="Start a conversation with our team.")
 
-homestay_body = simple(
-    "Homestay and places to live",
-    "Find a place that works for your routine. Here is what to think about while we prepare checked accommodation links.",
-    [("Homestay", "Live with a local host. Ask about location, meals, house rules, price and the terms from the homestay provider."),
-     ("Student accommodation", "Check the exact address, what is included, the lease terms and if a room is free."),
-     ("Shared rental", "Think about transport, who you live with, your budget and the lease."),
-     ("Location matters", "Live close to your campus or good transport. This page does not mean a room is available.")],
-    cta_text="Ask about homestay or accommodation.")
+import homestay_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
+homestay_body = homestay_page.render()
 
 oshc_body = simple(
     "Student health cover (OSHC)",
@@ -223,8 +217,8 @@ CONTENT_PAGES = {
         "Practise everyday English for free: an 8-question quiz, Say It Wrong and Wobbi Says videos, games, and help finding an English course in Australia.", english_body),
     "student-services": ("Student services | We International",
         "Help with choosing a course, applying to a school and getting ready to study in Australia.", services_body),
-    "homestay": ("Homestay and student accommodation | We International",
-        "What to check when choosing homestay, student accommodation or a shared rental in Australia.", homestay_body),
+    "homestay": ("Homestay in Australia with AHN | We International",
+        "Start with a homestay: a screened host family near your school, meals, bills and 24/7 support with our partner AHN. Steps, 2026/2027 prices and FAQs.", homestay_body),
     "oshc": ("Overseas Student Health Cover (OSHC) | We International",
         "Plan your Overseas Student Health Cover and ask our team about current options.", oshc_body),
     "migration-support": ("Migration support | We International",

@@ -251,3 +251,5 @@ nav.chips { margin: 16px 0 24px; }
 .quizzes { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 12px; }
 .paths.two { grid-template-columns: 1fr; }
 @media (min-width: 720px) { .quizzes { grid-template-columns: repeat(2, 1fr); } .paths.two { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 720px) { .points.two-col { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .fees.all td::before { content: attr(data-col) ": "; color: var(--muted); } }
