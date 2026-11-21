@@ -211,6 +211,10 @@ def build():
     write("th/index.html", page(thai_pages.HOME_TITLE, thai_pages.home(posts, fmt_date), path="/th/",
           description=thai_pages.HOME_DESC, lang="th"))
     urls_extra.append("/th/")
+    import thai_more
+    write("th/blog.html", page(thai_more.BLOG_TITLE, thai_more.blog_body(posts, fmt_date), path="/th/blog",
+          description=thai_more.BLOG_DESC, lang="th"))
+    urls_extra.append("/th/blog")
     for rel, (title, desc, body) in thai_pages.TH_PAGES.items():
         write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, lang="th", jsonld=thai_pages.JSONLD.get(rel)))
         urls_extra.append("/" + rel)

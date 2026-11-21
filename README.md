@@ -16,4 +16,6 @@ Owner: We International Education & Visa Pty Ltd · Team: Web & CRM.
 - `schools.py` + `content/schools.json` — school pages `/schools` and `/schools/<slug>` from files schools sent us (only schools that replied). `"approved": false` = preview only; production leaves them out until the owner approves. Skill: `.claude/skills/school-promo-pages`.
 - `assets/forms.js` — lead forms → GetWec `mia` Edge Function `action: "lead"` (contract copy: `tests/getwec-lead-contract.mjs`). Sends only in a `--production` build with `getwec_anon_key` set in `config.json`; preview never sends. Skill: `.claude/skills/website-lead-forms`.
 
+- `thai_pages.py`, `thai_content.py`, `thai_more.py` — Thai pages `/th/...` (every page except `/privacy-policy` and post bodies). Skill: `.claude/skills/website-thai-pages`.
+
 Still to decide (owner): 4 Wix-app pages in `tests/pending-pages.json` — /partner-portal, /schedule, /videos, /challenges. Privacy notice approved by the owner on 20 Nov 2026. Local copies of images still to do.

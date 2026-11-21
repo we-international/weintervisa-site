@@ -67,7 +67,7 @@ feed = (SITE / "blog-feed.xml").read_text()
 check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items (same path as Wix)")
 import pages as _p, content_pages as _cp
 import thai_pages as _tp
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + 1 + len(_tp.TH_PAGES)  # + Thai home and Thai pages
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
 # 8. Lead forms (→ GetWec "lead" contract) — never connected in a preview build
@@ -154,16 +154,32 @@ for en_path, th_path in _tp.TH_OF.items():
         check(f'hreflang="th" href="https://www.weintervisa.com{th_path}"' in s_ and 'hreflang="x-default"' in s_, f"{th_path} ↔ {en_path} hreflang pair")
     check(f'class="lang" href="{en_path}"' in ts and f'class="lang" href="{th_path}"' in es_, f"{th_path} ↔ {en_path} language switch")
     main_ = ts.split('<main id="main">')[1].split("</main>")[0]
-    visible = re.sub(r"<[^>]+>", " ", main_)
+    # English proper names (course titles, post titles, campuses) are marked lang="en" and not counted
+    visible = re.sub(r"<[^>]+>", " ", re.sub(r'<(\w+)\b[^>]*\blang="en"[^>]*>.*?</\1>', " ", main_, flags=re.S))
     words = re.findall(r"[A-Za-z]{4,}", visible)
     check(len(TH_CHARS.findall(visible)) > 4 * len("".join(words)), f"{th_path} body is mainly Thai")
     check("registered migration agent" in ts and "ไม่ใช่ migration agent" in ts, f"{th_path} refers visa questions to a registered migration agent")
     check(not re.search(r"รับประกัน(ผล|ที่เรียน|วีซ่า|งาน)(?!ได้)|ฟรี|ภายใน 24 ชั่วโมง|ถูกที่สุด", main_.replace("ไม่มีใครรับประกันผลวีซ่าได้", "")), f"{th_path} makes no unapproved promises")
+# 15. Thai set 3 (21 Nov 2026): courses, blog, schools in Thai; Thai nav points at Thai pages
+import thai_more as _tm
+tc = (SITE / "th/courses.html").read_text()
+check(tc.count('<ul class="areas">') == len(_tm.GROUP_TH) and all(f'id="{_tm.group_anchor(g)}"' in tc for g in _tm.GROUP_TH),
+      "/th/courses has every study-area group with the same anchors as /courses")
+tb = (SITE / "th/blog.html").read_text()
+check(tb.count('<li class="card">') == len(slugs) and 'lang="en"' in tb, f"/th/blog lists all {len(slugs)} posts, titles marked lang=en")
+check(("/th/schools" in _tp.EN_OF) == bool(_sc.SCHOOLS) and all(f"/th/schools/{s_['slug']}" in _tp.EN_OF for s_ in _sc.SCHOOLS),
+      "Thai school pages exist exactly for the schools shown in English (none in production until approved)")
+for s_ in _sc.SCHOOLS:
+    t_ = (SITE / f"th/schools/{s_['slug']}.html").read_text()
+    check(all(f'<td data-col="{c_}">' in t_ for c_ in s_["fee_columns"]) and t_.count('scope="row"') == len(s_["courses"]) and "offer letter" in t_,
+          f"/th/schools/{s_['slug']}: same courses and fee columns as English, offer-letter note")
+navth = (SITE / "th/index.html").read_text().split('<nav class="wide">')[1].split("</nav>")[0]
+check('href="/th/courses"' in navth and 'href="/th/blog"' in navth and 'href="/courses"' not in navth, "Thai nav links Thai courses and blog")
 tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith("/schools") or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")

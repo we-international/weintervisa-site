@@ -21,9 +21,17 @@ Owner rule (20 Nov 2026): every page in English + Thai, `/th/...` + hreflang, Th
 4. Add the URL to `tests/e2e.mjs` `urls`. `python3 tests/test_site.py` checks html lang, hreflang pair, switch, "body mainly Thai", visa note, no promises, sitemap count.
 
 ## Second set (21 Nov 2026)
-- Content pages in Thai live in `thai_content.py` (`PAIRS` = English → Thai paths, `PAGES`, `JSONLD`); `thai_pages.py` merges them into `TH_OF` / `TH_PAGES`. Not yet in Thai: `/courses` (study-area list from the CMS), `/privacy-policy` (owner-approved English text; a Thai copy needs owner review), `/schools*`, blog.
+- Content pages in Thai live in `thai_content.py` (`PAIRS` = English → Thai paths, `PAGES`, `JSONLD`); `thai_pages.py` merges them into `TH_OF` / `TH_PAGES`. (Courses, schools and blog index came in set 3, below.)
 - Shared builders take a labels dict instead of copying code, e.g. `content_pages.partner_cards(partners, LABELS_TH)`.
 - e2e checks every `/th` + content page automatically (`content` list filtered in `tests/e2e.mjs`).
+
+## Third set (21 Nov 2026, 14:13 run)
+- `thai_more.py`: `/th/courses` (45 study areas with Thai names in `AREA_TH`, keyed by CMS slug; build stops if a new CMS area has no Thai entry), `/th/blog` (built in `build.py` because it needs the posts), `/th/schools` + `/th/schools/<slug>`.
+- Thai nav now points at `/th/courses` and `/th/blog`; Thai bodies no longer say "(ภาษาอังกฤษ)" next to course links.
+- English proper names that must stay English (course titles in fee tables, blog post titles, campus names, school names) are wrapped in an element with `lang="en"`. Screen readers switch voice, and the "body mainly Thai" test strips `lang="en"` elements before counting English words. Don't use `lang="en"` to hide ordinary sentences that should be Thai.
+- School pages keep the approval gate: Thai school pairs are added to `TH_OF` only for `schools.SCHOOLS` (empty in production until the owner approves), so production has no `/th/schools`. Every school needs Thai `SUMMARY_TH`, `INTAKES_TH`, `FEE_NOTE_TH` entries — the build stops otherwise, so adding a school to `content/schools.json` means adding its Thai lines too.
+- Mobile fee table in Thai: `data-col="ระยะเวลา"`; campus columns keep the English campus name.
+- Still English only: `/privacy-policy` (owner-approved English; a Thai copy needs owner review before it goes up) and blog post bodies.
 
 ## Traps
 - "Body mainly Thai" test counts English words of 4+ letters: a page that repeats "registered migration agent" fails. Write the Thai term ("เอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน") and give the English term once in brackets; the footer already carries the required phrase.

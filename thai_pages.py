@@ -17,15 +17,16 @@ e = html.escape
 
 # English path → Thai path, for pages that exist in both languages.
 import thai_content
+import thai_more
 
-TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS}
+TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS}
 EN_OF = {v: k for k, v in TH_OF.items()}
 
 NAV_TH = [  # Thai labels; link to the Thai page when it exists, else the English one
-    ("คอร์สเรียน", "/courses"),
+    ("คอร์สเรียน", "/th/courses"),
     ("Fast-track", "/th/fast-track-courses"),
     ("บริการนักเรียน", "/th/student-services"),
-    ("บทความ", "/blog"),
+    ("บทความ", "/th/blog"),
     ("ติดต่อเรา", "/th/contact-us"),
 ]
 
@@ -55,7 +56,7 @@ def home(posts, fmt_date):
     groups = {}
     for a in areas:
         groups.setdefault(a["group"], []).append(a)
-    chips = "".join(f'<li><a href="/courses#{e(group_anchor(g))}">{e(GROUP_TH.get(g, g))} <span>{len(items)}</span></a></li>'
+    chips = "".join(f'<li><a href="/th/courses#{e(group_anchor(g))}">{e(GROUP_TH.get(g, g))} <span>{len(items)}</span></a></li>'
                     for g, items in groups.items())
     why = [
         ("คอร์สที่ใช่สำหรับคุณ", "เริ่มจากสิ่งที่คุณสนใจ วุฒิที่เรียนมา เมืองที่อยากอยู่ และงบประมาณ เราช่วยเทียบตัวเลือกที่เหมาะ เมื่อมีข้อมูลล่าสุดจากสถาบัน"),
@@ -64,7 +65,7 @@ def home(posts, fmt_date):
     ]
     why_html = "".join(f"<li><strong>{e(h)}</strong><span>{e(b)}</span></li>" for h, b in why)
     tiles = [
-        ("/courses", "คอร์สเรียน", "ภาษาอังกฤษ งานดูแล ธุรกิจ งานช่าง ไอที และอื่นๆ"),
+        ("/th/courses", "คอร์สเรียน", "ภาษาอังกฤษ งานดูแล ธุรกิจ งานช่าง ไอที และอื่นๆ"),
         ("/th/fast-track-courses", "Fast-track สำหรับ Working Holiday", "แผนเรียนสั้นที่เข้ากับวีซ่า 417 หรือ 462 เช็กเงื่อนไขก่อนเสมอ"),
         ("/th/courses/nursing-pathways-australia", "เส้นทางสายพยาบาล", "ขั้นตอนหลักสำหรับพยาบาลที่เรียนจบจากนอกออสเตรเลีย"),
         ("/th/english-practice", "เรียนภาษาอังกฤษ", "เสริมภาษาอังกฤษสำหรับการเรียน การทำงาน และชีวิตประจำวัน"),
@@ -79,11 +80,11 @@ def home(posts, fmt_date):
 <p class="kicker">เรียนต่อออสเตรเลีย</p>
 <h1>บทใหม่ของคุณ เริ่มจากการเลือกที่ดีกว่า</h1>
 <p class="lead">ดูสาขาที่น่าสนใจ เข้าใจตัวเลือกของคุณ แล้วก้าวต่อไปอย่างมั่นใจ กับทีมที่คิดถึงนักเรียนก่อน</p>
-<p class="actions"><a class="btn" href="/courses">ดูคอร์สเรียน</a> <a class="btn ghost" href="/th/contact-us">ถามทีมงาน</a></p>
+<p class="actions"><a class="btn" href="/th/courses">ดูคอร์สเรียน</a> <a class="btn ghost" href="/th/contact-us">ถามทีมงาน</a></p>
 </div></section>
 <section class="wrap">
 <h2>เริ่มจากสาขาที่สนใจ</h2>
-<p>เลือกกลุ่มเพื่อดูสาขาในกลุ่มนั้น (หน้ารายละเอียดเป็นภาษาอังกฤษ) เราเช็กรายละเอียดคอร์สล่าสุดกับสถาบันก่อนส่งให้คุณเสมอ</p>
+<p>เลือกกลุ่มเพื่อดูสาขาในกลุ่มนั้น เราเช็กรายละเอียดคอร์สล่าสุดกับสถาบันก่อนส่งให้คุณเสมอ</p>
 <ul class="chips">{chips}</ul>
 </section>
 <section class="wrap">
@@ -108,7 +109,7 @@ def home(posts, fmt_date):
 <section class="wrap">
 <h2>บทความล่าสุด (ภาษาอังกฤษ)</h2>
 <ul class="cards">{cards}</ul>
-<p><a href="/blog">บทความทั้งหมด {len(posts)} เรื่อง</a></p>
+<p><a href="/th/blog">บทความทั้งหมด {len(posts)} เรื่อง</a></p>
 <aside class="cta"><p>คุยกับ Mia ผู้ช่วย AI ได้ทุกภาษา ทีมงานของเราตอบเป็นภาษาไทยหรืออังกฤษ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
 </section>"""
 
@@ -154,7 +155,7 @@ contact_body = f"""<section class="wrap narrow">
 <p class="lead">ถามเรื่องคอร์ส สถาบัน โฮมสเตย์ หรือประกันสุขภาพนักเรียนได้เลย ทีมงานอ่านทุกข้อความ และตอบเป็นภาษาไทยหรืออังกฤษ</p>
 <ul class="contact-list">
   <li><strong>อีเมล</strong> <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></li>
-  <li><strong>บทความ</strong> <a href="/blog">คู่มือเรื่องคอร์สและชีวิตในออสเตรเลีย</a> (ภาษาอังกฤษ)</li>
+  <li><strong>บทความ</strong> <a href="/th/blog">คู่มือเรื่องคอร์สและชีวิตในออสเตรเลีย</a> (ภาษาอังกฤษ)</li>
 </ul>
 {VISA_NOTE_TH}
 {contact_form}
@@ -213,6 +214,7 @@ TH_PAGES = {
                                "บอกเราว่าอยากเรียนอะไรในออสเตรเลีย ทีมงานจะติดต่อกลับเรื่องตัวเลือกคอร์ส",
                                apply_body),
     **thai_content.PAGES,
+    **thai_more.PAGES,
 }
 JSONLD = thai_content.JSONLD
 
