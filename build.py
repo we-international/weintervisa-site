@@ -120,6 +120,7 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
 {og}
 <link rel="alternate" type="application/rss+xml" title="We International blog" href="/blog-feed.xml">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>img,video,iframe,table{{max-width:100%}}img{{height:auto}}</style><!-- critical: media never widen the page while site.css loads -->
 <link rel="stylesheet" href="/assets/site.css">
 {ld}{extra_head}
 </head>

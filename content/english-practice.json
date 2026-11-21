@@ -1,0 +1,52 @@
+{
+  "_source": "Live page www.weintervisa.com/english-practice (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183).",
+  "_edits": "21 Nov 2026: the live quiz shows question 1 only without its script, so questions 2-8 are written by the Web & CRM team (same style: one everyday mistake each); answers open with <details> (no script, nothing saved). 'Puzora Games' is the studio's old name: now WE International Game Studio (weintergames.com). Etsy cover images are not loaded from Etsy (no third-party requests); the cards link to the listings.",
+  "kicker": "Free English practice",
+  "h1": "Practise English. Have fun doing it.",
+  "lead": "Short videos, a podcast-style show and quick games made by our team. Learn the English Australians really use, one small mistake at a time.",
+  "points": [["🎙️", "Say It Wrong with Maya & Kenji: real conversations, real mistakes"], ["✏️", "Wobbi Says: one everyday mistake fixed in under a minute"], ["🎮", "Mini games: test yourself right here on this page"]],
+  "heroImage": {"wix": "https://static.wixstatic.com/media/187087_f1d1a9d8c39441e9967f50dfad68ad5c~mv2.png", "file": "187087_f1d1a9d8c39441e9967f50dfad68ad5c-mv2.webp", "alt": "Maya the quokka and Kenji the koala chatting over coffee (AI-generated scene)"},
+  "maya": "Everyone makes mistakes in English. We just make ours on camera! 😄",
+  "kenji": "Watch, play, then comment your own sentence. We read them!",
+  "quiz": [
+    ["I am agree with you.", ["I agree with you.", "I am agreeing you.", "I agreed with you am."], 0, "\"Agree\" is a verb, so we don't add \"am\"."],
+    ["She don't like coffee.", ["She doesn't like coffee.", "She not like coffee.", "She isn't like coffee."], 0, "With he, she or it, use \"doesn't\"."],
+    ["I have 25 years old.", ["I'm 25 years old.", "I have 25 years.", "I am having 25 years."], 0, "In English we say our age with \"be\": I'm 25."],
+    ["Can you explain me the rules?", ["Can you explain the rules to me?", "Can you explain me about the rules?", "Can you explain to me the rules me?"], 0, "We explain something to someone."],
+    ["I'm living in Sydney since March.", ["I've been living in Sydney since March.", "I live in Sydney since March.", "I was living in Sydney since March."], 0, "With \"since\", use the present perfect: I've been living / I've lived."],
+    ["Let's discuss about the course.", ["Let's discuss the course.", "Let's discuss on the course.", "Let's discussing the course."], 0, "\"Discuss\" needs no \"about\". You can say \"talk about\" instead."],
+    ["I look forward to hear from you.", ["I look forward to hearing from you.", "I look forward hear from you.", "I look forward for hearing from you."], 0, "After \"look forward to\", use the -ing form."],
+    ["How much hours do you work?", ["How many hours do you work?", "How much hour do you work?", "How many hour you work?"], 0, "Hours can be counted, so we say \"how many\"."]
+  ],
+  "channels": [
+    {"title": "Say It Wrong – Learn English", "body": "Maya & Kenji chat about the mistakes we all make, with an Australian twist. Great for B1–B2 learners.",
+     "youtube": "https://www.youtube.com/channel/UC4u_okrOQWWbeBrjk9DTLcQ?sub_confirmation=1",
+     "follow": [["Instagram", "https://www.instagram.com/sayitwrong_learnenglish"], ["Facebook", "https://www.facebook.com/SayItWrongLearnEnglish"]]},
+    {"title": "Wobbi Says", "body": "Wobbi the stickman fixes one everyday English mistake at a time. Short, funny and easy to remember.",
+     "youtube": "https://www.youtube.com/channel/UCOo_Oeq5c_x0pP7Qj32dsng?sub_confirmation=1",
+     "follow": [["TikTok", "https://www.tiktok.com/@wobbisays"], ["Instagram", "https://www.instagram.com/wobbi_says"], ["Facebook", "https://www.facebook.com/1372096519313289"]]}
+  ],
+  "challenge": "After each video, type the correct sentence in the comments. Writing it once helps you remember it much longer!",
+  "games": [
+    ["🧩", "Say it right", "8 everyday mistakes, instant answers. Perfect for a coffee break.", "Play now →", "#quiz"],
+    ["🎮", "Puzzle games from our game studio", "Relaxing puzzle games from WE International Game Studio, part of the We International group.", "See the games ↗", "https://weintergames.com/"],
+    ["✨", "More practice tools", "Phrase cards, listening games and more. Follow our channels to hear first.", "", ""]
+  ],
+  "study": "From General English to IELTS and PTE preparation, we help you compare courses, providers and intake dates. Free advice, no obligation.",
+  "kids": {
+    "kicker": "For families · from our sister brand KindozaStudio",
+    "h2": "Brought your kids to Australia? Learning activities for them too",
+    "body": "While you study, your children can practise English, numbers and Aussie life at home. Printable activity books made for ages 3–8, with Australian animals, Aussie money and Australian spelling. Instant download — print as many pages as you need.",
+    "items": [
+      ["Ages 3–7 · English", "Learn to Read Bundle", "Letters, sounds, CVC words and the first 92 sight words — 4 workbooks, 140 pages.", "https://www.etsy.com/listing/4596298070/learn-to-read-bundle-4-printable"],
+      ["Ages 3–6 · Handwriting", "Alphabet Tracing Book", "One page per letter A–Z, capital and small, plus two ABC colouring books.", "https://www.etsy.com/listing/4498549526/my-first-alphabet-tracing-activity-book"],
+      ["Ages 5–8 · Maths", "Australian Money Worksheets", "Aussie coins and notes, counting change and shopping — useful for kids new to Australia.", "https://www.etsy.com/listing/4580180494/australian-money-worksheets-printable"],
+      ["Ages 4–8 · Maths", "Kindergarten Maths Bundle", "Adding and subtracting, numbers to 100, shapes and measuring — 3 workbooks, 99 pages.", "https://www.etsy.com/listing/4581591819/kindergarten-math-worksheets-bundle"],
+      ["Ages 4–8 · Colouring", "Aussie Animals Colouring", "Koala, kangaroo, wombat and friends — a fun way to learn animal names in English.", "https://www.etsy.com/listing/4573310211/australian-animal-coloring-pages-aussie"],
+      ["Ages 4–8 · Craft", "Origami for Kids", "12 easy paper models with fold lines printed on the paper. No glue needed — great screen-free time.", "https://www.etsy.com/listing/4597672105/origami-for-kids-printable-12-easy-paper"]
+    ],
+    "shop": "https://www.etsy.com/shop/KindozaStudio",
+    "note": "Opens Etsy in a new tab · Digital downloads, nothing is posted · KindozaStudio is a sister brand of We International."
+  },
+  "characters": "Maya and Kenji are fictional, AI-generated characters; some images are AI-generated and do not show a specific provider, campus or student."
+}

@@ -73,13 +73,8 @@ nursing_body = simple(
 import fasttrack_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
 fast_track_body = fasttrack_page.render()
 
-english_body = simple(
-    "English study",
-    "Improve your English for daily life, study or work, or learn English during a visit to Australia.",
-    [("Courses to ask about", "General English, academic English, and IELTS or PTE test preparation. See <a href=\"/courses#english-pathways\">English &amp; Pathways</a>."),
-     ("Visiting Australia?", "For visitors we only look at English courses with no work placement."),
-     ("Check before you book", "Your course length, visa conditions, school entry rules and course details must be checked before you go ahead.")],
-    note=True, cta_text="Ask about English study.")
+import englishpractice_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
+english_body = englishpractice_page.render()
 
 services_body = simple(
     "Student services",
@@ -224,8 +219,8 @@ CONTENT_PAGES = {
         "Nursing registration pathways in Australia and preparation for English, NCLEX-RN and OSCE. Ask We International about fees, dates and study options.", nursing_body),
     "fast-track-courses": ("Working Holiday courses (417/462) | We International",
         "On a 417 or 462 visa? Study a practical Certificate III in care, health or childcare with work placement, and ask for a free course plan.", fast_track_body),
-    "english-practice": ("English study in Australia | We International",
-        "General English, academic English and IELTS or PTE preparation in Australia, including English study for visitors.", english_body),
+    "english-practice": ("Free English practice | We International",
+        "Practise everyday English for free: an 8-question quiz, Say It Wrong and Wobbi Says videos, games, and help finding an English course in Australia.", english_body),
     "student-services": ("Student services | We International",
         "Help with choosing a course, applying to a school and getting ready to study in Australia.", services_body),
     "homestay": ("Homestay and student accommodation | We International",

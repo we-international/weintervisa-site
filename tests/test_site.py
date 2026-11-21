@@ -141,6 +141,13 @@ check(all(f'id="{c["id"]}"' in ft for c in ftd["courses"]) and all(f'href="{h}"'
 check("condition 8548" in ft and "registered migration agent" in ft and "utm_" not in ft, "/fast-track-courses: 4-month study rule, visa → registered migration agent, no tracking")
 for f_ in re.findall(r'src="/assets/img/([^"]+)"', ft):
     check((ROOT / "assets/img" / f_).exists(), f"/fast-track-courses image {f_} is in the repo")
+# 10d. /english-practice — rebuilt from the live Wix page (21 Nov 2026)
+ep = (SITE / "english-practice.html").read_text()
+words_ep = len(re.sub(r"<[^>]+>", " ", ep.split("<main")[1].split("</main>")[0]).split())
+check(words_ep >= 746, f"/english-practice is as full as the live Wix page ({words_ep} words, live ≈ 746)")
+check(ep.count("Question ") >= 8 and ep.count("<details>") >= 8, "/english-practice: 8 quiz questions, answers in <details> (no script)")
+check("Puzora" not in ep and "https://weintergames.com/" in ep, "/english-practice: game studio under its current name (WE International Game Studio), no old name")
+check(not re.search(r'<(img|iframe)[^>]+src="https?://', ep), "/english-practice loads no third-party images or embeds")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")
