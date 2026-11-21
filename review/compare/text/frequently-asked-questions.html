@@ -1,0 +1,91 @@
+<body><!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/frequently-asked-questions">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more is-cur">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top" aria-current="page">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top" aria-current="page">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<!--WEI-HSBAR--><style>.wei-hsbar{background:#0e3e6a;text-align:center;padding:10px 14px;font:600 14px/1.3 Arial,Helvetica,sans-serif}.wei-hsbar a{color:#fff;text-decoration:none}.wei-hsbar u{color:#ffd7d9}@media(max-width:640px){.wei-hsbar{font-size:13px;padding:9px 10px}.wei-hsbar .wl{display:none}}</style><div class="wei-hsbar"><a href="https://www.weintervisa.com/homestay" target="_top">🏡 New to Australia? <span class="wl">Stay with a screened host family first — </span><u>Find a homestay →</u></a></div><!--/WEI-HSBAR-->
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true" class="site-header"><div class="wrap header-inner"><a aria-label="We International homepage" class="brand" href="https://www.weintervisa.com/" target="_top"><img alt="We International Education and Visa" src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png"><strong>We International<small>Education &amp; Visa</small></strong></a><nav aria-label="Main navigation" class="site-nav"><a href="https://www.weintervisa.com/" target="_top">Home</a><a href="https://www.weintervisa.com/courses" target="_top">Explore courses</a><a href="https://www.weintervisa.com/oshc" target="_top">OSHC</a><a href="https://www.weintervisa.com/contact-us" target="_top">Contact</a><a href="https://www.weintervisa.com/blog" target="_top"><span>Blog</span></a></nav><a class="btn red" href="https://www.weintervisa.com/contact-us" target="_top">Talk to our team <span aria-hidden="true">→</span></a><div class="language-switch"><label for="site-language"><span aria-hidden="true">🌐</span><select aria-label="Language / ภาษา / 言語 / 언어 / 语言 / Ngôn ngữ / Idioma / Bahasa" id="site-language"><option lang="en" value="en">English</option><option lang="th" value="th">ไทย</option><option lang="ja" value="ja">日本語</option><option lang="ko" value="ko">한국어</option><option lang="zh-Hans" value="zh-Hans">简体中文</option><option lang="zh-Hant" value="zh-Hant">繁體中文</option><option lang="vi" value="vi">Tiếng Việt</option><option lang="es" value="es">Español</option><option lang="pt-BR" value="pt-BR">Português</option><option lang="id" value="id">Bahasa Indonesia</option></select></label></div></div></header><main id="app"><section class="hero-compact"><div class="wrap"><div class="eyebrow">Frequently Asked Questions</div><h1>A few answers before your next step.</h1><p class="lead">Find quick answers about our education support and the information shown on this website.</p></div></section><section class="section"><div class="wrap faqgrid"><aside><h3>Find an answer</h3><p>Course options</p><p>Applications &amp; support</p><p>Documents &amp; privacy</p><p>Working with us</p><div class="deco-rule"></div><a class="btn outline" href="https://www.weintervisa.com/contact-us" target="_top">Ask a question <span>↗</span></a></aside><div><details class="faqitem" open=""><summary>Can I apply for every study area listed?</summary><p>The directory includes areas we are preparing to support. An area marked provider agreement pending is not yet a confirmed course offering.</p></details><details class="faqitem"><summary>Will I get three options?</summary><p>We aim to compare at least three suitable institutions per study area and location where available. We tell you when fewer options are confirmed.</p></details><details class="faqitem"><summary>Is a place, visa or job guaranteed?</summary><p>No. Course admission is decided by the provider, and visa decisions are made by the relevant authority. Employment is not guaranteed.</p></details><details class="faqitem"><summary>Can I visit your office?</summary><p>We operate online. Contact us to arrange a conversation.</p></details><details class="faqitem"><summary>Can I send my documents now?</summary><p>Please start with a general enquiry. Send sensitive documents only when you receive verified secure instructions.</p></details><details class="faqitem"><summary>Can I speak in my own language?</summary><p>Tell us your preferred language and we will confirm the support available.</p></details><details class="faqitem"><summary>Can I practise for IELTS or TOEIC here?</summary><p>An English practice platform is being planned. It is marked Coming soon and is not open for registration, payment or practice tests yet.</p></details></div></div></section><section class="section"><div class="wrap"><div class="cta-band"><div><h2>Still have a question?</h2><p>Let’s make the next step easier to understand.</p></div><a class="btn" href="https://www.weintervisa.com/contact-us" target="_top">Talk to our team <span>↗</span></a></div></div></section></main><footer class="site-footer"><div class="wrap"><div><p>We International Education &amp; Visa</p><a href="mailto:info@weintervisa.com" target="_top">info@weintervisa.com</a><nav aria-label="More pages" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;font-size:13px"><a href="https://www.weintervisa.com/" target="_top">Home</a><a href="https://www.weintervisa.com/courses" target="_top">Explore courses</a><a href="https://www.weintervisa.com/fast-track-courses" target="_top">Fast-track</a><a href="https://www.weintervisa.com/student-services" target="_top">Student services</a><a href="https://www.weintervisa.com/oshc" target="_top">OSHC</a><a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a><a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a><a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a><a href="https://www.weintervisa.com/contact-us" target="_top">Contact</a><a href="https://www.weintervisa.com/english-practice" target="_top">English practice — Coming soon</a><a href="https://www.weintervisa.com/blog" target="_top">Blog</a></nav></div><p class="tagline">Your tomorrow matters. ♥</p></div><!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer></body>
