@@ -41,6 +41,16 @@ for f in (ROOT / "content").glob("*.json"):
         local = IMG / sp["file"]
         if not local.exists():
             with urllib.request.urlopen(sp["wix"], timeout=60) as r:
-                local.write_bytes(r.read())
+                data = r.read()
+            if local.suffix == ".webp" and not sp["wix"].lower().endswith(".webp"):
+                # Wix originals can be 2048 px PNGs of 3-4 MB: re-encode to WebP, max 1400 px wide (phone-first)
+                import io
+                from PIL import Image
+                im = Image.open(io.BytesIO(data)).convert("RGB")
+                if im.width > 1400:
+                    im = im.resize((1400, round(im.height * 1400 / im.width)), Image.LANCZOS)
+                im.save(local, "WEBP", quality=80)
+            else:
+                local.write_bytes(data)
             done += 1
 print(f"downloaded {done} images into {IMG}")

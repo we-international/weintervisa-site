@@ -70,14 +70,8 @@ nursing_body = simple(
      ("Check the official rules", "Rules change. Always check your own pathway on the official Ahpra and NMBA websites before you pay for a course.")],
     note=True, cta_text="Ask us about fees, dates and study options for nursing preparation.")
 
-fast_track_body = simple(
-    "Study during a working holiday",
-    "Already in Australia on a Working Holiday (417) or Work and Holiday (462) visa? Build a new skill while you are here.",
-    [("Tell us your situation", "Let us know which visa you hold, how long you want to study and which city you prefer."),
-     ("Popular areas", "Care and community, health support, early childhood, hospitality and English. See all <a href=\"/courses\">study areas</a>."),
-     ("We check before we suggest", "Course length, work placement and your work conditions all need checking for you before we call a course a good fit."),
-     ("Visa questions go to the right person", "Questions about your visa are referred to a registered migration agent.")],
-    note=True, cta_text="Ask about course options for your working holiday.", second=("Apply to study", "/charter-application"))
+import fasttrack_page  # noqa: E402 — rebuilt from the live Wix page (21 Nov 2026)
+fast_track_body = fasttrack_page.render()
 
 english_body = simple(
     "English study",
@@ -228,8 +222,8 @@ CONTENT_PAGES = {
         "Browse study areas in Australia, from English to care, business and trades, and ask our team about checked options, fees and start dates.", courses_body),
     "courses/nursing-pathways-australia": ("Nursing pathways in Australia | English and OBA preparation",
         "Nursing registration pathways in Australia and preparation for English, NCLEX-RN and OSCE. Ask We International about fees, dates and study options.", nursing_body),
-    "fast-track-courses": ("Study on a working holiday visa | We International",
-        "On a 417 or 462 visa? Ask about care, health, childcare and English course options in Australia.", fast_track_body),
+    "fast-track-courses": ("Working Holiday courses (417/462) | We International",
+        "On a 417 or 462 visa? Study a practical Certificate III in care, health or childcare with work placement, and ask for a free course plan.", fast_track_body),
     "english-practice": ("English study in Australia | We International",
         "General English, academic English and IELTS or PTE preparation in Australia, including English study for visitors.", english_body),
     "student-services": ("Student services | We International",

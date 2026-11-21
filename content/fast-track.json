@@ -1,0 +1,61 @@
+{
+  "_source": "Live page www.weintervisa.com/fast-track-courses (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183). Facts on the live page were checked by the company on 22 Oct 2026.",
+  "_edits": "21 Nov 2026: reply-time wording left out (site rule: no reply-time promises on pages); the 3-question JS course finder is a one-question picker that jumps to the matching course (no script); tracking parameters dropped; images show once copied into assets/img.",
+  "kicker": "Working Holiday visa 417 / 462",
+  "h1": "Turn your Working Holiday into a new skill.",
+  "lead": "Study a practical Certificate III while you travel. We help you pick a course that fits your visa dates, and sort homestay and health cover too.",
+  "points": [["🎓", "A Certificate III in care, health or childcare, recognised across Australia"], ["🤝", "Real work placement built into the course"], ["🏡", "Homestay and health cover sorted in one place"]],
+  "heroImage": {"wix": "https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png", "file": "187087_5766fac30a8149dbab2b9742233e3198-mv2.webp", "alt": "Maya the quokka and Kenji the koala, our guide characters, waving at Circular Quay in Sydney"},
+  "maya": "G'day! On a 417 or 462 visa? Let's turn your trip into a new skill. 🎒",
+  "kenji": "Pick what you enjoy and we'll point you to the right course.",
+  "finder": [["🧓", "Caring for older people or people with disability", "#chc33021"], ["🏥", "Helping nurses and patients in a hospital", "#hlt33115"], ["🧸", "Working with young children", "#chc30125"], ["🤔", "I'm not sure yet", "/contact-us"]],
+  "steps": [["Check your visa", "Look up your visa dates and conditions for free in <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>."],
+            ["Pick a course", "Use the course finder above, or tell us what you enjoy and we'll suggest options."],
+            ["Get your free course plan", "We send the provider's current timetable, intake dates and a written quote, so you can check them against your visa."]],
+  "tip": "Home Affairs says Working Holiday Makers can study or train for <strong>up to 4 months</strong> on each visa (condition 8548). Check your own conditions first: <a href=\"https://immi.homeaffairs.gov.au/programs-subsite/Pages/working-holiday-maker/work-conditions.aspx\" target=\"_blank\" rel=\"noopener\">Home Affairs ↗</a>. Course weeks and intakes vary by provider, and we confirm them in writing before you apply.",
+  "plan": "Tell us your visa (417 or 462), when it ends and the course you like. We reply by email.",
+  "courses": [
+    {"id": "chc33021", "code": "CHC33021", "title": "Certificate III in Individual Support", "for": "For you if you like helping people, in aged care or disability support.",
+     "learn": ["Person-centred support", "Safe work and infection control", "Supervised work placement"],
+     "img": {"wix": "https://static.wixstatic.com/media/187087_fb8fecc264b24c94b5bcc5cf7bd68590~mv2.webp", "file": "187087_fb8fecc264b24c94b5bcc5cf7bd68590-mv2.webp", "alt": "Care worker supporting an older person (illustrative image)"},
+     "more": ["Read the guide", "/post/chc33021-certificate-iii-in-individual-support-what-you-ll-learn-and-who-it-suits"]},
+    {"id": "hlt33115", "code": "HLT33115", "title": "Certificate III in Health Services Assistance", "for": "For you if you'd like to support nurses and patients in a hospital team.",
+     "learn": ["Assisting patients", "Infection prevention", "Work placement through the provider"],
+     "img": {"wix": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp", "file": "187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp", "alt": "Health support worker in a hospital (illustrative image)"},
+     "more": ["Read the guide", "/post/hlt33115-health-services-assistance-a-plain-english-guide"]},
+    {"id": "chc30125", "code": "CHC30125", "title": "Certificate III in Early Childhood Education and Care", "for": "For you if you enjoy working with young children.",
+     "learn": ["Play-based learning", "Health, safety and wellbeing", "Placement in an early learning service"],
+     "img": {"wix": "https://static.wixstatic.com/media/187087_a988c62bc5444e1e9e321a58e13f5eda~mv2.png", "file": "187087_a988c62bc5444e1e9e321a58e13f5eda-mv2.webp", "alt": "Educator reading with young children (illustrative image)"},
+     "more": ["Read the guide", "/post/chc30125-early-childhood-education-plain-english-guide"]}
+  ],
+  "video": {"title": "Maya & Kenji explain CHC33021 in 7 minutes", "body": "What you learn, the jobs it can lead to and whether the work is in demand, using official sources.", "url": "https://www.youtube.com/watch?v=GqUhVgaAR5E"},
+  "lead_to": [
+    ["Care workers are in national shortage", "Aged and disabled carers were rated in shortage on the 2025 Occupation Shortage List.", "Jobs and Skills Australia ↗", "https://www.jobsandskills.gov.au/news/shortages-ease-gaps-persist-2025-occupation-shortage-list"],
+    ["Health and care is growing", "Health care and social assistance jobs are projected to grow over the next 10 years.", "Occupation profile ↗", "https://www.jobsandskills.gov.au/data/labour-market-insights/occupations/4231-aged-and-disabled-carers"]
+  ],
+  "roles": ["Aged care worker", "Disability support worker", "Hospital assistant", "Childcare educator"],
+  "news": "In the news: aged care providers are calling for a visa for care workers (ABC News, 20 Oct 2026). It's a proposal only and visa law hasn't changed.",
+  "newsPost": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
+  "settle": [
+    ["🏡", "Live with a local host", "Our homestay partner, the Australian Homestay Network (AHN), screens hosts and supports you during your stay.", "Find a homestay with AHN ↗", "https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa", "How homestay works →", "/homestay"],
+    ["🩺", "Health cover", "Home Affairs strongly recommends private health insurance for visitors not covered by Medicare. Compare options for Working Holiday Makers.", "Compare cover options →", "/oshc", "", ""],
+    ["✅", "Your first-week checklist", "TFN, bank account, phone, super, VEVO and your work rights, step by step.", "Open the checklist →", "/post/first-week-on-a-working-holiday-visa-a-checklist", "", ""]
+  ],
+  "faq": [
+    ["Can I study on a working holiday visa?", "Yes. Home Affairs says Working Holiday Makers can study or train for up to 4 months on each visa (condition 8548). Check your own conditions in <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>."],
+    ["How long are the fast-track courses?", "It depends on the provider, the course and the intake. We send you the provider's current timetable in writing before you apply, so you can check it against your visa dates."],
+    ["How much does it cost?", "Fees depend on the course and intake. Ask us for a free written quote with the next intake dates."],
+    ["What English level do I need?", "It's set by the provider. Tell us your level (or test score) and we'll check. English support may be available."],
+    ["Can I work while I study?", "Your work rights come from your visa. Everyone working in Australia has the same workplace rights, including minimum pay and payslips. <a href=\"https://www.fairwork.gov.au/about-us/policies-and-guides/fact-sheets/rights-and-obligations/visa-holders-and-migrant-workers-workplace-right\" target=\"_blank\" rel=\"noopener\">Fair Work: visa holders' rights ↗</a> · <a href=\"/post/working-holiday-visa-the-6-month-employer-limit-explained\">The 6-month employer limit explained</a> · <a href=\"https://immi.homeaffairs.gov.au/what-we-do/whm-program/specified-work-conditions\" target=\"_blank\" rel=\"noopener\">Specified work for a second or third visa (Home Affairs) ↗</a>"],
+    ["Will a course get me a job, a second visa or PR?", "No course can promise a job, a visa or PR. We're an education agency working with registered migration partners, and can refer visa questions to a <a href=\"/migration-support\">registered migration agent</a>."]
+  ],
+  "whmNews": {"checked": "22 Oct 2026", "items": [
+    ["22 Oct 2026", "Most WHM visa applications take around three months on average; Home Affairs recommends waiting for your grant before booking travel, work or study."],
+    ["1 Jul 2026", "Passport holders from Cyprus, Finland, Germany and the Republic of Korea aged 18 to 35 can apply for a 417 visa."],
+    ["1 Jul 2026", "Up to 1,500 first 462 visas per program year for eligible passport holders from Uruguay."]],
+    "source": "https://immi.homeaffairs.gov.au/what-we-do/whm-program/latest-news"},
+  "guides": [["Working Holiday tax: TFN, 15% rate & DASP", "/post/working-holiday-tax-in-australia-tfn-15-rate-dasp"], ["Can you study on a Working Holiday visa?", "/post/can-you-study-on-a-working-holiday-visa-417-462-the-4-month-rule-explained"], ["Medicare for Working Holiday Makers", "/post/medicare-for-working-holiday-makers-reciprocal-deals"], ["How to check your visa for free with VEVO", "/post/how-to-check-your-australian-visa-for-free-with-vevo"], ["All Working Holiday guides", "/blog/categories/working-holiday-guides"]],
+  "readyImage": {"wix": "https://static.wixstatic.com/media/187087_a2063ccabde74ae3b7d7c1d64797577c~mv2.png", "file": "187087_a2063ccabde74ae3b7d7c1d64797577c-mv2.webp", "alt": "Maya and Kenji in a care skills training room (AI-generated scene)"},
+  "ready": "Send us your visa dates and the course you like. We'll reply with course options, intake dates and a written quote. Free, with no obligation.",
+  "disclaimer": "Information on this page is general, was checked on 22 Oct 2026 and is not migration, legal, tax or insurance advice. We do not promise admission, visas, employment or course completion dates. Maya and Kenji are fictional, AI-generated characters; scenes and some images are AI-generated and do not show a specific provider, campus or student."
+}

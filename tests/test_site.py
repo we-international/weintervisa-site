@@ -132,6 +132,15 @@ check("Our team replies in Thai or English" in html_unescape(home), "home FAQ: o
 check("fictional, AI-generated characters" in home, "home says Maya and Kenji are fictional, AI-generated characters")
 for f_ in re.findall(r'src="/assets/img/([^"]+)"', home):
     check((ROOT / "assets/img" / f_).exists(), f"home image {f_} is in the repo")
+# 10c. /fast-track-courses — rebuilt from the live Wix page (21 Nov 2026)
+ft = (SITE / "fast-track-courses.html").read_text()
+ftd = json.loads((ROOT / "content/fast-track.json").read_text())
+words_ft = len(re.sub(r"<[^>]+>", " ", ft.split("<main")[1].split("</main>")[0]).split())
+check(words_ft >= 1000, f"/fast-track-courses is as full as the live Wix page ({words_ft} words, live ≈ 1,003)")
+check(all(f'id="{c["id"]}"' in ft for c in ftd["courses"]) and all(f'href="{h}"' in ft for _, _, h in ftd["finder"]), "/fast-track-courses: every finder answer jumps to its course (or contact)")
+check("condition 8548" in ft and "registered migration agent" in ft and "utm_" not in ft, "/fast-track-courses: 4-month study rule, visa → registered migration agent, no tracking")
+for f_ in re.findall(r'src="/assets/img/([^"]+)"', ft):
+    check((ROOT / "assets/img" / f_).exists(), f"/fast-track-courses image {f_} is in the repo")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")

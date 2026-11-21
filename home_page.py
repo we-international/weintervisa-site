@@ -24,7 +24,8 @@ def img(spec, cls="", lazy=True, w=None, h=None):
     """<img> for a local copy of a live-site image, or "" while the copy is not in the repo yet."""
     if not spec or not (ROOT / "assets/img" / spec["file"]).exists():
         return ""
-    size = f' width="{w}" height="{h}"' if w else ""
+    # inline max-width: the width/height attributes (no layout shift) must never widen the page, even before site.css loads
+    size = f' width="{w}" height="{h}" style="max-width:100%;height:auto"' if w else ""
     return (f'<img src="/assets/img/{e(spec["file"])}" alt="{e(spec["alt"])}"{size}'
             f'{" loading=\"lazy\"" if lazy else ""}{f" class=\"{cls}\"" if cls else ""}>')
 
