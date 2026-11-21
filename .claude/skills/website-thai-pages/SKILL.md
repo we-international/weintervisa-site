@@ -51,4 +51,4 @@ When an English page is rebuilt from the live Wix page (a `*_page.py` + `content
 - Rebuilding with escaped `UI_EN` strings turns `'` into `&#x27;` in the English HTML; that is the same text (check with `diff` of the built page before/after a refactor — only escapes may differ).
 - Thai "free" stays "ไม่มีค่าใช้จ่าย"; blog guides linked from Thai pages say "(ภาษาอังกฤษ)".
 - `.kicker` uses uppercase + letter-spacing; `html:lang(th) .kicker { letter-spacing: 0; }` keeps Thai vowel and tone marks together.
-- Done 22 Nov: /th/homestay, /th/oshc, /th/courses/nursing-pathways-australia, /th/fast-track-courses, /th/english-practice. Next: home, about, referral partners, contact, student services, courses catalogue.
+- Done 22 Nov: /th/homestay, /th/oshc, /th/courses/nursing-pathways-australia, /th/fast-track-courses, /th/english-practice, /th/about-we-international, /th/referral-partners (JSON copies); /th/contact-us and /th/student-services (same sections written in Thai, booking link `https://getwec.pages.dev/book/?lang=th` opens the GetWec booking page in Thai). Next: home, courses catalogue.

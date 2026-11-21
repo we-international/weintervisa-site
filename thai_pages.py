@@ -150,15 +150,45 @@ contact_form = f"""<form class="lead" data-lead-form="enquiry" novalidate>
 <p class="form-status" role="status" aria-live="polite"></p>
 </form>"""
 
-contact_body = f"""<section class="wrap narrow">
-<h1>ติดต่อเรา</h1>
-<p class="lead">ถามเรื่องคอร์ส สถาบัน โฮมสเตย์ หรือประกันสุขภาพนักเรียนได้เลย ทีมงานอ่านทุกข้อความ และตอบเป็นภาษาไทยหรืออังกฤษ</p>
+BOOK_TH = "https://getwec.pages.dev/book/?lang=th"  # GetWec booking page in Thai (replaces Wix /schedule)
+
+# Same sections as the English /contact-us (rebuilt 22 Nov 2026), in Thai
+contact_body = f"""<section class="hero home-hero"><div class="wrap">
+<p class="kicker">ติดต่อทีมงาน</p>
+<h1>มาคุยเรื่องบทต่อไปของคุณกัน</h1>
+<p class="lead">เริ่มจากคำถามก็ได้ บอกเราว่าอยากเรียนอะไร ตอนนี้อยู่ที่ไหน และสะดวกคุยภาษาไหน (ไทยหรืออังกฤษ)</p>
+<p class="actions"><a class="btn" href="#enquiry">ส่งคำถาม ↓</a> <a class="btn ghost" href="{BOOK_TH}">นัดเวลาคุย</a></p>
+</div></section>
+<section class="wrap">
+<h2>ช่องทางติดต่อเรา</h2>
+<ul class="paths">
+<li class="path"><h3>ส่งข้อความ</h3><p>ใช้ฟอร์มในหน้านี้ เขียนเป็นภาษาไทยหรืออังกฤษก็ได้</p><a href="#enquiry">ไปที่ฟอร์ม ↓</a></li>
+<li class="path"><h3>แชทผ่าน Messenger</h3><p>ส่งข้อความหาเพจ Facebook ของเรา</p><a href="https://m.me/113772648238480" target="_blank" rel="noopener">เปิด Messenger ↗</a></li>
+<li class="path"><h3>เริ่มทางอีเมล</h3><p>เขียนหาเราได้ทุกเมื่อ</p><a href="mailto:info@weintervisa.com">info@weintervisa.com</a></li>
+<li class="path"><h3>นัดเวลาคุย</h3><p>เลือกหัวข้อ วิธีคุย (โทรศัพท์ วิดีโอ LINE หรืออีเมล) และวันที่สะดวก แล้วเราจะยืนยันเวลากับคุณ</p><a href="{BOOK_TH}">นัดเวลาคุย →</a></li>
+</ul>
+<p><strong>ออนไลน์ ไม่ว่าคุณอยู่ที่ไหน</strong> เราทำงานออนไลน์ และจะยืนยันช่องทางติดต่อกับเวลานัดกับคุณ
+Mia ผู้ช่วย AI ของเราคุยได้หลายภาษา ทีมงานของเราพูดภาษาไทยและอังกฤษ คำตอบจากทีมงานจึงเป็นภาษาไทยหรืออังกฤษ</p>
+</section>
+<section class="wrap narrow" id="enquiry">
+<p class="kicker">คุยกับทีมงาน</p>
+<p>เล่าแผนของคุณให้เราฟัง กรุณาอย่าแนบพาสปอร์ต รายการเดินบัญชี หรือเอกสารวีซ่า เพราะนี่คือการสอบถามเรื่องเรียนหรือบริการ ไม่ใช่การยื่นวีซ่า
+ข้อความจะถูกส่งเมื่อคุณกดส่งฟอร์มและเห็นข้อความยืนยันเท่านั้น อ่าน<a href="/th/privacy-policy">นโยบายความเป็นส่วนตัว</a>ว่าเราดูแลข้อมูลของคุณอย่างไร</p>
+{contact_form}
+{VISA_NOTE_TH}
+</section>
+<section class="wrap">
+<h2>เลือกจุดเริ่มต้น</h2>
+<ul class="paths">
+<li class="path"><h3>มีคำถามเรื่องเรียน?</h3><p>เราช่วยคุณสำรวจตัวเลือกการเรียนได้</p><a href="/th/courses">ดูสาขาที่เรียน →</a></li>
+<li class="path"><h3>ถือวีซ่า Working Holiday?</h3><p>คอร์ส Certificate III สายอาชีพสำหรับผู้ถือวีซ่า 417/462</p><a href="/th/fast-track-courses">ดูคอร์สสำหรับ Working Holiday →</a></li>
+<li class="path"><h3>เป็นสถาบันหรือผู้ให้บริการ?</h3><p>เล่าเรื่องสถาบันหรือบริการของคุณให้เราฟัง</p><a href="/th/referral-partners">ร่วมงานกับเรา →</a></li>
+<li class="path"><h3>อยากได้คำตอบก่อน?</h3><p>เริ่มจากคำถามที่พบบ่อย</p><a href="/th/frequently-asked-questions">ดูคำถามที่พบบ่อย →</a></li>
+</ul>
 <ul class="contact-list">
   <li><strong>อีเมล</strong> <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></li>
   <li><strong>บทความ</strong> <a href="/th/blog">คู่มือเรื่องคอร์สและชีวิตในออสเตรเลีย</a> (ภาษาอังกฤษ)</li>
 </ul>
-{VISA_NOTE_TH}
-{contact_form}
 </section>"""
 
 apply_form = f"""<form class="lead" data-lead-form="application" novalidate>

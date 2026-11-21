@@ -286,7 +286,8 @@ check(cfg.get("getwec_endpoint", "").startswith("https://") and cfg["getwec_endp
 # 16. Thai copies of the pages rebuilt from live Wix (22 Nov 2026): same JSON keys and list lengths as the English
 #     content, and the same sections (h2 count) on the page, so the Thai page never falls behind the English one.
 TH_SYNC = {"homestay": "/homestay", "oshc": "/oshc", "nursing": "/courses/nursing-pathways-australia",
-           "fast-track": "/fast-track-courses", "english-practice": "/english-practice"}
+           "fast-track": "/fast-track-courses", "english-practice": "/english-practice",
+           "about": "/about-we-international", "referral-partners": "/referral-partners"}
 
 
 def _shape(x):

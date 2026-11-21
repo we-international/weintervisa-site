@@ -9,6 +9,7 @@ import html
 import json
 from pathlib import Path
 
+import about_page
 import content_pages as cp
 import englishpractice_page
 import fasttrack_page
@@ -49,15 +50,40 @@ fast_track = fasttrack_page.render(th_json("fast-track"))  # full page, same lay
 
 english = englishpractice_page.render(th_json("english-practice"))  # full page, same layout as the English one (22 Nov 2026)
 
-services = simple(
-    "บริการนักเรียน",
-    "ช่วยทุกขั้นตอนรอบๆ การเรียนของคุณ ตั้งแต่เลือกคอร์ส สมัครกับสถาบัน จนถึงเตรียมตัวก่อนเริ่มเรียน",
-    [("คำแนะนำเรื่องคอร์ส", "คุยเรื่องเป้าหมายของคุณ แล้วเทียบตัวเลือกคอร์สที่เช็กข้อมูลแล้ว"),
-     ("ช่วยเรื่องการสมัคร", "เราช่วยติดตามเอกสาร สถานะใบสมัคร และคำตอบจากสถาบันให้คุณ"),
-     ("ดูแลระหว่างเรียน", "ถามเราได้เรื่องข้อมูลปฐมนิเทศ ช่องทางติดต่อสถาบัน และการส่งต่อความช่วยเหลือ"),
-     ("ภาษาที่ใช้คุย", "คุยกับ Mia ผู้ช่วย AI ของเราได้หลายภาษา ส่วนทีมงานพูดภาษาไทยและอังกฤษ คำตอบจากทีมงานจึงเป็นภาษาไทยหรืออังกฤษ"),
-     ("ความช่วยเหลืออื่นๆ", "<a href=\"/th/homestay\">โฮมสเตย์และที่พัก</a> · <a href=\"/th/oshc\">ประกันสุขภาพนักเรียน (OSHC)</a> · <a href=\"/th/english-practice\">เรียนภาษาอังกฤษ</a>")],
-    cta_text="เริ่มคุยกับทีมงานของเรา")
+# Same sections as the English /student-services (22 Nov 2026), in Thai
+services = f"""<section class="hero home-hero"><div class="wrap">
+<p class="kicker">บริการนักเรียน</p>
+<h1>ช่วยทุกขั้นตอนรอบๆ การเรียนของคุณ</h1>
+<p class="lead">ช่วยให้เข้าใจตัวเลือกการเรียน จัดการใบสมัครเข้าสถาบัน และเตรียมตัวสำหรับก้าวต่อไป</p>
+<p class="actions"><a class="btn" href="/th/contact-us">เริ่มคุยกับเรา</a> <a class="btn ghost" href="https://getwec.pages.dev/book/?lang=th">นัดเวลาคุย</a></p>
+</div></section>
+<section class="wrap">
+<p class="kicker">ความช่วยเหลือรอบการเรียน</p>
+<h2>ชัดเจนขึ้น ไม่ต้องเดา</h2>
+<ul class="paths">
+<li class="path"><h3>ปรึกษาเรื่องคอร์ส</h3><p>คุยให้ชัดว่าอยากเรียนเพื่ออะไร แล้วเทียบตัวเลือกการเรียนที่ยืนยันแล้ว</p><a href="/th/courses">ดูสาขาที่เรียน →</a></li>
+<li class="path"><h3>ประสานงานการสมัคร</h3><p>เราช่วยติดตามเอกสารการเรียนที่ต้องใช้ สถานะใบสมัคร และคำตอบจากสถาบัน</p><a href="/th/charter-application">บอกเราว่าอยากเรียนอะไร →</a></li>
+<li class="path"><h3>ดูแลนักเรียน</h3><p>ถามเราได้เรื่องข้อมูลปฐมนิเทศ ช่องทางติดต่อสถาบัน และการส่งต่อความช่วยเหลือ</p><a href="/th/contact-us">ถามทีมงาน →</a></li>
+<li class="path"><h3>เรื่องภาษา</h3><p>Mia ผู้ช่วย AI ของเราคุยได้หลายภาษา ทีมงานของเราพูดภาษาไทยและอังกฤษ คำตอบจากทีมงานจึงเป็นภาษาไทยหรืออังกฤษ ศัพท์สำคัญของคอร์สเราคงเป็นภาษาอังกฤษไว้ จะได้ไม่คลาดเคลื่อน</p><a href="/th/english-practice">ฝึกภาษาอังกฤษ →</a></li>
+</ul>
+</section>
+<section class="wrap">
+<p class="kicker">ก่อนและหลังมาถึง</p>
+<h2>ช่วยเรื่องที่ต้องจัดการจริง</h2>
+<ul class="paths">
+<li class="path"><h3>โฮมสเตย์</h3><p>เริ่มต้นกับครอบครัวเจ้าของบ้านที่ผ่านการคัดกรอง ใกล้สถาบันของคุณ กับพาร์ตเนอร์ของเรา AHN</p><a href="/th/homestay">หาโฮมสเตย์ →</a></li>
+<li class="path"><h3>ประกันสุขภาพนักเรียน</h3><p>เทียบบริษัท OSHC แล้วซื้อได้เองบนเว็บไซต์ของพาร์ตเนอร์</p><a href="/th/oshc">เทียบ OSHC →</a></li>
+<li class="path"><h3>คอร์สสำหรับ Working Holiday</h3><p>คอร์ส Certificate III สายอาชีพสำหรับผู้ถือวีซ่า 417 และ 462</p><a href="/th/fast-track-courses">ดูคอร์ส →</a></li>
+<li class="path"><h3>เส้นทางสายพยาบาล</h3><p>เข้าใจขั้นตอนการขึ้นทะเบียน แล้วเตรียมภาษาอังกฤษ NCLEX-RN และ OSCE</p><a href="/th/courses/nursing-pathways-australia">เส้นทางสายพยาบาล →</a></li>
+</ul>
+</section>
+<section class="wrap narrow">
+<h2>ขั้นตอน</h2>
+<ol class="flow flow3"><li><strong>บอกแผนของคุณ</strong><span>อยากเรียนอะไร ตอนนี้อยู่ที่ไหน และงบประมาณ</span></li>
+<li><strong>เทียบตัวเลือก</strong><span>เราเช็กคอร์สที่เปิดอยู่และรายละเอียดกับสถาบัน</span></li>
+<li><strong>สมัครและเตรียมตัว</strong><span>เราช่วยเรื่องใบสมัครเข้าสถาบันและขั้นต่อไป</span></li></ol>
+{VISA_NOTE_TH}{cta("ขั้นต่อไปของคุณเริ่มจากการพูดคุย บอกเราว่าอยากเรียนอะไร")}
+</section>"""
 
 homestay = homestay_page.render(th_json("homestay"))  # full page, same layout as the English one (22 Nov 2026)
 
@@ -80,13 +106,7 @@ migration = f"""<section class="wrap narrow"><h1>ความช่วยเห�
 <p class="small">เป็นเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน และทำงานด้านวีซ่าอย่างเดียวใช่ไหม <a href="{cp.PARTNER_FORM}" target="_blank" rel="noopener">ลงรายชื่อสำนักงานของคุณ</a> (ไม่มีค่าใช้จ่าย ฟอร์มเป็นภาษาอังกฤษ)</p>
 {VISA_NOTE_TH}{cta("ไม่แน่ใจว่าควรถามใคร ส่งข้อความมา เราจะแนะนำเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียนให้")}</section>"""
 
-partners = simple(
-    "ร่วมงานกับเรา",
-    "สถาบันการศึกษา วิทยาลัย และผู้ให้บริการนักเรียน คุยกับเราเรื่องการทำงานร่วมกันได้",
-    [("สถาบันและวิทยาลัย", "ส่งชื่อสถาบัน เว็บไซต์ สาขาที่สอน และผู้ติดต่อด้านพาร์ตเนอร์มาให้เรา เราตรวจสัญญาและสิทธิ์การทำการตลาดก่อนลงชื่อใครเสมอ"),
-     ("ผู้ให้บริการ", "บอกเราว่าคุณทำอะไร ที่ไหน และมีใบอนุญาตหรือคุณสมบัติอะไร การแนะนำลูกค้าต่อกันต้องตรวจสอบก่อน"),
-     ("ติดต่อเรา", "อีเมล <a href=\"mailto:info@weintervisa.com?subject=Partnership%20enquiry\">info@weintervisa.com</a> ใส่คำว่า \"Partnership\" ในหัวข้อ หรือใช้ฟอร์มติดต่อแล้วเลือก \"พาร์ตเนอร์\"")],
-    cta_text="สอบถามเรื่องการเป็นพาร์ตเนอร์")
+partners = about_page.partners(th_json("referral-partners"))  # full page, same layout as the English one (22 Nov 2026)
 
 faq = [
     ("สมัครเรียนได้ทุกสาขาที่อยู่ในเว็บไหม", "ยังไม่ทุกสาขา บางสาขาเรากำลังเตรียมความพร้อม เราจะบอกคุณว่าคอร์สไหนยืนยันแล้ว"),
@@ -105,15 +125,7 @@ faq_body = (f'<section class="wrap narrow"><h1>คำถามที่พบบ
 faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "th", "mainEntity": [
     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
-about = simple(
-    "เกี่ยวกับ We International",
-    "คำแนะนำที่ตรงไปตรงมา และการตัดสินใจที่เป็นของคุณ We International Education &amp; Visa Pty Ltd เป็นเอเจนซีการศึกษาในซิดนีย์ ที่ช่วยนักเรียนวางแผนเรียนต่อออสเตรเลีย",
-    [("นักเรียนมาก่อน", "เป้าหมาย สถานการณ์ และคำถามของคุณ เป็นตัวนำการพูดคุยเสมอ"),
-     ("ชัดเจนและตรงไปตรงมา", "เราเช็กข้อมูลก่อน บอกตรงๆ ว่าอะไรยังไม่ยืนยัน และการตัดสินใจเป็นของคุณ"),
-     ("บริการออนไลน์", "เราทำงานออนไลน์ ส่งข้อความมาเพื่อนัดเวลาคุยกัน"),
-     ("คนและ AI", "AI อาจช่วยทีมงานเรื่องการค้นข้อมูล งานเอกสาร และข้อความ แต่การตัดสินใจสำคัญยังเป็นของคน"),
-     ("เอเจนซีการศึกษาที่ขึ้นทะเบียน", "เราขึ้นทะเบียนเป็น Qualified Education Agent Counsellor (เลข QEAC อยู่ท้ายหน้า) เราไม่ใช่ migration agent")],
-    cta_text="มาทำความรู้จักกันผ่านการพูดคุย")
+about = about_page.about(th_json("about"))  # full page, same layout as the English one (22 Nov 2026)
 
 PAGES = {
     "th/about-we-international": ("เกี่ยวกับเรา | We International",
