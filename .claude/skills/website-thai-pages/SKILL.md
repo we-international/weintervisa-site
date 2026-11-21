@@ -20,7 +20,15 @@ Owner rule (20 Nov 2026): every page in English + Thai, `/th/...` + hreflang, Th
 3. If it is in the Thai nav, point `NAV_TH` at the Thai path.
 4. Add the URL to `tests/e2e.mjs` `urls`. `python3 tests/test_site.py` checks html lang, hreflang pair, switch, "body mainly Thai", visa note, no promises, sitemap count.
 
+## Second set (21 Nov 2026)
+- Content pages in Thai live in `thai_content.py` (`PAIRS` = English → Thai paths, `PAGES`, `JSONLD`); `thai_pages.py` merges them into `TH_OF` / `TH_PAGES`. Not yet in Thai: `/courses` (study-area list from the CMS), `/privacy-policy` (owner-approved English text; a Thai copy needs owner review), `/schools*`, blog.
+- Shared builders take a labels dict instead of copying code, e.g. `content_pages.partner_cards(partners, LABELS_TH)`.
+- e2e checks every `/th` + content page automatically (`content` list filtered in `tests/e2e.mjs`).
+
 ## Traps
+- "Body mainly Thai" test counts English words of 4+ letters: a page that repeats "registered migration agent" fails. Write the Thai term ("เอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน") and give the English term once in brackets; the footer already carries the required phrase.
+- The no-promise regex `รับประกัน(ผล|ที่เรียน|วีซ่า|งาน)(?!ได้)` also hits honest denials ("ไม่มีการรับประกันงาน"). Phrase as "ไม่มีใครรับประกัน…ได้" or "รับประกันว่า…".
+- Never use "ฟรี" on Thai pages (blocked word); say "ไม่มีค่าใช้จ่าย" where the owner approved "free".
 - Thai line breaks: Thai has no spaces between words; keep headings short and check the 375px screenshot (no overflow).
 - `\b` does not work around Thai words in regexes (tests use plain substrings).
 - After editing `assets/forms.js`, rebuild before running e2e (`build.py` copies assets into `site/`).

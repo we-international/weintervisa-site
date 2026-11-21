@@ -16,13 +16,15 @@ ROOT = Path(__file__).resolve().parent
 e = html.escape
 
 # English path → Thai path, for pages that exist in both languages.
-TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application"}
+import thai_content
+
+TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS}
 EN_OF = {v: k for k, v in TH_OF.items()}
 
 NAV_TH = [  # Thai labels; link to the Thai page when it exists, else the English one
     ("คอร์สเรียน", "/courses"),
-    ("Fast-track", "/fast-track-courses"),
-    ("บริการนักเรียน", "/student-services"),
+    ("Fast-track", "/th/fast-track-courses"),
+    ("บริการนักเรียน", "/th/student-services"),
     ("บทความ", "/blog"),
     ("ติดต่อเรา", "/th/contact-us"),
 ]
@@ -63,11 +65,11 @@ def home(posts, fmt_date):
     why_html = "".join(f"<li><strong>{e(h)}</strong><span>{e(b)}</span></li>" for h, b in why)
     tiles = [
         ("/courses", "คอร์สเรียน", "ภาษาอังกฤษ งานดูแล ธุรกิจ งานช่าง ไอที และอื่นๆ"),
-        ("/fast-track-courses", "Fast-track สำหรับ Working Holiday", "แผนเรียนสั้นที่เข้ากับวีซ่า 417 หรือ 462 เช็กเงื่อนไขก่อนเสมอ"),
-        ("/courses/nursing-pathways-australia", "เส้นทางสายพยาบาล", "ขั้นตอนหลักสำหรับพยาบาลที่เรียนจบจากนอกออสเตรเลีย"),
-        ("/english-practice", "เรียนภาษาอังกฤษ", "เสริมภาษาอังกฤษสำหรับการเรียน การทำงาน และชีวิตประจำวัน"),
-        ("/student-services", "บริการนักเรียน", "โฮมสเตย์ ประกันสุขภาพ และการดูแลระหว่างเรียน"),
-        ("/referral-partners", "พาร์ตเนอร์แนะนำนักเรียน", "ร่วมงานกับเราเพื่อแนะนำนักเรียน"),
+        ("/th/fast-track-courses", "Fast-track สำหรับ Working Holiday", "แผนเรียนสั้นที่เข้ากับวีซ่า 417 หรือ 462 เช็กเงื่อนไขก่อนเสมอ"),
+        ("/th/courses/nursing-pathways-australia", "เส้นทางสายพยาบาล", "ขั้นตอนหลักสำหรับพยาบาลที่เรียนจบจากนอกออสเตรเลีย"),
+        ("/th/english-practice", "เรียนภาษาอังกฤษ", "เสริมภาษาอังกฤษสำหรับการเรียน การทำงาน และชีวิตประจำวัน"),
+        ("/th/student-services", "บริการนักเรียน", "โฮมสเตย์ ประกันสุขภาพ และการดูแลระหว่างเรียน"),
+        ("/th/referral-partners", "พาร์ตเนอร์แนะนำนักเรียน", "ร่วมงานกับเราเพื่อแนะนำนักเรียน"),
     ]
     tiles_html = "".join(f'<a class="tile" href="{p}"><strong>{e(t)}</strong><span>{e(d)}</span></a>' for p, t, d in tiles)
     cards = "".join(f"""<li class="card"><a href="/post/{p['slug']}">
@@ -210,7 +212,9 @@ TH_PAGES = {
     "th/charter-application": ("สมัครเรียน | We International",
                                "บอกเราว่าอยากเรียนอะไรในออสเตรเลีย ทีมงานจะติดต่อกลับเรื่องตัวเลือกคอร์ส",
                                apply_body),
+    **thai_content.PAGES,
 }
+JSONLD = thai_content.JSONLD
 
 HOME_TITLE = "เรียนต่อออสเตรเลีย | We International Education & Visa"
 HOME_DESC = "ดูสาขาที่น่าสนใจ เข้าใจตัวเลือกของคุณ แล้วก้าวต่อไปอย่างมั่นใจ กับทีมที่คิดถึงนักเรียนก่อน ทีมงานตอบภาษาไทยหรืออังกฤษ"

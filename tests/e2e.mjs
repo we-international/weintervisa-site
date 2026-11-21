@@ -28,7 +28,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
 const content = ["/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
-const urls = ["/", "/blog", "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", ...content, ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", ...content, ...content.filter(u => !u.startsWith("/schools") && !["/courses", "/privacy-policy"].includes(u)).map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {

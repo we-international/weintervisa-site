@@ -93,7 +93,7 @@ services_body = simple(
     [("Course advice", "Talk through your goals and compare checked course options."),
      ("Application help", "We help you track your documents, your application status and replies from the school."),
      ("Student support", "Ask us for help with orientation information, school contacts and support referrals."),
-     ("Your language", "Tell us your preferred language. We confirm what support we can offer and keep important English study terms."),
+     ("Your language", "Chat with Mia, our AI assistant, in many languages. Our team speaks Thai and English, so a reply from a person is in Thai or English."),
      ("More help", "<a href=\"/homestay\">Homestay and places to live</a> · <a href=\"/oshc\">Student health cover (OSHC)</a> · <a href=\"/english-practice\">English study</a>")],
     cta_text="Start a conversation with our team.")
 
@@ -116,7 +116,13 @@ oshc_body = simple(
 PARTNER_FORM = "https://getwec.pages.dev/partners/migration/"
 
 
-def partner_cards(partners):
+LABELS_EN = {"where": "Where", "languages": "Languages", "markets": "Clients from", "visa": "Visa types", "contact": "Contact",
+             "online": " · online across Australia", "visit": "Visit their migration page",
+             "empty": ('<p class="note-box"><strong>List coming soon.</strong> We are checking the first agents now. '
+                       'Until then, <a href="/contact-us">ask us for a referral</a>.</p>')}
+
+
+def partner_cards(partners, labels=LABELS_EN):
     """Cards for registered migration agents (GetWec, status 'listed' only). Every value is escaped;
     links must be https; the agent's personal name is never part of the data."""
     out = []
@@ -125,21 +131,21 @@ def partner_cards(partners):
         if not (p.get("name") and p.get("marn") and url.startswith("https://")):
             continue
         langs = ", ".join(p.get("languages") or [])
-        where = e(p.get("city") or "") + (" · online across Australia" if p.get("online_au") else "")
+        L = labels
+        where = e(p.get("city") or "") + (L["online"] if p.get("online_au") else "")
         contact = []
         if p.get("email"):
             contact.append(f'<a href="mailto:{e(p["email"])}">{e(p["email"])}</a>')
         if p.get("phone"):
             contact.append(f'<a href="tel:{e(re.sub(r"[^0-9+]", "", p["phone"]))}">{e(p["phone"])}</a>')
-        rows = [("MARN", e(p["marn"])), ("Where", where), ("Languages", e(langs)), ("Clients from", e(p.get("markets") or "")),
-                ("Visa types", e(", ".join(p.get("visa_types") or []))), ("Contact", " · ".join(contact))]
+        rows = [("MARN", e(p["marn"])), (L["where"], where), (L["languages"], e(langs)), (L["markets"], e(p.get("markets") or "")),
+                (L["visa"], e(", ".join(p.get("visa_types") or []))), (L["contact"], " · ".join(contact))]
         dl = "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in rows if v)
         intro = f'<p>{e(p["intro"])}</p>' if p.get("intro") else ""
         out.append(f'<li class="agent"><h3>{e(p["name"])}</h3>{intro}<dl>{dl}</dl>'
-                   f'<a class="btn ghost" href="{e(url)}" target="_blank" rel="noopener nofollow">Visit their migration page</a></li>')
+                   f'<a class="btn ghost" href="{e(url)}" target="_blank" rel="noopener nofollow">{L["visit"]}</a></li>')
     if not out:
-        return ('<p class="note-box"><strong>List coming soon.</strong> We are checking the first agents now. '
-                'Until then, <a href="/contact-us">ask us for a referral</a>.</p>')
+        return labels["empty"]
     return f'<ul class="agents">{"".join(out)}</ul>'
 
 
