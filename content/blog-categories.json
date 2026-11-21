@@ -1,0 +1,66 @@
+{
+ "_note": "Wix Blog categories (read-only export 21 Nov 2026, Wix Blog API). URL stays /blog/categories/<slug>.",
+ "categories": [
+  {
+   "slug": "working-holiday-guides",
+   "label": "Working Holiday & Visa Guides",
+   "description": "Plain-English guides for Working Holiday Makers (417/462) and students in Australia: study limits, VEVO checks and useful official information. General information only, not migration advice.",
+   "posts": [
+    "working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026",
+    "visitor-visas-no-further-stay-condition-8503-from-28-nov-2026",
+    "training-visa-407-apply-from-outside-australia-from-12-nov-2026",
+    "student-visa-reforms-home-affairs-opens-consultation-nov-2026",
+    "working-holiday-visa-ballot-for-years-2-and-3-what-we-know",
+    "student-visa-changes-from-2-october-2026-what-whms-need-to-know",
+    "aged-care-needs-more-workers-what-the-latest-news-says",
+    "first-week-on-a-working-holiday-visa-a-checklist",
+    "oshc-ovhc-or-travel-insurance-health-cover-basics",
+    "medicare-for-working-holiday-makers-reciprocal-deals",
+    "working-holiday-visa-the-6-month-employer-limit-explained",
+    "working-holiday-tax-in-australia-tfn-15-rate-dasp",
+    "fast-track-courses-for-working-holiday-makers-how-it-works",
+    "how-to-check-your-australian-visa-for-free-with-vevo",
+    "can-you-study-on-a-working-holiday-visa-417-462-the-4-month-rule-explained"
+   ]
+  },
+  {
+   "slug": "courses-study",
+   "label": "Courses & Study",
+   "description": "Course guides for studying in Australia, including Fast-track Certificate III courses planned to finish within 4 months.",
+   "posts": [
+    "hlt33115-operating-theatre-vs-acute-care-streams",
+    "chc33021-ageing-vs-disability-which-specialisation",
+    "how-to-find-a-course-on-our-website-a-quick-tour",
+    "short-courses-vs-a-cert-iii-what-whms-should-know",
+    "chc30125-early-childhood-education-plain-english-guide",
+    "hlt33115-health-services-assistance-a-plain-english-guide",
+    "fast-track-courses-for-working-holiday-makers-how-it-works",
+    "which-care-course-should-you-explore-in-australia",
+    "chc33021-certificate-iii-in-individual-support-what-you-ll-learn-and-who-it-suits",
+    "can-you-study-on-a-working-holiday-visa-417-462-the-4-month-rule-explained"
+   ]
+  },
+  {
+   "slug": "life-in-australia",
+   "label": "Life in Australia",
+   "description": "Day trips, cheap eats and what's on in Sydney, Melbourne and beyond for Working Holiday Makers and students.",
+   "posts": [
+    "homestay-in-australia-what-to-know-before-you-book",
+    "free-events-mid-november-adelaide-pageant-donut-festival",
+    "christmas-in-sydney-2026-free-tree-lighting-fair-markets",
+    "free-weekend-festivals-20-22-nov-melbourne-sydney",
+    "free-in-sydney-powerhouse-parramatta-head-on-2026",
+    "cheap-eats-in-adelaide-cbd-4-budget-lunch-picks",
+    "dandenong-ranges-day-trip-from-melbourne-by-train",
+    "cheap-eats-in-perth-cbd-3-lunches-around-10",
+    "straddie-day-trip-from-brisbane-by-public-transport",
+    "cheap-eats-in-brisbane-cbd-3-lunches-under-16",
+    "rottnest-island-day-trip-from-perth-a-budget-guide",
+    "cheap-eats-in-melbourne-cbd-3-lunches-under-15",
+    "royal-national-park-day-trip-from-sydney-by-train-ferry",
+    "cheap-eats-in-sydney-s-thaitown-3-favourites-near-central",
+    "blue-mountains-day-trip-from-sydney-by-train-a-budget-guide"
+   ]
+  }
+ ]
+}

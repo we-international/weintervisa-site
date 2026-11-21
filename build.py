@@ -176,15 +176,33 @@ def build():
         write(f"post/{p['slug']}.html", page(p.get("seoTitle") or p["title"], body, path=f"/post/{p['slug']}",
               description=p.get("seoDescription") or p.get("excerpt"), og_image=p.get("cover", ""), jsonld=ld))
 
-    # Blog index
-    cards = "".join(f"""<li class="card"><a href="/post/{p['slug']}">
+    # Blog index + category pages (same URLs as the Wix blog: /blog/categories/<slug>)
+    def card_list(items):
+        return "".join(f"""<li class="card"><a href="/post/{p['slug']}">
 {f'<img src="{esc(p["cover"])}" alt="" loading="lazy">' if p.get("cover") else '<div class="noimg"></div>'}
 <span class="date">{fmt_date(p["date"])}</span><strong>{esc(p["title"])}</strong>
-<span class="ex">{esc(p.get("excerpt"))}</span></a></li>""" for p in posts)
+<span class="ex">{esc(p.get("excerpt"))}</span></a></li>""" for p in items)
+    blog_cats = json.loads((ROOT / "content/blog-categories.json").read_text())["categories"]
+    def cat_nav(current=None):
+        cur = ' aria-current="page"'
+        links = [f'<a href="/blog"{cur if current is None else ""}>All posts</a>'] + [
+            f'<a href="/blog/categories/{c["slug"]}"{cur if current == c["slug"] else ""}>'
+            f'{esc(c["label"])} <span>{len(c["posts"])}</span></a>' for c in blog_cats]
+        return f'<nav class="chips" aria-label="Blog topics">{"".join(links)}</nav>'
     write("blog.html", page("Blog | We International", f'<section class="wrap"><h1>Blog</h1>'
           f'<p class="lead">Plain-English guides on courses, working holidays and life in Australia.</p>'
-          f'<ul class="cards">{cards}</ul></section>', path="/blog",
+          f'{cat_nav()}<ul class="cards">{card_list(posts)}</ul></section>', path="/blog",
           description="Guides on courses, working holidays and student life in Australia."))
+    by_slug = {p["slug"]: p for p in posts}
+    for c in blog_cats:
+        items = [by_slug[s] for s in c["posts"] if s in by_slug]
+        items.sort(key=lambda p: p["date"], reverse=True)
+        write(f"blog/categories/{c['slug']}.html", page(f"{html.unescape(c['label'])} | We International blog",
+              f'<section class="wrap"><p class="meta"><a href="/blog">Blog</a></p><h1>{esc(c["label"])}</h1>'
+              f'<p class="lead">{esc(c["description"])}</p>{cat_nav(c["slug"])}'
+              f'<ul class="cards">{card_list(items)}</ul></section>',
+              path=f"/blog/categories/{c['slug']}", description=c["description"][:155]))
+        urls_extra.append(f"/blog/categories/{c['slug']}")
 
     # Home — from the CMS home draft (content/home.json), see home_page.py
     import home_page

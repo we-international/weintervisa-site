@@ -20,6 +20,16 @@ slugs = json.loads((ROOT / "tests/wix-post-slugs.json").read_text())
 missing = [s for s in slugs if not (SITE / "post" / f"{s}.html").exists()]
 check(not missing, f"all {len(slugs)} Wix post URLs exist" + (f" — missing {missing}" if missing else ""))
 
+# 1b. Every URL in the live Wix sitemap (CI snapshot: tools/live_urls.py) is a page or redirect here,
+#     except the Wix app pages still waiting for an owner decision (tests/pending-pages.json).
+live = [x["path"] for x in json.loads((ROOT / "tests/wix-live-urls.json").read_text())["paths"]]
+_pending = set(json.loads((ROOT / "tests/pending-pages.json").read_text()))
+def _served(p):
+    rel = p.lstrip("/")
+    return p == "/" or (SITE / f"{rel}.html").exists() or (SITE / rel / "index.html").exists()
+gap = [p for p in live if not _served(p) and p not in _pending]
+check(not gap, f"all {len(live)} live Wix sitemap URLs are served ({len([p for p in live if p in _pending])} waiting for owner)" + (f" — missing {gap}" if gap else ""))
+
 # 2. Internal links resolve (pages still to build are listed in tests/pending-pages.json)
 pending = set(json.loads((ROOT / "tests/pending-pages.json").read_text()))
 def resolves(path):
@@ -70,6 +80,7 @@ check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items
 import pages as _p, content_pages as _cp
 import thai_pages as _tp
 n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
+n_static += len(json.loads((ROOT / "content/blog-categories.json").read_text())["categories"])  # /blog/categories/<slug>
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
 # 8. Lead forms (→ GetWec "lead" contract) — never connected in a preview build

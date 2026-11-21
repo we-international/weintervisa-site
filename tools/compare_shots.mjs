@@ -50,6 +50,10 @@ async function measureOn(page, url, size, w) {
     status = r ? r.status() : 0;
   } catch (e) { return { status: 0, error: String(e.message).split("\n")[0].slice(0, 120) }; }
   const loadMs = Date.now() - t0;
+  // Wix shows a bot check ("Please wait while we verify your request") to fast repeat visits;
+  // wait for it to clear, and mark the row blocked if it does not.
+  const check = () => /verify your request/i.test(document.body ? document.body.innerText : "");
+  await page.waitForFunction(c => !new Function("return " + c)()(), check.toString(), { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(2500); // Wix paints sections late; let lazy images in
   const m = await page.evaluate(() => {
     const vis = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
@@ -63,6 +67,7 @@ async function measureOn(page, url, size, w) {
       forms: document.querySelectorAll("form").length,
       height: document.documentElement.scrollHeight,
       sideways: document.documentElement.scrollWidth > window.innerWidth + 1,
+      blocked: /verify your request/i.test(text),
     };
   });
   const img = await page.screenshot({ type: "jpeg", quality: 55, clip: { x: 0, y: 0, width: w,
@@ -76,6 +81,7 @@ for (const [size, opts] of Object.entries(sizes)) {
   const ctx = await browser.newContext(opts);
   for (const p of pages) {
     const { img: liveImg, ...live } = await measure(ctx, LIVE + p, size, opts.viewport.width);
+    await new Promise(r => setTimeout(r, 6000)); // go slowly on the live site
     const { img: newImg, ...neu } = await measure(ctx, NEW + p, size, opts.viewport.width);
     const name = (p === "/" ? "home" : p.slice(1).replace(/\//g, "_")) + "-" + size + ".jpg";
     const b64 = b => b ? `data:image/jpeg;base64,${b.toString("base64")}` : "";
@@ -96,6 +102,6 @@ await browser.close();
 server.close();
 fs.writeFileSync(path.join(out, "report.json"), JSON.stringify(report, null, 1));
 const md = ["| Page | Size | Wix words / links / buttons / load ms | New words / links / buttons / load ms | New sideways scroll |", "|---|---|---|---|---|",
-  ...report.map(r => `| ${r.path} | ${r.size} | ${r.live.words ?? "-"} / ${r.live.links ?? "-"} / ${r.live.buttons ?? "-"} / ${r.live.loadMs ?? r.live.error} | ${r.new.words} / ${r.new.links} / ${r.new.buttons} / ${r.new.loadMs} | ${r.new.sideways ? "YES" : "no"} |`)];
+  ...report.map(r => `| ${r.path} | ${r.size} | ${r.live.words ?? "-"} / ${r.live.links ?? "-"} / ${r.live.buttons ?? "-"} / ${r.live.loadMs ?? r.live.error} | ${r.new.words} / ${r.new.links} / ${r.new.buttons} / ${r.new.loadMs} | ${r.new.sideways ? "YES" : "no"} |${r.live.blocked ? " (Wix bot check)" : ""}`)];
 fs.writeFileSync(path.join(out, "report.md"), md.join("\n") + "\n");
 console.log(md.join("\n"));
