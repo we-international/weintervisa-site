@@ -54,6 +54,8 @@ check(not any(trackers.search(s) for s in pages.values()), "no analytics/tracker
 check(all('name="robots" content="noindex' in s for s in pages.values()), "every page is noindex (preview)")
 check("Disallow: /" in (SITE / "robots.txt").read_text(), "robots.txt blocks crawlers (preview)")
 check("url=https://weintergames.com/" in (SITE / "games.html").read_text(), "/games → weintergames.com")
+check("url=https://getwec.pages.dev/book/" in (SITE / "schedule.html").read_text(), "/schedule → GetWec Book a free consultation (Wix Bookings rebuilt)")
+check("url=https://getwec.pages.dev/" in (SITE / "partner-portal.html").read_text(), "/partner-portal → GetWec partner sign-in (Wix portal rebuilt)")
 check('url=/"' in (SITE / "welcome.html").read_text(), "/welcome → /")
 check(not re.search(r">Games<", (SITE / "index.html").read_text()), "no Games item in the menu")
 

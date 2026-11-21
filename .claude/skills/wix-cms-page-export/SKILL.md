@@ -32,3 +32,4 @@ description: Use when a Wix page's text is needed for the new weintervisa.com bu
 
 ## Left for the owner
 Wix-app pages cannot be copied as static pages: /partner-portal (Members + Partner* collections), /schedule (Bookings), /videos (Wix Video), /challenges (Online Programs). Ask the owner: rebuild in GetWec, link out, or drop with a redirect.
+Owner chose (20 Nov 2026): rebuild all four in GetWec, keep Wix until all are done. Done: /partner-portal (GetWec partner portal) and /schedule (GetWec /book/, 21 Nov) — the old paths redirect from `build.py` `redirects`, with a test each. Before rebuilding one, read the Wix app's data read-only first (e.g. Bookings Services V2 query showed all 3 services hidden, so a request form was enough, not a calendar).

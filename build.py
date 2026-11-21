@@ -194,6 +194,9 @@ def build():
 
     # Redirects (static: meta refresh + canonical). /welcome was the Wix home; /games moved.
     redirects = {"welcome": "/", "games": "https://weintergames.com/",
+                 # Wix app pages rebuilt in GetWec (owner 20 Nov 2026): keep the old URLs working.
+                 "schedule": "https://getwec.pages.dev/book/",          # Wix Bookings → Book a free consultation
+                 "partner-portal": "https://getwec.pages.dev/",         # Wix Members portal → GetWec partner sign-in
                  # dead link already on the live Wix blog (post no longer exists) → blog index
                  "post/what-s-on-in-october-2026-sydney-melbourne-events": "/blog"}
     for rel, target in redirects.items():
