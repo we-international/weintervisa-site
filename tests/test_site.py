@@ -199,8 +199,8 @@ _local_imgs = set(re.findall(r"/assets/img/[\w.-]+", _post_txt))
 _missing_imgs = [i for i in _local_imgs if not (ROOT / i.lstrip("/")).exists()]
 check(not _missing_imgs, f"every local post image exists ({len(_local_imgs)} local)" + (f" — missing {_missing_imgs}" if _missing_imgs else ""))
 _wix_imgs = len(set(re.findall(r"https://static\.wixstatic\.com/media/[\w~.-]+", _post_txt)))
-check(all("static.wixstatic.com" not in s_ for s_ in pages.values()) if _wix_imgs == 0 else True,
-      f"Wix-hosted post images left: {_wix_imgs} (must be 0 before the DNS switch)")
+check(_wix_imgs == 0 and all("static.wixstatic.com" not in s_ for s_ in pages.values()),
+      f"no page loads images from Wix (Wix-hosted post images left: {_wix_imgs})")
 
 # The production build connects only when the public key is set
 import importlib.util, os
