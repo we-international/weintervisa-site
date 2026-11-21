@@ -1,0 +1,109 @@
+<body>
+
+<!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/privacy-policy">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true"><a class="brand" href="https://www.weintervisa.com/" target="_top">We International<br>Education &amp; Visa</a><a href="mailto:info@weintervisa.com?subject=Privacy%20request">Privacy enquiries</a></header>
+<main><div class="hero"><span class="eyebrow">YOUR INFORMATION, YOUR CHOICES</span><h1>Privacy Policy</h1><p class="lead">This policy explains how We International Education &amp; Visa (We International, we, us) handles personal information when you browse our website, contact us or ask for help with education and related services.</p><p class="meta">Effective and last updated: 29 September 2026<br>Website: weintervisa.com · Privacy contact: info@weintervisa.com</p></div>
+<aside class="notice" lang="th"><h2>ข้อมูลของคุณ ใช้เพื่อช่วยดูแลเรื่องที่คุณติดต่อมา</h2><p>เรารับข้อมูลเพื่อช่วยตอบคำถาม วางแผนเรียน และประสานการสมัครตามที่คุณร้องขอ กรุณาอย่าส่งพาสปอร์ต รายการเดินบัญชี หรือเอกสารส่วนตัวผ่านช่องสอบถามทั่วไปหรือแชต หากต้องใช้เอกสาร ทีมจะแจ้งช่องทางและวัตถุประสงค์ให้ทราบก่อน</p><p>คุณติดต่อเราเป็นภาษาไทยหรืออังกฤษเพื่อขอดู แก้ไข ขอให้ลบข้อมูล หรือร้องเรียนเรื่องความเป็นส่วนตัวได้ที่ <a href="mailto:info@weintervisa.com?subject=Privacy%20request">info@weintervisa.com</a> โดยการลบอาจมีข้อจำกัดหากจำเป็นต้องเก็บตามกฎหมายหรือจัดการข้อพิพาท</p><p class="meta">ข้อความภาษาไทยส่วนนี้เป็นสรุป โปรดอ่านรายละเอียดทั้งหมดด้านล่าง หรือติดต่อให้ทีมอธิบายเป็นภาษาไทย</p></aside>
+<nav aria-label="Policy contents"><a href="#collect">Information we collect</a><a href="#use">How we use it</a><a href="#sharing">Sharing &amp; storage</a><a href="#choices">Your choices</a><a href="#contact">Contact &amp; complaints</a></nav>
+<section class="card" id="collect"><h2>1. Information we collect</h2><p>The information depends on the service you request. It can include:</p><ul><li>Your name, email, telephone number, messages, course interests, preferred location and start date.</li><li>Education history, English-language background, country of citizenship or residence, relevant visa/status information and application progress when needed for your request.</li><li>Application documents, identity details, financial evidence or information about support needs only at the relevant application stage and when necessary. Health or other sensitive information requires consent unless another lawful basis applies.</li><li>Communications, consent records, referral/source details, and records needed to manage your enquiry or service.</li><li>Technical information such as IP address, browser/device information, pages visited, referring links, timestamps and cookie or similar identifiers through website and form services.</li></ul><p>You can ask a general question anonymously or using a nickname where practical. We may need your real details to contact you, verify a request or assist with an application. If necessary information is not supplied, we may be unable to provide the requested service.</p></section>
+<section class="card"><h2>2. How we receive information</h2><p>We receive information directly through forms, email, chat and conversations, and from documents you choose to provide. With your authority, we may also receive relevant information from an education provider, your nominated representative or a referral partner. If you provide someone else's information, please ensure you have authority to do so and tell them about this policy.</p><p>General enquiry forms are for initial questions. Please do not include passport scans, bank statements, medical records, passwords or payment-card details there. When documents are needed, our team will explain the purpose and appropriate submission channel. If we agree to receive documents by email, the email provider also processes that message and its attachments; we may transfer them into your application record.</p></section>
+<section class="card" id="use"><h2>3. Why we use information</h2><p>We use relevant information to respond to enquiries; discuss study options; coordinate applications and requested services; communicate with you and your authorised providers; maintain case records; check consent and referral attribution; prevent misuse; improve our service; and meet applicable legal or recordkeeping obligations.</p><p>An enquiry does not automatically subscribe you to marketing. Where marketing is sent, we will use an appropriate consent or other lawful basis and provide an opt-out. You can ask us to stop marketing at any time. Necessary service messages may continue while we manage your request.</p></section>
+<section class="card" id="sharing"><h2>4. When information is shared</h2><p>We may share relevant information with:</p><ul><li>Education providers and other service providers you ask us to approach, where necessary to discuss or process your request.</li><li>Your authorised representative, parent/guardian or referral partner, within the scope you authorise. A referral alone does not give someone unrestricted access to your documents.</li><li>Technology providers that support our website, forms, customer records, email and file storage, including Wix, Zoho and Google services where used.</li><li>Professional advisers, authorities or other recipients where required or permitted by law, or necessary to address a legal claim or serious safety issue.</li></ul><p>Schools, insurers and other independent providers handle information under their own privacy policies once you deal with them. Opening a link to another provider does not mean we control that provider's data practices. We do not sell your personal information.</p></section>
+<section class="card"><h2>5. Cloud services and overseas processing</h2><p>Website enquiries and application records may be held across the systems used for that service, including Wix, Zoho, email and document storage. Information submitted through a Zoho form may be retained in Forms and transferred to CRM when that integration is enabled. This policy does not promise that all records are stored in one system or only in Australia.</p><p>Technology providers may store or process information overseas, including for support and service operations. Wix identifies processing or storage locations including the United States, Ireland, Israel, South Korea and Taiwan. Zoho provides an Australian service region but also operates internationally, including India. Google operates globally, including in the United States. The countries involved depend on the service, configuration and subprocessors. A requested overseas provider or representative may also receive information in their country; we will explain relevant disclosures when arranging your service.</p><p>Current supplier information: <a href="https://www.wix.com/about/privacy" target="_blank" rel="noopener">Wix Privacy Policy</a>, <a href="https://support.wix.com/en/article/list-of-wixs-sub-processors" target="_blank" rel="noopener">Wix subprocessors</a>, <a href="https://www.zoho.com/privacy.html" target="_blank" rel="noopener">Zoho Privacy Policy</a>, <a href="https://www.zoho.com/privacy/sub-processors.html" target="_blank" rel="noopener">Zoho subprocessors</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p></section>
+<section class="card"><h2>6. Cookies, links and chat</h2><p>Our website and embedded services may use cookies and similar technologies for operation, security, preferences and measurement. You can manage cookies through your browser and any cookie controls presented by the relevant service. Blocking cookies may affect forms or other features. External links and embedded services can receive technical information when opened or loaded.</p><p>If you use website chat, the messages and technical details you provide may be processed by the chat service and made available to our team. Where an AI assistant is enabled, it should be identified as automated. Please keep chat to general questions and avoid sensitive documents. Ask to speak with our team for personal case handling. This policy does not mean that every planned AI or chat feature is currently available.</p></section>
+<section class="card"><h2>7. Protecting and retaining information</h2><p>We take reasonable steps to protect personal information against misuse, interference, loss and unauthorised access, modification or disclosure. No internet transmission or storage system can be guaranteed completely secure.</p><p>We retain information for as long as reasonably needed for your enquiry, application, ongoing service, applicable legal requirements and dispute handling. The period varies with the record and circumstances. When information is no longer needed and no retention obligation applies, we will take reasonable steps to delete or de-identify it. Backup copies and records held by independent providers may follow separate deletion cycles or requirements. If a data incident occurs, we will assess it and notify affected people and regulators where required.</p></section>
+<section class="card" id="choices"><h2>8. Access, correction and other requests</h2><p>You can ask what personal information we hold, request access or correction, withdraw consent where processing relies on it, stop marketing, or request deletion. Contact us using the details below. We may need to verify your identity using information proportionate to your request; please do not send identity documents unless asked through an appropriate channel.</p><p>We will consider your request under applicable law, explain any lawful limits or refusal, and tell you about available complaint options. Withdrawal does not undo processing already lawfully undertaken and may limit the services we can continue. A deletion request does not override mandatory recordkeeping or another lawful reason to retain a record.</p></section>
+<section class="card"><h2>9. Young people</h2><p>If you are under 18, please involve a parent or guardian when requesting application assistance or providing documents. Where appropriate, we will confirm authority and obtain parent/guardian involvement before handling an application or sensitive information. A parent or guardian can contact us about a young person's information.</p></section>
+<section class="card" id="contact"><h2>10. Contact and privacy complaints</h2><p>Contact the Privacy Contact at We International Education &amp; Visa:</p><p><a class="contact" href="mailto:info@weintervisa.com?subject=Privacy%20request">Email info@weintervisa.com</a></p><p>Please describe your concern, relevant dates and the outcome you would like. We will acknowledge the concern, investigate and aim to provide a substantive response within 30 days. If more time is needed, we will explain why and provide an update.</p><p>If you are dissatisfied, you may contact the <a href="https://www.oaic.gov.au/privacy/privacy-complaints" target="_blank" rel="noopener">Office of the Australian Information Commissioner (OAIC)</a> where the matter falls within its jurisdiction, or another applicable privacy regulator. The OAIC generally expects you to raise your complaint with the organisation first.</p></section>
+<section class="card"><h2>11. Changes to this policy</h2><p>We may update this policy when our services or information-handling practices change. The published page will show the effective or updated date. Material changes will be communicated where appropriate or required.</p></section>
+
+</main><footer>We International Education &amp; Visa · <a href="https://www.weintervisa.com/contact-us" target="_top">Contact us</a><!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer>
+</body>
