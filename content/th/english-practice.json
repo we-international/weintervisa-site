@@ -1,0 +1,61 @@
+{
+"_source": "Thai copy of content/english-practice.json (22 Nov 2026), written by the Web & CRM team in plain Thai. The quiz sentences stay English (that is the practice) and are marked lang=\"en\"; explanations are Thai. 'free' is written as 'ไม่มีค่าใช้จ่าย' (site rule for Thai pages).",
+"kicker": "ฝึกภาษาอังกฤษ ไม่มีค่าใช้จ่าย",
+"h1": "ฝึกภาษาอังกฤษ แบบสนุกไปด้วย",
+"lead": "วิดีโอสั้น รายการแนวพอดแคสต์ และเกมสั้นๆ ที่ทีมเราทำเอง เรียนภาษาอังกฤษแบบที่คนออสเตรเลียใช้จริง ทีละข้อผิดเล็กๆ",
+"points": [["🎙️", "Say It Wrong กับ Maya และ Kenji: บทสนทนาจริง ข้อผิดจริง"], ["✏️", "Wobbi Says: แก้ข้อผิดในชีวิตประจำวันทีละข้อ ภายในไม่ถึงนาที"], ["🎮", "มินิเกม: ทดสอบตัวเองได้ในหน้านี้เลย"]],
+"heroImage": {"wix": "https://static.wixstatic.com/media/187087_f1d1a9d8c39441e9967f50dfad68ad5c~mv2.png", "file": "187087_f1d1a9d8c39441e9967f50dfad68ad5c-mv2.webp", "alt": "Maya ควอกก้า และ Kenji โคอาล่า นั่งคุยกันกับกาแฟ (ภาพที่สร้างด้วย AI)"},
+"maya": "ใครๆ ก็พูดภาษาอังกฤษผิดได้ แค่เราผิดให้ดูหน้ากล้องเท่านั้นเอง! 😄",
+"kenji": "ดู เล่น แล้วคอมเมนต์ประโยคของคุณเอง เราอ่านทุกอัน!",
+"quiz": [
+["I am agree with you.", ["I agree with you.", "I am agreeing you.", "I agreed with you am."], 0, "\"agree\" เป็นคำกริยาอยู่แล้ว จึงไม่ต้องเติม \"am\""],
+["She don't like coffee.", ["She doesn't like coffee.", "She not like coffee.", "She isn't like coffee."], 0, "ประธานเป็น he, she หรือ it ให้ใช้ \"doesn't\""],
+["I have 25 years old.", ["I'm 25 years old.", "I have 25 years.", "I am having 25 years."], 0, "ภาษาอังกฤษบอกอายุด้วย \"be\": I'm 25"],
+["Can you explain me the rules?", ["Can you explain the rules to me?", "Can you explain me about the rules?", "Can you explain to me the rules me?"], 0, "เราอธิบายอะไรบางอย่าง \"ให้\" ใครฟัง: explain something to someone"],
+["I'm living in Sydney since March.", ["I've been living in Sydney since March.", "I live in Sydney since March.", "I was living in Sydney since March."], 0, "ถ้ามี \"since\" ให้ใช้ present perfect: I've been living / I've lived"],
+["Let's discuss about the course.", ["Let's discuss the course.", "Let's discuss on the course.", "Let's discussing the course."], 0, "\"discuss\" ไม่ต้องมี \"about\" ตามหลัง หรือจะพูดว่า \"talk about\" แทนก็ได้"],
+["I look forward to hear from you.", ["I look forward to hearing from you.", "I look forward hear from you.", "I look forward for hearing from you."], 0, "หลัง \"look forward to\" ใช้กริยาเติม -ing"],
+["How much hours do you work?", ["How many hours do you work?", "How much hour do you work?", "How many hour you work?"], 0, "ชั่วโมงนับได้ จึงใช้ \"how many\""]
+],
+"channels": [
+{"title": "Say It Wrong – Learn English", "body": "Maya กับ Kenji คุยเรื่องข้อผิดที่ทุกคนเคยพลาด ในแบบฉบับออสเตรเลีย เหมาะกับผู้เรียนระดับ B1–B2 (วิดีโอภาษาอังกฤษ)", "youtube": "https://www.youtube.com/channel/UC4u_okrOQWWbeBrjk9DTLcQ?sub_confirmation=1", "follow": [["Instagram", "https://www.instagram.com/sayitwrong_learnenglish"], ["Facebook", "https://www.facebook.com/SayItWrongLearnEnglish"]]},
+{"title": "Wobbi Says", "body": "Wobbi มนุษย์ก้างปลาแก้ข้อผิดภาษาอังกฤษในชีวิตประจำวันทีละข้อ สั้น ตลก และจำง่าย", "youtube": "https://www.youtube.com/channel/UCOo_Oeq5c_x0pP7Qj32dsng?sub_confirmation=1", "follow": [["TikTok", "https://www.tiktok.com/@wobbisays"], ["Instagram", "https://www.instagram.com/wobbi_says"], ["Facebook", "https://www.facebook.com/1372096519313289"]]}
+],
+"challenge": "ดูวิดีโอจบแล้ว พิมพ์ประโยคที่ถูกต้องในคอมเมนต์ การได้เขียนเองสักครั้งช่วยให้จำได้นานขึ้นมาก!",
+"games": [
+["🧩", "พูดให้ถูก", "ข้อผิดในชีวิตประจำวัน 8 ข้อ เฉลยทันที เหมาะกับช่วงพักดื่มกาแฟ", "เล่นเลย →", "#quiz"],
+["🎮", "เกมพัซเซิลจากสตูดิโอเกมของเรา", "เกมพัซเซิลเล่นสบายๆ จาก WE International Game Studio ในเครือ We International", "ดูเกม ↗", "https://weintergames.com/"],
+["✨", "เครื่องมือฝึกเพิ่มเติม", "การ์ดวลี เกมฝึกฟัง และอื่นๆ ติดตามช่องของเราเพื่อรู้ก่อนใคร", "", ""]
+],
+"study": "ตั้งแต่ General English จนถึงเตรียมสอบ IELTS และ PTE เราช่วยเทียบคอร์ส สถาบัน และวันเปิดรับให้ ปรึกษาได้โดยไม่มีค่าใช้จ่ายและไม่มีข้อผูกมัด",
+"kids": {
+"kicker": "สำหรับครอบครัว · จากแบรนด์ในเครือ KindozaStudio",
+"h2": "พาลูกมาออสเตรเลียด้วย? มีกิจกรรมการเรียนรู้ให้ลูกด้วย",
+"body": "ระหว่างที่คุณเรียน ลูกๆ ฝึกภาษาอังกฤษ ตัวเลข และเรื่องชีวิตในออสเตรเลียที่บ้านได้ สมุดกิจกรรมแบบพิมพ์เองสำหรับเด็กอายุ 3–8 ปี มีสัตว์ออสเตรเลีย เงินออสเตรเลีย และการสะกดแบบออสเตรเลีย ดาวน์โหลดได้ทันที พิมพ์ได้ตามต้องการ",
+"items": [
+["อายุ 3–7 ปี · ภาษาอังกฤษ", "ชุดหัดอ่าน", "ตัวอักษร เสียง คำ CVC และคำศัพท์พื้นฐาน 92 คำแรก สมุด 4 เล่ม 140 หน้า", "https://www.etsy.com/listing/4596298070/learn-to-read-bundle-4-printable"],
+["อายุ 3–6 ปี · คัดลายมือ", "สมุดหัดเขียนตัวอักษร", "หน้าละตัวอักษร A–Z ทั้งตัวพิมพ์ใหญ่และเล็ก พร้อมสมุดระบายสี ABC อีก 2 เล่ม", "https://www.etsy.com/listing/4498549526/my-first-alphabet-tracing-activity-book"],
+["อายุ 5–8 ปี · คณิตศาสตร์", "แบบฝึกหัดเงินออสเตรเลีย", "เหรียญและธนบัตรออสเตรเลีย การทอนเงิน และการซื้อของ เหมาะกับเด็กที่เพิ่งมาออสเตรเลีย", "https://www.etsy.com/listing/4580180494/australian-money-worksheets-printable"],
+["อายุ 4–8 ปี · คณิตศาสตร์", "ชุดคณิตศาสตร์อนุบาล", "บวกลบ ตัวเลขถึง 100 รูปทรง และการวัด สมุด 3 เล่ม 99 หน้า", "https://www.etsy.com/listing/4581591819/kindergarten-math-worksheets-bundle"],
+["อายุ 4–8 ปี · ระบายสี", "ระบายสีสัตว์ออสเตรเลีย", "โคอาล่า จิงโจ้ วอมแบต และเพื่อนๆ วิธีสนุกๆ ในการจำชื่อสัตว์เป็นภาษาอังกฤษ", "https://www.etsy.com/listing/4573310211/australian-animal-coloring-pages-aussie"],
+["อายุ 4–8 ปี · งานประดิษฐ์", "พับกระดาษสำหรับเด็ก", "งานพับกระดาษง่ายๆ 12 แบบ มีเส้นพับพิมพ์ไว้บนกระดาษ ไม่ต้องใช้กาว เป็นกิจกรรมที่ไม่ต้องใช้หน้าจอ", "https://www.etsy.com/listing/4597672105/origami-for-kids-printable-12-easy-paper"]
+],
+"shop": "https://www.etsy.com/shop/KindozaStudio",
+"note": "เปิด Etsy ในแท็บใหม่ · เป็นไฟล์ดาวน์โหลด ไม่มีการส่งของ · KindozaStudio เป็นแบรนด์ในเครือ We International"
+},
+"characters": "Maya และ Kenji เป็นตัวละครสมมติที่สร้างด้วย AI ภาพบางภาพสร้างด้วย AI และไม่ได้แสดงสถาบัน วิทยาเขต หรือนักเรียนคนใดจริง",
+"ui": {
+"q": "ข้อ {} จาก 8", "notQuite": "ยังไม่ถูก:", "which": "แบบไหนถูก?", "show": "ดูเฉลย",
+"sub": "▶ กดติดตามบน YouTube", "follow": "ติดตาม:", "soon": "เร็วๆ นี้", "etsy": "ดูบน Etsy",
+"quizBtn": "ลองทำควิซ 1 นาที", "watchBtn": "ดูวิดีโอ", "mayaN": "Maya:", "kenjiN": "Kenji:",
+"gameK": "มินิเกม", "gameH": "พูดให้ถูก: ข้อผิดที่เจอบ่อย 8 ข้อ",
+"gameP": "เลือกประโยคที่ฟังเป็นธรรมชาติ แล้วเปิดดูเฉลย ไม่ต้องสมัครสมาชิก ไม่มีการเก็บคะแนน แค่ฝึกเฉยๆ",
+"watchK": "ดูและฟัง", "watchH": "ช่องภาษาอังกฤษของเรา",
+"watchP": "ทุกการดู กดไลก์ และคอมเมนต์ ช่วยให้เราทำบทเรียนดีๆ ได้อีก ขอบคุณที่กดติดตาม!",
+"chalB": "ภารกิจจาก Kenji", "gamesK": "เกม", "gamesH": "เล่นเกม ภาษาอังกฤษก็ดีขึ้น",
+"studyP": "อยากเรียนภาษาอังกฤษที่ออสเตรเลียไหม", "seeCourses": "ดูคอร์สภาษาอังกฤษ", "talk": "คุยกับทีมงาน",
+"studyNote": "General English, Academic English และเตรียมสอบ IELTS หรือ PTE ถือวีซ่าท่องเที่ยว? เราดูเฉพาะคอร์สภาษาอังกฤษที่ไม่มีการฝึกงาน\nระยะเวลาเรียน เงื่อนไขวีซ่า และเกณฑ์รับเข้า จะเช็กให้ก่อนคุณตัดสินใจ เราไม่ใช่ migration agent คำแนะนำเรื่องวีซ่า เราจะแนะนำเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน (registered migration agent) ให้",
+"allKids": "ดูกิจกรรมสำหรับเด็กทั้งหมด", "courses": "/th/courses", "contact": "/th/contact-us",
+"en": " lang=\"en\""
+}
+}

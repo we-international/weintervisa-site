@@ -283,6 +283,29 @@ cfg = json.loads((ROOT / "config.json").read_text())
 check(cfg.get("getwec_endpoint", "").startswith("https://") and cfg["getwec_endpoint"].endswith("/functions/v1/mia"),
       "GetWec endpoint configured (mia Edge Function)")
 
+# 16. Thai copies of the pages rebuilt from live Wix (22 Nov 2026): same JSON keys and list lengths as the English
+#     content, and the same sections (h2 count) on the page, so the Thai page never falls behind the English one.
+TH_SYNC = {"homestay": "/homestay", "oshc": "/oshc", "nursing": "/courses/nursing-pathways-australia",
+           "fast-track": "/fast-track-courses", "english-practice": "/english-practice"}
+
+
+def _shape(x):
+    if isinstance(x, dict):
+        return {k: _shape(v) for k, v in x.items() if not k.startswith("_") and k != "ui"}
+    if isinstance(x, list):
+        return [_shape(v) for v in x]
+    return type(x).__name__
+
+
+for name_, en_path in TH_SYNC.items():
+    en_j = json.loads((ROOT / f"content/{name_}.json").read_text())
+    th_j = json.loads((ROOT / f"content/th/{name_}.json").read_text())
+    check(_shape(en_j) == _shape(th_j), f"content/th/{name_}.json has the same fields and list lengths as content/{name_}.json")
+    main_en = (SITE / (en_path.strip("/") + ".html")).read_text().split('<main id="main">')[1].split("</main>")[0]
+    main_th = (SITE / ("th" + en_path + ".html")).read_text().split('<main id="main">')[1].split("</main>")[0]
+    check(main_en.count("<h2") == main_th.count("<h2") and main_en.count('class="faq"') == main_th.count('class="faq"'),
+          f"/th{en_path} has the same sections and FAQ as {en_path}")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

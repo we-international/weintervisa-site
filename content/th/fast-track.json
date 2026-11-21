@@ -1,0 +1,302 @@
+{
+ "_source": "Thai copy of content/fast-track.json (22 Nov 2026), written by the Web & CRM team in plain Thai: same facts, dates, links and course codes; 'free' is written as 'ไม่มีค่าใช้จ่าย' (site rule for Thai pages). Blog guides are English and say so.",
+ "kicker": "วีซ่า Working Holiday 417 / 462",
+ "h1": "เปลี่ยน Working Holiday ให้เป็นทักษะใหม่",
+ "lead": "เรียน Certificate III สายอาชีพระหว่างเที่ยว เราช่วยเลือกคอร์สที่เข้ากับวันวีซ่าของคุณ และจัดการเรื่องโฮมสเตย์กับประกันสุขภาพให้ด้วย",
+ "points": [
+  [
+   "🎓",
+   "Certificate III สายงานดูแล สุขภาพ หรือปฐมวัย เป็นที่ยอมรับทั่วออสเตรเลีย"
+  ],
+  [
+   "🤝",
+   "มีการฝึกงานจริงอยู่ในคอร์ส"
+  ],
+  [
+   "🏡",
+   "จัดการโฮมสเตย์และประกันสุขภาพได้ในที่เดียว"
+  ]
+ ],
+ "heroImage": {
+  "wix": "https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png",
+  "file": "187087_5766fac30a8149dbab2b9742233e3198-mv2.webp",
+  "alt": "Maya ควอกก้า และ Kenji โคอาล่า ตัวละครผู้ช่วยของเรา โบกมือที่ Circular Quay ใน Sydney"
+ },
+ "maya": "สวัสดี! ถือวีซ่า 417 หรือ 462 อยู่ใช่ไหม มาเปลี่ยนทริปนี้ให้เป็นทักษะใหม่กัน 🎒",
+ "kenji": "เลือกงานที่คุณชอบ แล้วเราจะชี้คอร์สที่ใช่ให้",
+ "finder": [
+  [
+   "🧓",
+   "ดูแลผู้สูงอายุหรือผู้พิการ",
+   "#chc33021"
+  ],
+  [
+   "🏥",
+   "ช่วยพยาบาลและผู้ป่วยในโรงพยาบาล",
+   "#hlt33115"
+  ],
+  [
+   "🧸",
+   "ทำงานกับเด็กเล็ก",
+   "#chc30125"
+  ],
+  [
+   "🤔",
+   "ยังไม่แน่ใจ",
+   "/th/contact-us"
+  ]
+ ],
+ "steps": [
+  [
+   "เช็กวีซ่าของคุณ",
+   "ดูวันหมดอายุและเงื่อนไขวีซ่าได้โดยไม่มีค่าใช้จ่ายใน <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>"
+  ],
+  [
+   "เลือกคอร์ส",
+   "ใช้ตัวช่วยเลือกคอร์สด้านบน หรือบอกเราว่าคุณชอบอะไร แล้วเราจะแนะนำตัวเลือกให้"
+  ],
+  [
+   "รับแผนการเรียน",
+   "เราส่งตารางเรียนล่าสุด วันเปิดรับ และใบเสนอราคาเป็นลายลักษณ์อักษรจากสถาบันให้ คุณจะได้เทียบกับวันวีซ่าของคุณ"
+  ]
+ ],
+ "tip": "Home Affairs ระบุว่าผู้ถือวีซ่า Working Holiday เรียนหรือฝึกอบรมได้ <strong>ไม่เกิน 4 เดือน</strong> ต่อวีซ่าแต่ละใบ (เงื่อนไข 8548) เช็กเงื่อนไขของคุณเองก่อน: <a href=\"https://immi.homeaffairs.gov.au/programs-subsite/Pages/working-holiday-maker/work-conditions.aspx\" target=\"_blank\" rel=\"noopener\">Home Affairs ↗</a> จำนวนสัปดาห์และรอบเปิดเรียนต่างกันไปตามสถาบัน เรายืนยันเป็นลายลักษณ์อักษรให้ก่อนคุณสมัคร",
+ "plan": "บอกเราว่าถือวีซ่าอะไร (417 หรือ 462) หมดเมื่อไหร่ และคอร์สที่สนใจ เราตอบกลับทางอีเมล",
+ "courses": [
+  {
+   "id": "chc33021",
+   "code": "CHC33021",
+   "title": "Certificate III in Individual Support",
+   "for": "เหมาะกับคุณถ้าชอบช่วยเหลือผู้คน ในงานดูแลผู้สูงอายุหรือผู้พิการ",
+   "learn": [
+    "การดูแลที่ยึดผู้รับบริการเป็นศูนย์กลาง",
+    "ความปลอดภัยในการทำงานและการป้องกันการติดเชื้อ",
+    "ฝึกงานภายใต้การดูแล"
+   ],
+   "img": {
+    "wix": "https://static.wixstatic.com/media/187087_fb8fecc264b24c94b5bcc5cf7bd68590~mv2.webp",
+    "file": "187087_fb8fecc264b24c94b5bcc5cf7bd68590-mv2.webp",
+    "alt": "ผู้ดูแลกำลังช่วยเหลือผู้สูงอายุ (ภาพประกอบ)"
+   },
+   "more": [
+    "อ่านคู่มือ (ภาษาอังกฤษ)",
+    "/post/chc33021-certificate-iii-in-individual-support-what-you-ll-learn-and-who-it-suits"
+   ]
+  },
+  {
+   "id": "hlt33115",
+   "code": "HLT33115",
+   "title": "Certificate III in Health Services Assistance",
+   "for": "เหมาะกับคุณถ้าอยากเป็นทีมช่วยพยาบาลและผู้ป่วยในโรงพยาบาล",
+   "learn": [
+    "การช่วยเหลือผู้ป่วย",
+    "การป้องกันการติดเชื้อ",
+    "ฝึกงานผ่านสถาบัน"
+   ],
+   "img": {
+    "wix": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp",
+    "file": "187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp",
+    "alt": "ผู้ช่วยงานสุขภาพในโรงพยาบาล (ภาพประกอบ)"
+   },
+   "more": [
+    "อ่านคู่มือ (ภาษาอังกฤษ)",
+    "/post/hlt33115-health-services-assistance-a-plain-english-guide"
+   ]
+  },
+  {
+   "id": "chc30125",
+   "code": "CHC30125",
+   "title": "Certificate III in Early Childhood Education and Care",
+   "for": "เหมาะกับคุณถ้าชอบทำงานกับเด็กเล็ก",
+   "learn": [
+    "การเรียนรู้ผ่านการเล่น",
+    "สุขภาพ ความปลอดภัย และความเป็นอยู่ที่ดีของเด็ก",
+    "ฝึกงานในศูนย์เด็กเล็ก"
+   ],
+   "img": {
+    "wix": "https://static.wixstatic.com/media/187087_a988c62bc5444e1e9e321a58e13f5eda~mv2.png",
+    "file": "187087_a988c62bc5444e1e9e321a58e13f5eda-mv2.webp",
+    "alt": "ครูกำลังอ่านหนังสือกับเด็กเล็ก (ภาพประกอบ)"
+   },
+   "more": [
+    "อ่านคู่มือ (ภาษาอังกฤษ)",
+    "/post/chc30125-early-childhood-education-plain-english-guide"
+   ]
+  }
+ ],
+ "video": {
+  "title": "Maya กับ Kenji อธิบาย CHC33021 ใน 7 นาที",
+  "body": "เรียนอะไร ต่อยอดไปทำงานอะไรได้ และงานนี้เป็นที่ต้องการไหม จากแหล่งข้อมูลทางการ (วิดีโอภาษาอังกฤษ)",
+  "url": "https://www.youtube.com/watch?v=GqUhVgaAR5E"
+ },
+ "lead_to": [
+  [
+   "งานดูแลขาดแคลนทั่วประเทศ",
+   "อาชีพผู้ดูแลผู้สูงอายุและผู้พิการถูกจัดว่าขาดแคลนใน Occupation Shortage List ปี 2025",
+   "Jobs and Skills Australia ↗",
+   "https://www.jobsandskills.gov.au/news/shortages-ease-gaps-persist-2025-occupation-shortage-list"
+  ],
+  [
+   "งานสุขภาพและการดูแลกำลังเติบโต",
+   "คาดว่างานด้านสุขภาพและสังคมสงเคราะห์จะเพิ่มขึ้นในอีก 10 ปีข้างหน้า",
+   "ข้อมูลอาชีพ ↗",
+   "https://www.jobsandskills.gov.au/data/labour-market-insights/occupations/4231-aged-and-disabled-carers"
+  ]
+ ],
+ "roles": [
+  "ผู้ดูแลผู้สูงอายุ",
+  "ผู้ช่วยดูแลผู้พิการ",
+  "ผู้ช่วยในโรงพยาบาล",
+  "ครูดูแลเด็กเล็ก"
+ ],
+ "news": "ในข่าว: ผู้ให้บริการดูแลผู้สูงอายุเรียกร้องให้มีวีซ่าสำหรับผู้ดูแล (ABC News, 20 ต.ค. 2026) นี่เป็นเพียงข้อเสนอ กฎหมายวีซ่ายังไม่เปลี่ยน",
+ "newsPost": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
+ "settle": [
+  [
+   "🏡",
+   "อยู่กับเจ้าของบ้านคนท้องถิ่น",
+   "พาร์ตเนอร์โฮมสเตย์ของเรา Australian Homestay Network (AHN) คัดกรองเจ้าของบ้าน และดูแลคุณตลอดการเข้าพัก",
+   "หาโฮมสเตย์กับ AHN ↗",
+   "https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa",
+   "โฮมสเตย์ทำงานอย่างไร →",
+   "/th/homestay"
+  ],
+  [
+   "🩺",
+   "ประกันสุขภาพ",
+   "Home Affairs แนะนำอย่างยิ่งให้ผู้ที่ไม่ได้อยู่ในระบบ Medicare ซื้อประกันสุขภาพเอกชน เทียบตัวเลือกสำหรับผู้ถือวีซ่า Working Holiday",
+   "เทียบตัวเลือกประกัน →",
+   "/th/oshc",
+   "",
+   ""
+  ],
+  [
+   "✅",
+   "เช็กลิสต์สัปดาห์แรก",
+   "TFN บัญชีธนาคาร โทรศัพท์ super VEVO และสิทธิ์การทำงานของคุณ ทีละขั้น (ภาษาอังกฤษ)",
+   "เปิดเช็กลิสต์ →",
+   "/post/first-week-on-a-working-holiday-visa-a-checklist",
+   "",
+   ""
+  ]
+ ],
+ "faq": [
+  [
+   "ถือวีซ่า Working Holiday เรียนได้ไหม",
+   "ได้ Home Affairs ระบุว่าผู้ถือวีซ่า Working Holiday เรียนหรือฝึกอบรมได้ไม่เกิน 4 เดือนต่อวีซ่าแต่ละใบ (เงื่อนไข 8548) เช็กเงื่อนไขของคุณเองใน <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>"
+  ],
+  [
+   "คอร์ส fast-track เรียนนานแค่ไหน",
+   "ขึ้นอยู่กับสถาบัน คอร์ส และรอบเปิดเรียน เราส่งตารางเรียนล่าสุดของสถาบันเป็นลายลักษณ์อักษรให้ก่อนสมัคร คุณจะได้เทียบกับวันวีซ่า"
+  ],
+  [
+   "ค่าเรียนเท่าไหร่",
+   "ขึ้นอยู่กับคอร์สและรอบเปิดเรียน ขอใบเสนอราคาเป็นลายลักษณ์อักษรพร้อมวันเปิดรอบถัดไปจากเราได้ ไม่มีค่าใช้จ่าย"
+  ],
+  [
+   "ต้องใช้ภาษาอังกฤษระดับไหน",
+   "สถาบันเป็นผู้กำหนด บอกระดับภาษาหรือคะแนนสอบของคุณ แล้วเราจะเช็กให้ บางสถาบันอาจมีคอร์สเสริมภาษาอังกฤษ"
+  ],
+  [
+   "ทำงานระหว่างเรียนได้ไหม",
+   "สิทธิ์การทำงานมาจากวีซ่าของคุณ ทุกคนที่ทำงานในออสเตรเลียมีสิทธิ์ในที่ทำงานเท่ากัน รวมถึงค่าแรงขั้นต่ำและสลิปเงินเดือน <a href=\"https://www.fairwork.gov.au/about-us/policies-and-guides/fact-sheets/rights-and-obligations/visa-holders-and-migrant-workers-workplace-right\" target=\"_blank\" rel=\"noopener\">Fair Work: สิทธิ์ของผู้ถือวีซ่า ↗</a> · <a href=\"/post/working-holiday-visa-the-6-month-employer-limit-explained\">กฎทำงานกับนายจ้างเดิมไม่เกิน 6 เดือน (ภาษาอังกฤษ)</a> · <a href=\"https://immi.homeaffairs.gov.au/what-we-do/whm-program/specified-work-conditions\" target=\"_blank\" rel=\"noopener\">งานที่กำหนดสำหรับวีซ่าปีที่ 2 หรือ 3 (Home Affairs) ↗</a>"
+  ],
+  [
+   "เรียนแล้วจะได้งาน วีซ่าปีที่ 2 หรือ PR ไหม",
+   "ไม่มีคอร์สไหนสัญญาเรื่องงาน วีซ่า หรือ PR ได้ เราเป็นเอเจนซีการศึกษาที่ทำงานร่วมกับพาร์ตเนอร์ด้านวีซ่าที่ขึ้นทะเบียน และส่งต่อคำถามวีซ่าให้<a href=\"/th/migration-support\">เอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน</a>ได้"
+  ]
+ ],
+ "whmNews": {
+  "checked": "22 ต.ค. 2026",
+  "items": [
+   [
+    "22 ต.ค. 2026",
+    "ใบสมัครวีซ่า WHM ส่วนใหญ่ใช้เวลาเฉลี่ยประมาณ 3 เดือน Home Affairs แนะนำให้รอผลอนุมัติวีซ่าก่อนจองการเดินทาง งาน หรือการเรียน"
+   ],
+   [
+    "1 ก.ค. 2026",
+    "ผู้ถือพาสปอร์ตไซปรัส ฟินแลนด์ เยอรมนี และเกาหลีใต้ อายุ 18 ถึง 35 ปี สมัครวีซ่า 417 ได้"
+   ],
+   [
+    "1 ก.ค. 2026",
+    "วีซ่า 462 ใบแรกได้ถึง 1,500 ใบต่อปีโครงการ สำหรับผู้ถือพาสปอร์ตอุรุกวัยที่มีคุณสมบัติ"
+   ]
+  ],
+  "source": "https://immi.homeaffairs.gov.au/what-we-do/whm-program/latest-news"
+ },
+ "guides": [
+  [
+   "ภาษีสำหรับ Working Holiday: TFN อัตรา 15% และ DASP (ภาษาอังกฤษ)",
+   "/post/working-holiday-tax-in-australia-tfn-15-rate-dasp"
+  ],
+  [
+   "ถือวีซ่า Working Holiday เรียนได้ไหม (ภาษาอังกฤษ)",
+   "/post/can-you-study-on-a-working-holiday-visa-417-462-the-4-month-rule-explained"
+  ],
+  [
+   "Medicare สำหรับผู้ถือวีซ่า Working Holiday (ภาษาอังกฤษ)",
+   "/post/medicare-for-working-holiday-makers-reciprocal-deals"
+  ],
+  [
+   "วิธีเช็กวีซ่าด้วย VEVO โดยไม่มีค่าใช้จ่าย (ภาษาอังกฤษ)",
+   "/post/how-to-check-your-australian-visa-for-free-with-vevo"
+  ],
+  [
+   "คู่มือ Working Holiday ทั้งหมด (ภาษาอังกฤษ)",
+   "/blog/categories/working-holiday-guides"
+  ]
+ ],
+ "readyImage": {
+  "wix": "https://static.wixstatic.com/media/187087_a2063ccabde74ae3b7d7c1d64797577c~mv2.png",
+  "file": "187087_a2063ccabde74ae3b7d7c1d64797577c-mv2.webp",
+  "alt": "Maya และ Kenji ในห้องฝึกทักษะการดูแล (ภาพที่สร้างด้วย AI)"
+ },
+ "ready": "ส่งวันวีซ่าและคอร์สที่คุณสนใจมาให้เรา เราจะตอบกลับพร้อมตัวเลือกคอร์ส วันเปิดรับ และใบเสนอราคาเป็นลายลักษณ์อักษร ไม่มีค่าใช้จ่ายและไม่มีข้อผูกมัด",
+ "disclaimer": "ข้อมูลในหน้านี้เป็นข้อมูลทั่วไป เช็กเมื่อ 22 ต.ค. 2026 และไม่ใช่คำแนะนำด้านวีซ่า กฎหมาย ภาษี หรือประกัน เราไม่ได้สัญญาเรื่องการรับเข้าเรียน วีซ่า งาน หรือวันเรียนจบ Maya และ Kenji เป็นตัวละครสมมติที่สร้างด้วย AI ฉากและภาพบางภาพสร้างด้วย AI และไม่ได้แสดงสถาบัน วิทยาเขต หรือนักเรียนคนใดจริง",
+ "ui": {
+  "plan": "ขอแผนการเรียน",
+  "find": "หาคอร์สของฉัน (30 วินาที)",
+  "watch": "▶ ดูวิดีโอคอร์ส",
+  "finderK": "ตัวช่วยเลือกคอร์ส",
+  "finderH": "คอร์สไหนเหมาะกับคุณ",
+  "finderP": "ไม่ต้องสมัครสมาชิก เลือกงานที่คุณสนใจ แล้วเราจะพาไปดูคอร์ส จากนั้นขอแผนการเรียนจากเราได้ ไม่มีค่าใช้จ่าย",
+  "finderQ": "งานแบบไหนที่คุณสนใจ",
+  "howK": "ขั้นตอน",
+  "howH": "จาก \"อยากรู้\" สู่คลาสแรก",
+  "tipB": "เคล็ดลับจาก Kenji",
+  "readyP": "พร้อมแล้ว? ขอแผนการเรียน ไม่มีค่าใช้จ่าย",
+  "getPlan": "ขอแผนการเรียนของฉัน",
+  "mailSubject": "Working%20Holiday%20course%20plan",
+  "email": "อีเมล info@weintervisa.com",
+  "noIds": "กรุณาอย่าส่งเลขพาสปอร์ต เลขอนุมัติวีซ่า หรือข้อมูลบัญชีธนาคาร",
+  "coursesK": "คอร์สเรียน",
+  "coursesH": "3 คอร์สที่คนถือวีซ่า Working Holiday ชอบ",
+  "coursesP": "ทุกคอร์สมีแบบ fast-track สำหรับผู้ถือวีซ่า Working Holiday จำนวนสัปดาห์ การฝึกงาน และรอบเปิดเรียนต่างกันไปตามสถาบัน",
+  "feesNote": "ค่าเรียน ค่าอุปกรณ์ และค่าฝึกงานขึ้นอยู่กับคอร์ส สถาบัน และรอบเปิดเรียน ขอใบเสนอราคาเป็นลายลักษณ์อักษรจากเราได้ ไม่มีค่าใช้จ่าย",
+  "watchK": "ดูวิดีโอ",
+  "yt": "▶ ดูบน YouTube",
+  "guide": "อ่านคู่มือ CHC33021 (ภาษาอังกฤษ)",
+  "leadK": "ต่อยอดไปทางไหนได้",
+  "leadH": "ทักษะที่ออสเตรเลียต้องการ",
+  "rolesH": "ตำแหน่งงานที่เป็นไปได้หลังจบ Cert III",
+  "mayaB": "Maya เล่าให้ฟัง",
+  "summary": "อ่านสรุปของเรา (ภาษาอังกฤษ)",
+  "noPromise": "ไม่มีคอร์สไหนสัญญาเรื่องงาน วีซ่า หรือ PR ได้ นายจ้างกำหนดคุณสมบัติและการตรวจสอบเอง",
+  "settleK": "ตั้งหลัก",
+  "settleH": "ที่พัก ประกันสุขภาพ และสัปดาห์แรกของคุณ",
+  "settleNote": "ปุ่มโฮมสเตย์จะเปิดเว็บไซต์ของ AHN ในแท็บใหม่ เพื่อให้คุณสมัคร AHN เป็นพาร์ตเนอร์โฮมสเตย์ของเรา",
+  "faqH": "คำถามที่ผู้ถือวีซ่า Working Holiday ถามเรา",
+  "newsS": "ข่าวล่าสุดเรื่อง Working Holiday (Home Affairs)",
+  "source": "ที่มา:",
+  "newsLink": "ข่าวล่าสุด WHM ของ Home Affairs",
+  "checked": "เช็กเมื่อ {}",
+  "guidesS": "คู่มือ Working Holiday เพิ่มเติม",
+  "readyH": "มาวางแผนคอร์สไปด้วยกัน",
+  "tryFinder": "ลองใช้ตัวช่วยเลือกคอร์ส",
+  "qeac": "ที่ปรึกษาที่ได้รับการรับรอง QEAC (PIER) เลข QEAC 11964 · อยู่ที่ Sydney ออสเตรเลีย",
+  "mayaN": "Maya:",
+  "kenjiN": "Kenji:",
+  "contact": "/th/contact-us",
+  "en": " lang=\"en\""
+ }
+}

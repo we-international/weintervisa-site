@@ -41,3 +41,14 @@ Owner rule (20 Nov 2026): every page in English + Thai, `/th/...` + hreflang, Th
 - Thai line breaks: Thai has no spaces between words; keep headings short and check the 375px screenshot (no overflow).
 - `\b` does not work around Thai words in regexes (tests use plain substrings).
 - After editing `assets/forms.js`, rebuild before running e2e (`build.py` copies assets into `site/`).
+
+## Fourth set: Thai copies of the rebuilt pages (22 Nov 2026)
+When an English page is rebuilt from the live Wix page (a `*_page.py` + `content/<name>.json`), its Thai page must get the same depth, not stay a short summary. Pattern (no copied templates):
+- The renderer takes the content: `render(d=None)`; `d = d or <EN JSON>`; fixed page words live in `UI_EN` and are merged `L = {**UI_EN, **d.get("ui", {})}`. Links that differ by language (`/contact-us` → `/th/contact-us`) are keys in `UI_EN` too.
+- The Thai copy is `content/th/<name>.json`: the same keys and list lengths as the English JSON (same facts, prices, dates, links), plus `"ui"` with the Thai page words. `thai_content.py`: `homestay = homestay_page.render(th_json("homestay"))`.
+- English sentences that must stay English (quiz sentences on /th/english-practice, course titles) get `L["en"]` = `' lang="en"'` in the Thai copy (empty in English).
+- Test 16 in `tests/test_site.py` (`TH_SYNC`): Thai JSON has the same shape as the English JSON and the page has the same number of `<h2>` and FAQ items. When you add a field or an FAQ to the English JSON, the test fails until the Thai copy has it.
+- Rebuilding with escaped `UI_EN` strings turns `'` into `&#x27;` in the English HTML; that is the same text (check with `diff` of the built page before/after a refactor — only escapes may differ).
+- Thai "free" stays "ไม่มีค่าใช้จ่าย"; blog guides linked from Thai pages say "(ภาษาอังกฤษ)".
+- `.kicker` uses uppercase + letter-spacing; `html:lang(th) .kicker { letter-spacing: 0; }` keeps Thai vowel and tone marks together.
+- Done 22 Nov: /th/homestay, /th/oshc, /th/courses/nursing-pathways-australia, /th/fast-track-courses, /th/english-practice. Next: home, about, referral partners, contact, student services, courses catalogue.

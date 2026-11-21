@@ -137,6 +137,7 @@ details.faq summary { cursor: pointer; font-weight: 600; }
 details.faq p { margin: .5rem 0 0; }
 /* home */
 .kicker { text-transform: uppercase; letter-spacing: .08em; font-size: 14px; font-weight: 700; color: var(--brand); margin: 0; }
+html:lang(th) .kicker { letter-spacing: 0; } /* spacing splits Thai vowel and tone marks */
 .hero h1 { font-size: 32px; max-width: 18em; }
 .actions .btn { margin: 4px 6px 4px 0; }
 .chips { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }

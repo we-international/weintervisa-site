@@ -21,7 +21,7 @@ Owner: We International Education & Visa Pty Ltd · Team: Web & CRM.
 - `schools.py` + `content/schools.json` — school pages `/schools` and `/schools/<slug>` from files schools sent us (only schools that replied). `"approved": false` = preview only; production leaves them out until the owner approves. Skill: `.claude/skills/school-promo-pages`.
 - `assets/forms.js` — lead forms → GetWec `mia` Edge Function `action: "lead"` (contract copy: `tests/getwec-lead-contract.mjs`). Sends only in a `--production` build with `getwec_anon_key` set in `config.json`; preview never sends. Skill: `.claude/skills/website-lead-forms`.
 
-- `thai_pages.py`, `thai_content.py`, `thai_more.py` — Thai pages `/th/...` (every page except `/privacy-policy` and post bodies). Skill: `.claude/skills/website-thai-pages`.
+- `thai_pages.py`, `thai_content.py`, `thai_more.py` — Thai pages `/th/...` (every page except post bodies). Pages rebuilt from live Wix render the same layout in Thai from `content/th/<name>.json` (same fields as the English JSON + `ui` words; test 16 keeps them in step). Skill: `.claude/skills/website-thai-pages`.
 
 Wix-app pages (owner 20 Nov 2026: rebuild in GetWec): /partner-portal → GetWec partner portal, /schedule → GetWec /book/ (redirects); still to build: /videos, /challenges (`tests/pending-pages.json`). Privacy notice approved by the owner on 20 Nov 2026. Images: the 27 blog images are local in `assets/img/` (copied by the workflow "Copy Wix images into the repo", 21 Nov 2026); the test fails if any page loads an image from Wix. /videos and /challenges: the Wix apps hold no content (0 programmes, no video library) → owner to choose redirect or a later GetWec feature.
 

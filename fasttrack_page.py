@@ -14,15 +14,44 @@ e = html.escape
 FT = json.loads((ROOT / "content/fast-track.json").read_text())
 
 
-def render():
-    d = FT
+# Fixed page words; a Thai copy (content/th/fast-track.json "ui") overrides them key by key.
+UI_EN = {
+    "plan": "Get a course plan", "find": "Find my course (30 seconds)", "watch": "▶ Watch the course video",
+    "finderK": "Course finder", "finderH": "Which course suits you?",
+    "finderP": "No sign-up. Pick what sounds good and we'll show you the course. Then ask us for a free course plan.",
+    "finderQ": "What kind of work sounds good to you?", "howK": "How it works", "howH": "From \"I'm curious\" to your first class",
+    "tipB": "Kenji's tip", "readyP": "Ready? Ask for your free course plan", "getPlan": "Get my free course plan",
+    "mailSubject": "Working%20Holiday%20course%20plan", "email": "Email info@weintervisa.com",
+    "noIds": "Please don't send passport numbers, visa grant numbers or bank details.",
+    "coursesK": "Courses", "coursesH": "Three courses Working Holiday Makers love",
+    "coursesP": "Each one has a fast-track option for Working Holiday visa holders. Weeks, placement and intakes vary by provider.",
+    "feesNote": "Fees, materials and placement costs depend on the course, provider and intake. Ask us for a free written quote.",
+    "watchK": "Watch", "yt": "▶ Watch on YouTube", "guide": "Read the CHC33021 guide",
+    "leadK": "Where it can lead", "leadH": "Skills that Australia needs", "rolesH": "Possible roles after Cert III",
+    "mayaB": "Maya says", "summary": "Read our summary",
+    "noPromise": "No course can promise a job, a visa or PR. Employers set their own requirements and checks.",
+    "settleK": "Settle in", "settleH": "A place to stay, health cover and your first week",
+    "settleNote": "The homestay button opens AHN's website in a new tab, where you sign up. AHN is our homestay partner.",
+    "faqH": "Questions Working Holiday Makers ask us", "newsS": "Latest Working Holiday news (Home Affairs)",
+    "source": "Source:", "newsLink": "Home Affairs WHM latest news", "checked": "Checked {}.", "guidesS": "More Working Holiday guides",
+    "readyH": "Let's plan your course together", "tryFinder": "Try the course finder",
+    "qeac": "QEAC-certified counsellor (PIER), QEAC No. 11964 · Based in Sydney, Australia",
+    "mayaN": "Maya:", "kenjiN": "Kenji:", "contact": "/contact-us",
+    "en": "",  # Thai copy: ' lang="en"' on English course titles
+}
+
+
+def render(d=None):
+    d = d or FT
+    L = {**UI_EN, **d.get("ui", {})}
+    c_ = L["contact"]
     points = "".join(f'<li><span aria-hidden="true">{i}</span>{e(t)}</li>' for i, t in d["points"])
     finder = "".join(f'<li><a href="{e(h)}"><span class="ico" aria-hidden="true">{i}</span>{e(t)}</a></li>' for i, t, h in d["finder"])
     steps = "".join(f"<li><strong>{e(t)}</strong><span>{b}</span></li>" for t, b in d["steps"])
     courses = "".join(f"""<li class="course" id="{c['id']}">{img(c['img'], w=1536, h=1024)}<div>
-<span class="code">{e(c['code'])}</span><h3>{e(c['title'])}</h3><p>{e(c['for'])}</p>
+<span class="code">{e(c['code'])}</span><h3{L["en"]}>{e(c['title'])}</h3><p>{e(c['for'])}</p>
 <ul class="list">{''.join(f'<li>{e(x)}</li>' for x in c['learn'])}</ul>
-<p class="links"><a class="btn" href="/contact-us">Get a course plan</a> <a href="{e(c['more'][1])}">{e(c['more'][0])}</a></p>
+<p class="links"><a class="btn" href="{c_}">{e(L["plan"])}</a> <a href="{e(c['more'][1])}">{e(c['more'][0])}</a></p>
 </div></li>""" for c in d["courses"])
     leads = "".join(f'<li><strong>{e(t)}</strong><span>{e(b)} <a href="{e(u)}" target="_blank" rel="noopener">{e(l)}</a></span></li>'
                     for t, b, l, u in d["lead_to"])
@@ -40,66 +69,66 @@ def render():
 <h1>{e(d["h1"])}</h1>
 <p class="lead">{e(d["lead"])}</p>
 <ul class="points">{points}</ul>
-<p class="actions"><a class="btn" href="#finder">Find my course (30 seconds) →</a> <a class="btn ghost" href="#video">▶ Watch the course video</a></p>
+<p class="actions"><a class="btn" href="#finder">{e(L["find"])} →</a> <a class="btn ghost" href="#video">{e(L["watch"])}</a></p>
 </div><div class="hero-side">{img(d["heroImage"], "hero-img", lazy=False, w=1200, h=750)}
-<p class="bubble"><strong>Maya:</strong> {e(d["maya"])}</p>
-<p class="bubble alt"><strong>Kenji:</strong> {e(d["kenji"])}</p>
+<p class="bubble"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
+<p class="bubble alt"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
 </div></div></section>
 <section class="wrap" id="finder">
-<p class="kicker">Course finder</p>
-<h2>Which course suits you?</h2>
-<p>No sign-up. Pick what sounds good and we'll show you the course. Then ask us for a free course plan.</p>
-<p><strong>What kind of work sounds good to you?</strong></p>
+<p class="kicker">{e(L["finderK"])}</p>
+<h2>{e(L["finderH"])}</h2>
+<p>{e(L["finderP"])}</p>
+<p><strong>{e(L["finderQ"])}</strong></p>
 <ul class="finder">{finder}</ul>
 </section>
 <section class="wrap">
-<p class="kicker">How it works</p>
-<h2>From "I'm curious" to your first class</h2>
+<p class="kicker">{e(L["howK"])}</p>
+<h2>{e(L["howH"])}</h2>
 <ol class="flow flow3">{steps}</ol>
-<aside class="tip"><strong>Kenji's tip</strong> {d["tip"]}</aside>
-<aside class="cta"><p>Ready? Ask for your free course plan</p><span class="small">{e(d["plan"])}</span><br>
-<a class="btn" href="/contact-us">Get my free course plan</a> <a class="btn ghost" href="mailto:info@weintervisa.com?subject=Working%20Holiday%20course%20plan">Email info@weintervisa.com</a>
-<p class="small">Please don't send passport numbers, visa grant numbers or bank details.</p></aside>
+<aside class="tip"><strong>{e(L["tipB"])}</strong> {d["tip"]}</aside>
+<aside class="cta"><p>{e(L["readyP"])}</p><span class="small">{e(d["plan"])}</span><br>
+<a class="btn" href="{c_}">{e(L["getPlan"])}</a> <a class="btn ghost" href="mailto:info@weintervisa.com?subject={L["mailSubject"]}">{e(L["email"])}</a>
+<p class="small">{e(L["noIds"])}</p></aside>
 </section>
 <section class="wrap">
-<p class="kicker">Courses</p>
-<h2>Three courses Working Holiday Makers love</h2>
-<p>Each one has a fast-track option for Working Holiday visa holders. Weeks, placement and intakes vary by provider.</p>
+<p class="kicker">{e(L["coursesK"])}</p>
+<h2>{e(L["coursesH"])}</h2>
+<p>{e(L["coursesP"])}</p>
 <ul class="courses">{courses}</ul>
-<p class="small">Fees, materials and placement costs depend on the course, provider and intake. Ask us for a free written quote.</p>
+<p class="small">{e(L["feesNote"])}</p>
 </section>
 <section class="wrap" id="video">
-<p class="kicker">Watch</p>
+<p class="kicker">{e(L["watchK"])}</p>
 <h2>{e(v["title"])}</h2>
 <p>{e(v["body"])}</p>
-<p class="actions"><a class="btn" href="{e(v["url"])}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a> <a href="{e(d["courses"][0]["more"][1])}">Read the CHC33021 guide</a></p>
+<p class="actions"><a class="btn" href="{e(v["url"])}" target="_blank" rel="noopener">{e(L["yt"])} ↗</a> <a href="{e(d["courses"][0]["more"][1])}">{e(L["guide"])}</a></p>
 </section>
 <section class="wrap">
-<p class="kicker">Where it can lead</p>
-<h2>Skills that Australia needs</h2>
+<p class="kicker">{e(L["leadK"])}</p>
+<h2>{e(L["leadH"])}</h2>
 <ul class="help leads">{leads}</ul>
-<h3>Possible roles after Cert III</h3>
+<h3>{e(L["rolesH"])}</h3>
 <ul class="tags roles">{roles}</ul>
-<aside class="tip maya"><strong>Maya says</strong> {e(d["news"])} <a href="{e(d["newsPost"])}">Read our summary</a></aside>
-<p class="small">No course can promise a job, a visa or PR. Employers set their own requirements and checks.</p>
+<aside class="tip maya"><strong>{e(L["mayaB"])}</strong> {e(d["news"])} <a href="{e(d["newsPost"])}">{e(L["summary"])}</a></aside>
+<p class="small">{e(L["noPromise"])}</p>
 </section>
 <section class="wrap">
-<p class="kicker">Settle in</p>
-<h2>A place to stay, health cover and your first week</h2>
+<p class="kicker">{e(L["settleK"])}</p>
+<h2>{e(L["settleH"])}</h2>
 <ul class="paths">{settle}</ul>
-<p class="small">The homestay button opens AHN's website in a new tab, where you sign up. AHN is our homestay partner.</p>
+<p class="small">{e(L["settleNote"])}</p>
 </section>
 <section class="wrap narrow">
-<h2>Questions Working Holiday Makers ask us</h2>
+<h2>{e(L["faqH"])}</h2>
 {faq}
-<details class="faq"><summary>Latest Working Holiday news (Home Affairs)</summary><ul class="list">{news}</ul>
-<p class="small">Source: <a href="{e(n["source"])}" target="_blank" rel="noopener">Home Affairs WHM latest news ↗</a>. Checked {e(n["checked"])}.</p></details>
-<details class="faq"><summary>More Working Holiday guides</summary><ul class="list">{guides}</ul></details>
+<details class="faq"><summary>{e(L["newsS"])}</summary><ul class="list">{news}</ul>
+<p class="small">{e(L["source"])} <a href="{e(n["source"])}" target="_blank" rel="noopener">{e(L["newsLink"])} ↗</a>. {e(L["checked"].format(n["checked"]))}</p></details>
+<details class="faq"><summary>{e(L["guidesS"])}</summary><ul class="list">{guides}</ul></details>
 </section>
 <section class="wrap ready">{img(d["readyImage"], "ready-img", w=900, h=563)}<div>
-<h2>Let's plan your course together</h2>
+<h2>{e(L["readyH"])}</h2>
 <p>{e(d["ready"])}</p>
-<p class="actions"><a class="btn" href="/contact-us">Get my free course plan</a> <a class="btn ghost" href="#finder">Try the course finder</a></p>
-<p class="small">QEAC-certified counsellor (PIER), QEAC No. 11964 · Based in Sydney, Australia · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
+<p class="actions"><a class="btn" href="{c_}">{e(L["getPlan"])}</a> <a class="btn ghost" href="#finder">{e(L["tryFinder"])}</a></p>
+<p class="small">{e(L["qeac"])} · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
 <p class="small">{e(d["disclaimer"])}</p>
 </div></section>"""

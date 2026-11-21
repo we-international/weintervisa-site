@@ -6,10 +6,22 @@ migration agent; our team speaks Thai and English only; we receive no commission
 Links point to the Thai page when one exists (TH), else to the English page.
 """
 import html
+import json
+from pathlib import Path
 
 import content_pages as cp
+import englishpractice_page
+import fasttrack_page
+import homestay_page
+import nursing_page
+import oshc_page
 
 e = html.escape
+
+
+def th_json(name):
+    """Thai copy of a rebuilt page's content (content/th/<name>.json): same keys as the English JSON, plus "ui"."""
+    return json.loads((Path(__file__).resolve().parent / "content/th" / f"{name}.json").read_text())
 
 # English path → Thai path for this set (merged into thai_pages.TH_OF)
 PAIRS = {p: "/th" + p for p in (
@@ -31,33 +43,11 @@ def simple(h1, lead, items, *, note=False, cta_text="มีคำถามไห
             f'{body}{VISA_NOTE_TH if note else ""}{cta(cta_text, second)}</section>')
 
 
-nursing = simple(
-    "เส้นทางสายพยาบาลในออสเตรเลีย",
-    "เรียนพยาบาลจบจากนอกออสเตรเลียใช่ไหม ดูขั้นตอนหลักก่อนจะทำงานเป็นพยาบาลที่นี่ แล้วถามเราเรื่องคอร์สเตรียมตัวได้",
-    [("ใครเป็นคนตัดสินเรื่องใบอนุญาต", "พยาบาลในออสเตรเลียต้องขึ้นทะเบียนกับ Nursing and Midwifery Board of Australia (NMBA) ผ่าน Ahpra "
-      "ซึ่งเป็นผู้ตัดสินว่าคุณขึ้นทะเบียนได้หรือไม่ เราช่วยเรื่องการเรียนและการเลือกคอร์สเท่านั้น ไม่ได้ตัดสินเรื่องการขึ้นทะเบียน"),
-     ("เริ่มจากภาษาอังกฤษ", "เส้นทางส่วนใหญ่ต้องใช้ผลสอบภาษาอังกฤษที่ได้รับการยอมรับ เราช่วยหาคอร์สภาษาอังกฤษหรือคอร์สเตรียมสอบได้"),
-     ("การประเมินแบบ outcomes-based", "พยาบาลที่จบจากต่างประเทศหลายคนต้องผ่านการประเมินของ NMBA คือสอบ NCLEX-RN แล้วตามด้วย OSCE "
-      "ถามเราเรื่องคอร์สเตรียมตัวที่เข้ากับแผนเวลาของคุณได้"),
-     ("เช็กกฎจากแหล่งทางการ", "กฎเปลี่ยนได้เสมอ ก่อนจ่ายค่าคอร์ส ควรเช็กเส้นทางของคุณเองในเว็บไซต์ทางการของ Ahpra และ NMBA")],
-    note=True, cta_text="ถามเราเรื่องค่าเรียน วันเริ่มเรียน และตัวเลือกคอร์สเตรียมตัวสายพยาบาล")
+nursing = nursing_page.render(th_json("nursing"))  # full page, same layout as the English one (22 Nov 2026)
 
-fast_track = simple(
-    "เรียนระหว่าง Working Holiday",
-    "อยู่ออสเตรเลียด้วยวีซ่า Working Holiday (417) หรือ Work and Holiday (462) อยู่แล้วใช่ไหม ใช้ช่วงเวลานี้เพิ่มทักษะใหม่ได้",
-    [("เล่าสถานการณ์ของคุณให้เราฟัง", "บอกเราว่าคุณถือวีซ่าอะไร อยากเรียนนานแค่ไหน และอยากอยู่เมืองไหน"),
-     ("สาขาที่คนสนใจบ่อย", "งานดูแลและชุมชน ผู้ช่วยงานสุขภาพ การศึกษาปฐมวัย การโรงแรม และภาษาอังกฤษ ดู<a href=\"/th/courses\">สาขาทั้งหมด</a>"),
-     ("เราเช็กก่อนแนะนำเสมอ", "ระยะเวลาเรียน การฝึกงาน และเงื่อนไขการทำงานของคุณ ต้องเช็กให้เรียบร้อยก่อนเราจะบอกว่าคอร์สไหนเหมาะ"),
-     ("คำถามวีซ่าส่งต่อคนที่ใช่", "คำถามเกี่ยวกับวีซ่าของคุณ เราส่งต่อให้ registered migration agent")],
-    note=True, cta_text="ถามเรื่องตัวเลือกคอร์สระหว่าง Working Holiday", second=("สมัครเรียน", "/th/charter-application"))
+fast_track = fasttrack_page.render(th_json("fast-track"))  # full page, same layout as the English one (22 Nov 2026)
 
-english = simple(
-    "เรียนภาษาอังกฤษ",
-    "เสริมภาษาอังกฤษสำหรับชีวิตประจำวัน การเรียน หรือการทำงาน หรือเรียนภาษาระหว่างมาเที่ยวออสเตรเลีย",
-    [("คอร์สที่ถามเราได้", "General English, Academic English และคอร์สเตรียมสอบ IELTS หรือ PTE ดูกลุ่ม<a href=\"/th/courses#english-pathways\">ภาษาอังกฤษและเส้นทางต่อยอด</a>"),
-     ("มาเที่ยวออสเตรเลีย?", "สำหรับผู้มาเที่ยว เราดูเฉพาะคอร์สภาษาอังกฤษที่ไม่มีการฝึกงาน"),
-     ("เช็กก่อนจอง", "ระยะเวลาเรียน เงื่อนไขวีซ่า เกณฑ์รับเข้าของสถาบัน และรายละเอียดคอร์ส ต้องเช็กให้ครบก่อนตัดสินใจ")],
-    note=True, cta_text="ถามเรื่องการเรียนภาษาอังกฤษ")
+english = englishpractice_page.render(th_json("english-practice"))  # full page, same layout as the English one (22 Nov 2026)
 
 services = simple(
     "บริการนักเรียน",
@@ -69,21 +59,9 @@ services = simple(
      ("ความช่วยเหลืออื่นๆ", "<a href=\"/th/homestay\">โฮมสเตย์และที่พัก</a> · <a href=\"/th/oshc\">ประกันสุขภาพนักเรียน (OSHC)</a> · <a href=\"/th/english-practice\">เรียนภาษาอังกฤษ</a>")],
     cta_text="เริ่มคุยกับทีมงานของเรา")
 
-homestay = simple(
-    "โฮมสเตย์และที่พัก",
-    "หาที่พักที่เข้ากับชีวิตประจำวันของคุณ นี่คือเรื่องที่ควรคิดไว้ ระหว่างที่เรากำลังเตรียมลิงก์ที่พักที่เช็กแล้ว",
-    [("โฮมสเตย์", "อยู่กับเจ้าของบ้านคนท้องถิ่น ถามเรื่องทำเล อาหาร กฎของบ้าน ราคา และเงื่อนไขจากผู้ให้บริการโฮมสเตย์"),
-     ("หอพักนักเรียน", "เช็กที่อยู่ที่แน่นอน สิ่งที่รวมในราคา เงื่อนไขสัญญาเช่า และมีห้องว่างหรือไม่"),
-     ("แชร์บ้านเช่า", "คิดเรื่องการเดินทาง คนที่จะอยู่ด้วย งบประมาณ และสัญญาเช่า"),
-     ("ทำเลสำคัญ", "อยู่ใกล้วิทยาเขตหรือใกล้ระบบขนส่งที่สะดวก หน้านี้ไม่ได้หมายความว่ามีห้องว่าง")],
-    cta_text="ถามเรื่องโฮมสเตย์หรือที่พัก")
+homestay = homestay_page.render(th_json("homestay"))  # full page, same layout as the English one (22 Nov 2026)
 
-oshc = simple(
-    "ประกันสุขภาพนักเรียน (OSHC)",
-    "ผู้ถือวีซ่านักเรียนส่วนใหญ่ต้องมี Overseas Student Health Cover วางแผนไปพร้อมกับการเรียนได้เลย",
-    [("ถามเราเรื่องตัวเลือก", "เรากำลังเตรียมลิงก์แนะนำที่เช็กแล้ว ระหว่างนี้ถามทีมงานเรื่องตัวเลือกที่มีตอนนี้ได้"),
-     ("อ่านกรมธรรม์ก่อน", "ก่อนซื้อ ให้เทียบวันเริ่มและวันสิ้นสุด ใครได้รับความคุ้มครอง อะไรไม่คุ้มครอง และเงื่อนไขในเอกสารของบริษัทประกัน")],
-    cta_text="ถามเรื่องประกันสุขภาพ")
+oshc = oshc_page.render(th_json("oshc"))  # full page, same layout as the English one (22 Nov 2026)
 
 LABELS_TH = {"where": "ที่ตั้ง", "languages": "ภาษา", "markets": "ลูกค้าจาก", "visa": "ประเภทวีซ่า", "contact": "ติดต่อ",
              "online": " · ให้บริการออนไลน์ทั่วออสเตรเลีย", "visit": "ไปที่หน้า migration ของเขา",
@@ -143,15 +121,15 @@ PAGES = {
     "th/courses/nursing-pathways-australia": ("เส้นทางสายพยาบาลในออสเตรเลีย | ภาษาอังกฤษและเตรียมสอบ",
         "ขั้นตอนขึ้นทะเบียนพยาบาลในออสเตรเลีย และการเตรียมตัวเรื่องภาษาอังกฤษ NCLEX-RN และ OSCE ถาม We International เรื่องค่าเรียนและวันเริ่มเรียน", nursing),
     "th/fast-track-courses": ("เรียนระหว่าง Working Holiday | We International",
-        "ถือวีซ่า 417 หรือ 462 อยู่ใช่ไหม ถามเราเรื่องคอร์สงานดูแล สุขภาพ ปฐมวัย และภาษาอังกฤษในออสเตรเลีย", fast_track),
-    "th/english-practice": ("เรียนภาษาอังกฤษในออสเตรเลีย | We International",
-        "General English, Academic English และเตรียมสอบ IELTS หรือ PTE ในออสเตรเลีย รวมถึงคอร์สภาษาสำหรับผู้มาเที่ยว", english),
+        "ถือวีซ่า 417 หรือ 462 อยู่ใช่ไหม เรียน Certificate III สายดูแล ผู้ช่วยงานสุขภาพ หรือปฐมวัย พร้อมฝึกงาน และจัดการโฮมสเตย์กับประกันสุขภาพในที่เดียว", fast_track),
+    "th/english-practice": ("ฝึกภาษาอังกฤษ ไม่มีค่าใช้จ่าย | We International",
+        "ฝึกภาษาอังกฤษไม่มีค่าใช้จ่าย: ควิซข้อผิดที่เจอบ่อย 8 ข้อ ช่อง Say It Wrong และ Wobbi Says เกม และคอร์สภาษาอังกฤษในออสเตรเลีย", english),
     "th/student-services": ("บริการนักเรียน | We International",
         "ช่วยเลือกคอร์ส สมัครกับสถาบัน และเตรียมตัวก่อนเริ่มเรียนในออสเตรเลีย ทีมงานตอบภาษาไทยหรืออังกฤษ", services),
     "th/homestay": ("โฮมสเตย์และที่พักนักเรียน | We International",
-        "เรื่องที่ควรเช็กเมื่อเลือกโฮมสเตย์ หอพักนักเรียน หรือแชร์บ้านเช่าในออสเตรเลีย", homestay),
+        "เริ่มชีวิตในออสเตรเลียกับโฮมสเตย์ของ AHN: บ้านที่ผ่านการตรวจ อาหาร ค่าน้ำค่าไฟ และสายด่วน 24 ชั่วโมง พร้อมราคา 2026/2027 และขั้นตอนสมัคร", homestay),
     "th/oshc": ("ประกันสุขภาพนักเรียน (OSHC) | We International",
-        "วางแผน Overseas Student Health Cover และถามทีมงานเรื่องตัวเลือกที่มีตอนนี้", oshc),
+        "เทียบประกันสุขภาพนักเรียน OSHC จาก Allianz, Bupa, Medibank และ AHM แล้วซื้อบนเว็บไซต์พาร์ตเนอร์ พร้อมเรื่องที่ต้องเช็กก่อนซื้อ", oshc),
     "th/migration-support": ("ความช่วยเหลือเรื่องวีซ่า | We International",
         "เราช่วยเรื่องการเรียน คำถามวีซ่าให้เลือกเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน เราไม่ได้รับค่าคอมมิชชันจากเอเจนต์ในรายชื่อ", migration),
     "th/referral-partners": ("ร่วมงานกับเรา | We International",
