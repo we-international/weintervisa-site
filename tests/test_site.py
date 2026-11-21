@@ -173,6 +173,11 @@ for s_ in _sc.SCHOOLS:
     t_ = (SITE / f"th/schools/{s_['slug']}.html").read_text()
     check(all(f'<td data-col="{c_}">' in t_ for c_ in s_["fee_columns"]) and t_.count('scope="row"') == len(s_["courses"]) and "offer letter" in t_,
           f"/th/schools/{s_['slug']}: same courses and fee columns as English, offer-letter note")
+tp_ = (SITE / "th/privacy-policy.html").read_text()
+ep_ = (SITE / "privacy-policy.html").read_text()
+check(tp_.count("<h2>") == ep_.split('<main id="main">')[1].count("<h2>") and "ให้ถือตามฉบับภาษาอังกฤษ" in tp_ and "OAIC" in tp_ and "ซิดนีย์" in tp_ and "ไม่ใช้คุกกี้" in tp_,
+      "/th/privacy-policy: same sections as the approved English notice, English prevails, Sydney, OAIC, no cookies")
+check(all('href="/th/privacy-policy"' in (SITE / f"{r}.html").read_text() for r in ("th/index", "th/contact-us", "th/charter-application")), "Thai footer and Thai form consent link the Thai privacy notice")
 navth = (SITE / "th/index.html").read_text().split('<nav class="wide">')[1].split("</nav>")[0]
 check('href="/th/courses"' in navth and 'href="/th/blog"' in navth and 'href="/courses"' not in navth, "Thai nav links Thai courses and blog")
 tm = (SITE / "th/migration-support.html").read_text()

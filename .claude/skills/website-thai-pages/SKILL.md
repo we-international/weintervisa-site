@@ -31,7 +31,8 @@ Owner rule (20 Nov 2026): every page in English + Thai, `/th/...` + hreflang, Th
 - English proper names that must stay English (course titles in fee tables, blog post titles, campus names, school names) are wrapped in an element with `lang="en"`. Screen readers switch voice, and the "body mainly Thai" test strips `lang="en"` elements before counting English words. Don't use `lang="en"` to hide ordinary sentences that should be Thai.
 - School pages keep the approval gate: Thai school pairs are added to `TH_OF` only for `schools.SCHOOLS` (empty in production until the owner approves), so production has no `/th/schools`. Every school needs Thai `SUMMARY_TH`, `INTAKES_TH`, `FEE_NOTE_TH` entries — the build stops otherwise, so adding a school to `content/schools.json` means adding its Thai lines too.
 - Mobile fee table in Thai: `data-col="ระยะเวลา"`; campus columns keep the English campus name.
-- Still English only: `/privacy-policy` (owner-approved English; a Thai copy needs owner review before it goes up) and blog post bodies.
+- `/th/privacy-policy` (21 Nov 2026, owner: "ทำได้เลย"): a sentence-by-sentence Thai copy of the owner-approved English notice in `thai_more.PRIVACY_TH`, with "ถ้าต่างกัน ให้ถือตามฉบับภาษาอังกฤษ". Change both together: the test checks the same number of sections, Sydney, OAIC, no cookies. Thai footer and the consent box on Thai forms link the Thai notice. Never add a promise to the Thai copy that the English one lacks.
+- Still English only: blog post bodies.
 
 ## Traps
 - "Body mainly Thai" test counts English words of 4+ letters: a page that repeats "registered migration agent" fails. Write the Thai term ("เอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน") and give the English term once in brackets; the footer already carries the required phrase.

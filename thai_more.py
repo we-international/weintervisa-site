@@ -5,7 +5,7 @@ Same facts as the English pages, in plain Thai written for people. Names that ar
 read them right; the "body mainly Thai" test ignores lang="en" parts.
 School pages follow the school rules (schools.py): only schools that replied, only what they sent,
 "approved": false = preview only (production leaves them out until the owner approves).
-Not in Thai yet: /privacy-policy (owner-approved English text; a Thai copy needs owner review).
+/th/privacy-policy: Thai copy of the owner-approved English notice (owner said go ahead, 21 Nov 2026); English applies if they differ.
 """
 import html
 import json
@@ -219,6 +219,37 @@ if schools.SCHOOLS:  # same rule as English: empty in production until the owner
             f"{s['name']} คอร์สและค่าเรียน | We International",
             f"{s['name']}: วิทยาเขต รอบเปิดเรียน และค่าเรียนจากไฟล์ของสถาบันเอง ให้ We International ช่วยสมัครได้",
             detail(s))
+
+# /th/privacy-policy — owner said go ahead (21 Nov 2026). Same content as the owner-approved English notice
+# (content_pages.privacy_body, 20 Nov 2026); if the two differ, the English version applies.
+PRIVACY_TH = """<section class="wrap narrow">
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="lead">วิธีที่ We International Education &amp; Visa Pty Ltd ดูแลข้อมูลที่คุณให้เรา มีคำถามส่งมาที่ <a href="mailto:info@weintervisa.com?subject=Privacy">info@weintervisa.com</a></p>
+<h2>ข้อมูลที่เราเก็บ</h2>
+<p>เฉพาะข้อมูลที่คุณเลือกส่งมาเอง เช่น ชื่อ อีเมล หรือเบอร์โทร / LINE ID ตอนนี้อยู่ที่ไหน อยากเรียนอะไร และข้อความของคุณ
+กรุณาอย่าส่งเลขพาสปอร์ต เอกสารยืนยันตัวตน หรือเอกสารการเงินมาในข้อความทั่วไป ถ้าเราต้องใช้ เราจะส่งช่องทางที่ปลอดภัยให้</p>
+<h2>เราใช้ข้อมูลทำอะไร</h2>
+<p>เพื่อตอบคุณ และช่วยเรื่องบริการด้านการเรียนที่คุณขอ ถ้าคุณติ๊กช่องรับข่าว เราอาจส่งข่าวคอร์สทางอีเมลด้วย ยกเลิกได้ทุกเมื่อ</p>
+<h2>เก็บข้อมูลไว้ที่ไหน</h2>
+<p>ข้อความจากฟอร์มและแชทบนเว็บไซต์ของเรา เข้าสู่ระบบลูกค้าของเราเองชื่อ GetWec ซึ่งเก็บข้อมูลบนเซิร์ฟเวอร์ในซิดนีย์ ออสเตรเลีย
+เฉพาะทีมงานของเราเข้าถึงได้ ตามหน้าที่ของแต่ละคน อีเมลของเราใช้บริการ Google Workspace</p>
+<h2>ผู้ช่วย AI</h2>
+<p>ผู้ช่วยแชทบนเว็บไซต์ของเราเป็น AI ตอบคำถามทั่วไปจากข้อมูลที่ทีมงานอนุมัติแล้ว และส่งข้อมูลของคุณให้ทีมงานเมื่อคุณขอ ผู้ช่วย AI ไม่ให้คำแนะนำเรื่องวีซ่า</p>
+<h2>การส่งต่อข้อมูล</h2>
+<p>เราส่งข้อมูลของคุณให้สถาบันการศึกษา หรือให้เอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน (registered migration agent) เพื่อแนะนำต่อ เฉพาะเมื่อจำเป็นต่อบริการที่คุณขอ และคุณยินยอมแล้วเท่านั้น
+เราเป็นเอเจนซีการศึกษา ไม่ใช่ migration agent</p>
+<h2>ไม่มีการติดตาม</h2>
+<p>เว็บไซต์นี้ไม่ใช้คุกกี้ เครื่องมือวิเคราะห์ หรือตัวติดตามโฆษณา</p>
+<h2>ดูหรือแก้ไขข้อมูลของคุณ</h2>
+<p>ส่งอีเมลมาที่ <a href="mailto:info@weintervisa.com?subject=Privacy">info@weintervisa.com</a> เพื่อขอดูข้อมูลของคุณ ขอแก้ไขหรือลบ หรือแจ้งข้อกังวลเรื่องความเป็นส่วนตัว
+ถ้าไม่พอใจคำตอบของเรา ติดต่อสำนักงานคณะกรรมการข้อมูลแห่งออสเตรเลีย (<span lang="en">Office of the Australian Information Commissioner</span>, OAIC) ได้</p>
+<p class="note-box">นี่คือฉบับภาษาไทยของ <a href="/privacy-policy">Privacy notice</a> ถ้าฉบับภาษาไทยกับภาษาอังกฤษมีข้อความต่างกัน ให้ถือตามฉบับภาษาอังกฤษ</p>
+<p class="hint">ปรับปรุงล่าสุด: 20 พฤศจิกายน 2026</p>
+</section>"""
+PAIRS["/privacy-policy"] = "/th/privacy-policy"
+PAGES["th/privacy-policy"] = ("นโยบายความเป็นส่วนตัว | We International",
+                              "We International Education & Visa Pty Ltd เก็บ ใช้ และดูแลข้อมูลของคุณอย่างไร",
+                              PRIVACY_TH)
 
 BLOG_TITLE = "บทความเรื่องเรียนต่อและชีวิตในออสเตรเลีย | We International"
 BLOG_DESC = "คู่มือเรื่องคอร์สเรียน Working Holiday และชีวิตนักเรียนในออสเตรเลีย (บทความภาษาอังกฤษ) ทีมงานตอบคำถามเป็นภาษาไทยหรืออังกฤษ"

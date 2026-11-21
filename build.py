@@ -137,7 +137,7 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
 <footer class="foot">
   <p><strong>{COMPANY}</strong>{(" · ABN " + esc(CONFIG["abn"])) if CONFIG.get("abn") else ""} · QEAC {esc(CONFIG["qeac"])}</p>
   <p>{tp.FOOT_TH if th else "We help with study and courses in Australia. We are not a migration agent: for visa advice we refer you to a registered migration agent."}</p>
-  <p><a href="{"/th/contact-us" if th else "/contact-us"}">{"ติดต่อเรา" if th else "Contact"}</a> · <a href="/privacy-policy">{"ความเป็นส่วนตัว" if th else "Privacy"}</a> · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
+  <p><a href="{"/th/contact-us" if th else "/contact-us"}">{"ติดต่อเรา" if th else "Contact"}</a> · <a href="{"/th/privacy-policy" if th else "/privacy-policy"}">{"ความเป็นส่วนตัว" if th else "Privacy"}</a> · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
 </footer>
 </body>
 </html>

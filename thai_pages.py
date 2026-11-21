@@ -115,7 +115,7 @@ def home(posts, fmt_date):
 
 
 CONSENT_TH = """<div class="field check">
-  <label><input type="checkbox" name="consent" required> <span>ฉันยินยอมให้ We International Education &amp; Visa Pty Ltd เก็บข้อมูลนี้ไว้เพื่อติดต่อกลับเรื่องที่สอบถาม (<a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>)</span></label>
+  <label><input type="checkbox" name="consent" required> <span>ฉันยินยอมให้ We International Education &amp; Visa Pty Ltd เก็บข้อมูลนี้ไว้เพื่อติดต่อกลับเรื่องที่สอบถาม (<a href="/th/privacy-policy">นโยบายความเป็นส่วนตัว</a>)</span></label>
   <span class="err" data-err="consent"></span>
 </div>
 <div class="field check">
