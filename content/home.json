@@ -1,29 +1,336 @@
 {
-  "_source": "Wix CMS collection WEIWebsitePages, slug 'home' (status DRAFT_READY_FOR_EDITOR), read-only export 20 Nov 2026. Content only.",
-  "title": "Study in Australia",
-  "heading": "Your next chapter starts with a better choice.",
-  "intro": "Explore study areas, understand your options and take the next step with clear, student-first support.",
+  "_source": "Live home page of www.weintervisa.com (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183, text/home.txt + home.html). Rebuilt from what visitors see now, not from the older CMS draft (read-only export 20 Nov 2026).",
+  "_edits": "21 Nov 2026: 'Can I talk to you in my language?' keeps the owner's rule from 20 Nov 2026 (Mia, our AI assistant, answers in many languages; our team replies in Thai or English). Tracking parameters (utm_*) dropped: the site has no analytics. The Wix 'translate this page' widget is replaced by the EN/TH switch. Images are shown only once a local copy is in assets/img (tools/fetch_images.py).",
+  "title": "Sydney education agency · Est. 2023",
+  "heading": "Study in Australia, your way.",
+  "intro": "Whatever visa you're on, we help you find a course that fits, compare your options and settle in. Friendly, free advice from a QEAC-certified counsellor.",
   "seoTitle": "Study in Australia | We International Education & Visa",
-  "seoDescription": "Explore study areas, understand your options and take the next step with clear, student-first support.",
-  "cta": "Explore courses",
-  "ctaTarget": "courses",
-  "sections": [
+  "seoDescription": "Whatever visa you're on, we help you find a course that fits, compare your options and settle in. Free advice from a QEAC-certified counsellor in Sydney.",
+  "heroPoints": [
+    [
+      "🧭",
+      "Find the right course for your visa, budget and goals"
+    ],
+    [
+      "📝",
+      "Help with your application and the documents providers ask for"
+    ],
+    [
+      "🏡",
+      "Health cover, a place to stay and first-week tips"
+    ]
+  ],
+  "trust": [
+    "✅ QEAC-certified counsellor (PIER) · No. 11964",
+    "📍 Based in Sydney · online support Australia-wide",
+    "💬 Free, no-obligation advice"
+  ],
+  "heroImage": {
+    "wix": "https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png",
+    "file": "187087_5766fac30a8149dbab2b9742233e3198-mv2.png",
+    "alt": "Maya the quokka and Kenji the koala, our guide characters, at Circular Quay in Sydney"
+  },
+  "guides": {
+    "maya": "Hi! I'm Maya, and this is Kenji. We'll show you around. 👋",
+    "kenji": "Pick your visa below and we'll take you to the right page."
+  },
+  "homestay": {
+    "kicker": "Finding a place to stay",
+    "heading": "New to Australia? Start with a homestay.",
+    "body": "Live with a screened local host family for your first weeks. Our homestay partner, Australian Homestay Network (AHN), checks every host and home, includes meals, Wi-Fi and bills, and gives you 24/7 emergency support.",
+    "url": "https://www.homestaynetwork.org/partners/weinternationaleducationandvisa-agents",
+    "button": "Find a homestay with AHN ↗",
+    "note": "You'll be taken to AHN's website · Opens a new tab"
+  },
+  "paths": [
     {
-      "heading": "A course that fits you",
-      "body": "Start with your interests, previous study, preferred city and budget. We help you compare suitable options when current provider information is available."
+      "icon": "🎒",
+      "tag": "Visa 417 / 462",
+      "title": "I'm on a Working Holiday visa",
+      "body": "Add a practical Cert III in care, health or childcare to your trip. Take our 30-second course finder.",
+      "link": "Working Holiday page",
+      "href": "/fast-track-courses"
     },
     {
-      "heading": "Clear choices. Honest support.",
-      "body": "Understand what is confirmed, what needs checking and what happens next. You stay in control of your study decision."
+      "icon": "🎓",
+      "tag": "Student visa (500)",
+      "title": "I want to study full time",
+      "body": "Explore courses, compare providers and get help applying. Student visas need a registered (CRICOS) course and OSHC.",
+      "link": "Explore courses",
+      "href": "/courses"
     },
     {
-      "heading": "Support in your language",
-      "body": "Chat with Mia, our AI assistant, in your own language any time. Our team replies in Thai or English."
+      "icon": "🩺",
+      "tag": "Student visa holders",
+      "title": "I need health cover (OSHC)",
+      "body": "Compare Overseas Student Health Cover and visitor cover options in one place.",
+      "link": "Compare health cover",
+      "href": "/oshc"
     },
     {
-      "heading": "A simpler way forward",
-      "body": "Explore a study area, ask about current options, compare the details, and proceed only when you are ready."
+      "icon": "✈️",
+      "tag": "Visitor visa (600)",
+      "title": "I'm visiting and want a short course",
+      "body": "Visitor visas usually allow up to 3 months of study. Ask us about short English and skills courses.",
+      "link": "Ask about short courses",
+      "href": "/contact-us"
+    },
+    {
+      "icon": "🏠",
+      "tag": "Graduate, partner or other visa",
+      "title": "I'm already in Australia on another visa",
+      "body": "Your visa conditions decide what you can study. Tell us your situation and we'll suggest options that may fit.",
+      "link": "Get course options",
+      "href": "/contact-us"
+    },
+    {
+      "icon": "🌏",
+      "tag": "Groups & families · ภาษาไทย",
+      "title": "Study Tour / Summer Camp",
+      "body": "Short study-and-explore programs in Australia. Prices on request. สอบถามเป็นภาษาไทยได้",
+      "link": "Ask about Study Tours",
+      "href": "/contact-us"
+    },
+    {
+      "icon": "🩺",
+      "tag": "Nurses & future nurses",
+      "title": "How to become a Registered Nurse in Australia",
+      "body": "Qualified as a nurse overseas, or planning to study nursing? See how registration works (Ahpra / NMBA) and find prep courses for English, NCLEX-RN and OSCE with our partner schools.",
+      "link": "Explore nursing pathways",
+      "href": "/courses/nursing-pathways-australia"
     }
   ],
-  "_edits": "20 Nov 2026 (owner): section 3 changed from the CMS draft — our team speaks Thai and English only; Mia (AI) chats in many languages."
+  "tip": "Not sure what your visa allows? Check your conditions for free in VEVO. We're an education agency working with registered migration partners, so for visa advice we can refer you to a registered migration agent.",
+  "vevo": "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online",
+  "popular": [
+    {
+      "code": "CHC33021",
+      "title": "Certificate III in Individual Support",
+      "body": "Aged care and disability support, with a supervised work placement.",
+      "img": {
+        "wix": "https://static.wixstatic.com/media/187087_fb8fecc264b24c94b5bcc5cf7bd68590~mv2.webp",
+        "file": "187087_fb8fecc264b24c94b5bcc5cf7bd68590-mv2.webp",
+        "alt": "Care worker supporting an older person (illustrative image)"
+      },
+      "more": [
+        "▶ Watch video",
+        "https://www.youtube.com/watch?v=GqUhVgaAR5E"
+      ]
+    },
+    {
+      "code": "HLT33115",
+      "title": "Certificate III in Health Services Assistance",
+      "body": "Support nurses and patients as part of a hospital team.",
+      "img": {
+        "wix": "https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp",
+        "file": "187087_b0a20dc9987e49d0b6446fb5b19bd3ca-mv2.webp",
+        "alt": "Health support worker in a hospital (illustrative image)"
+      },
+      "more": [
+        "Read the guide",
+        "/post/hlt33115-health-services-assistance-a-plain-english-guide"
+      ]
+    },
+    {
+      "code": "CHC30125",
+      "title": "Certificate III in Early Childhood Education and Care",
+      "body": "Play-based learning and child safety, with a placement in an early learning service.",
+      "img": {
+        "wix": "https://static.wixstatic.com/media/187087_a988c62bc5444e1e9e321a58e13f5eda~mv2.png",
+        "file": "187087_a988c62bc5444e1e9e321a58e13f5eda-mv2.png",
+        "alt": "Educator reading with young children (illustrative image)"
+      },
+      "more": [
+        "Read the guide",
+        "/post/chc30125-early-childhood-education-plain-english-guide"
+      ]
+    }
+  ],
+  "dream": [
+    {
+      "icon": "🎓",
+      "title": "Bachelor's degrees",
+      "body": "Start a university degree in Australia. Compare universities and colleges, entry requirements and intakes.",
+      "tags": [
+        "Business",
+        "IT",
+        "Health",
+        "Engineering",
+        "Design"
+      ],
+      "ask": "Ask about Bachelor's degrees"
+    },
+    {
+      "icon": "🏛️",
+      "title": "Master's degrees",
+      "body": "Take your career further with a coursework Master's or MBA, with pathways for many backgrounds.",
+      "tags": [
+        "MBA",
+        "Data Science",
+        "Project Mgmt",
+        "Nursing",
+        "Education"
+      ],
+      "ask": "Ask about Master's degrees"
+    },
+    {
+      "icon": "🛠️",
+      "title": "Trades & technical skills",
+      "body": "Hands-on courses you can use anywhere: build, fix, wire and cook like a pro.",
+      "tags": [
+        "Carpentry",
+        "Electrical",
+        "Automotive",
+        "Plumbing",
+        "Commercial cookery"
+      ],
+      "ask": "Ask about trade courses"
+    },
+    {
+      "icon": "🤖",
+      "title": "AI & data",
+      "body": "Learn how AI really works: machine learning, data analytics and automation, from short courses to Master's.",
+      "tags": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Analytics"
+      ],
+      "ask": "Ask about AI courses"
+    },
+    {
+      "icon": "💻",
+      "title": "IT & cyber security",
+      "body": "Software, networking, cloud and cyber security, from Diploma to Master's level.",
+      "tags": [
+        "Cyber Security",
+        "Software Dev",
+        "Cloud",
+        "Networking"
+      ],
+      "ask": "Ask about IT courses"
+    },
+    {
+      "icon": "🗣️",
+      "title": "English & test prep",
+      "body": "General English, IELTS and PTE preparation to reach the level your course needs.",
+      "tags": [
+        "General English",
+        "IELTS",
+        "PTE",
+        "Academic English"
+      ],
+      "ask": "Ask about English courses"
+    }
+  ],
+  "help": [
+    [
+      "🧭",
+      "Course advice",
+      "Compare courses, providers, intakes and fees, and get a written quote."
+    ],
+    [
+      "📝",
+      "Application help",
+      "We check your documents and apply to the provider with you."
+    ],
+    [
+      "🩺",
+      "Health cover",
+      "Compare OSHC and visitor cover options before you buy."
+    ],
+    [
+      "🏡",
+      "A place to stay",
+      "Homestay with our partner and tips for your first week."
+    ],
+    [
+      "🛂",
+      "Visa questions",
+      "We refer you to a registered migration agent for visa advice."
+    ],
+    [
+      "📚",
+      "Free guides",
+      "Plain-English guides on tax, TFN, VEVO, Medicare and more."
+    ]
+  ],
+  "video": {
+    "title": "Maya & Kenji explain a course in 7 minutes",
+    "body": "CHC33021 Certificate III in Individual Support: what you learn, possible jobs and whether the work is in demand.",
+    "url": "https://www.youtube.com/watch?v=GqUhVgaAR5E",
+    "channel": "https://www.youtube.com/channel/UC-Kiihd4RZgzIlnZsTzrfYA"
+  },
+  "english": {
+    "helpers": [
+      [
+        "🎙️",
+        "Say It Wrong",
+        "Real conversations with Maya & Kenji"
+      ],
+      [
+        "✏️",
+        "Wobbi Says",
+        "One everyday mistake fixed in under a minute"
+      ],
+      [
+        "🎮",
+        "Mini games",
+        "Test yourself in a minute, no sign-up"
+      ]
+    ],
+    "quiz": {
+      "wrong": "I am agree with you.",
+      "options": [
+        "I agree with you.",
+        "I am agreeing you.",
+        "I agreed with you am."
+      ],
+      "answer": 0,
+      "why": "\"Agree\" is a verb, so we don't add \"am\". Say: I agree with you."
+    }
+  },
+  "steps": [
+    [
+      "Tell us about you",
+      "Your visa, your goals and when you'd like to start."
+    ],
+    [
+      "Get your options",
+      "We send course options, intake dates and a written quote. Free."
+    ],
+    [
+      "Apply with our help",
+      "We check your documents and apply to the provider with you."
+    ]
+  ],
+  "maya": "Please don't send passport numbers or bank details by email. We'll tell you exactly which documents the provider needs and the safe way to send them.",
+  "faq": [
+    [
+      "Do you charge students for course advice?",
+      "Our course advice is free and there's no obligation. Ask us about any service before you start."
+    ],
+    [
+      "Can you help with my visa?",
+      "We're an education agency working with registered migration partners. We don't give visa advice ourselves, but we can <a href=\"/migration-support\">refer you to a registered migration agent</a>."
+    ],
+    [
+      "Can I study on a Working Holiday visa?",
+      "Yes. Home Affairs says Working Holiday Makers can study or train for up to 4 months on each visa (condition 8548). See our <a href=\"/fast-track-courses\">Working Holiday page</a>."
+    ],
+    [
+      "Do you help students outside Sydney?",
+      "Yes. We support students online and can look at courses in other cities. Our office is in Sydney."
+    ],
+    [
+      "Can I talk to you in my language?",
+      "Mia, our AI assistant, can chat in your language. Our team replies in Thai or English. This site is in English and <a href=\"/th/\">Thai</a>."
+    ]
+  ],
+  "ready": "Tell us your visa and what you'd like to study. We'll reply with options, intake dates and a written quote. Free, with no obligation.",
+  "readyImage": {
+    "wix": "https://static.wixstatic.com/media/187087_f1d1a9d8c39441e9967f50dfad68ad5c~mv2.png",
+    "file": "187087_f1d1a9d8c39441e9967f50dfad68ad5c-mv2.png",
+    "alt": "Maya and Kenji having coffee in a café (AI-generated scene)"
+  },
+  "characters": "Maya and Kenji are fictional, AI-generated characters; some images are AI-generated and do not show a specific provider, campus or student."
 }

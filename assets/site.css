@@ -184,3 +184,59 @@ nav.chips { margin: 16px 0 24px; }
 @media (max-width: 480px) { .fees table, .fees caption, .fees tbody, .fees tr { display: block; } .fees thead { display: none; }
   .fees tr { padding: 8px 12px; border-top: 1px solid var(--line); } .fees tbody th, .fees td { display: block; border: 0; padding: 2px 0; white-space: normal; }
   .fees td:nth-of-type(n+2)::before { content: attr(data-col) ": "; color: var(--muted); } }
+/* home v2 — rebuilt from the live Wix home page (21 Nov 2026) */
+.topnote { margin: 0; padding: 10px 16px; background: #fff3dc; text-align: center; font-size: 15px; }
+.home-hero .wrap { padding-bottom: 16px; }
+.hero-grid { display: grid; gap: 20px; align-items: center; }
+.points { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 8px; }
+.points li { display: flex; gap: 10px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; }
+.points span, .ico { font-size: 22px; line-height: 1.2; flex: none; }
+.hero-img { border-radius: 16px; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.bubble { background: var(--card); border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 10px 14px; margin: 10px 0 0; font-size: 16px; max-width: 30em; }
+.bubble.alt { border-radius: 14px 14px 4px 14px; margin-left: auto; background: #e9f2f1; }
+.trust-wrap { padding-top: 0; }
+.trust { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; color: var(--muted); }
+.band { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); margin-top: 24px; margin-bottom: 8px; }
+.band h2 { margin-top: 4px; }
+.paths, .dream, .courses, .help { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 12px; }
+.path, .area { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; }
+.path h3, .area h3 { margin: 6px 0 4px; }
+.path p, .area p { margin: 0 0 10px; color: var(--muted); }
+.path > a, .area > a { margin-top: auto; font-weight: 700; text-decoration: none; }
+.tag, .code { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); margin-top: 6px; }
+.tip { margin: 16px 0 0; padding: 14px 16px; background: #e9f2f1; border-radius: var(--radius); }
+.tip strong { display: block; margin-bottom: 2px; }
+.tip.maya { background: #fff3dc; }
+.course { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.course img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+.course > div { padding: 14px 16px; }
+.course h3 { margin: 4px 0; }
+.course p { margin: 0 0 10px; color: var(--muted); }
+.course .links { margin: 0; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.course .links .btn { margin: 0; }
+.tags { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font-size: 13px; padding: 2px 10px; border-radius: 999px; background: #e9f2f1; color: var(--brand); font-weight: 600; }
+.help li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; }
+.help .ico { grid-row: span 2; }
+.help span:not(.ico) { color: var(--muted); font-size: 15px; }
+.english { display: grid; gap: 20px; }
+.quiz { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; align-self: start; }
+.quiz .wrong { color: #b3261e; margin: 6px 0; }
+.quiz details summary { cursor: pointer; font-weight: 700; color: var(--brand); min-height: 44px; display: flex; align-items: center; }
+.quiz ol li { margin: 4px 0; }
+.quiz details strong { color: #1d6b35; }
+.english .help { grid-template-columns: 1fr !important; }
+.flow3 li span { display: block; }
+.ready { display: grid; gap: 16px; align-items: center; background: #e9f2f1; border-radius: var(--radius); margin-bottom: 24px; }
+.ready-img { border-radius: 12px; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.ready h2 { margin-top: 0; }
+@media (min-width: 720px) {
+  .hero-grid { grid-template-columns: 1.1fr 1fr; }
+  .paths, .dream, .help { grid-template-columns: repeat(2, 1fr); }
+  .courses { grid-template-columns: repeat(3, 1fr); }
+  .english, .ready { grid-template-columns: 1fr 1fr; }
+  .flow.flow3 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 960px) {
+  .paths, .dream, .help { grid-template-columns: repeat(3, 1fr); }
+}

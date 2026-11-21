@@ -110,16 +110,28 @@ check('"FAQPage"' in (SITE / "frequently-asked-questions.html").read_text(), "FA
 pv = (SITE / "privacy-policy.html").read_text()
 check("Sydney" in pv and "cookies" in pv and "AI" in pv, "privacy notice covers GetWec in Sydney, no cookies, the AI assistant")
 check("Draft for owner review" not in pv and "Last updated:" in pv, "privacy notice is the approved version (no draft label, has a date)")
-# 10. Home page — from the CMS home draft; every study-area group links to its section on /courses
+# 10. Home page — content/home.json (live Wix home, 21 Nov 2026); every study-area group links to its section on /courses
 hd = json.loads((ROOT / "content/home.json").read_text())
-check(hd["heading"] in html_unescape(home) and home.count("<h1>") == 1, "home uses the CMS heading as its one h1")
-check(f'<title>{hd["seoTitle"]}</title>' in html_unescape(home) and hd["seoDescription"] in html_unescape(home), "home has the CMS SEO title + description")
+check(hd["heading"] in html_unescape(home) and home.count("<h1>") == 1, "home uses its heading as the one h1")
+check(f'<title>{hd["seoTitle"]}</title>' in html_unescape(home) and hd["seoDescription"] in html_unescape(home), "home has its SEO title + description")
 for anchor in set(re.findall(r'href="/courses#([\w-]+)"', home)):
     check(f'id="{anchor}"' in c, f"home chip /courses#{anchor} has a matching section")
 check(len(re.findall(r'href="/courses#', home)) == len({a["group"] for a in json.loads((ROOT / "content/study-areas.json").read_text())}), "home links every study-area group")
 check("registered migration agent" in home.split("<footer")[0], "home body refers visa questions to a registered migration agent")
 check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee(d)? (place|visa|job)|100% |best price", home, re.I), "home makes no unapproved promises")
 check('"WebSite"' in home and '"Organization"' in home, "home has Organization + WebSite structured data")
+# 10b. Home v2 — rebuilt from the live Wix home page (21 Nov 2026), must be as full as the live page
+body_home = home.split("<main")[1].split("</main>")[0]
+words_home = len(re.sub(r"<[^>]+>", " ", body_home).split())
+check(words_home >= 1000, f"home body is as full as the live Wix home ({words_home} words, live ≈ 1,312)")
+check(all(f'href="{x["href"]}"' in home for x in hd["paths"]) and len(hd["paths"]) == 7, "home: all 7 'which one sounds like you' paths link to their pages")
+check('id="homestay"' in home and 'href="/homestay"' in home and 'rel="noopener"' in home, "home: homestay band links /homestay and opens the partner site in a new tab")
+check(all(f'href="/post/{c["more"][1].split("/post/")[1]}"' in home for c in hd["popular"] if "/post/" in c["more"][1]), "home: popular course guides link existing posts")
+check("utm_" not in home, "home: no tracking parameters")
+check("Our team replies in Thai or English" in html_unescape(home), "home FAQ: our team replies in Thai or English (owner rule)")
+check("fictional, AI-generated characters" in home, "home says Maya and Kenji are fictional, AI-generated characters")
+for f_ in re.findall(r'src="/assets/img/([^"]+)"', home):
+    check((ROOT / "assets/img" / f_).exists(), f"home image {f_} is in the repo")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
 check("We don&#x27;t receive any commission or benefit from listed agents" in ms or "We don't receive any commission or benefit from listed agents" in ms, "/migration-support says we receive no commission or benefit")

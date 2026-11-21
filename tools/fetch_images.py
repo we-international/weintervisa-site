@@ -24,4 +24,23 @@ for f in (ROOT / "content/posts").glob("*.md"):
             done += 1
         s = s.replace(url, "/assets/img/" + local.name)
     f.write_text(s)
+# Page images (content/*.json: {"wix": <url>, "file": <local name>}): download only; the page
+# shows an image once its local copy exists (home_page.img), so nothing ever loads from Wix.
+import json
+def specs(x):
+    if isinstance(x, dict):
+        if "wix" in x and "file" in x:
+            yield x
+        for v in x.values():
+            yield from specs(v)
+    elif isinstance(x, list):
+        for v in x:
+            yield from specs(v)
+for f in (ROOT / "content").glob("*.json"):
+    for sp in specs(json.loads(f.read_text())):
+        local = IMG / sp["file"]
+        if not local.exists():
+            with urllib.request.urlopen(sp["wix"], timeout=60) as r:
+                local.write_bytes(r.read())
+            done += 1
 print(f"downloaded {done} images into {IMG}")
