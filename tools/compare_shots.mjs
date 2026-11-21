@@ -70,19 +70,32 @@ async function measureOn(page, url, size, w) {
       blocked: /verify your request/i.test(text),
     };
   });
+  // Live Wix pages keep their content in embeds (iframes): collect the text of every frame so the
+  // team can rebuild the page from what visitors really see (CMS drafts are older than the live page).
+  const frameText = [];
+  for (const f of page.frames()) {
+    const t = await f.evaluate(() => document.body ? document.body.innerText : "").catch(() => "");
+    if (t && t.trim()) frameText.push(t.trim());
+  }
+  m.allWords = frameText.join(" ").split(/\s+/).filter(Boolean).length;
   const img = await page.screenshot({ type: "jpeg", quality: 55, clip: { x: 0, y: 0, width: w,
     height: Math.min(MAXH[size], m.height) } }).catch(() => null);
-  return { status, loadMs, ...m, img };
+  return { status, loadMs, ...m, img, frameText };
 }
 
+const name0 = p => p === "/" ? "home" : p.slice(1).replace(/\//g, "_");
 const browser = await chromium.launch();
 const report = [];
 for (const [size, opts] of Object.entries(sizes)) {
   const ctx = await browser.newContext(opts);
   for (const p of pages) {
-    const { img: liveImg, ...live } = await measure(ctx, LIVE + p, size, opts.viewport.width);
+    const { img: liveImg, frameText: liveText, ...live } = await measure(ctx, LIVE + p, size, opts.viewport.width);
+    if (size === "phone" && liveText && liveText.length) {
+      fs.mkdirSync(path.join(out, "text"), { recursive: true });
+      fs.writeFileSync(path.join(out, "text", name0(p) + ".txt"), liveText.join("\n\n----- frame -----\n\n") + "\n");
+    }
     await new Promise(r => setTimeout(r, 6000)); // go slowly on the live site
-    const { img: newImg, ...neu } = await measure(ctx, NEW + p, size, opts.viewport.width);
+    const { img: newImg, frameText: _nt, ...neu } = await measure(ctx, NEW + p, size, opts.viewport.width);
     const name = (p === "/" ? "home" : p.slice(1).replace(/\//g, "_")) + "-" + size + ".jpg";
     const b64 = b => b ? `data:image/jpeg;base64,${b.toString("base64")}` : "";
     const w = opts.viewport.width;
@@ -101,7 +114,7 @@ for (const [size, opts] of Object.entries(sizes)) {
 await browser.close();
 server.close();
 fs.writeFileSync(path.join(out, "report.json"), JSON.stringify(report, null, 1));
-const md = ["| Page | Size | Wix words / links / buttons / load ms | New words / links / buttons / load ms | New sideways scroll |", "|---|---|---|---|---|",
-  ...report.map(r => `| ${r.path} | ${r.size} | ${r.live.words ?? "-"} / ${r.live.links ?? "-"} / ${r.live.buttons ?? "-"} / ${r.live.loadMs ?? r.live.error} | ${r.new.words} / ${r.new.links} / ${r.new.buttons} / ${r.new.loadMs} | ${r.new.sideways ? "YES" : "no"} |${r.live.blocked ? " (Wix bot check)" : ""}`)];
+const md = ["| Page | Size | Wix words (all frames) / links / buttons / load ms | New words / links / buttons / load ms | New sideways scroll |", "|---|---|---|---|---|",
+  ...report.map(r => `| ${r.path} | ${r.size} | ${r.live.allWords ?? r.live.words ?? "-"} / ${r.live.links ?? "-"} / ${r.live.buttons ?? "-"} / ${r.live.loadMs ?? r.live.error} | ${r.new.words} / ${r.new.links} / ${r.new.buttons} / ${r.new.loadMs} | ${r.new.sideways ? "YES" : "no"} |${r.live.blocked ? " (Wix bot check)" : ""}`)];
 fs.writeFileSync(path.join(out, "report.md"), md.join("\n") + "\n");
 console.log(md.join("\n"));
