@@ -261,7 +261,7 @@ tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith("/schools") or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith("/schools") or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
@@ -306,6 +306,12 @@ for name_, en_path in TH_SYNC.items():
     main_th = (SITE / ("th" + en_path + ".html")).read_text().split('<main id="main">')[1].split("</main>")[0]
     check(main_en.count("<h2") == main_th.count("<h2") and main_en.count('class="faq"') == main_th.count('class="faq"'),
           f"/th{en_path} has the same sections and FAQ as {en_path}")
+# the Thai home is the English home's layout from content/th/home.json (the English home does not link /referral-partners either)
+_he, _ht = (json.loads((ROOT / f).read_text()) for f in ("content/home.json", "content/th/home.json"))
+check(_shape(_he) == _shape(_ht), "content/th/home.json has the same fields and list lengths as content/home.json")
+_me, _mt = ((SITE / f).read_text().split('<main id="main">')[1].split("</main>")[0] for f in ("index.html", "th/index.html"))
+check(_me.count("<h2") == _mt.count("<h2") and _me.count('class="faq"') == _mt.count('class="faq"') and _mt.count('<li class="path">') == len(_ht["paths"]),
+      "/th/ has the same sections, paths and FAQ as /")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

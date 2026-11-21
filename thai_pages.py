@@ -52,66 +52,10 @@ VISA_NOTE_TH = """<p class="note-box"><strong>มีคำถามเรื่�
 
 
 def home(posts, fmt_date):
-    areas = json.loads((ROOT / "content/study-areas.json").read_text())
-    groups = {}
-    for a in areas:
-        groups.setdefault(a["group"], []).append(a)
-    chips = "".join(f'<li><a href="/th/courses#{e(group_anchor(g))}">{e(GROUP_TH.get(g, g))} <span>{len(items)}</span></a></li>'
-                    for g, items in groups.items())
-    why = [
-        ("คอร์สที่ใช่สำหรับคุณ", "เริ่มจากสิ่งที่คุณสนใจ วุฒิที่เรียนมา เมืองที่อยากอยู่ และงบประมาณ เราช่วยเทียบตัวเลือกที่เหมาะ เมื่อมีข้อมูลล่าสุดจากสถาบัน"),
-        ("ตัวเลือกชัด ดูแลตรงไปตรงมา", "รู้ว่าอะไรยืนยันแล้ว อะไรต้องเช็กเพิ่ม และขั้นต่อไปคืออะไร คุณเป็นคนตัดสินใจเรื่องการเรียนเองเสมอ"),
-        ("คุยในภาษาของคุณ", "คุยกับ Mia ผู้ช่วย AI ของเราได้ทุกภาษา ตลอดเวลา ส่วนทีมงานของเราตอบเป็นภาษาไทยหรืออังกฤษ"),
-    ]
-    why_html = "".join(f"<li><strong>{e(h)}</strong><span>{e(b)}</span></li>" for h, b in why)
-    tiles = [
-        ("/th/courses", "คอร์สเรียน", "ภาษาอังกฤษ งานดูแล ธุรกิจ งานช่าง ไอที และอื่นๆ"),
-        ("/th/fast-track-courses", "Fast-track สำหรับ Working Holiday", "แผนเรียนสั้นที่เข้ากับวีซ่า 417 หรือ 462 เช็กเงื่อนไขก่อนเสมอ"),
-        ("/th/courses/nursing-pathways-australia", "เส้นทางสายพยาบาล", "ขั้นตอนหลักสำหรับพยาบาลที่เรียนจบจากนอกออสเตรเลีย"),
-        ("/th/english-practice", "เรียนภาษาอังกฤษ", "เสริมภาษาอังกฤษสำหรับการเรียน การทำงาน และชีวิตประจำวัน"),
-        ("/th/student-services", "บริการนักเรียน", "โฮมสเตย์ ประกันสุขภาพ และการดูแลระหว่างเรียน"),
-        ("/th/referral-partners", "พาร์ตเนอร์แนะนำนักเรียน", "ร่วมงานกับเราเพื่อแนะนำนักเรียน"),
-    ]
-    tiles_html = "".join(f'<a class="tile" href="{p}"><strong>{e(t)}</strong><span>{e(d)}</span></a>' for p, t, d in tiles)
-    cards = "".join(f"""<li class="card"><a href="/post/{p['slug']}">
-{f'<img src="{e(p["cover"])}" alt="" loading="lazy">' if p.get("cover") else '<div class="noimg"></div>'}
-<span class="date">{fmt_date(p["date"])}</span><strong>{e(p["title"])}</strong></a></li>""" for p in posts[:3])
-    return f"""<section class="hero"><div class="wrap">
-<p class="kicker">เรียนต่อออสเตรเลีย</p>
-<h1>บทใหม่ของคุณ เริ่มจากการเลือกที่ดีกว่า</h1>
-<p class="lead">ดูสาขาที่น่าสนใจ เข้าใจตัวเลือกของคุณ แล้วก้าวต่อไปอย่างมั่นใจ กับทีมที่คิดถึงนักเรียนก่อน</p>
-<p class="actions"><a class="btn" href="/th/courses">ดูคอร์สเรียน</a> <a class="btn ghost" href="/th/contact-us">ถามทีมงาน</a></p>
-</div></section>
-<section class="wrap">
-<h2>เริ่มจากสาขาที่สนใจ</h2>
-<p>เลือกกลุ่มเพื่อดูสาขาในกลุ่มนั้น เราเช็กรายละเอียดคอร์สล่าสุดกับสถาบันก่อนส่งให้คุณเสมอ</p>
-<ul class="chips">{chips}</ul>
-</section>
-<section class="wrap">
-<h2>เราช่วยอะไรได้บ้าง</h2>
-<ul class="why">{why_html}</ul>
-</section>
-<section class="wrap">
-<h2>ขั้นตอนง่ายๆ</h2>
-<ol class="flow">
-<li><strong>สำรวจ</strong><span>ดูสาขาที่คุณสนใจ</span></li>
-<li><strong>ถาม</strong><span>ส่งข้อความถามตัวเลือกที่เปิดรับตอนนี้</span></li>
-<li><strong>เทียบ</strong><span>ดูคอร์ส ค่าเรียน วิทยาเขต และวันเริ่มเรียนเทียบกัน</span></li>
-<li><strong>ตัดสินใจ</strong><span>ไปต่อเมื่อคุณพร้อมเท่านั้น เป็นการตัดสินใจของคุณ</span></li>
-</ol>
-</section>
-<section class="wrap">
-<h2>หน้าที่คนดูบ่อย</h2>
-<div class="grid3">{tiles_html}</div>
-<p class="note-box"><strong>มีคำถามเรื่องวีซ่า?</strong> เราเป็นเอเจนซีการศึกษา ไม่ใช่ migration agent
-คำแนะนำเรื่องวีซ่า เราจะแนะนำ registered migration agent ให้ ไม่มีใครรับประกันผลวีซ่าได้</p>
-</section>
-<section class="wrap">
-<h2>บทความล่าสุด (ภาษาอังกฤษ)</h2>
-<ul class="cards">{cards}</ul>
-<p><a href="/th/blog">บทความทั้งหมด {len(posts)} เรื่อง</a></p>
-<aside class="cta"><p>คุยกับ Mia ผู้ช่วย AI ได้ทุกภาษา ทีมงานของเราตอบเป็นภาษาไทยหรืออังกฤษ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
-</section>"""
+    """Thai home: the same layout as the English home (rebuilt from live Wix), from content/th/home.json (22 Nov 2026)."""
+    import home_page
+    th = json.loads((ROOT / "content/th/home.json").read_text())
+    return home_page.render(posts, fmt_date, th, group_label=lambda g: GROUP_TH.get(g, g))
 
 
 CONSENT_TH = """<div class="field check">
@@ -249,4 +193,4 @@ TH_PAGES = {
 JSONLD = thai_content.JSONLD
 
 HOME_TITLE = "เรียนต่อออสเตรเลีย | We International Education & Visa"
-HOME_DESC = "ดูสาขาที่น่าสนใจ เข้าใจตัวเลือกของคุณ แล้วก้าวต่อไปอย่างมั่นใจ กับทีมที่คิดถึงนักเรียนก่อน ทีมงานตอบภาษาไทยหรืออังกฤษ"
+HOME_DESC = "ไม่ว่าคุณถือวีซ่าอะไร เราช่วยหาคอร์สที่เหมาะ เทียบตัวเลือก และช่วยให้คุณตั้งหลักในออสเตรเลีย ปรึกษากับที่ปรึกษา QEAC ใน Sydney โดยไม่มีค่าใช้จ่าย ทีมงานตอบภาษาไทยหรืออังกฤษ"
