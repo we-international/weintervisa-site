@@ -141,23 +141,125 @@
    "slug": "frontier-education",
    "name": "Frontier Education",
    "approved": true,
-   "summary": "Vocational college with campuses in Brisbane and Cairns.",
+   "summary": "Business, hospitality, cookery, aged care, community services and AI courses on two campuses in Queensland.",
    "campuses": [
-    "Brisbane (QLD)",
-    "Cairns (QLD)"
+    "Brisbane (Level 5, 110 Eagle Street, QLD)",
+    "Cairns (Level 1, 19 Aplin Street, QLD)"
    ],
    "cricos": "03520G",
    "rto": "110080",
    "website": "https://www.frontiereducation.edu.au",
    "intakes": "November 2026 intake open (school update, 17 Nov 2026)",
-   "fee_columns": [],
-   "fee_note": "2027 fees are coming soon. Ask us for the current course list and 2026 fees.",
+   "fee_columns": [
+    "Already in Australia",
+    "Applying from overseas"
+   ],
+   "fee_note": "Total course fee in AUD: tuition + material fee + A$250 application fee. Same fees in Brisbane and Cairns. Deposit A$1,250 if you are already in Australia; from overseas the first payment is larger (for example A$5,000–6,600 tuition plus the material and enrolment fees). Package prices for 2–3 courses together are lower (for example Cert IV Kitchen Management + Diploma of Hospitality Management, 78 weeks: A$14,500 total). Entry: 18+, Year 11 or equal, IELTS 5.5 or PTE 46 (up to 10 weeks of English first if lower).",
    "source": {
-    "file": "School emails of 9 and 17 Nov 2026 (2026 marketing material sent for promotion)",
-    "received": "2026-11-17",
+    "file": "Frontier Marketing Material.pdf (price list + course sheets)",
+    "received": "2026-11-09",
     "year": "2026"
    },
-   "courses": []
+   "courses": [
+    {
+     "code": "BSB50120",
+     "name": "Diploma of Business",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 9500,
+      "Applying from overseas": 9500
+     },
+     "cricos": "107235C"
+    },
+    {
+     "code": "BSB50420",
+     "name": "Diploma of Leadership and Management",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 9500,
+      "Applying from overseas": 9500
+     },
+     "cricos": "104297B"
+    },
+    {
+     "code": "BSB60120",
+     "name": "Advanced Diploma of Business",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 9500,
+      "Applying from overseas": 9500
+     },
+     "cricos": "107194G"
+    },
+    {
+     "code": "SIT40521",
+     "name": "Certificate IV in Kitchen Management",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 11800,
+      "Applying from overseas": 11300
+     },
+     "cricos": "109510F"
+    },
+    {
+     "code": "SIT50422",
+     "name": "Diploma of Hospitality Management",
+     "weeks": 78,
+     "fees": {
+      "Already in Australia": 9200,
+      "Applying from overseas": 11300
+     },
+     "cricos": "114953C"
+    },
+    {
+     "code": "SIT60322",
+     "name": "Advanced Diploma of Hospitality Management",
+     "weeks": 91,
+     "fees": {
+      "Already in Australia": 10750
+     },
+     "cricos": "114954B"
+    },
+    {
+     "code": "CHC33021",
+     "name": "Certificate III in Individual Support (Ageing)",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 9500,
+      "Applying from overseas": 11000
+     },
+     "cricos": "116256A"
+    },
+    {
+     "code": "CHC43015",
+     "name": "Certificate IV in Ageing Support",
+     "weeks": 52,
+     "fees": {
+      "Already in Australia": 8500,
+      "Applying from overseas": 10000
+     },
+     "cricos": "107529M"
+    },
+    {
+     "code": "CHC52025",
+     "name": "Diploma of Community Services",
+     "weeks": 104,
+     "fees": {
+      "Already in Australia": 17500,
+      "Applying from overseas": 21500
+     },
+     "cricos": "118748J"
+    },
+    {
+     "code": "11287NAT",
+     "name": "Diploma of Artificial Intelligence (AI)",
+     "weeks": 92,
+     "fees": {
+      "Already in Australia": 27250,
+      "Applying from overseas": 27250
+     }
+    }
+   ]
   }
  ]
 }

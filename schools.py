@@ -44,9 +44,9 @@ def fee_table(s):
     cols = s["fee_columns"]
     head = "".join(f'<th scope="col">{e(c)}</th>' for c in cols)
     body = "".join(
-        f'<tr><th scope="row">{e(c["name"])}<span>{e(c["code"])} · CRICOS {e(c["cricos"])}</span></th>'
+        f'<tr><th scope="row">{e(c["name"])}<span>{e(c["code"])}{" · CRICOS " + e(c["cricos"]) if c.get("cricos") else ""}</span></th>'
         f'<td data-col="Length">{c["weeks"]} weeks</td>'
-        + "".join(f'<td data-col="{e(col)}">{money(c["fees"][col])}</td>' for col in cols) + "</tr>"
+        + "".join(f'<td data-col="{e(col)}">{money(c["fees"][col]) if c["fees"].get(col) else "Ask us"}</td>' for col in cols) + "</tr>"
         for c in s["courses"])
     return (f'<div class="fees"><table><caption>{e(s["source"]["year"])} course fees (AUD)</caption>'
             f'<thead><tr><th scope="col">Course</th><th scope="col">Length</th>{head}</tr></thead>'

@@ -138,7 +138,7 @@ SCHOOL_NOTE_TH = ("<p class=\"note-box\"><strong>เกี่ยวกับข�
 
 SUMMARY_TH = {  # Thai summary per school (same meaning as the English summary from the school's files)
     "alana-kaye-college": "คอร์สงานดูแล การศึกษาปฐมวัย บริการชุมชน ธุรกิจ และก่อสร้าง มี 2 วิทยาเขต",
-    "frontier-education": "วิทยาลัยสายอาชีพ มีวิทยาเขตที่บริสเบนและแคนส์",
+    "frontier-education": "คอร์สธุรกิจ การโรงแรม การทำอาหาร ดูแลผู้สูงอายุ บริการชุมชน และ AI มี 2 วิทยาเขตในควีนส์แลนด์",
 }
 INTAKES_TH = {
     "alana-kaye-college": "วันจันทร์ที่ 3 ของทุกเดือน",
@@ -147,7 +147,7 @@ INTAKES_TH = {
 FEE_NOTE_TH = {
     "alana-kaye-college": "ค่าเรียนรวมทั้งคอร์สเป็นเงินดอลลาร์ออสเตรเลีย รวมค่าสมัคร A$300 และค่าอุปกรณ์การเรียน A$200 แล้ว "
                           "ผ่อนจ่ายได้ (งวดแรก A$1,500 แล้วจ่ายเป็นรายเทอม)",
-    "frontier-education": "ค่าเรียนปี 2027 จะประกาศเร็วๆ นี้ ถามเราเรื่องรายการคอร์สและค่าเรียนปี 2026 ได้",
+    "frontier-education": "ค่าเรียนรวมทั้งคอร์สเป็นเงินดอลลาร์ออสเตรเลีย: ค่าเรียน + ค่าอุปกรณ์การเรียน + ค่าสมัคร A$250 ราคาเดียวกันทั้งบริสเบนและแคนส์ มัดจำ A$1,250 ถ้าอยู่ในออสเตรเลียแล้ว ถ้าสมัครจากต่างประเทศ งวดแรกจะสูงกว่า (เช่น ค่าเรียน A$5,000–6,600 บวกค่าอุปกรณ์และค่าลงทะเบียน) เรียนเป็นแพ็กเกจ 2–3 คอร์สถูกกว่า (เช่น Cert IV Kitchen Management + Diploma of Hospitality Management 78 สัปดาห์ รวม A$14,500) คุณสมบัติ: อายุ 18 ปีขึ้นไป จบ ม.5 หรือเทียบเท่า IELTS 5.5 หรือ PTE 46 (ถ้าต่ำกว่า อาจต้องเรียนภาษาอังกฤษก่อนสูงสุด 10 สัปดาห์)",
 }
 
 
@@ -177,9 +177,9 @@ def fee_table(s):
     cols = s["fee_columns"]
     head = "".join(f'<th scope="col" lang="en">{e(c)}</th>' for c in cols)
     body = "".join(
-        f'<tr><th scope="row" lang="en">{e(c["name"])}<span>{e(c["code"])} · CRICOS {e(c["cricos"])}</span></th>'
+        f'<tr><th scope="row" lang="en">{e(c["name"])}<span>{e(c["code"])}{" · CRICOS " + e(c["cricos"]) if c.get("cricos") else ""}</span></th>'
         f'<td data-col="ระยะเวลา">{c["weeks"]} สัปดาห์</td>'
-        + "".join(f'<td data-col="{e(col)}">{schools.money(c["fees"][col])}</td>' for col in cols) + "</tr>"
+        + "".join(f'<td data-col="{e(col)}">{schools.money(c["fees"][col]) if c["fees"].get(col) else "ถามเรา"}</td>' for col in cols) + "</tr>"
         for c in s["courses"])
     return (f'<div class="fees"><table><caption>ค่าเรียนปี {e(s["source"]["year"])} (AUD)</caption>'
             f'<thead><tr><th scope="col">คอร์ส</th><th scope="col">ระยะเวลา</th>{head}</tr></thead>'

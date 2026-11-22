@@ -210,7 +210,8 @@ for x in sd:
     check(s.count("<h1>") == 1 and "registered migration agent" in s and "offer letter" in s, f"/schools/{x['slug']} has one h1, visa note and fee caveat")
     check(not re.search(r"\bguarantee|best price|100% |free consultation|<img", s, re.I), f"/schools/{x['slug']} makes no promises and shows no unsupplied images")
     for c in x["courses"]:
-        check(all(isinstance(c["fees"][col], int) for col in x["fee_columns"]) and c["cricos"] in s, f"{x['slug']} {c['code']} fee + CRICOS shown")
+        check(all(isinstance(c["fees"][col], int) for col in x["fee_columns"] if col in c["fees"]) and c["fees"]
+              and (c.get("cricos") or "") in s and c["code"] in s, f"{x['slug']} {c['code']} fee + code (+ CRICOS when the school gave one) shown")
 check(subprocess.run([sys.executable, "-c", "import sys; sys.argv=['x','--production']; import schools; "
                       "sys.exit(0 if all(s.get('approved') for s in schools.SCHOOLS) else 1)"], cwd=ROOT).returncode == 0,
       "production build includes only owner-approved schools")
