@@ -262,3 +262,7 @@ nav.chips { margin: 16px 0 24px; }
 .topic { margin: 18px 0 26px; }
 .topic img { border-radius: 14px; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 @media (max-width: 480px) { .course-item dl { grid-template-columns: 1fr; } .course-item dt { margin-top: 6px; } }
+/* FAQ help page: topics with a jump bar (22 Nov 2026) */
+.faq-topic { margin-top: 32px; scroll-margin-top: 16px; }
+.faq-topic h2 { margin-bottom: 4px; }
+.faq-more { margin-top: 12px; font-size: 15px; }

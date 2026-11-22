@@ -328,6 +328,25 @@ check(_ct.count('<strong lang="en">') == len(_cpg.COURSES) and all(f">{e_(_cpg.T
       and 'href="/charter-application"' not in _ct and 'href="/th/charter-application"' in _ct,
       "/th/courses: course titles marked lang=en, Thai group names, buttons go to Thai pages")
 
+# 20. FAQ help page (22 Nov 2026): every page FAQ, by topic, same in Thai; structured data matches the page
+import faq_page as _fq
+for _lang, _rel in (("en", "frequently-asked-questions.html"), ("th", "th/frequently-asked-questions.html")):
+    _fm = (SITE / _rel).read_text().split('<main id="main">')[1].split("</main>")[0]
+    _ts = _fq.topics(_lang)
+    _n = sum(len(t[4]) for t in _ts)
+    check(_fm.count('<details class="faq">') == _n and all(f'id="{t[0]}"' in _fm and f'href="#{t[0]}"' in _fm for t in _ts),
+          f"/{_rel[:-5]}: {_n} questions in {len(_ts)} topics, each topic in the jump bar")
+    for _name in ("fast-track", "nursing", "homestay", "oshc", "referral-partners"):
+        _src = json.loads((ROOT / "content" / ("th" if _lang == "th" else "") / f"{_name}.json").read_text())["faq"]
+        check(all(html_unescape(q) in html_unescape(_fm) for q, _ in _src), f"/{_rel[:-5]} has every {_name} FAQ question")
+    _ld = json.loads(re.search(r'<script type="application/ld\+json">(\{"@context": "https://schema.org", "@type": "FAQPage".*?)</script>',
+                               (SITE / _rel).read_text(), re.S).group(1))
+    check(len(_ld["mainEntity"]) == _n and not any("<" in q["acceptedAnswer"]["text"] for q in _ld["mainEntity"]),
+          f"/{_rel[:-5]}: FAQPage data lists all {_n} questions as plain text")
+check([t[0] for t in _fq.topics("en")] == [t[0] for t in _fq.topics("th")]
+      and [len(t[4]) for t in _fq.topics("en")] == [len(t[4]) for t in _fq.topics("th")], "Thai FAQ has the same topics and question counts as English")
+check("IELTS" in (SITE / "frequently-asked-questions.html").read_text(), "FAQ keeps the Wix IELTS / TOEIC question (now answered by /english-practice)")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

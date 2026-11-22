@@ -108,22 +108,8 @@ migration = f"""<section class="wrap narrow"><h1>ความช่วยเห�
 
 partners = about_page.partners(th_json("referral-partners"))  # full page, same layout as the English one (22 Nov 2026)
 
-faq = [
-    ("สมัครเรียนได้ทุกสาขาที่อยู่ในเว็บไหม", "ยังไม่ทุกสาขา บางสาขาเรากำลังเตรียมความพร้อม เราจะบอกคุณว่าคอร์สไหนยืนยันแล้ว"),
-    ("จะได้ตัวเลือก 3 ที่ไหม", "เราตั้งใจเทียบสถาบันที่เหมาะอย่างน้อย 3 แห่งตามสาขาและเมืองที่คุณเลือก ถ้ามีให้เลือก ถ้ายืนยันได้น้อยกว่านั้น เราจะบอกตรงๆ"),
-    ("มีใครรับประกันว่าจะได้ที่เรียน วีซ่า หรืองานไหม", "ไม่มี สถาบันเป็นผู้ตัดสินการรับเข้าเรียน รัฐบาลเป็นผู้ตัดสินเรื่องวีซ่า และเรื่องงานก็ไม่มีใครรับประกันได้"),
-    ("ให้คำแนะนำเรื่องวีซ่าไหม", "ไม่ เราไม่ใช่ migration agent เรื่องคำแนะนำวีซ่า เราจะแนะนำ registered migration agent ให้"),
-    ("ไปที่ออฟฟิศได้ไหม", "เราทำงานออนไลน์ ส่งข้อความมา แล้วเราจะนัดเวลาคุยกัน"),
-    ("ส่งเอกสารตอนนี้เลยได้ไหม", "เริ่มจากส่งข้อความสั้นๆ ก่อน ส่งพาสปอร์ตหรือเอกสารส่วนตัวเมื่อเราให้ช่องทางที่ปลอดภัยแล้วเท่านั้น"),
-    ("คุยเป็นภาษาของฉันได้ไหม", "ได้ กับ Mia ผู้ช่วย AI ของเรา ซึ่งคุยได้หลายภาษา ทีมงานของเราพูดภาษาไทยและอังกฤษ คำตอบจากทีมงานจึงเป็นภาษาไทยหรืออังกฤษ"),
-    ("ผู้ช่วยในแชทเป็นคนจริงไหม", "ผู้ช่วยบนเว็บไซต์ของเราเป็น AI ตอบคำถามทั่วไป และส่งข้อความของคุณต่อให้ทีมงาน"),
-]
-faq_body = (f'<section class="wrap narrow"><h1>คำถามที่พบบ่อย</h1>'
-            f'<p class="lead">คำตอบสั้นๆ เกี่ยวกับบริการด้านการเรียนของเรา</p>'
-            + "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in faq)
-            + VISA_NOTE_TH + cta("ยังมีคำถามอยู่ไหม") + "</section>")
-faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "th", "mainEntity": [
-    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+import faq_page  # noqa: E402 — same topics and answers as the English help page (22 Nov 2026)
+faq_body, faq_ld = faq_page.render("th", VISA_NOTE_TH)
 
 about = about_page.about(th_json("about"))  # full page, same layout as the English one (22 Nov 2026)
 
@@ -147,6 +133,6 @@ PAGES = {
     "th/referral-partners": ("ร่วมงานกับเรา | We International",
         "สถาบันการศึกษา วิทยาลัย และผู้ให้บริการนักเรียน คุยกับ We International เรื่องการทำงานร่วมกันได้", partners),
     "th/frequently-asked-questions": ("คำถามที่พบบ่อย | We International",
-        "คำตอบสั้นๆ เกี่ยวกับบริการด้านการเรียนในออสเตรเลียของเรา", faq_body),
+        "คำตอบเรื่องเรียนต่อ คอร์ส Working Holiday พยาบาล โฮมสเตย์ ประกันสุขภาพ (OSHC) และการทำงานกับ We International ในออสเตรเลีย", faq_body),
 }
 JSONLD = {"th/frequently-asked-questions": faq_ld}

@@ -162,22 +162,8 @@ We check every MARN on the official register before we list an agent, but please
 import about_page  # noqa: E402 — about + referral partners rebuilt from the live Wix pages (22 Nov 2026)
 partners_body = about_page.partners()
 
-faq = [
-    ("Can I apply for every study area on this site?", "Not yet. Some areas are ones we are preparing to support. We tell you which courses are confirmed."),
-    ("Will I get three options?", "We aim to compare at least three suitable schools for your study area and city when they are available. We tell you if fewer are confirmed."),
-    ("Is a place, a visa or a job guaranteed?", "No. The school decides admission, the government decides visas, and jobs are not guaranteed."),
-    ("Do you give visa advice?", "No. We are not a migration agent. For visa advice we refer you to a registered migration agent."),
-    ("Can I visit your office?", "We work online. Send us a message and we will arrange a time to talk."),
-    ("Can I send my documents now?", "Please start with a short message. Send passports or other private documents only when we give you a secure way to do it."),
-    ("Can I talk in my own language?", "Yes, with Mia, our AI assistant: she can chat in many languages. Our team speaks Thai and English, so a reply from a person will be in Thai or English."),
-    ("Is the chat assistant a person?", "Our website assistant is an AI. It answers general questions and passes your message to our team."),
-]
-faq_body = (f'<section class="wrap narrow"><h1>Frequently asked questions</h1>'
-            f'<p class="lead">Quick answers about our study support.</p>'
-            + "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in faq)
-            + cta("Still have a question?") + "</section>")
-faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
+import faq_page  # noqa: E402 — one help page for every question, by topic (22 Nov 2026)
+faq_body, faq_ld = faq_page.render("en", VISA_NOTE)
 
 about_body = about_page.about()
 
@@ -226,7 +212,7 @@ CONTENT_PAGES = {
     "referral-partners": ("Partner with us | We International",
         "Schools, colleges and student service providers can talk to We International about working together.", partners_body),
     "frequently-asked-questions": ("FAQs | We International",
-        "Quick answers about our study support in Australia.", faq_body),
+        "Answers about study, Working Holiday courses, nursing, homestay, health cover (OSHC) and working with We International in Australia.", faq_body),
     "privacy-policy": ("Privacy notice | We International",
         "How We International Education & Visa Pty Ltd collects, uses and protects your information.", privacy_body),
 }
