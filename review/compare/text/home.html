@@ -1,0 +1,465 @@
+<body>
+
+<!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top" aria-current="page">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top" aria-current="page">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<!--WEI-HSBAR--><style>.wei-hsbar{background:#0e3e6a;text-align:center;padding:10px 14px;font:600 14px/1.3 Arial,Helvetica,sans-serif}.wei-hsbar a{color:#fff;text-decoration:none}.wei-hsbar u{color:#ffd7d9}@media(max-width:640px){.wei-hsbar{font-size:13px;padding:9px 10px}.wei-hsbar .wl{display:none}}</style><div class="wei-hsbar"><a href="https://www.weintervisa.com/homestay" target="_top">🏡 New to Australia? <span class="wl">Stay with a screened host family first — </span><u>Find a homestay →</u></a></div><!--/WEI-HSBAR-->
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true" class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+      <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+      <strong>We International<small>Education &amp; Visa</small></strong>
+    </a>
+    <button type="button" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">Menu ☰</button>
+    <div class="nav-panel" id="site-navigation">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+        <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+        <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+        <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+        <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+        <a href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sydney education agency · Est. 2023</span>
+      <h1 id="h1">Study in Australia, <span class="hl">your way.</span></h1>
+      <p class="lead">Whatever visa you're on, we help you find a course that fits, compare your options and settle in. Friendly, free advice from a QEAC-certified counsellor.</p>
+      <ul class="perks">
+        <li><span class="ic" aria-hidden="true">🧭</span><span><b>Find the right course</b> for your visa, budget and goals</span></li>
+        <li><span class="ic" aria-hidden="true">📝</span><span><b>Help with your application</b> and the documents providers ask for</span></li>
+        <li><span class="ic" aria-hidden="true">🏡</span><span><b>Health cover, a place to stay</b> and first-week tips</span></li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn primary" href="#paths">Start here: which visa are you on? →</a>
+        <a class="btn" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=hero">Talk to our team</a>
+      </div>
+      <div class="wi-lang" id="wiLang">
+        <button class="wi-lang__pill" id="wiLangBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="wiLangList">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M2 12h20M12 2c3 3.5 3 16.5 0 20M12 2c-3 3.5-3 16.5 0 20" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+          <span>Read this page in your language</span> · <b id="wiLangCur">English</b> <span aria-hidden="true">▾</span>
+        </button>
+        <ul class="wi-lang__list" id="wiLangList" role="listbox" aria-label="Choose a language" hidden=""><li><button type="button" lang="en" role="option" data-code="en" aria-selected="true">English</button></li><li><button type="button" lang="th" role="option" data-code="th" aria-selected="false">ไทย</button></li><li><button type="button" lang="ja" role="option" data-code="ja" aria-selected="false">日本語</button></li><li><button type="button" lang="ko" role="option" data-code="ko" aria-selected="false">한국어</button></li><li><button type="button" lang="zh-Hans" role="option" data-code="zh-Hans" aria-selected="false">简体中文</button></li><li><button type="button" lang="zh-Hant" role="option" data-code="zh-Hant" aria-selected="false">繁體中文</button></li><li><button type="button" lang="vi" role="option" data-code="vi" aria-selected="false">Tiếng Việt</button></li><li><button type="button" lang="es" role="option" data-code="es" aria-selected="false">Español</button></li><li><button type="button" lang="pt-BR" role="option" data-code="pt-BR" aria-selected="false">Português</button></li><li><button type="button" lang="id" role="option" data-code="id" aria-selected="false">Bahasa Indonesia</button></li></ul>
+        <p class="wi-lang__note" id="wiLangNote" hidden=""></p>
+      </div>
+    </div>
+    <div class="hero-pic">
+      <p class="bubble maya"><b>Maya:</b> Hi! I'm Maya, and this is Kenji. We'll show you around. 👋</p>
+      <div class="photo"><img src="https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png/v1/fill/w_1200,h_750,al_c,q_82,enc_auto/maya-kenji-sydney.png" alt="Maya the quokka and Kenji the koala, our guide characters, at Circular Quay in Sydney" width="1200" height="750"></div>
+      <p class="bubble kenji"><b>Kenji:</b> Pick your visa below and we'll take you to the right page.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="trustbar"><span>✅ <b>QEAC-certified</b> counsellor (PIER) · No. 11964</span><span>📍 Based in Sydney · online support Australia-wide</span><span>💬 Free, no-obligation advice</span></div>
+  </div>
+</section>
+<!--WEI-HSBAND--><section id="homestay" aria-labelledby="hs-h" style="padding:44px 0;background:#fff6e6">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+    <div style="flex:1 1 520px;min-width:0">
+      <span class="eyebrow">Finding a place to stay</span>
+      <h2 id="hs-h">New to Australia? Start with a homestay.</h2>
+      <p>Live with a screened local host family for your first weeks. Our homestay partner, Australian Homestay Network (AHN), checks every host and home, includes meals, Wi-Fi and bills, and gives you 24/7 emergency support.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+      <a class="btn primary" href="https://www.homestaynetwork.org/partners/weinternationaleducationandvisa-agents" target="_blank" rel="noopener sponsored">Find a homestay with AHN ↗</a>
+      <a class="btn" href="https://www.weintervisa.com/homestay" target="_top">How homestay works</a>
+      <small style="display:block;width:100%;color:#526c82">You'll be taken to AHN's website · Opens a new tab</small>
+    </div>
+  </div>
+</section><!--/WEI-HSBAND-->
+
+
+<section id="paths" class="alt" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Start here</span>
+      <h2 id="paths-h">Which one sounds like you?</h2>
+      <p class="lead">Choose your situation. Each path shows what you can usually study and how we can help.</p>
+    </div>
+    <div class="paths">
+      <a class="path feature" target="_top" href="https://www.weintervisa.com/fast-track-courses?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home">
+        <span class="top"><span class="em" aria-hidden="true">🎒</span><span><span class="tag">Visa 417 / 462</span><h3>I'm on a Working Holiday visa</h3></span></span>
+        <p>Add a practical Cert III in care, health or childcare to your trip. Take our 30-second course finder.</p>
+        <span class="go">Working Holiday page →</span>
+      </a>
+      <a class="path" target="_top" href="https://www.weintervisa.com/courses?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home">
+        <span class="top"><span class="em" aria-hidden="true">🎓</span><span><span class="tag">Student visa (500)</span><h3>I want to study full time</h3></span></span>
+        <p>Explore courses, compare providers and get help applying. Student visas need a registered (CRICOS) course and OSHC.</p>
+        <span class="go">Explore courses →</span>
+      </a>
+      <a class="path" target="_top" href="https://www.weintervisa.com/oshc?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home">
+        <span class="top"><span class="em" aria-hidden="true">🩺</span><span><span class="tag">Student visa holders</span><h3>I need health cover (OSHC)</h3></span></span>
+        <p>Compare Overseas Student Health Cover and visitor cover options in one place.</p>
+        <span class="go">Compare health cover →</span>
+      </a>
+      <a class="path" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home&amp;course=Short%20course%20on%20a%20visitor%20visa&amp;message=Visitor%20visa%3A%20short%20course%20enquiry">
+        <span class="top"><span class="em" aria-hidden="true">✈️</span><span><span class="tag">Visitor visa (600)</span><h3>I'm visiting and want a short course</h3></span></span>
+        <p>Visitor visas usually allow up to 3 months of study. Ask us about short English and skills courses.</p>
+        <span class="go">Ask about short courses →</span>
+      </a>
+      <a class="path" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home&amp;course=Help%20me%20choose%20a%20course&amp;message=I%27m%20on%20another%20visa%20and%20want%20to%20study">
+        <span class="top"><span class="em" aria-hidden="true">🏠</span><span><span class="tag">Graduate, partner or other visa</span><h3>I'm already in Australia on another visa</h3></span></span>
+        <p>Your visa conditions decide what you can study. Tell us your situation and we'll suggest options that may fit.</p>
+        <span class="go">Get course options →</span>
+      </a>
+      <a class="path" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home&amp;course=Study%20Tour%20%2F%20Summer%20Camp&amp;message=Study%20Tour%20enquiry">
+        <span class="top"><span class="em" aria-hidden="true">🌏</span><span><span class="tag">Groups &amp; families · ภาษาไทย</span><h3>Study Tour / Summer Camp</h3></span></span>
+        <p>Short study-and-explore programs in Australia. Prices on request. สอบถามเป็นภาษาไทยได้</p>
+        <span class="go">Ask about Study Tours →</span>
+      </a>
+      <a class="path wide" target="_top" href="https://www.weintervisa.com/courses/nursing-pathways-australia?utm_source=website&amp;utm_medium=home-path&amp;utm_campaign=home">
+        <span class="top"><span class="em" aria-hidden="true">🩺</span><span><span class="tag">Nurses &amp; future nurses</span><h3>How to become a Registered Nurse in Australia</h3></span></span>
+        <p>Qualified as a nurse overseas, or planning to study nursing? See how registration works (Ahpra / NMBA) and find prep courses for English, NCLEX-RN and OSCE with our partner schools.</p>
+        <span class="go">Explore nursing pathways →</span>
+      </a>
+    </div>
+    <div class="tip">
+      <img src="https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png/v1/crop/x_1330,y_290,w_400,h_400/fill/w_112,h_112,al_c,q_85,enc_auto/kenji.png" alt="" width="56" height="56">
+      <p><span class="who">Kenji's tip</span>Not sure what your visa allows? Check your conditions for free in <a href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online" target="_blank" rel="noopener">VEVO ↗</a>. We're an education agency working with registered migration partners, so for visa advice we can <a target="_top" href="https://www.weintervisa.com/migration-support">refer you to a registered migration agent</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="courses" aria-labelledby="courses-h">
+  <div class="wrap">
+    <span class="eyebrow">Popular courses</span>
+    <h2 id="courses-h">Practical courses that lead somewhere</h2>
+    <p class="lead">Hands-on Certificate III courses with work placement, plus English and other study areas.</p>
+    <div class="grid g3">
+      <article class="card course reveal">
+        <div class="pic"><img src="https://static.wixstatic.com/media/187087_fb8fecc264b24c94b5bcc5cf7bd68590~mv2.webp" alt="Care worker supporting an older person (illustrative image)" loading="lazy" width="1536" height="1024"></div>
+        <div class="body">
+          <span class="chip-code">CHC33021</span>
+          <h3>Certificate III in Individual Support</h3>
+          <p style="margin:0">Aged care and disability support, with a supervised work placement.</p>
+          <div class="btn-row">
+            <a class="btn primary" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=card-chc33021&amp;course=CHC33021%20Certificate%20III%20in%20Individual%20Support">Get fees &amp; intakes</a>
+            <a class="btn" href="#video">▶ Watch video</a>
+          </div>
+        </div>
+      </article>
+      <article class="card course reveal">
+        <div class="pic"><img src="https://static.wixstatic.com/media/187087_b0a20dc9987e49d0b6446fb5b19bd3ca~mv2.webp" alt="Health support worker in a hospital (illustrative image)" loading="lazy" width="1536" height="1024"></div>
+        <div class="body">
+          <span class="chip-code">HLT33115</span>
+          <h3>Certificate III in Health Services Assistance</h3>
+          <p style="margin:0">Support nurses and patients as part of a hospital team.</p>
+          <div class="btn-row">
+            <a class="btn primary" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=card-hlt33115&amp;course=HLT33115%20Certificate%20III%20in%20Health%20Services%20Assistance">Get fees &amp; intakes</a>
+            <a class="btn" target="_top" href="https://www.weintervisa.com/post/hlt33115-health-services-assistance-a-plain-english-guide">Read the guide</a>
+          </div>
+        </div>
+      </article>
+      <article class="card course reveal">
+        <div class="pic"><img src="https://static.wixstatic.com/media/187087_a988c62bc5444e1e9e321a58e13f5eda~mv2.png" alt="Educator reading with young children (illustrative image)" loading="lazy" width="1536" height="1024"></div>
+        <div class="body">
+          <span class="chip-code">CHC30125</span>
+          <h3>Certificate III in Early Childhood Education and Care</h3>
+          <p style="margin:0">Play-based learning and child safety, with a placement in an early learning service.</p>
+          <div class="btn-row">
+            <a class="btn primary" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=card-chc30125&amp;course=CHC30125%20Certificate%20III%20in%20Early%20Childhood%20Education%20and%20Care">Get fees &amp; intakes</a>
+            <a class="btn" target="_top" href="https://www.weintervisa.com/post/chc30125-early-childhood-education-plain-english-guide">Read the guide</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:18px"><a class="btn" target="_top" href="https://www.weintervisa.com/courses">See all courses →</a></p>
+  </div>
+</section>
+
+<section id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Study areas</span>
+      <h2 id="areas-h">Dream bigger: degrees, trades and tech</h2>
+      <p class="lead">From a Bachelor's or Master's to hands-on trades and AI, tell us your goal and we'll find courses, providers and intakes that fit your visa and budget.</p>
+    </div>
+    <div class="areas">
+      <a class="area t1 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-bachelor&amp;course=Bachelor%20degree">
+        <span class="area-em" aria-hidden="true">🎓</span>
+        <h3>Bachelor's degrees</h3>
+        <p>Start a university degree in Australia. Compare universities and colleges, entry requirements and intakes.</p>
+        <ul class="chips2"><li>Business</li><li>IT</li><li>Health</li><li>Engineering</li><li>Design</li></ul>
+        <span class="go">Ask about Bachelor's degrees →</span>
+      </a>
+      <a class="area t2 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-master&amp;course=Master%20degree">
+        <span class="area-em" aria-hidden="true">🏛️</span>
+        <h3>Master's degrees</h3>
+        <p>Take your career further with a coursework Master's or MBA, with pathways for many backgrounds.</p>
+        <ul class="chips2"><li>MBA</li><li>Data Science</li><li>Project Mgmt</li><li>Nursing</li><li>Education</li></ul>
+        <span class="go">Ask about Master's degrees →</span>
+      </a>
+      <a class="area t3 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-trades&amp;course=Trade%20course">
+        <span class="area-em" aria-hidden="true">🛠️</span>
+        <h3>Trades &amp; technical skills</h3>
+        <p>Hands-on courses you can use anywhere: build, fix, wire and cook like a pro.</p>
+        <ul class="chips2"><li>Carpentry</li><li>Electrical</li><li>Automotive</li><li>Plumbing</li><li>Commercial cookery</li></ul>
+        <span class="go">Ask about trade courses →</span>
+      </a>
+      <a class="area t4 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-ai&amp;course=AI%20and%20data%20course">
+        <span class="area-em" aria-hidden="true">🤖</span>
+        <h3>AI &amp; data</h3>
+        <p>Learn how AI really works: machine learning, data analytics and automation, from short courses to Master's.</p>
+        <ul class="chips2"><li>Artificial Intelligence</li><li>Machine Learning</li><li>Data Analytics</li></ul>
+        <span class="go">Ask about AI courses →</span>
+      </a>
+      <a class="area t5 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-it&amp;course=IT%20course">
+        <span class="area-em" aria-hidden="true">💻</span>
+        <h3>IT &amp; cyber security</h3>
+        <p>Software, networking, cloud and cyber security, from Diploma to Master's level.</p>
+        <ul class="chips2"><li>Cyber Security</li><li>Software Dev</li><li>Cloud</li><li>Networking</li></ul>
+        <span class="go">Ask about IT courses →</span>
+      </a>
+      <a class="area t6 reveal" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=area-english&amp;course=English%20course">
+        <span class="area-em" aria-hidden="true">🗣️</span>
+        <h3>English &amp; test prep</h3>
+        <p>General English, IELTS and PTE preparation to reach the level your course needs.</p>
+        <ul class="chips2"><li>General English</li><li>IELTS</li><li>PTE</li><li>Academic English</li></ul>
+        <span class="go">Ask about English courses →</span>
+      </a>
+    </div>
+    <p class="small center" style="margin-top:14px">Course availability, entry requirements and fees vary by provider. Ask us for current options.</p>
+  </div>
+</section>
+
+<section id="help" class="alt" aria-labelledby="help-h">
+  <div class="wrap">
+    <span class="eyebrow">How we help</span>
+    <h2 id="help-h">Everything for your first months, in one place</h2>
+    <div class="svc-grid">
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/courses"><span class="ic" aria-hidden="true">🧭</span><span><h3>Course advice</h3><p>Compare courses, providers, intakes and fees, and get a written quote.</p></span></a>
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/student-services"><span class="ic" aria-hidden="true">📝</span><span><h3>Application help</h3><p>We check your documents and apply to the provider with you.</p></span></a>
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/oshc?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=svc-cover"><span class="ic" aria-hidden="true">🩺</span><span><h3>Health cover</h3><p>Compare OSHC and visitor cover options before you buy.</p></span></a>
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/homestay"><span class="ic" aria-hidden="true">🏡</span><span><h3>A place to stay</h3><p>Homestay with our partner and tips for your first week.</p></span></a>
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/migration-support"><span class="ic" aria-hidden="true">🛂</span><span><h3>Visa questions</h3><p>We refer you to a registered migration agent for visa advice.</p></span></a>
+      <a class="svc-card" target="_top" href="https://www.weintervisa.com/blog"><span class="ic" aria-hidden="true">📚</span><span><h3>Free guides</h3><p>Plain-English guides on tax, TFN, VEVO, Medicare and more.</p></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="video" aria-labelledby="video-h">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Watch</span>
+      <h2 id="video-h">Maya &amp; Kenji explain a course in 7 minutes</h2>
+      <p class="lead">CHC33021 Certificate III in Individual Support: what you learn, possible jobs and whether the work is in demand.</p>
+    </div>
+    <div class="video-box" id="vbox">
+      <button type="button" id="vplay" aria-label="Play video: CHC33021 Certificate III in Individual Support explained">
+        <img src="https://i.ytimg.com/vi/GqUhVgaAR5E/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+        <span class="play" aria-hidden="true"></span>
+      </button>
+    </div>
+    <p class="small vcap center">More videos on <a href="https://www.youtube.com/channel/UC-Kiihd4RZgzIlnZsTzrfYA" target="_blank" rel="noopener">our YouTube channel ↗</a></p>
+  </div>
+</section>
+
+<!--WEP-->
+<style>
+#practice{background:linear-gradient(180deg,#fff 0%,#fff6e6 100%)}
+.wep-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.wep-list{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:10px}
+.wep-list li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.wep-ico{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:19px;background:var(--soft-2)}
+.wep-list strong{display:block;color:var(--blue)}
+.wep-list span.d{font-size:14px;color:var(--muted)}
+.wep-quiz{background:#fff;border:2px solid var(--blue);border-radius:18px;padding:22px;box-shadow:0 14px 34px rgba(14,62,106,.10)}
+.wep-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:999px;padding:4px 10px}
+.wep-q{margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.wep-q s{color:var(--red-dark)}
+.wep-ask{margin:0 0 12px;font-weight:700;color:var(--blue);font-size:17px}
+.wep-opt{display:block;width:100%;text-align:left;font:inherit;font-size:16px;padding:12px 14px;margin:0 0 8px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;min-height:46px}
+.wep-opt:hover{border-color:var(--blue)}
+.wep-opt.ok{background:#e8f6ef;border-color:var(--ok);color:var(--ok);font-weight:700}
+.wep-opt.no{background:#fdecec;border-color:var(--red);color:var(--red-dark)}
+.wep-fb{min-height:24px;margin:6px 0 0;font-weight:700;font-size:15px}
+.wep-fb.ok{color:var(--ok)}.wep-fb.no{color:var(--red-dark)}
+.wep-more{margin:14px 0 0;font-size:14px;color:var(--muted)}
+.wep-more a{color:var(--blue);font-weight:700}
+@media(max-width:860px){.wep-grid{grid-template-columns:1fr;gap:22px}}
+</style>
+<section id="practice" aria-labelledby="practice-h">
+  <div class="wrap wep-grid">
+    <div>
+      <span class="eyebrow">Free English practice</span>
+      <h2 id="practice-h">Want to practise your English?</h2>
+      <p class="lead">We have helpers to make you a little better every day. Learn the English Australians really use, one small mistake at a time.</p>
+      <ul class="wep-list">
+        <li><span class="wep-ico" aria-hidden="true">🎙️</span><div><strong translate="no">Say It Wrong</strong><span class="d">Real conversations with Maya &amp; Kenji</span></div></li>
+        <li><span class="wep-ico" aria-hidden="true">✏️</span><div><strong translate="no">Wobbi Says</strong><span class="d">One everyday mistake fixed in under a minute</span></div></li>
+        <li><span class="wep-ico" aria-hidden="true">🎮</span><div><strong>Mini games</strong><span class="d">Test yourself in a minute, no sign-up</span></div></li>
+      </ul>
+      <div class="btn-row"><a class="btn primary" href="https://www.weintervisa.com/english-practice" target="_top">Start practising →</a></div>
+    </div>
+    <div class="wep-quiz" id="wepQuiz">
+      <span class="wep-tag">Try one now</span>
+      <p class="wep-q">Not quite: <s translate="no">I am agree with you.</s></p>
+      <p class="wep-ask">Which is correct?</p>
+      <div translate="no">
+        <button type="button" class="wep-opt" data-ok="1">I agree with you.</button>
+        <button type="button" class="wep-opt">I am agreeing you.</button>
+        <button type="button" class="wep-opt">I agreed with you am.</button>
+      </div>
+      <p class="wep-fb" id="wepFb" aria-live="polite"></p>
+      <p class="wep-more">7 more questions, videos and games are waiting. <a href="https://www.weintervisa.com/english-practice" target="_top">Go to English practice →</a></p>
+    </div>
+  </div>
+</section>
+
+<!--/WEP-->
+
+
+<section id="how" class="alt" aria-labelledby="how-h">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2 id="how-h">Three simple steps</h2>
+    <ol class="steps">
+      <li><strong>Tell us about you</strong>Your visa, your goals and when you'd like to start.</li>
+      <li><strong>Get your options</strong>We send course options, intake dates and a written quote. Free.</li>
+      <li><strong>Apply with our help</strong>We check your documents and apply to the provider with you.</li>
+    </ol>
+    <div class="tip">
+      <img src="https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png/v1/crop/x_1020,y_350,w_380,h_380/fill/w_112,h_112,al_c,q_85,enc_auto/maya.png" alt="" width="56" height="56">
+      <p><span class="who">Maya says</span>Please don't send passport numbers or bank details by email. We'll tell you exactly which documents the provider needs and the safe way to send them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h">Common questions</h2>
+    <details><summary>Do you charge students for course advice?</summary><div class="ans"><p>Our course advice is free and there's no obligation. Ask us about any service before you start.</p></div></details>
+    <details><summary>Can you help with my visa?</summary><div class="ans"><p>We're an education agency working with registered migration partners. We don't give visa advice ourselves, but we can <a target="_top" href="https://www.weintervisa.com/migration-support">refer you to a registered migration agent</a>.</p></div></details>
+    <details><summary>Can I study on a Working Holiday visa?</summary><div class="ans"><p>Yes. Home Affairs says Working Holiday Makers can study or train for up to 4 months on each visa (condition 8548). See our <a target="_top" href="https://www.weintervisa.com/fast-track-courses">Working Holiday page</a>.</p></div></details>
+    <details><summary>Do you help students outside Sydney?</summary><div class="ans"><p>Yes. We support students online and can look at courses in other cities. Our office is in Sydney.</p></div></details>
+    <details><summary>Can I talk to you in my language?</summary><div class="ans"><p>Yes. Use the "Read this page in your language" button to switch language, and tell us your preferred language when you contact us.</p></div></details>
+    <p style="margin-top:12px"><a target="_top" href="https://www.weintervisa.com/frequently-asked-questions">More questions →</a></p>
+  </div>
+</section>
+
+<section id="apply" class="final" aria-labelledby="apply-h">
+  <div class="wrap final-grid">
+    <div>
+      <h2 id="apply-h">Ready when you are</h2>
+      <p>Tell us your visa and what you'd like to study. We'll reply with options, intake dates and a written quote. Free, with no obligation.</p>
+      <div class="btn-row">
+        <a class="btn primary" target="_top" href="https://www.weintervisa.com/contact-us?utm_source=website&amp;utm_medium=cta&amp;utm_campaign=home&amp;utm_content=final">Talk to our team</a>
+        <a class="btn" href="#paths">Choose my path</a>
+      </div>
+      <p class="trust">QEAC-certified counsellor (PIER), QEAC No. 11964 · Based in Sydney, Australia · <a href="mailto:info@weintervisa.com" style="color:#fff">info@weintervisa.com</a></p>
+    </div>
+    <div class="photo reveal"><img src="https://static.wixstatic.com/media/187087_f1d1a9d8c39441e9967f50dfad68ad5c~mv2.png/v1/fill/w_900,h_563,al_c,q_80,enc_auto/maya-kenji-cafe.png" alt="Maya and Kenji having coffee in a café (AI-generated scene)" loading="lazy" width="900" height="563"></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p><strong>We International Education &amp; Visa</strong><br><a href="mailto:info@weintervisa.com">info@weintervisa.com</a><br>Est. 2023 · Sydney, Australia<br><a href="https://www.pieronline.org/qeac" target="_blank" rel="noopener">QEAC No. 11964</a></p>
+      <nav class="social" aria-label="Social media"><a href="https://www.facebook.com/113772648238480" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/weintervisa" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@weintervisa" target="_blank" rel="noopener">TikTok</a><a href="https://www.linkedin.com/company/133425439" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/channel/UC-Kiihd4RZgzIlnZsTzrfYA" target="_blank" rel="noopener">YouTube</a></nav>
+    </div>
+    <div><h4>Study</h4><ul><li><a target="_top" href="https://www.weintervisa.com/courses">Explore courses</a></li><li><a target="_top" href="https://www.weintervisa.com/fast-track-courses">Working Holiday</a></li><li><a target="_top" href="https://www.weintervisa.com/courses/nursing-pathways-australia">Nursing pathways</a></li><li><a target="_top" href="https://www.weintervisa.com/english-practice">English practice</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a target="_top" href="https://www.weintervisa.com/student-services">Student services</a></li><li><a target="_top" href="https://www.weintervisa.com/oshc">Health cover (OSHC)</a></li><li><a target="_top" href="https://www.weintervisa.com/migration-support">Migration support</a></li></ul></div>
+    <div><h4>About</h4><ul><li><a target="_top" href="https://www.weintervisa.com/about-we-international">About us</a></li><li><a target="_top" href="https://www.weintervisa.com/blog">Guides &amp; news</a></li><li><a target="_top" href="https://www.weintervisa.com/frequently-asked-questions">FAQs</a></li><li><a target="_top" href="https://www.weintervisa.com/contact-us">Contact</a></li><li><a target="_top" href="https://www.weintervisa.com/privacy-policy">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="wrap"><p class="disclaimer">We International Education &amp; Visa Pty Ltd is an education agency working with registered migration partners. Information on this site is general and is not migration, legal, tax or insurance advice. We do not guarantee admission, visas, employment or outcomes. Maya and Kenji are fictional, AI-generated characters; some images are AI-generated and do not show a specific provider, campus or student.</p></div>
+<!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer>
+
+
+
+
+
+</body>

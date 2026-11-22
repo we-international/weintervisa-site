@@ -1,0 +1,111 @@
+<body>
+<!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/referral-partners">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<!--WEI-HSBAR--><style>.wei-hsbar{background:#0e3e6a;text-align:center;padding:10px 14px;font:600 14px/1.3 Arial,Helvetica,sans-serif}.wei-hsbar a{color:#fff;text-decoration:none}.wei-hsbar u{color:#ffd7d9}@media(max-width:640px){.wei-hsbar{font-size:13px;padding:9px 10px}.wei-hsbar .wl{display:none}}</style><div class="wei-hsbar"><a href="https://www.weintervisa.com/homestay" target="_top">🏡 New to Australia? <span class="wl">Stay with a screened host family first — </span><u>Find a homestay →</u></a></div><!--/WEI-HSBAR-->
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true"><div class="bar"><a class="brand" href="https://www.weintervisa.com/" target="_top">We <span>International</span><small>EDUCATION &amp; VISA</small></a><nav aria-label="Partner navigation"><button class="secondary" data-view="public">Become a partner</button><button data-view="dashboard">Partner sign in</button></nav></div></header>
+<main><div id="publicView"><section class="hero"><div><div class="eyebrow">Good connections. Meaningful next steps.</div><h1>Help a student<br>find their way.</h1><p class="lead">You bring the connection. We bring the guidance, practical resources and a team to help students explore their study options.</p><a class="cta" href="#apply">Apply now →</a><!--WEP-LOGIN--><a href="https://www.weintervisa.com/partner-portal" target="_top" style="display:inline-block;margin:12px 0 0 16px;font-weight:600;color:inherit;text-decoration:underline">Already a partner? Log in →</a><!--/WEP-LOGIN--><p class="hint" style="margin-top:16px">We are starting with a small group. Every application is reviewed personally.</p><div class="feature how-card how-left"><span class="tag">Your role, made simpler</span><div class="how"><div class="step"><span class="num">1</span><div><strong>Make an introduction</strong><p>Help a student connect with us, with their permission.</p></div></div><div class="step"><span class="num">2</span><div><strong>Work with our team</strong><p>Use clear guides and verified information. You do not need to know every answer.</p></div></div><div class="step"><span class="num">3</span><div><strong>Follow the next step</strong><p>Keep track of the students assigned to you and what they need next.</p></div></div></div></div></div><aside class="hero-apply" id="apply"><span class="eyebrow">Tell us a little about yourself</span><h2 style="margin-top:12px">Let’s start with<br>a conversation.</h2><p>Share your background and how you would like to help students connect with We International.</p><div class="notice" id="availability">The online application form is being prepared. Submissions are not open yet.</div><p class="hint">For questions, contact <a href="mailto:info@weintervisa.com">info@weintervisa.com</a>.</p><form id="applicationForm" class="card"><div class="form-grid"><div class="full"><label for="name">Full name *</label><input id="name" name="name" maxlength="120" autocomplete="name" required=""></div><div><label for="email">Email *</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" required=""></div><div><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" maxlength="40" autocomplete="tel"></div><div class="full"><label for="country">Country / region *</label><input id="country" name="country" maxlength="100" autocomplete="country-name" required=""></div><div class="full"><label for="experience">Your background and student connections *</label><textarea id="experience" name="experience" maxlength="2000" required=""></textarea><p class="hint">Do not include personal information about students.</p></div><div class="full"><label class="check"><input name="consent" type="checkbox" required=""><span>I agree that We International may use these details to review my partner application and contact me about it.</span></label><p class="hint">This is separate from student consent. Application privacy details and verification must be finalised before submissions open.</p></div></div><button id="submit" type="submit" disabled="">Applications opening soon</button><p class="status" id="applicationStatus" role="status" aria-live="polite"></p></form></aside></section>
+<section class="section"><h2>Support you can work with.</h2><div class="grid"><article class="card"><span class="eyebrow">Know where to start</span><h3>Practical guidance</h3><p>Simple onboarding, checklists and resources to help you introduce students responsibly.</p></article><article class="card"><span class="eyebrow">Stay informed</span><h3>Clear progress updates</h3><p>An approved partner account to follow your referrals, see next steps and reach our team.</p></article><article class="card"><span class="eyebrow">Keep it accurate</span><h3>Verified information</h3><p>Use course information checked by our team. Ask us when something needs clarification.</p></article></div></section>
+<section class="section split"><div><span class="eyebrow">A partnership built carefully</span><h2 style="margin-top:12px">Start small.<br>Build trust together.</h2><p>We welcome applications from people who can make thoughtful introductions and communicate clearly with students.</p><p>Submitting an application does not activate a partner account. We review each application, discuss suitability and confirm approval before access is granted.</p><div class="notice small">Partners introduce students and support communication. Preliminary checks are not a visa guarantee. Partners do not provide visa advice on our behalf.</div></div><div><details open=""><summary>What happens after I apply?</summary><p>Your application enters a review queue. Our team may contact you for more information. The owner makes the approval decision before partner access is enabled.</p></details><details><summary>How are referrals identified?</summary><p>Approved partners will have their own referral reference and link. The student confirms the introduction, and our team checks existing records before assigning a case.</p></details><details><summary>How does compensation work?</summary><p>Compensation arrangements are confirmed individually in writing before they apply. Tuition payments, funds actually received by our company, cancellations and refunds are considered during review. No rate or payment date is promised on this page.</p></details><details><summary>Can I send student documents now?</summary><p>Please do not include student details or documents in your partner application. Student information must follow the consent and referral process provided after approval.</p></details></div></section>
+</div>
+<div id="dashboardView" class="hidden"><div class="flex"><div><span class="eyebrow">Your partner workspace</span><h1 style="font-size:40px">Welcome back.</h1></div><button class="secondary" id="refresh">Refresh access</button></div><p class="lead">Your students, their next steps and the support you need.</p><div id="dashboardStatus" class="notice" role="status">Checking your account…</div><section id="cases"></section><div class="grid section"><article class="card"><h3>Guides &amp; support</h3><p>For help with a referral, contact our team.</p><a href="mailto:info@weintervisa.com">Email We International</a></article><article class="card"><h3>Course information</h3><p>Verified course information will be connected from our central system.</p></article><article class="card"><h3>Compensation</h3><p>Terms are pending. No payable balance or payment date is available.</p></article></div><div class="notice small">Student submissions remain closed during setup. Please do not send student documents through this page.</div><button class="secondary" data-view="owner">Owner review</button></div>
+<div id="ownerView" class="hidden"><span class="eyebrow">Restricted owner workspace</span><h1 style="font-size:40px">Partner review.</h1><p class="lead">Review the application and supporting information before making a decision.</p><div id="ownerStatus" class="notice" role="status">Checking owner access…</div><div id="applications"></div><div class="card"><h3>Approval checklist</h3><p>Confirm identity and suitability → agree responsibilities → verify the member account → record the owner decision → activate partner access.</p><p class="hint">Approval, suspension and compensation decision controls are not enabled in this staged build.</p></div><button class="secondary" data-view="dashboard" style="margin-top:20px">Back to dashboard</button></div>
+</main><footer><div class="flex"><span>We International Education &amp; Visa</span><a href="https://www.weintervisa.com/" target="_top">Back to the main website ↗</a></div><p style="margin:12px 0 0">Thoughtful introductions. Clear information. Support from our team.</p><!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer>
+<style id="wei-rp-layout">.hero{grid-template-columns:1.05fr 1fr;align-items:start;gap:48px;padding-top:28px}
+.hero>div:first-child{padding-top:18px}
+.hero-apply{background:#fff;border:1px solid var(--line,#dce6ee);border-radius:20px;padding:28px;box-shadow:0 18px 44px rgba(14,62,106,.12)}
+.hero-apply h2{font-size:28px;margin:6px 0 10px}
+.hero-apply form.card{border:0;padding:0;margin-top:14px;box-shadow:none;background:none}
+.how-card{padding:26px 28px;margin-top:30px;border-radius:20px}
+.how{display:grid;grid-template-columns:1fr;gap:4px;margin-top:6px}
+.how .step{margin:12px 0 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero{display:flex;flex-direction:column;align-items:stretch;gap:22px}.hero>div:first-child{display:contents}.hero>div:first-child>*{margin-top:0;margin-bottom:0}.hero .eyebrow{margin-bottom:-10px}.hero-apply{order:2}.hero .how-left{order:3;margin-top:0}.hero a.cta{align-self:flex-start}.hero a[href*="partner-portal"]{margin:0!important;align-self:flex-start}.how{grid-template-columns:1fr;gap:4px}}
+@media(max-width:700px){.hero-apply{padding:20px}}
+</style>
+</body>
