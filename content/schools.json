@@ -1,10 +1,10 @@
 {
- "_about": "Schools that replied to us and sent their own files (WEI-SCHOOL-BACKLOG-1120 step 4). Use only what the school sent. 'approved': false = preview only; the production build leaves the school out until the owner approves. Add a school = add one object.",
+ "_about": "Schools that replied to us and sent their own files (WEI-SCHOOL-BACKLOG-1120 step 4). Use only what the school sent. 'approved': false = preview only; the production build leaves the school out until the owner approves (owner approved Alana Kaye College and Frontier Education on 22 Nov 2026). Add a school = add one object.",
  "schools": [
   {
    "slug": "alana-kaye-college",
    "name": "Alana Kaye College",
-   "approved": false,
+   "approved": true,
    "summary": "Care, early childhood, community services, business and building courses on two campuses.",
    "campuses": [
     "Gold Coast (Southport, QLD)",
@@ -140,7 +140,7 @@
   {
    "slug": "frontier-education",
    "name": "Frontier Education",
-   "approved": false,
+   "approved": true,
    "summary": "Vocational college with campuses in Brisbane and Cairns.",
    "campuses": [
     "Brisbane (QLD)",

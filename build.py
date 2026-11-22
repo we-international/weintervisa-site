@@ -216,6 +216,11 @@ def build():
                  # Wix app pages rebuilt in GetWec (owner 20 Nov 2026): keep the old URLs working.
                  "schedule": "https://getwec.pages.dev/book/",          # Wix Bookings → Book a free consultation
                  "partner-portal": "https://getwec.pages.dev/",         # Wix Members portal → GetWec partner sign-in
+                 "members": "https://getwec.pages.dev/",                # Wix Members area → GetWec sign-in (owner 22 Nov 2026)
+                 "file-share": "https://getwec.pages.dev/",             # Wix File Share → private documents in GetWec (owner 22 Nov 2026)
+                 # Empty Wix app pages (owner 22 Nov 2026, option ก): send to the matching page on the new site.
+                 "videos": "/blog",                                     # Wix Video page had no videos
+                 "challenges": "/english-practice",                             # Wix Online Programs page had no programs
                  # dead link already on the live Wix blog (post no longer exists) → blog index
                  "post/what-s-on-in-october-2026-sydney-melbourne-events": "/blog"}
     for rel, target in redirects.items():

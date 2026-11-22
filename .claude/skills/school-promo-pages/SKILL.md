@@ -22,3 +22,4 @@ description: Use when adding or changing a school page on weintervisa.com (/scho
 - `get_thread` on threads with signature images is huge: it saves to a file; use `jq` to list `.messages[].attachments[].filename` and the first part of each body.
 - Fee tables on phones: turn rows into blocks under 480px and label cells with `data-col` + `::before`. Make the `<caption>` `display:block` too, or it shrinks to one word per line.
 - Always add the caveat: fees and dates can change; the school confirms them in the offer letter; visa questions go to a registered migration agent.
+- Owner approved Alana Kaye College and Frontier Education on 22 Nov 2026 (both `approved: true`). A school added later starts at `false` again and needs its own approval; a test checks the approved names.

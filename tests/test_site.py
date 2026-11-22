@@ -347,6 +347,13 @@ check([t[0] for t in _fq.topics("en")] == [t[0] for t in _fq.topics("th")]
       and [len(t[4]) for t in _fq.topics("en")] == [len(t[4]) for t in _fq.topics("th")], "Thai FAQ has the same topics and question counts as English")
 check("IELTS" in (SITE / "frequently-asked-questions.html").read_text(), "FAQ keeps the Wix IELTS / TOEIC question (now answered by /english-practice)")
 
+# Owner 22 Nov 2026: Wix app pages decided (option ก) and the first two schools approved for the live site.
+_moves = {"videos": "/blog", "challenges": "/english-practice", "members": "https://getwec.pages.dev/", "file-share": "https://getwec.pages.dev/"}
+check(all(f'url={t}"' in (SITE / f"{r}.html").read_text() for r, t in _moves.items()), "Wix app pages /videos /challenges /members /file-share redirect (owner 22 Nov)")
+check(json.loads((ROOT / "tests/pending-pages.json").read_text()) == [], "no Wix pages left waiting for an owner decision")
+_sch = json.loads((ROOT / "content/schools.json").read_text())["schools"]
+check({x["name"] for x in _sch if x.get("approved")} >= {"Alana Kaye College", "Frontier Education"}, "Alana Kaye College and Frontier Education approved for the live site (owner 22 Nov)")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
