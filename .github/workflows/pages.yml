@@ -33,10 +33,20 @@ jobs:
             echo "::warning::GetWec list not available; keeping the committed snapshot"
           fi
       - run: python3 tests/test_site.py
-      # Preview host is a project page under /weintervisa-site/: rebuild with that base path
-      # for the upload only (tests above run on the plain build). Remove when the DNS moves.
-      - run: SITE_BASE=/weintervisa-site python3 build.py
+      # Go-live dry run: the exact build www.weintervisa.com will serve after the DNS switch.
+      - run: python3 tests/test_production.py
+      # One switch for the DNS day (docs/go-live.md): config.json "live": true → production
+      # build (indexable, canonical www.weintervisa.com, CNAME) at the root of the custom domain.
+      # While "live" is false the preview host is a project page under /weintervisa-site/,
+      # so the upload is rebuilt with that base path (tests above run on the plain build).
+      - name: Build for upload (preview or live)
         if: github.ref == 'refs/heads/main'
+        run: |
+          if python3 -c "import json,sys;sys.exit(0 if json.load(open('config.json')).get('live') is True else 1)"; then
+            python3 build.py --production
+          else
+            SITE_BASE=/weintervisa-site python3 build.py
+          fi
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

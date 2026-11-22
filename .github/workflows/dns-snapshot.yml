@@ -1,0 +1,39 @@
+name: DNS snapshot (read-only)
+# Reads the current public DNS records of weintervisa.com from the CI runner (the cloud
+# team cannot reach DNS) so the go-live plan (docs/go-live.md) can list exactly which
+# records change on the DNS day (only @ and www) and which must stay as they are (MX,
+# SPF/DKIM/DMARC, verification TXT). Nothing is changed anywhere; output = job summary.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/dns-snapshot.yml"
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install -y -qq dnsutils >/dev/null
+      - name: Public records (Google and Cloudflare resolvers)
+        run: |
+          d=weintervisa.com
+          {
+            echo "## DNS snapshot for $d — $(date -u +%FT%TZ)"
+            echo '```'
+            for q in "$d NS" "$d SOA" "$d A" "$d AAAA" "www.$d CNAME" "www.$d A" "$d MX" "$d TXT" \
+                     "_dmarc.$d TXT" "google._domainkey.$d TXT" "$d CAA" \
+                     "_github-pages-challenge-we-international.$d TXT"; do
+              set -- $q
+              for r in 8.8.8.8 1.1.1.1; do
+                echo "$1 $2 @$r: $(dig +short +time=5 "$1" "$2" @$r | tr '\n' ' ')"
+              done
+            done
+            echo
+            echo "TTL (answer section, 8.8.8.8):"
+            for q in "$d A" "www.$d CNAME" "$d MX"; do set -- $q; dig +noall +answer "$1" "$2" @8.8.8.8; done
+            echo
+            echo "GitHub Pages IPs (target for @ on the DNS day):"
+            dig +short we-international.github.io A @8.8.8.8 | tr '\n' ' '; echo
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"

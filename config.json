@@ -1,4 +1,6 @@
 {
+  "live": false,
+  "_live_note": "DNS day only, with the owner (docs/go-live.md): true = CI deploys the production build (indexable, canonical www.weintervisa.com). Set the custom domain in Settings → Pages first.",
   "qeac": "11964",
   "abn": "",
   "cname": "www.weintervisa.com",
