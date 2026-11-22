@@ -11,6 +11,7 @@ import html
 import json
 from pathlib import Path
 
+import courses_page
 import schools
 
 ROOT = Path(__file__).resolve().parent
@@ -99,13 +100,13 @@ def courses_body():
         + "".join(f'<li><strong>{e(AREA_TH[a["slug"]][0])}</strong><span>{e(AREA_TH[a["slug"]][1])}</span></li>' for a in items)
         + "</ul>" for g, items in groups.items())
     school_link = ('<p>ดูคอร์สและค่าเรียนจาก<a href="/th/schools">สถาบันที่ส่งข้อมูลให้เรา</a></p>' if schools.SCHOOLS else "")
-    return f"""<section class="wrap">
-<h1>หาสาขาที่ใช่สำหรับคุณ</h1>
-<p class="lead">ดู {len(areas)} สาขา ตั้งแต่ภาษาอังกฤษ งานดูแล ธุรกิจ ไปจนถึงงานช่าง บอกเราว่าคุณสนใจอะไร แล้วเราจะดูตัวเลือกที่เปิดรับตอนนี้ไปด้วยกัน</p>
-<p class="note-box"><strong>เกี่ยวกับรายการนี้</strong> นี่คือสาขาการเรียน ไม่ได้แปลว่าทุกคอร์สสมัครผ่านเราได้
+    # 22 Nov 2026: the top of the page is the 97-course catalogue (same layout and anchors as /courses, Thai words in
+    # content/th/courses.json); the study areas follow, as on the English page.
+    areas_html = f"""<section class="wrap">
+<p class="kicker">สาขาการเรียนทั้งหมด</p>
+<h2>ดู {len(areas)} สาขาการเรียน</h2>
+<p>ตั้งแต่ภาษาอังกฤษ งานดูแล ธุรกิจ งานช่าง และอื่นๆ นี่คือสาขาการเรียน ไม่ได้แปลว่าทุกคอร์สสมัครผ่านเราได้
 เราจะส่งชื่อคอร์ส รหัส CRICOS ค่าเรียน วิทยาเขต และวันเริ่มเรียน หลังจากเช็กกับสถาบันแล้วเท่านั้น</p>
-<p class="actions"><a class="btn" href="/th/charter-application">บอกเราว่าอยากเรียนอะไร</a> <a class="btn ghost" href="/th/courses/nursing-pathways-australia">เส้นทางสายพยาบาล</a></p>
-{school_link}
 <h2>ระดับการเรียน</h2>
 <ul class="list">
 <li><strong>ภาษาอังกฤษและเส้นทางต่อยอด</strong> เรียนภาษา หรือคอร์ส foundation ก่อนเรียนวุฒิถัดไป</li>
@@ -116,6 +117,7 @@ def courses_body():
 {VISA_NOTE_TH}
 <aside class="cta"><p>ยังไม่แน่ใจว่าสาขาไหนเหมาะ บอกเราเรื่องความสนใจ สิ่งที่เรียนมา เมืองที่อยากอยู่ และงบประมาณ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
 </section>"""
+    return courses_page.render(areas_html, school_link, th=True)
 
 
 def blog_body(posts, fmt_date):
@@ -206,7 +208,7 @@ def schools_index():
 # English path → Thai path, and Thai pages (rel → title, description, body). Blog is built in build.py (needs posts).
 PAIRS = {"/courses": "/th/courses", "/blog": "/th/blog"}
 PAGES = {"th/courses": ("คอร์สเรียนในออสเตรเลีย | We International",
-                        "ดูสาขาการเรียนในออสเตรเลีย ตั้งแต่ภาษาอังกฤษ งานดูแล ธุรกิจ ไปจนถึงงานช่าง แล้วถามทีมงานเรื่องตัวเลือก ค่าเรียน และวันเริ่มเรียน",
+                        f"ดู {len(courses_page.COURSES)} คอร์สในออสเตรเลีย ตั้งแต่ภาษาอังกฤษ งานดูแล ธุรกิจ ไปจนถึงงานช่าง เลือกตามความสนใจหรือเมือง แล้วให้ทีมงานช่วยเทียบวิทยาลัย",
                         courses_body())}
 if schools.SCHOOLS:  # same rule as English: empty in production until the owner approves a school
     PAIRS["/schools"] = "/th/schools"

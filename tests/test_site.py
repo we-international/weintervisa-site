@@ -313,6 +313,21 @@ _me, _mt = ((SITE / f).read_text().split('<main id="main">')[1].split("</main>")
 check(_me.count("<h2") == _mt.count("<h2") and _me.count('class="faq"') == _mt.count('class="faq"') and _mt.count('<li class="path">') == len(_ht["paths"]),
       "/th/ has the same sections, paths and FAQ as /")
 
+# /th/courses is the same 97-course catalogue as /courses (22 Nov 2026): every English value has Thai words,
+# the same course ids, topic and group anchors, Thai group names, course titles kept English (lang="en")
+import courses_page as _cpg
+from html import escape as e_
+check(not _cpg.th_missing(), "content/th/courses.json has Thai words for every topic, focus, length, note, campus, city and group"
+      + (f" — missing {_cpg.th_missing()[:5]}" if _cpg.th_missing() else ""))
+_ce, _ct = ((SITE / f).read_text().split('<main id="main">')[1].split("</main>")[0] for f in ("courses.html", "th/courses.html"))
+_ids = lambda h: re.findall(r'<details class="faq course-item" id="([^"]+)"', h)
+_anc = lambda h: re.findall(r'id="((?:t|c)-[^"]+)"', h)
+check(_ids(_ct) == _ids(_ce) and len(_ids(_ct)) == len(_cpg.COURSES) and _anc(_ct) == _anc(_ce),
+      f"/th/courses lists the same {len(_cpg.COURSES)} courses with the same topic and group anchors as /courses")
+check(_ct.count('<strong lang="en">') == len(_cpg.COURSES) and all(f">{e_(_cpg.TH['groups'][g])} <" in _ct for g in _cpg.GROUP_ORDER)
+      and 'href="/charter-application"' not in _ct and 'href="/th/charter-application"' in _ct,
+      "/th/courses: course titles marked lang=en, Thai group names, buttons go to Thai pages")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
