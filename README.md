@@ -28,3 +28,5 @@ Wix-app pages (owner 20 Nov 2026: rebuild in GetWec): /partner-portal → GetWec
 - `tools/live_urls.py` + `tools/compare_shots.mjs` (workflow "Live Wix vs new site", CI only, read-only): live sitemap URLs must all exist here (`tests/wix-live-urls.json`), and Wix-vs-new screenshots go to a `review/compare-<run>` branch. Blog categories: `content/blog-categories.json` → `/blog/categories/<slug>`.
 
 - Go-live: `docs/go-live.md` (DNS day runbook, rollback, current DNS snapshot). `tests/test_production.py` checks the exact production build in CI; `config.json` `"live"` is the one switch the go-live PR flips. Workflow "DNS snapshot (read-only)" reads the public records.
+
+- `redesign_mockups.py` — owner review of the readability redesign (WEI-WEB-REDESIGN-1123, 24 Nov 2026): `/redesign/` on the preview only (2 options for home + Working Holiday, Now-vs-options table, new sitemap). Never in production. Skill: `.claude/skills/website-readability`.
