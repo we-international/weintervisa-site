@@ -34,6 +34,7 @@ try:
     redirect = {k for k, s in pages.items() if 'http-equiv="refresh"' in s}
     real = {k: s for k, s in pages.items() if k not in redirect and k != "404.html"}
     cfg = json.loads((ROOT / "config.json").read_text())
+    check(not (SITE / "redesign").exists(), "redesign mockups are not in the production build (preview only)")
 
     # 1. Indexable on the real domain
     robots = (SITE / "robots.txt").read_text()

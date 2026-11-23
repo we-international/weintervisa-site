@@ -355,6 +355,17 @@ check(json.loads((ROOT / "tests/pending-pages.json").read_text()) == [], "no Wix
 _sch = json.loads((ROOT / "content/schools.json").read_text())["schools"]
 check({x["name"] for x in _sch if x.get("approved")} >= {"Alana Kaye College", "Frontier Education"}, "Alana Kaye College and Frontier Education approved for the live site (owner 22 Nov)")
 
+# Redesign mockups for the owner (WEI-WEB-REDESIGN-1123, 24 Nov 2026): preview only, readable, honest.
+_rd = {r: (SITE / "redesign" / f"{r}.html").read_text() for r in ["index", "home-a", "home-b", "working-holiday-a", "working-holiday-b"]}
+check(all('content="noindex' in s for s in _rd.values()) and "/redesign" not in (SITE / "sitemap.xml").read_text(), "redesign mockups are noindex and not in the sitemap")
+check(all("for review only" in s and "registered migration agent" in s and "QEAC 11964" in s for s in _rd.values()), "redesign mockups say 'for review only', keep the migration-agent line and the QEAC number")
+check(all(not re.search(r"guarantee|100% |best price|within (24 hours|one business day)", s, re.I) for s in _rd.values()), "redesign mockups make no unapproved promises")
+check(all(len(re.sub(r"<[^>]+>", " ", s.split("<main>")[1].split("</main>")[0]).split()) <= 400 for r, s in _rd.items() if r != "index"),
+      "redesign mockups stay short (≤ 400 words in the page body)")
+check(all("fictional, AI-generated" in s for r, s in _rd.items() if re.search(r'alt="Maya', s)), "mockups that show Maya and Kenji say they are fictional, AI-generated")
+check(all(len(html_unescape(re.sub(r"<[^>]+>", "", p_))) <= 320 for s in _rd.values() for p_ in re.findall(r"<p[^>]*>(.*?)</p>", s, re.S)),
+      "redesign mockups: no paragraph over 320 characters of text")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

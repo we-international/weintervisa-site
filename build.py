@@ -246,6 +246,11 @@ def build():
         write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, lang="th", jsonld=thai_pages.JSONLD.get(rel)))
         urls_extra.append("/" + rel)
 
+    # Redesign mockups for the owner (WEI-WEB-REDESIGN-1123): preview only, noindex, not in the sitemap.
+    if PREVIEW:
+        import redesign_mockups
+        redesign_mockups.build(write)
+
     write("404.html", page("Page not found | We International", '<section class="wrap"><h1>Page not found</h1>'
           '<p>This page has moved or no longer exists.</p><p><a class="btn" href="/">Home</a> '
           '<a class="btn ghost" href="/blog">Blog</a></p></section>', path="/404"))
