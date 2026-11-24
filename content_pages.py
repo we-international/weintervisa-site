@@ -194,7 +194,7 @@ CONTENT_PAGES = {
     "about-we-international": ("About We International | Student first",
         "We International is a Sydney education agency that helps students explore study in Australia, with honest, student-first support.", about_body),
     "courses": ("Australian college and university courses | We International",
-        "Explore 97 Australian courses, from Certificate III in care and childcare to business, cookery, trades, IT and degrees, by interest or city, and ask us to compare colleges.", courses_body),
+        "Explore 97 Australian courses, from Certificate III in care to business, cookery, trades, IT and degrees, by interest or city. Ask us to compare colleges.", courses_body),
     "courses/nursing-pathways-australia": ("Nursing pathways in Australia | English and OBA preparation",
         "Nursing registration pathways in Australia and preparation for English, NCLEX-RN and OSCE. Ask We International about fees, dates and study options.", nursing_body),
     "fast-track-courses": ("Working Holiday courses (417/462) | We International",

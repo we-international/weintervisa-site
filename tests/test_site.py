@@ -366,6 +366,22 @@ check(all("fictional, AI-generated" in s for r, s in _rd.items() if re.search(r'
 check(all(len(html_unescape(re.sub(r"<[^>]+>", "", p_))) <= 320 for s in _rd.values() for p_ in re.findall(r"<p[^>]*>(.*?)</p>", s, re.S)),
       "redesign mockups: no paragraph over 320 characters of text")
 
+# SEO lengths on every sitemap page (same rule as GetWec #/seo, skill seo-site-check): description 50–160
+# characters; title ≤ 60 except blog posts, whose titles stay the same as the live Wix posts.
+_bad_desc, _bad_title = [], []
+for _loc in re.findall(r"<loc>([^<]+)</loc>", (SITE / "sitemap.xml").read_text()):
+    _path = _loc.split("weintervisa.com", 1)[1] or "/"
+    _f = SITE / ("index.html" if _path == "/" else _path.strip("/") + ".html")
+    if not _f.exists():
+        _f = SITE / _path.strip("/") / "index.html"
+    _s = _f.read_text()
+    _d = html_unescape((re.search(r'<meta name="description" content="([^"]*)"', _s) or [None, ""])[1])
+    _t = html_unescape((re.search(r"<title>(.*?)</title>", _s, re.S) or [None, ""])[1]).strip()
+    if not 50 <= len(_d) <= 160: _bad_desc.append(f"{_path} ({len(_d)})")
+    if not _path.startswith("/post/") and not 15 <= len(_t) <= 60: _bad_title.append(f"{_path} ({len(_t)})")
+check(not _bad_desc, "every sitemap page has a 50–160 character description" + (f": {_bad_desc[:5]}" if _bad_desc else ""))
+check(not _bad_title, "every sitemap page (not blog posts) has a 15–60 character title" + (f": {_bad_title[:5]}" if _bad_title else ""))
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

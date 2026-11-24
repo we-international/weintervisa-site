@@ -5,6 +5,7 @@
  "date": "2026-11-18T22:39:32.981Z",
  "updated": "2026-11-18T22:39:32.981Z",
  "excerpt": "Home Affairs: registration opens 1 Dec 2026; from 1 Mar 2027 second and third WHM visas need an invitation. Current WHMs have until 28 Feb 2027 under existing rules.",
+ "seoDescription": "Home Affairs: registration opens 1 Dec 2026; from 1 Mar 2027 2nd and 3rd WHM visas need an invitation. Current WHMs have until 28 Feb 2027 under existing rules.",
  "minutesToRead": 2
 }
 meta-->
