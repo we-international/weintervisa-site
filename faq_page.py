@@ -20,6 +20,9 @@ GENERAL = {
         ("Will I get three options?", "We aim to compare at least three suitable schools for your study area and city when they are available. We tell you if fewer are confirmed."),
         ("Is a place, a visa or a job guaranteed?", "No. The school decides admission, the government decides visas, and jobs are not guaranteed."),
         ("Do you give visa advice?", "No. We are not a migration agent. For visa advice we refer you to a registered migration agent."),
+        ("Can I visit Australia first and switch to a student visa onshore?",
+         "In general, not if your visitor visa application was lodged on or after 28 Nov 2026: it carries condition 8503 \"No Further Stay\". Plan to apply for a Student visa from outside Australia. This is general information, not visa advice; for your own case we refer you to a registered migration agent. "
+         '<a href="/post/can-i-switch-from-a-visitor-visa-to-a-student-visa-in-australia">Read more (English and Thai)</a>'),
         ("Can I visit your office?", "We work online. Send us a message and we will arrange a time to talk."),
         ("Can I send my documents now?", "Please start with a short message. Send passports or other private documents only when we give you a secure way to do it."),
         ("Can I talk in my own language?", "Yes, with Mia, our AI assistant: she can chat in many languages. Our team speaks Thai and English, so a reply from a person will be in Thai or English."),
@@ -30,6 +33,9 @@ GENERAL = {
         ("จะได้ตัวเลือก 3 ที่ไหม", "เราตั้งใจเทียบสถาบันที่เหมาะอย่างน้อย 3 แห่งตามสาขาและเมืองที่คุณเลือก ถ้ามีให้เลือก ถ้ายืนยันได้น้อยกว่านั้น เราจะบอกตรงๆ"),
         ("มีใครรับประกันว่าจะได้ที่เรียน วีซ่า หรืองานไหม", "ไม่มี สถาบันเป็นผู้ตัดสินการรับเข้าเรียน รัฐบาลเป็นผู้ตัดสินเรื่องวีซ่า และเรื่องงานก็ไม่มีใครรับประกันได้"),
         ("ให้คำแนะนำเรื่องวีซ่าไหม", "ไม่ เราไม่ใช่ migration agent เรื่องคำแนะนำวีซ่า เราจะแนะนำ registered migration agent ให้"),
+        ("มาเที่ยวออสเตรเลียก่อน แล้วเปลี่ยนเป็นวีซ่านักเรียนในประเทศได้ไหม",
+         "โดยทั่วไปไม่ได้ ถ้ายื่นวีซ่าท่องเที่ยวตั้งแต่ 28 พ.ย. 2026 เพราะจะมีเงื่อนไข 8503 \"No Further Stay\" ควรวางแผนยื่นวีซ่านักเรียนจากนอกออสเตรเลีย ข้อมูลนี้เป็นข้อมูลทั่วไป ไม่ใช่คำแนะนำวีซ่า กรณีของคุณ เราจะแนะนำ registered migration agent ให้ "
+         '<a href="/post/can-i-switch-from-a-visitor-visa-to-a-student-visa-in-australia">อ่านต่อ (ไทยและอังกฤษ)</a>'),
         ("ไปที่ออฟฟิศได้ไหม", "เราทำงานออนไลน์ ส่งข้อความมา แล้วเราจะนัดเวลาคุยกัน"),
         ("ส่งเอกสารตอนนี้เลยได้ไหม", "เริ่มจากส่งข้อความสั้นๆ ก่อน ส่งพาสปอร์ตหรือเอกสารส่วนตัวเมื่อเราให้ช่องทางที่ปลอดภัยแล้วเท่านั้น"),
         ("คุยเป็นภาษาของฉันได้ไหม", "ได้ กับ Mia ผู้ช่วย AI ของเรา ซึ่งคุยได้หลายภาษา ทีมงานของเราพูดภาษาไทยและอังกฤษ คำตอบจากทีมงานจึงเป็นภาษาไทยหรืออังกฤษ"),
@@ -120,7 +126,7 @@ def topics(lang="en"):
     for anchor, src, raw, link in TOPICS:
         if anchor == "start":
             home = _json("home", lang)["faq"]
-            items = [(q, e(a)) for q, a in GENERAL[lang]] + [(home[i][0], home[i][1]) for i in HOME_KEEP]
+            items = [(q, a if a.endswith("</a>") else e(a)) for q, a in GENERAL[lang]]  # trusted link only at the end + [(home[i][0], home[i][1]) for i in HOME_KEEP]
         elif anchor == "english":
             items = list(ENGLISH[lang])
         else:
