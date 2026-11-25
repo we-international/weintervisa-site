@@ -29,7 +29,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
 const content = ["/families", "/take-a-break", "/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
 const blogCats = JSON.parse(fs.readFileSync(path.join(root, "../content/blog-categories.json"), "utf8")).categories.map(c => `/blog/categories/${c.slug}`);
-const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", "/working-holiday/charter", "/working-holiday/kca", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {
@@ -58,6 +58,10 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     ["/charter-application", async () => { await page.fill("#a-name", "Test Sample"); await page.fill("#a-phone", "0400 000 000");
       await page.selectOption("#a-field", { index: 1 }); await page.selectOption("#a-level", { index: 2 }); await page.fill("#a-start", "2027-02");
       await page.selectOption("#a-city", "Sydney"); await page.fill("#a-msg", "x".repeat(800)); }],
+    ["/working-holiday/charter", async () => { await page.fill("#w-name", "Test Sample"); await page.fill("#w-email", "whv.sample@example.com");
+      await page.selectOption("#w-visa", { index: 1 }); await page.fill("#w-end", "2027-06"); await page.selectOption("#w-course", { index: 2 }); }],
+    ["/working-holiday/kca", async () => { await page.fill("#w-name", "Test Sample"); await page.fill("#w-email", "whv.sample@example.com");
+      await page.fill("#w-end", "2027-04"); }],
   ]) {
     await page.goto(base + u, { waitUntil: "load" });
     const note = await page.textContent(".form-status");

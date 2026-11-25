@@ -24,3 +24,10 @@ description: Use when adding or changing a school page on weintervisa.com (/scho
 - Always add the caveat: fees and dates can change; the school confirms them in the offer letter; visa questions go to a registered migration agent.
 - Owner approved Alana Kaye College and Frontier Education on 22 Nov 2026 (both `approved: true`). A school added later starts at `false` again and needs its own approval; a test checks the approved names.
 - Frontier (22 Nov 2026): the 15.6 MB marketing PDF became readable once a person saved it to Drive; `read_file_content` on the Drive file returns the text (price list + course sheets) — no download needed. Fee columns can be by student situation ("Already in Australia" / "Applying from overseas") instead of campus; a missing fee shows "Ask us" / "ถามเรา"; `cricos` per course is optional (an 11xxxNAT course may have none). Show the total (tuition + material + application) and say so in `fee_note`.
+
+## Working Holiday school pages (25 Nov 2026, WEI-WHV-CHARTER-1125)
+- Owner-directed pages (Charter Australia first, KCA second) live in `content/working-holiday.json` + `whv_page.py`, not in `schools.json`: they sell one route (enrol with us → we send the application) instead of a fee catalogue. Add a school = add one object with `options` (form course choices).
+- Use the school's agent fee table for the visa type (Charter: the "Study and Work Program" 2027 table, published 24 Jul 2026, attached to Charter's 10 Sep 2026 email; KCA: the 30 Sep 2026 reply in thread "KCA 2027 Pricing Schedule"). Gmail threads with long HTML exceed the tool limit: read the saved JSON with `jq '.messages[].plaintextBody'`, and `pdftotext -layout` the fee PDF.
+- Never copy commission lines (KCA's email states one) — test greps `commission|25%`.
+- A program the school lists as "up to 12 months" on a WHV page: show it as the school's wording, add the Home Affairs 4-month rule (condition 8548) + VEVO link, and warn when the course is close to the limit (KCA 16 weeks). No visa advice: registered migration agent.
+- Expired intake dates (KCA's 2026 dates ended 18 Nov) are not shown; say "ask us for the next start date".

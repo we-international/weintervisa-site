@@ -64,6 +64,7 @@ def render(d=None):
     news = "".join(f"<li><strong>{e(dt)}</strong> {e(t)}</li>" for dt, t in n["items"])
     guides = "".join(f'<li><a href="{e(u)}">{e(t)}</a></li>' for t, u in d["guides"])
     v = d["video"]
+    schools = __import__("whv_page").strip_html(th=bool(L["en"]))
     return f"""<section class="hero home-hero"><div class="wrap hero-grid"><div>
 <p class="kicker">{e(d["kicker"])}</p>
 <h1>{e(d["h1"])}</h1>
@@ -74,7 +75,7 @@ def render(d=None):
 <p class="bubble"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
 <p class="bubble alt"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
 </div></div></section>
-<section class="wrap" id="finder">
+{schools}<section class="wrap" id="finder">
 <p class="kicker">{e(L["finderK"])}</p>
 <h2>{e(L["finderH"])}</h2>
 <p>{e(L["finderP"])}</p>

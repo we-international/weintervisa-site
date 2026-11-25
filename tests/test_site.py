@@ -80,7 +80,8 @@ check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items
 import pages as _p, content_pages as _cp
 import thai_pages as _tp
 import group_pages as _gp0
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
+import whv_page as _wv0
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + len(_wv0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
 n_static += len(json.loads((ROOT / "content/blog-categories.json").read_text())["categories"])  # /blog/categories/<slug>
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
@@ -398,6 +399,23 @@ for _loc in re.findall(r"<loc>([^<]+)</loc>", (SITE / "sitemap.xml").read_text()
     if not _path.startswith("/post/") and not 15 <= len(_t) <= 60: _bad_title.append(f"{_path} ({len(_t)})")
 check(not _bad_desc, "every sitemap page has a 50–160 character description" + (f": {_bad_desc[:5]}" if _bad_desc else ""))
 check(not _bad_title, "every sitemap page (not blog posts) has a 15–60 character title" + (f": {_bad_title[:5]}" if _bad_title else ""))
+
+# Working Holiday schools (owner 25 Nov 2026, WEI-WHV-CHARTER-1125): Charter first, then KCA; facts from the
+# schools' own files; one "Enrol with us" form → GetWec (whv_enrol); no commission, no visa advice.
+_wv = {k: (SITE / "working-holiday" / f"{k}.html").read_text() for k in ("charter", "kca")}
+for k, s_ in _wv.items():
+    check(s_.count('data-lead-form="whv_enrol"') == 1 and "/assets/forms.js" in s_ and 'name="visa_end"' in s_ and 'name="consent"' in s_,
+          f"/working-holiday/{k}: one Enrol with us form (name, email, visa end, course, consent)")
+    check("condition 8548" in s_ and "registered migration agent" in s_ and "QEAC No. 11964" in s_, f"/working-holiday/{k}: 4-month rule, migration agent line, QEAC number")
+    check(not re.search(r"commission|guarantee|25%", s_, re.I), f"/working-holiday/{k}: no commission or guarantee words")
+    check("passport numbers" in s_, f"/working-holiday/{k}: asks people not to send passport numbers")
+check("A$6,800" in _wv["charter"] and "A$7,700" in _wv["charter"] and "30 June 2027" in _wv["charter"] and "RTO 41038" in _wv["charter"],
+      "/working-holiday/charter: fees from Charter's 2027 SWP fee table")
+check("A$5,150" in _wv["kca"] and "16 weeks" in _wv["kca"] and "close to the 4-month study limit" in _wv["kca"], "/working-holiday/kca: KCA fees + 16-week warning")
+_ftp = (SITE / "fast-track-courses.html").read_text()
+check(_ftp.index('href="/working-holiday/charter"') < _ftp.index('href="/working-holiday/kca"') < _ftp.index('id="finder"'),
+      "/fast-track-courses shows Charter first, then KCA, before the course finder")
+check('href="/working-holiday/charter"' in (SITE / "th/fast-track-courses.html").read_text(), "/th/fast-track-courses links the Working Holiday schools")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

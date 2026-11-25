@@ -36,3 +36,9 @@ description: Use when adding or changing a lead form on weintervisa.com (or any 
 - `content_pages.partner_cards()` escapes every value, skips entries without an https link, uses `rel="noopener nofollow"`, and never shows the agent's personal name (GetWec does not send it).
 - Page text must keep: "We are not a migration agent", "We don't receive any commission or benefit from listed agents", check the MARN on the official register. Tests in `tests/test_site.py` section 11.
 - The email allowlist test also allows the listed agents' own contact emails (from the JSON), nothing else.
+
+## New form kinds (25 Nov 2026)
+- GetWec accepts any `form` kind matching `^[a-z][a-z0-9_]{1,39}$` and stores the contact as `source: form:<kind>` — a new site form needs no GetWec change. Add a readable label to the `label` map in `assets/forms.js` (e.g. `whv_enrol: 'Working Holiday enrolment'`) so staff see it as the Inbox subject.
+- A form without a phone field must make email required in HTML; the browser check puts the "email or phone" error under the email field.
+- A fixed answer (e.g. everyone on a WHV page is in Australia) can be a hidden input (`location=australia`).
+- Add every new form page to the forms loop in `tests/e2e.mjs` (preview + contract) and to `urls` (not to `content`, which is also checked under /th/).

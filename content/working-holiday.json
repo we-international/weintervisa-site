@@ -1,0 +1,76 @@
+{
+  "_about": "Working Holiday (417/462) schools: owner 25 Nov 2026 (WEI-WHV-CHARTER-1125) — help Working Holiday Makers enrol with us and send the application to Charter Australia; KCA added as a second option the same day. Facts only from the schools' own files sent to info@. Never put agent commission here.",
+  "schools": [
+    {
+      "slug": "charter",
+      "name": "Charter Australia",
+      "legal": "Charter Australia Pty Ltd",
+      "rto": "41038",
+      "cricos": "03417F",
+      "website": "https://charter.edu.au",
+      "city": "North Sydney campus, or online from any state",
+      "summary": "Aged care, hospital and childcare Certificate III courses in their Study and Work Program for Working Holiday Makers, with work placement arranged by Charter.",
+      "points": [
+        "Study at the North Sydney campus, in live online evening classes, or self-paced on Charter's E-Campus (not for primary student visa holders).",
+        "If you live in another state you can study the theory online. Placement for interstate students can have extra conditions.",
+        "Charter arranges the work placement (160 hours for childcare).",
+        "Intakes run almost every week or term, so you can start soon.",
+        "Payment plans are available."
+      ],
+      "fee_head": ["Stream", "Course", "English needed", "Tuition", "Materials"],
+      "fees": [
+        ["Aged care", "CHC33021 Certificate III in Individual Support", "IELTS 5.5 or equal", "A$6,800", "A$200"],
+        ["Aged care", "English for Healthcare and Nursing + CHC33021", "IELTS 4.5 or equal", "A$9,700", "A$300"],
+        ["Hospital", "HLT33115 Certificate III in Health Services Assistance", "IELTS 5.5 or equal", "A$8,020", "A$200 + A$950 placement fee"],
+        ["Hospital", "English for Healthcare and Nursing + HLT33115", "IELTS 4.5 or equal", "A$10,920", "A$300 + A$950 placement fee"],
+        ["Childcare", "CHC30125 Certificate III in Early Childhood Education and Care", "IELTS 5.5 or equal", "A$7,700 (special, was A$12,650)", "A$200"],
+        ["Childcare", "English for Care Professionals + CHC30125", "IELTS 5.0 or equal", "A$9,400 (special, was A$14,550)", "A$300"]
+      ],
+      "fee_notes": [
+        "Application fee A$300 (non-refundable). Before you start: A$1,500 first payment + the application fee + material fees.",
+        "Childcare special prices run until 30 June 2027.",
+        "Charter lists each program as up to 12 months. Your offer letter shows your real dates and fees."
+      ],
+      "source": "Charter Australia 2027 fee table for Study and Work Program students (published 24 July 2026) and Charter's course update to us (10 September 2026). Charter can change fees; the offer letter is final.",
+      "options": [
+        "Charter: CHC33021 Individual Support (aged care)",
+        "Charter: HLT33115 Health Services Assistance (hospital)",
+        "Charter: CHC30125 Early Childhood Education and Care (childcare)",
+        "Charter: English first, then one of these"
+      ]
+    },
+    {
+      "slug": "kca",
+      "name": "KCA Education",
+      "legal": "Learning Lab Pty Ltd, trading as KCA Education",
+      "rto": "91341",
+      "cricos": "03576B",
+      "website": "https://kca.edu.au",
+      "city": "Brisbane campus (Eight Mile Plains), or online from anywhere in Australia",
+      "summary": "A 16-week aged care and disability course for Working Holiday Makers: 12 weeks of class and 4 weeks of work placement.",
+      "points": [
+        "CHC33021 Certificate III in Individual Support (Ageing and Disability), open to 417 and 462 visa holders.",
+        "16 weeks: 12 weeks of study, then 4 weeks of work placement (at least 120 hours).",
+        "Classes Monday to Thursday, 9 am to 4 pm Brisbane time, at the Brisbane campus or online.",
+        "KCA arranges placement at no extra cost in Sydney or Brisbane / Gold Coast. Placement is in person.",
+        "Before placement you need a National Police Check, a First Aid certificate and a COVID-19 vaccination certificate.",
+        "Entry: Year 10 or higher, and IELTS 5.5 or KCA's free English placement test."
+      ],
+      "fee_head": ["Item", "Amount"],
+      "fees": [
+        ["Tuition", "A$4,400"],
+        ["Materials", "A$500"],
+        ["Enrolment", "A$250"],
+        ["Total", "A$5,150"]
+      ],
+      "fee_notes": [
+        "Full payment before the course starts.",
+        "If you apply now, the price in your offer letter applies, even for a 2027 intake. Accept the offer before it expires by paying the deposit it shows.",
+        "KCA publishes 2027 intake dates and prices near the end of 2026. Ask us for the next start date."
+      ],
+      "source": "KCA Education's course details for agents, sent to us on 30 September 2026.",
+      "warn": "16 weeks is close to the 4-month study limit on a Working Holiday visa. If you have already studied on this visa, the course may not fit: ask a registered migration agent before you apply.",
+      "options": ["KCA: CHC33021 Individual Support (aged care, 16 weeks)"]
+    }
+  ]
+}

@@ -41,7 +41,7 @@
   function payload(f) {
     var kind = f.getAttribute('data-lead-form');
     var parts = [];
-    var label = { enquiry: 'Enquiry', application: 'Study application' }[kind] || 'Website form';
+    var label = { enquiry: 'Enquiry', application: 'Study application', whv_enrol: 'Working Holiday enrolment' }[kind] || 'Website form';
     var fields = f.querySelectorAll('[data-summary]');
     for (var i = 0; i < fields.length; i++) {
       var v = val(f, fields[i].name);
