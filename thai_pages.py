@@ -19,8 +19,9 @@ e = html.escape
 import thai_content
 import thai_more
 import group_pages
+import whv_page
 
-TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS, **group_pages.PAIRS}
+TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS, **group_pages.PAIRS, **whv_page.PAIRS}
 EN_OF = {v: k for k, v in TH_OF.items()}
 
 NAV_TH = group_pages.NAV["th"]  # owner 25 Nov 2026: 6 items (see group_pages.py)
@@ -185,6 +186,7 @@ TH_PAGES = {
     **thai_content.PAGES,
     **thai_more.PAGES,
     **group_pages.TH_PAGES,
+    **whv_page.th_pages(CONSENT_TH, thai_content.VISA_NOTE_TH),
 }
 JSONLD = thai_content.JSONLD
 

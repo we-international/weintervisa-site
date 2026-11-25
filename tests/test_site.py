@@ -279,7 +279,7 @@ tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith("/schools") or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
@@ -415,7 +415,26 @@ check("A$5,150" in _wv["kca"] and "16 weeks" in _wv["kca"] and "close to the 4-m
 _ftp = (SITE / "fast-track-courses.html").read_text()
 check(_ftp.index('href="/working-holiday/charter"') < _ftp.index('href="/working-holiday/kca"') < _ftp.index('id="finder"'),
       "/fast-track-courses shows Charter first, then KCA, before the course finder")
-check('href="/working-holiday/charter"' in (SITE / "th/fast-track-courses.html").read_text(), "/th/fast-track-courses links the Working Holiday schools")
+check('href="/th/working-holiday/charter"' in (SITE / "th/fast-track-courses.html").read_text(), "/th/fast-track-courses links the Thai Working Holiday school pages")
+# Thai school pages (26 Nov 2026): same facts as English, same form (option values English for GetWec), Thai words.
+import json as _json
+_whe = _json.loads((ROOT / "content/working-holiday.json").read_text())["schools"]
+_wht = _json.loads((ROOT / "content/th/working-holiday.json").read_text())["schools"]
+check([s_["slug"] for s_ in _whe] == [s_["slug"] for s_ in _wht] and all(
+      a["fees"] and len(a["fees"]) == len(b["fees"]) and len(a["points"]) == len(b["points"])
+      and len(a["fee_notes"]) == len(b["fee_notes"]) and a["options"] == b["options"] and bool(a.get("warn")) == bool(b.get("warn"))
+      and [re.findall(r"A\$[\d,]+", c) for r in a["fees"] for c in r] == [re.findall(r"A\$[\d,]+", c) for r in b["fees"] for c in r]
+      and [re.findall(r"A\$[\d,]+", c) for c in a["fee_notes"]] == [re.findall(r"A\$[\d,]+", c) for c in b["fee_notes"]]
+      and set(b["option_labels"]) == set(o for s_ in _whe for o in s_["options"])
+      for a, b in zip(_whe, _wht)), "Thai Working Holiday JSON: same schools, rows, prices and option values as the English JSON")
+for k in ("charter", "kca"):
+    t_ = (SITE / "th/working-holiday" / f"{k}.html").read_text()
+    check('<html lang="th"' in t_ and 'hreflang="en" href=' in t_ and f'/working-holiday/{k}"' in t_, f"/th/working-holiday/{k}: Thai page paired with English")
+    check(t_.count('data-lead-form="whv_enrol"') == 1 and 'value="Charter: CHC33021 Individual Support (aged care)"' in t_ and 'value="Not sure yet"' in t_
+          and "/th/privacy-policy" in t_, f"/th/working-holiday/{k}: one form, English option values for GetWec, Thai consent")
+    check("เงื่อนไข 8548" in t_ and "QEAC No. 11964" in t_ and "ไม่ใช่ migration agent" in t_ and not re.search(r"commission|ค่าคอม|25%", t_, re.I),
+          f"/th/working-holiday/{k}: 4-month rule, QEAC, not a migration agent, no commission")
+check("A$5,150" in (SITE / "th/working-holiday/kca.html").read_text() and "16 สัปดาห์ใกล้กับเพดานเรียน 4 เดือน" in (SITE / "th/working-holiday/kca.html").read_text(), "/th/working-holiday/kca: price + 16-week warning")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

@@ -1,0 +1,90 @@
+{
+  "_about": "Thai copy of content/working-holiday.json (26 Nov 2026): same schools, same facts and prices, Thai words. Course titles stay English (lang=en). Option values stay English for GetWec; option_labels are what Thai readers see. Never put agent commission here.",
+  "schools": [
+    {
+      "slug": "charter",
+      "name": "Charter Australia",
+      "legal": "Charter Australia Pty Ltd",
+      "rto": "41038",
+      "cricos": "03417F",
+      "website": "https://charter.edu.au",
+      "city": "วิทยาเขต North Sydney หรือเรียนออนไลน์จากรัฐไหนก็ได้",
+      "summary": "คอร์ส Certificate III สายดูแลผู้สูงอายุ ผู้ช่วยในโรงพยาบาล และดูแลเด็ก ในโปรแกรม Study and Work ของ Charter สำหรับวีซ่า 417/462 พร้อมฝึกงานที่ Charter จัดให้",
+      "points": [
+        "เรียนที่วิทยาเขต North Sydney เรียนสดออนไลน์ช่วงเย็น หรือเรียนด้วยตัวเองบน E-Campus ของ Charter (แบบเรียนเองไม่เปิดให้ผู้ถือวีซ่านักเรียนหลัก)",
+        "ถ้าอยู่รัฐอื่น เรียนภาคทฤษฎีออนไลน์ได้ การฝึกงานของนักเรียนต่างรัฐอาจมีเงื่อนไขเพิ่ม",
+        "Charter จัดที่ฝึกงานให้ (สายดูแลเด็กฝึกงาน 160 ชั่วโมง)",
+        "เปิดรับเกือบทุกสัปดาห์หรือทุกเทอม เริ่มเรียนได้เร็ว",
+        "มีแผนผ่อนชำระค่าเรียน"
+      ],
+      "fee_head": ["สาย", "คอร์ส", "ภาษาอังกฤษที่ต้องมี", "ค่าเรียน", "ค่าอุปกรณ์"],
+      "fees": [
+        ["ดูแลผู้สูงอายุ", "CHC33021 Certificate III in Individual Support", "IELTS 5.5 หรือเทียบเท่า", "A$6,800", "A$200"],
+        ["ดูแลผู้สูงอายุ", "English for Healthcare and Nursing + CHC33021", "IELTS 4.5 หรือเทียบเท่า", "A$9,700", "A$300"],
+        ["โรงพยาบาล", "HLT33115 Certificate III in Health Services Assistance", "IELTS 5.5 หรือเทียบเท่า", "A$8,020", "A$200 + ค่าจัดฝึกงาน A$950"],
+        ["โรงพยาบาล", "English for Healthcare and Nursing + HLT33115", "IELTS 4.5 หรือเทียบเท่า", "A$10,920", "A$300 + ค่าจัดฝึกงาน A$950"],
+        ["ดูแลเด็ก", "CHC30125 Certificate III in Early Childhood Education and Care", "IELTS 5.5 หรือเทียบเท่า", "A$7,700 (ราคาพิเศษ จากเดิม A$12,650)", "A$200"],
+        ["ดูแลเด็ก", "English for Care Professionals + CHC30125", "IELTS 5.0 หรือเทียบเท่า", "A$9,400 (ราคาพิเศษ จากเดิม A$14,550)", "A$300"]
+      ],
+      "fee_notes": [
+        "ค่าสมัคร A$300 (ไม่คืนเงิน) ก่อนเริ่มเรียนจ่ายงวดแรก A$1,500 + ค่าสมัคร + ค่าอุปกรณ์",
+        "ราคาพิเศษสายดูแลเด็กถึง 30 มิถุนายน 2027",
+        "Charter ระบุว่าแต่ละโปรแกรมยาวได้ถึง 12 เดือน วันเรียนและค่าเรียนจริงดูใน Offer letter ของคุณ"
+      ],
+      "source": "ตารางค่าเรียน 2027 ของ Charter Australia สำหรับนักเรียนโปรแกรม Study and Work (เผยแพร่ 24 กรกฎาคม 2026) และอีเมลอัปเดตคอร์สถึงเรา (10 กันยายน 2026) Charter เปลี่ยนค่าเรียนได้ ให้ถือตาม Offer letter",
+      "options": [
+        "Charter: CHC33021 Individual Support (aged care)",
+        "Charter: HLT33115 Health Services Assistance (hospital)",
+        "Charter: CHC30125 Early Childhood Education and Care (childcare)",
+        "Charter: English first, then one of these"
+      ],
+      "option_labels": {
+        "Charter: CHC33021 Individual Support (aged care)": "Charter: CHC33021 ดูแลผู้สูงอายุ",
+        "Charter: HLT33115 Health Services Assistance (hospital)": "Charter: HLT33115 ผู้ช่วยในโรงพยาบาล",
+        "Charter: CHC30125 Early Childhood Education and Care (childcare)": "Charter: CHC30125 ดูแลเด็ก",
+        "Charter: English first, then one of these": "Charter: เรียนภาษาอังกฤษก่อน แล้วต่อคอร์สข้างบน",
+        "KCA: CHC33021 Individual Support (aged care, 16 weeks)": "KCA: CHC33021 ดูแลผู้สูงอายุ (16 สัปดาห์)"
+      }
+    },
+    {
+      "slug": "kca",
+      "name": "KCA Education",
+      "legal": "Learning Lab Pty Ltd, trading as KCA Education",
+      "rto": "91341",
+      "cricos": "03576B",
+      "website": "https://kca.edu.au",
+      "city": "วิทยาเขตบริสเบน (Eight Mile Plains) หรือเรียนออนไลน์จากที่ไหนก็ได้ในออสเตรเลีย",
+      "summary": "คอร์สดูแลผู้สูงอายุและผู้พิการ 16 สัปดาห์สำหรับวีซ่า Working Holiday: เรียนในห้อง 12 สัปดาห์ และฝึกงาน 4 สัปดาห์",
+      "points": [
+        "CHC33021 Certificate III in Individual Support (Ageing and Disability) เปิดรับผู้ถือวีซ่า 417 และ 462",
+        "16 สัปดาห์: เรียน 12 สัปดาห์ แล้วฝึกงาน 4 สัปดาห์ (อย่างน้อย 120 ชั่วโมง)",
+        "เรียนวันจันทร์ถึงพฤหัสบดี 9:00–16:00 เวลาบริสเบน ที่วิทยาเขตบริสเบนหรือออนไลน์",
+        "KCA จัดที่ฝึกงานให้โดยไม่มีค่าใช้จ่ายเพิ่ม ที่ซิดนีย์ หรือบริสเบน / Gold Coast ฝึกงานต้องไปด้วยตัวเอง",
+        "ก่อนฝึกงานต้องมี National Police Check ใบประกาศ First Aid และใบรับรองวัคซีนโควิด-19",
+        "คุณสมบัติ: จบ ม.4 (Year 10) ขึ้นไป และ IELTS 5.5 หรือสอบวัดระดับภาษาอังกฤษของ KCA (ไม่มีค่าใช้จ่าย)"
+      ],
+      "fee_head": ["รายการ", "จำนวนเงิน"],
+      "fees": [
+        ["ค่าเรียน", "A$4,400"],
+        ["ค่าอุปกรณ์", "A$500"],
+        ["ค่าลงทะเบียน", "A$250"],
+        ["รวม", "A$5,150"]
+      ],
+      "fee_notes": [
+        "จ่ายเต็มจำนวนก่อนเริ่มเรียน",
+        "ถ้าสมัครตอนนี้ ใช้ราคาใน Offer letter ของคุณ แม้เป็นรอบเรียนปี 2027 ตอบรับ Offer ก่อนหมดอายุด้วยการจ่ายมัดจำตามที่ระบุ",
+        "KCA จะประกาศวันเปิดเรียนและราคาปี 2027 ช่วงปลายปี 2026 ถามเราเรื่องรอบเรียนถัดไปได้"
+      ],
+      "source": "รายละเอียดคอร์สที่ KCA Education ส่งให้เอเจนซีของเรา เมื่อ 30 กันยายน 2026",
+      "warn": "16 สัปดาห์ใกล้กับเพดานเรียน 4 เดือนของวีซ่า Working Holiday ถ้าคุณเคยเรียนบนวีซ่านี้มาแล้ว คอร์สนี้อาจเกินเพดาน ให้ถามเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียนก่อนสมัคร",
+      "options": ["KCA: CHC33021 Individual Support (aged care, 16 weeks)"],
+      "option_labels": {
+        "KCA: CHC33021 Individual Support (aged care, 16 weeks)": "KCA: CHC33021 ดูแลผู้สูงอายุ (16 สัปดาห์)",
+        "Charter: CHC33021 Individual Support (aged care)": "Charter: CHC33021 ดูแลผู้สูงอายุ",
+        "Charter: HLT33115 Health Services Assistance (hospital)": "Charter: HLT33115 ผู้ช่วยในโรงพยาบาล",
+        "Charter: CHC30125 Early Childhood Education and Care (childcare)": "Charter: CHC30125 ดูแลเด็ก",
+        "Charter: English first, then one of these": "Charter: เรียนภาษาอังกฤษก่อน แล้วต่อคอร์สข้างบน"
+      }
+    }
+  ]
+}
