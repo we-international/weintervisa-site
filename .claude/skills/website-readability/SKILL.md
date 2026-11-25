@@ -33,3 +33,12 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 ## Tests (tests/test_site.py, test_production.py)
 - mockups noindex + not in sitemap; "for review only" + migration-agent line + QEAC; no unapproved promises; ≤ 400 words in the body; no paragraph over 320 characters; Maya/Kenji pages say they are fictional.
 - production build has no `/redesign/`.
+
+## Lesson 25 Nov 2026: the owner picked home A — turning a mockup into the real site
+- Real pages live in `group_pages.py` (home doors EN+TH, 6-item menu, footer links, /families, /take-a-break); CSS goes into `assets/site.css` (port only the classes you use, scoped: `.door .door-ico` — a generic `.door span` rule beat a bare `.door-ico` and shrank the icon to text size; check a phone screenshot every time).
+- Keep the old long home code (`home_page.render`, `content/home.json`) — the rule is "don't delete"; its sections already live on the door pages. Keep `/redesign/` until every page in it is decided (Working Holiday A/B was still open).
+- Menu highlight: pick the **longest** menu path the page sits under (`nav_current`), else `/courses` and `/courses/nursing-…` both light up.
+- Replace the old "as full as Wix" tests with: ≤ 450 words on home, 4 doors that resolve, every help link resolves, menu order, footer links, Thai home = same sections/doors with Thai links only.
+- Thai copy: the tests ban the word "ฟรี" inside `<main>` (promise rule) — write "ไม่มีค่าใช้จ่าย" or drop it; English "free games" is fine.
+- Link out only to URLs already confirmed in the repo or AI Office. No guessed YouTube/TPT links: leave the card out and ask in the report (Kindoza Kids videos, Solune walk clips).
+- One-way group rule: the visa site may link to the game studio and the kids' shop; those pages send nothing to GetWec and carry no student data (tested).

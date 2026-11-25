@@ -75,6 +75,8 @@ services = f"""<section class="hero home-hero"><div class="wrap">
 <li class="path"><h3>ประกันสุขภาพนักเรียน</h3><p>เทียบบริษัท OSHC แล้วซื้อได้เองบนเว็บไซต์ของพาร์ตเนอร์</p><a href="/th/oshc">เทียบ OSHC →</a></li>
 <li class="path"><h3>คอร์สสำหรับ Working Holiday</h3><p>คอร์ส Certificate III สายอาชีพสำหรับผู้ถือวีซ่า 417 และ 462</p><a href="/th/fast-track-courses">ดูคอร์ส →</a></li>
 <li class="path"><h3>เส้นทางสายพยาบาล</h3><p>เข้าใจขั้นตอนการขึ้นทะเบียน แล้วเตรียมภาษาอังกฤษ NCLEX-RN และ OSCE</p><a href="/th/courses/nursing-pathways-australia">เส้นทางสายพยาบาล →</a></li>
+<li class="path"><h3>มากับครอบครัว?</h3><p>กิจกรรมการเรียนรู้แบบพิมพ์ได้สำหรับลูก และแผนการเรียนที่เข้ากับชีวิตครอบครัว</p><a href="/th/families">สำหรับครอบครัว →</a></li>
+<li class="path"><h3>พักสมองสักนิด</h3><p>เรียนเหนื่อยแล้วพักสัก 5 นาทีกับเกมพัซเซิลจาก WE International Game Studio ในเครือของเรา</p><a href="/th/take-a-break">เล่นเกม →</a></li>
 </ul>
 </section>
 <section class="wrap narrow">

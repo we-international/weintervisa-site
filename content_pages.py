@@ -93,6 +93,8 @@ services_body = f"""<section class="hero home-hero"><div class="wrap">
 <li class="path"><h3>Student health cover</h3><p>Compare OSHC providers and buy directly on our partner's website.</p><a href="/oshc">Compare OSHC →</a></li>
 <li class="path"><h3>Working Holiday courses</h3><p>Practical Certificate III courses for 417 and 462 visa holders.</p><a href="/fast-track-courses">See the courses →</a></li>
 <li class="path"><h3>Nursing pathways</h3><p>Understand registration steps, then English, NCLEX-RN and OSCE preparation.</p><a href="/courses/nursing-pathways-australia">Nursing pathways →</a></li>
+<li class="path"><h3>Came with your family?</h3><p>Printable learning activities for kids and study plans that fit family life.</p><a href="/families">Help for families →</a></li>
+<li class="path"><h3>Take a break</h3><p>Studying is tiring. Free puzzle games from WE International Game Studio, part of our group, for a five-minute rest.</p><a href="/take-a-break">Play a free game →</a></li>
 </ul>
 </section>
 <section class="wrap narrow">

@@ -24,13 +24,8 @@ PREVIEW = "--production" not in sys.argv
 COMPANY = "We International Education &amp; Visa Pty Ltd"
 CONFIG = json.loads((ROOT / "config.json").read_text())
 
-NAV = [  # (label, path) — Games removed from the menu (now weintergames.com)
-    ("Courses", "/courses"),
-    ("Fast-track", "/fast-track-courses"),
-    ("Student services", "/student-services"),
-    ("Blog", "/blog"),
-    ("Contact", "/contact-us"),
-]
+import group_pages  # noqa: E402
+NAV = group_pages.NAV["en"]  # owner 25 Nov 2026: 6 items; Games is not in the menu (footer → weintergames.com)
 
 
 def esc(s):
@@ -98,7 +93,9 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
     canonical = SITE + ("" if path == "/" else path)
     robots = '<meta name="robots" content="noindex, nofollow">' if PREVIEW else ""
     nav_items = tp.NAV_TH if lang == "th" else NAV
-    nav = "".join(f'<a href="{p}"{" aria-current=page" if path.startswith(p) else ""}>{l}</a>' for l, p in nav_items)
+    cur = group_pages.nav_current(path, nav_items)
+    nav = "".join(f'<a href="{p}"{" aria-current=page" if p == cur else ""}'
+                  f'{" class=talk" if i == len(nav_items) - 1 else ""}>{l}</a>' for i, (l, p) in enumerate(nav_items))
     alt_head, switch = lang_links(path, lang)
     extra_head = alt_head + extra_head
     th = lang == "th"
@@ -138,6 +135,7 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
 <footer class="foot">
   <p><strong>{COMPANY}</strong>{(" · ABN " + esc(CONFIG["abn"])) if CONFIG.get("abn") else ""} · QEAC {esc(CONFIG["qeac"])}</p>
   <p>{tp.FOOT_TH if th else "We help with study and courses in Australia. We are not a migration agent: for visa advice we refer you to a registered migration agent."}</p>
+  {group_pages.footer_links(lang)}
   <p><a href="{"/th/contact-us" if th else "/contact-us"}">{"ติดต่อเรา" if th else "Contact"}</a> · <a href="{"/th/privacy-policy" if th else "/privacy-policy"}">{"ความเป็นส่วนตัว" if th else "Privacy"}</a> · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
 </footer>
 </body>
@@ -206,8 +204,10 @@ def build():
         urls_extra.append(f"/blog/categories/{c['slug']}")
 
     # Home — from the CMS home draft (content/home.json), see home_page.py
+    # Home style A "four doors" (owner 25 Nov 2026, group_pages.home); the v2 long home (home_page.render)
+    # stays in the repo — its sections live on the door pages (courses, homestay, English practice, FAQ, blog).
     import home_page
-    write("index.html", page(home_page.HOME["seoTitle"], home_page.render(posts, fmt_date), path="/",
+    write("index.html", page(home_page.HOME["seoTitle"], group_pages.home("en"), path="/",
           description=home_page.HOME["seoDescription"],
           jsonld=home_page.jsonld(SITE, html.unescape(COMPANY), posts)))
 
@@ -229,7 +229,7 @@ def build():
               f'<meta http-equiv="refresh" content="0; url={target}"><a href="{target}">{target}</a>')
 
     import pages, content_pages
-    for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES}.items():
+    for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES, **group_pages.PAGES}.items():
         write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, jsonld=content_pages.JSONLD.get(rel)))
         urls_extra.append("/" + rel)
 

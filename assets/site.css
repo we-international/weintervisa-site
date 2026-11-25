@@ -266,3 +266,29 @@ nav.chips { margin: 16px 0 24px; }
 .faq-topic { margin-top: 32px; scroll-margin-top: 16px; }
 .faq-topic h2 { margin-bottom: 4px; }
 .faq-more { margin-top: 12px; font-size: 15px; }
+
+/* Home style A "four doors" + 6-item menu + footer links (owner 25 Nov 2026, group_pages.py) */
+.doors { list-style: none; padding: 0; margin: 20px 0 16px; display: grid; gap: 12px; }
+.door a { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; background: var(--card);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; text-decoration: none; color: var(--ink); min-height: 96px; }
+.door a:hover, .door a:focus-visible { border-color: var(--brand); }
+.door img, .door .door-ico { width: 96px; height: 96px; object-fit: cover; border-radius: 10px; }
+.door .door-ico { display: grid; place-items: center; background: #e9f2f1; font-size: 40px; color: var(--ink); }
+.door h3 { margin: 0 0 2px; font-size: 18px; }
+.door span { display: block; color: var(--muted); font-size: 15px; }
+.door b { color: var(--brand); font-size: 15px; }
+.pick { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 10px; }
+.pick a { display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px; text-decoration: none; color: var(--ink); font-weight: 600; min-height: 56px; }
+.pick a span { font-size: 24px; }
+.cta h2 { margin-top: 0; }
+.foot-links a { display: inline-block; padding: 4px 0; }
+.wide a.talk { background: var(--brand); color: #fff; border-radius: 999px; padding: 8px 14px; }
+.wide a.talk[aria-current] { color: #fff; }
+@media (min-width: 720px) {
+  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .door a { grid-template-columns: 140px minmax(0, 1fr); padding: 12px; }
+  .door img, .door .door-ico { width: 140px; height: 120px; }
+  .pick { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 960px) { .wide a { padding: 10px 9px; font-size: 15px; } }

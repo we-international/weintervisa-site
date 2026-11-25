@@ -18,17 +18,12 @@ e = html.escape
 # English path → Thai path, for pages that exist in both languages.
 import thai_content
 import thai_more
+import group_pages
 
-TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS}
+TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS, **group_pages.PAIRS}
 EN_OF = {v: k for k, v in TH_OF.items()}
 
-NAV_TH = [  # Thai labels; link to the Thai page when it exists, else the English one
-    ("คอร์สเรียน", "/th/courses"),
-    ("Fast-track", "/th/fast-track-courses"),
-    ("บริการนักเรียน", "/th/student-services"),
-    ("บทความ", "/th/blog"),
-    ("ติดต่อเรา", "/th/contact-us"),
-]
+NAV_TH = group_pages.NAV["th"]  # owner 25 Nov 2026: 6 items (see group_pages.py)
 
 GROUP_TH = {
     "Business & Technology": "ธุรกิจและเทคโนโลยี",
@@ -53,9 +48,9 @@ VISA_NOTE_TH = """<p class="note-box"><strong>มีคำถามเรื่�
 
 def home(posts, fmt_date):
     """Thai home: the same layout as the English home (rebuilt from live Wix), from content/th/home.json (22 Nov 2026)."""
-    import home_page
-    th = json.loads((ROOT / "content/th/home.json").read_text())
-    return home_page.render(posts, fmt_date, th, group_label=lambda g: GROUP_TH.get(g, g))
+    # Style A "four doors" (owner 25 Nov 2026), same layout as the English home; the long v2 home
+    # (home_page.render with content/th/home.json) is kept in the repo, its content lives on the door pages.
+    return group_pages.home("th")
 
 
 CONSENT_TH = """<div class="field check">
@@ -189,6 +184,7 @@ TH_PAGES = {
                                apply_body),
     **thai_content.PAGES,
     **thai_more.PAGES,
+    **group_pages.TH_PAGES,
 }
 JSONLD = thai_content.JSONLD
 

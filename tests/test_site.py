@@ -79,7 +79,8 @@ feed = (SITE / "blog-feed.xml").read_text()
 check(feed.count("<item>") == len(slugs), f"blog-feed.xml has {len(slugs)} items (same path as Wix)")
 import pages as _p, content_pages as _cp
 import thai_pages as _tp
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
+import group_pages as _gp0
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
 n_static += len(json.loads((ROOT / "content/blog-categories.json").read_text())["categories"])  # /blog/categories/<slug>
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
@@ -114,22 +115,36 @@ check("Draft for owner review" not in pv and "Last updated:" in pv, "privacy not
 hd = json.loads((ROOT / "content/home.json").read_text())
 check(hd["heading"] in html_unescape(home) and home.count("<h1>") == 1, "home uses its heading as the one h1")
 check(f'<title>{hd["seoTitle"]}</title>' in html_unescape(home) and hd["seoDescription"] in html_unescape(home), "home has its SEO title + description")
-for anchor in set(re.findall(r'href="/courses#([\w-]+)"', home)):
-    check(f'id="{anchor}"' in c, f"home chip /courses#{anchor} has a matching section")
-check(len(re.findall(r'href="/courses#', home)) == len({a["group"] for a in json.loads((ROOT / "content/study-areas.json").read_text())}), "home links every study-area group")
 check("registered migration agent" in home.split("<footer")[0], "home body refers visa questions to a registered migration agent")
 check(not re.search(r"\bfree consultation|within (24 hours|one business day)|guarantee(d)? (place|visa|job)|100% |best price", home, re.I), "home makes no unapproved promises")
 check('"WebSite"' in home and '"Organization"' in home, "home has Organization + WebSite structured data")
-# 10b. Home v2 — rebuilt from the live Wix home page (21 Nov 2026), must be as full as the live page
+# 10b. Home style A "four doors" (owner 25 Nov 2026; replaces the long v2 home and its word-count bar, cancelled 23 Nov)
+import group_pages as _gp
 body_home = home.split("<main")[1].split("</main>")[0]
 words_home = len(re.sub(r"<[^>]+>", " ", body_home).split())
-check(words_home >= 1000, f"home body is as full as the live Wix home ({words_home} words, live ≈ 1,312)")
-check(all(f'href="{x["href"]}"' in home for x in hd["paths"]) and len(hd["paths"]) == 7, "home: all 7 'which one sounds like you' paths link to their pages")
-check('id="homestay"' in home and 'href="/homestay"' in home and 'rel="noopener"' in home, "home: homestay band links /homestay and opens the partner site in a new tab")
-check(all(f'href="/post/{c["more"][1].split("/post/")[1]}"' in home for c in hd["popular"] if "/post/" in c["more"][1]), "home: popular course guides link existing posts")
+check(words_home <= 450, f"home body is short: one sentence, four doors, three steps, one button ({words_home} words ≤ 450)")
+check(body_home.count('<li class="door">') == 4 and all(f'href="{d[0]}"' in body_home and resolves(d[0]) for d in _gp.DOORS["en"]),
+      "home: four doors, each links a built page")
+check(all(f'href="{x[2]}"' in body_home and resolves(x[2]) for x in _gp.HOME_UI["en"]["pick"]), "home: help links (OSHC, homestay, families, take a break, English, blog) go to built pages")
 check("utm_" not in home, "home: no tracking parameters")
-check("Our team replies in Thai or English" in html_unescape(home), "home FAQ: our team replies in Thai or English (owner rule)")
-check("fictional, AI-generated characters" in home, "home says Maya and Kenji are fictional, AI-generated characters")
+check("Our team replies in Thai or English" in html_unescape(home), "home: our team replies in Thai or English (owner rule)")
+check("Maya" not in body_home or "fictional, AI-generated characters" in home, "home: Maya and Kenji, if shown, are labelled fictional AI characters")
+# 10b2. Menu of 6 and footer (owner 25 Nov 2026)
+_nav = home.split('<nav class="wide">')[1].split("</nav>")[0]
+check(re.findall(r'href="([^"]+)"', _nav) == [p_ for _, p_ in _gp.NAV["en"]], "menu: Study, Working Holiday, Nursing and care, Student help, Learn English, Contact us")
+_ft = home.split('<footer')[1]
+check('href="https://weintergames.com/"' in _ft and 'rel="noopener"' in _ft and all(f'href="{h}"' in _ft for h in ("/take-a-break", "/families", "/english-practice", "/blog")),
+      "footer: game studio line + Learn English, Take a break, Families, Blog")
+check((SITE / "courses/nursing-pathways-australia.html").read_text().split('<nav class="wide">')[1].split("</nav>")[0].count("aria-current") == 1,
+      "menu marks one item on a sub-page (Nursing, not Study)")
+for rel in ("take-a-break", "families", "th/take-a-break", "th/families"):
+    s_ = (SITE / f"{rel}.html").read_text()
+    check(s_.count("<h1>") == 1 and "weintergames.com" in s_ and "getwec" not in s_.lower().split("<footer")[0], f"/{rel}: one h1, links the game studio, sends nothing to GetWec")
+_fam = (SITE / "families.html").read_text()
+check(all(i[3] in _fam for i in _gp.KIDS["items"]) and "registered migration agent" in _fam, "/families: every kids' activity links its listing; family visa questions → registered migration agent")
+check(all(f"weintergames.com/#{g[0]}" in (SITE / "take-a-break.html").read_text() for g in _gp.GAMES), "/take-a-break: each game links its section on weintergames.com")
+check(all(f'id="{g[0]}"' in (ROOT.parent / "weintergames-site/index.html").read_text() for g in _gp.GAMES) if (ROOT.parent / "weintergames-site/index.html").exists() else True,
+      "/take-a-break game anchors exist on weintergames.com (when the site repo is next to this one)")
 for f_ in re.findall(r'src="/assets/img/([^"]+)"', home):
     check((ROOT / "assets/img" / f_).exists(), f"home image {f_} is in the repo")
 # 10c. /fast-track-courses — rebuilt from the live Wix page (21 Nov 2026)
@@ -257,7 +272,8 @@ check(tp_.count("<h2>") == ep_.split('<main id="main">')[1].count("<h2>") and "�
       "/th/privacy-policy: same sections as the approved English notice, English prevails, Sydney, OAIC, no cookies")
 check(all('href="/th/privacy-policy"' in (SITE / f"{r}.html").read_text() for r in ("th/index", "th/contact-us", "th/charter-application")), "Thai footer and Thai form consent link the Thai privacy notice")
 navth = (SITE / "th/index.html").read_text().split('<nav class="wide">')[1].split("</nav>")[0]
-check('href="/th/courses"' in navth and 'href="/th/blog"' in navth and 'href="/courses"' not in navth, "Thai nav links Thai courses and blog")
+check('href="/th/courses"' in navth and 'href="/th/english-practice"' in navth and 'href="/courses"' not in navth
+      and 'href="/th/blog"' in (SITE / "th/index.html").read_text().split("<footer")[1], "Thai nav links Thai pages; Thai footer links the Thai blog")
 tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
@@ -311,8 +327,9 @@ for name_, en_path in TH_SYNC.items():
 _he, _ht = (json.loads((ROOT / f).read_text()) for f in ("content/home.json", "content/th/home.json"))
 check(_shape(_he) == _shape(_ht), "content/th/home.json has the same fields and list lengths as content/home.json")
 _me, _mt = ((SITE / f).read_text().split('<main id="main">')[1].split("</main>")[0] for f in ("index.html", "th/index.html"))
-check(_me.count("<h2") == _mt.count("<h2") and _me.count('class="faq"') == _mt.count('class="faq"') and _mt.count('<li class="path">') == len(_ht["paths"]),
-      "/th/ has the same sections, paths and FAQ as /")
+check(_me.count("<h2") == _mt.count("<h2") and _mt.count('<li class="door">') == _me.count('<li class="door">') == 4
+      and _mt.count('<li><a href="/th/') == _me.count('<li><a href="/') - _me.count('<li><a href="/th/'),
+      "/th/ has the same sections, doors and help links as / (all Thai pages)")
 
 # /th/courses is the same 97-course catalogue as /courses (22 Nov 2026): every English value has Thai words,
 # the same course ids, topic and group anchors, Thai group names, course titles kept English (lang="en")

@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
 const base = `http://127.0.0.1:${server.address().port}`;
 
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
-const content = ["/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
+const content = ["/families", "/take-a-break", "/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
 const blogCats = JSON.parse(fs.readFileSync(path.join(root, "../content/blog-categories.json"), "utf8")).categories.map(c => `/blog/categories/${c.slug}`);
 const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
