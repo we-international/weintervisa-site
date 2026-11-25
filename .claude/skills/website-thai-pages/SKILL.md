@@ -60,3 +60,9 @@ For a long generated list (97 courses from `content/courses.json`) do not copy t
 - One renderer, `render(..., th=True)`: same ids/anchors (`#chc33021`, `#t-care`, `#c-care-community`) so links and city lists work in both languages; group names in Thai, course titles and codes English with `lang="en"`; buttons go to `/th/charter-application` and `/th/contact-us`.
 - Test: same course ids and anchors in the same order as `/courses`, titles `lang="en"`, Thai buttons. Diff the built English page before/after the refactor (must be identical).
 - Thai promise check: `รับประกันที่เรียน` matches the blocked regex even after "ไม่"; write "เราไม่สัญญาเรื่องที่เรียน วีซ่า หรืองาน".
+
+## Thai pages with a form GetWec reads (26 Nov 2026, /th/working-holiday/charter + /kca)
+- `whv_page.detail(s, L, data)` is one renderer; `UI_EN` / `UI_TH` hold page words, `content/th/working-holiday.json` holds the Thai facts (same schools, rows, prices; test compares every `A$` amount in fees and fee notes, row counts and option values). English output must stay byte-identical apart from whitespace (diff before/after).
+- **Option values stay English** when GetWec parses them (whv_enrol: `Charter: CHC33021 …` → school + course code, getwec `_shared/whv.js`): Thai pages render `<option value="<English>">Thai label</option>` from `option_labels`. `data-summary` labels stay English too. e2e checks the Thai payload's `interest` still has `Course: Charter: …`.
+- Course titles in the Thai fee table: `en_cols` marks those cells `lang="en"`; the legal name / RTO line is wrapped in `<span lang="en">` on Thai only.
+- A Thai page only reached from a section (not the Thai home) needs its prefix in the "Thai home links Thai pages" test exemption list (`/schools`, `/working-holiday/`).
