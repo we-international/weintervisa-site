@@ -548,6 +548,19 @@ check(all(f'href="/{_sp}"' in (SITE / f).read_text() for f in ("fast-track-cours
       and '<html lang="th"' in _st and 'href="/th/working-holiday/charter"' in _st,
       "hospital comparison linked from fast-track, already-in-australia and both other comparisons (EN + TH), and links back")
 
+# Security (WEI-SEC-1126, skill security-basics): no keys or tokens anywhere in the repo files (public repo)
+_SECRET = re.compile("|".join([r"sk-ant-[A-Za-z0-9-]{10,}", r"sb_secret_[A-Za-z0-9_-]{10,}", r"service_role\s*[:=]\s*['\"]ey",
+    r"sk_live_[A-Za-z0-9]{10,}", r"ghp_[A-Za-z0-9]{30,}", r"github_pat_[A-Za-z0-9_]{30,}", r"gh[ousr]_[A-Za-z0-9]{30,}",
+    r"AKIA[0-9A-Z]{16}", r"AIza[0-9A-Za-z_-]{35}", r"-----BEGIN [A-Z ]*PRIVATE KEY-----", r"xox[bap]-[0-9A-Za-z-]{10,}"]))
+_tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, text=True).stdout.split()
+_leaks = []
+for _f in _tracked + [str(p.relative_to(ROOT)) for p in pages]:
+    _p = ROOT / _f
+    if _p.is_file() and _p.suffix.lower() in {".py", ".js", ".mjs", ".json", ".html", ".css", ".md", ".yml", ".yaml", ".txt", ".xml", ".toml"}:
+        if _SECRET.search(_p.read_text(errors="ignore")):
+            _leaks.append(_f)
+check(not _leaks, "no keys or tokens in repo files or built pages" + (f" — {sorted(set(_leaks))}" if _leaks else ""))
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
