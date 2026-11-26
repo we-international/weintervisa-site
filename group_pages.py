@@ -13,6 +13,7 @@ only links we already know are real (no guessed URLs: Kindoza Kids videos and So
 when their links are confirmed).
 """
 import html
+import re
 import json
 from pathlib import Path
 
@@ -59,10 +60,34 @@ def footer_links(lang):
     return f'<p class="foot-links">{links}</p><p>{studio}</p>'
 
 
+# Line icons (unslop pass 27 Nov 2026): one set, 24 viewBox, 1.5 stroke, colour = text role. Drawn here, no emoji.
+_ICON_PATHS = {
+    "badge": '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 9.5"/>',
+    "pin": '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    "chat": '<path d="M4 5h16v11H10l-6 4z"/>',
+    "shield": '<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M12 9v6M9 12h6"/>',
+    "home": '<path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/>',
+    "family": '<circle cx="9" cy="7.5" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><path d="M15 15.2c.6-.4 1.3-.7 2-.7 2 0 3.5 1.8 3.5 4.5"/>',
+    "blocks": '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><circle cx="16.5" cy="16.5" r="3.5"/>',
+    "talk": '<path d="M4 5h16v11H10l-6 4z"/><path d="M8 9h8M8 12h5"/>',
+    "book": '<path d="M4 5.5c2.7-1.2 5.3-1 8 1 2.7-2 5.3-2.2 8-1V19c-2.7-1.2-5.3-1-8 1-2.7-2-5.3-2.2-8-1z"/><path d="M12 6.5V20"/>',
+    "link": '<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>',
+}
+
+
+def icon(name, cls="ico"):
+    return (f'<svg class="{cls}" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{_ICON_PATHS[name]}</svg>')
+
+
+TRUST_ICONS = ["badge", "pin", "chat"]
+_LEAD_EMOJI = re.compile(r"^[^\w(]+", re.U)
+
+
 # ---------- Home, style A: four doors ----------
 def _img(spec_file, alt=""):
     if not spec_file or not (ROOT / "assets/img" / spec_file).exists():
-        return '<span class="door-ico" aria-hidden="true">🤝</span>'
+        return f'<span class="door-ico">{icon("link", "ico ico-door")}</span>'
     return f'<img src="/assets/img/{e(spec_file)}" alt="{e(alt)}" loading="lazy" width="140" height="120">'
 
 
@@ -87,10 +112,10 @@ HOME_UI = {
     "en": {"kicker": "Education agency in Sydney", "lead": "Tell us your visa. We'll show you courses that fit.",
            "more": "See more →", "howH": "How it works", "howP": "Three steps. No cost for course advice.",
            "hereH": "Already here, or nearly?", "hereP": "Health cover, a place to live and the things that make life easier.",
-           "pick": [("🩺", "Compare health cover (OSHC)", "/oshc"), ("🏡", "Find a homestay with our partner", "/homestay"),
-                    ("👨‍👩‍👧", "Came with your family? Help for kids", "/families"),
-                    ("🎮", "Take a break: free games", "/take-a-break"),
-                    ("🗣️", "Learn English free", "/english-practice"), ("📚", "Read our plain-English guides", "/blog")],
+           "pick": [("shield", "Compare health cover (OSHC)", "/oshc"), ("home", "Find a homestay with our partner", "/homestay"),
+                    ("family", "Came with your family? Help for kids", "/families"),
+                    ("blocks", "Take a break: free games", "/take-a-break"),
+                    ("talk", "Learn English free", "/english-practice"), ("book", "Read our plain-English guides", "/blog")],
            "visa": ("<strong>Visa questions?</strong> We are an education agency, not a migration agent. "
                     'For visa advice we refer you to a <a href="/migration-support">registered migration agent</a>.'),
            "ctaH": "Not sure where to start?",
@@ -99,10 +124,10 @@ HOME_UI = {
     "th": {"kicker": "เอเจนซีการศึกษาใน Sydney", "lead": "บอกเราว่าถือวีซ่าอะไร เราจะหาคอร์สที่เหมาะให้",
            "more": "ดูต่อ →", "howH": "ขั้นตอน", "howP": "3 ขั้นตอน ปรึกษาเรื่องคอร์สไม่มีค่าใช้จ่าย",
            "hereH": "อยู่ออสเตรเลียแล้ว หรือใกล้จะมา?", "hereP": "ประกันสุขภาพ ที่พัก และเรื่องที่ช่วยให้ชีวิตง่ายขึ้น",
-           "pick": [("🩺", "เทียบประกันสุขภาพนักเรียน (OSHC)", "/th/oshc"), ("🏡", "หาโฮมสเตย์กับพาร์ตเนอร์ของเรา", "/th/homestay"),
-                    ("👨‍👩‍👧", "มากับครอบครัว? กิจกรรมสำหรับลูก", "/th/families"),
-                    ("🎮", "พักสมอง: เกมพัซเซิล", "/th/take-a-break"),
-                    ("🗣️", "ฝึกภาษาอังกฤษไม่มีค่าใช้จ่าย", "/th/english-practice"), ("📚", "อ่านบทความแนะนำ", "/th/blog")],
+           "pick": [("shield", "เทียบประกันสุขภาพนักเรียน (OSHC)", "/th/oshc"), ("home", "หาโฮมสเตย์กับพาร์ตเนอร์ของเรา", "/th/homestay"),
+                    ("family", "มากับครอบครัว? กิจกรรมสำหรับลูก", "/th/families"),
+                    ("blocks", "พักสมอง: เกมพัซเซิล", "/th/take-a-break"),
+                    ("talk", "ฝึกภาษาอังกฤษไม่มีค่าใช้จ่าย", "/th/english-practice"), ("book", "อ่านบทความแนะนำ", "/th/blog")],
            "visa": ("<strong>มีคำถามเรื่องวีซ่า?</strong> เราเป็นเอเจนซีการศึกษา ไม่ใช่ migration agent "
                     'คำแนะนำเรื่องวีซ่า เราจะแนะนำ <a href="/th/migration-support">registered migration agent</a> ให้'),
            "ctaH": "ไม่รู้จะเริ่มตรงไหน?",
@@ -115,9 +140,9 @@ def home(lang="en"):
     L, h = HOME_UI[lang], (HOME_TH if lang == "th" else HOME)
     doors = "".join(f'<li class="door"><a href="{href}">{_img(f)}<div><h3>{e(t)}</h3><span>{e(b)}</span><b>{e(L["more"])}</b></div></a></li>'
                     for href, f, t, b in DOORS[lang])
-    trust = "".join(f"<li>{e(x)}</li>" for x in h["trust"])
+    trust = "".join(f"<li>{icon(TRUST_ICONS[n % 3])}{e(_LEAD_EMOJI.sub('', x))}</li>" for n, x in enumerate(h["trust"]))
     steps = "".join(f"<li><strong>{e(a)}</strong><span>{e(b)}</span></li>" for a, b in h["steps"])
-    pick = "".join(f'<li><a href="{href}"><span aria-hidden="true">{i}</span>{e(t)}</a></li>' for i, t, href in L["pick"])
+    pick = "".join(f'<li><a href="{href}">{icon(i)}{e(t)}</a></li>' for i, t, href in L["pick"])
     replies = f'<p class="small">{e(L["replies"])}</p>' if L["replies"] else ""
     return f"""<section class="hero doors-hero"><div class="wrap">
 <p class="kicker">{e(L["kicker"])}</p>
