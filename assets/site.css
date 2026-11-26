@@ -106,6 +106,9 @@ h3 { font-size: 19px; margin: 22px 0 6px; }
 .steps { padding-left: 22px; } .steps li { margin: 4px 0; }
 .lead-form, form.lead { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin: 20px 0; }
 form.lead h2 { margin-top: 8px; font-size: 21px; }
+/* form.lead shares the class name with the intro paragraph .lead: keep form text ink and body size (unslop 27 Nov) */
+form.lead { color: var(--ink); font-size: 17px; }
+.wrap.join { padding-top: 0; }
 .field { margin: 0 0 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .field label { font-weight: 600; font-size: 15px; }
 .field input, .field select, .field textarea { font: inherit; width: 100%; padding: 10px 12px; border: 1px solid #c9c5b9;
@@ -179,7 +182,7 @@ nav.chips { margin: 16px 0 24px; }
 .fees table { border-collapse: collapse; width: 100%; font-size: 15px; }
 .fees caption { text-align: left; padding: 10px 12px; font-weight: 600; }
 .fees th, .fees td { padding: 8px 12px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
-.fees td { white-space: nowrap; }
+.fees td { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .fees tbody th { font-weight: 600; }
 .fees tbody th span { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
 @media (max-width: 480px) { .fees table, .fees caption, .fees tbody, .fees tr { display: block; } .fees thead { display: none; }

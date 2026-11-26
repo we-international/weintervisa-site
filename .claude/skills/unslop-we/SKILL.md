@@ -18,6 +18,11 @@ description: Use with the unslop skill (.claude/skills/unslop) on any weintervis
 6. **Credit:** "unslop by @heydamir" only in a story video or the skill files, never on a page.
 7. **Story video:** optional; if made, render with `-preset veryfast` (the upstream script uses slow; pass a copy, do not edit the script) and keep it in the redesign Drive folder.
 
+## Traps we found
+- **Class-name collisions read as "grey, washed-out" slop.** Lead forms are `<form class="lead">` and the intro paragraph is `.lead` (muted, 19px), so every form on the site (16 pages) inherited muted text and 19px selects. Fix in CSS with a more specific rule (`form.lead { color: var(--ink); font-size: 17px; }`), not by renaming the class: `tests/e2e.mjs` clicks `form.lead button`. When text looks faded, check computed styles before touching colours.
+- Back-to-back `<section class="wrap">` blocks stack 24 + 24 px padding plus the child's margin; use `.wrap.join` (padding-top 0) for a section that continues the one above (enrol form, "Another option").
+- Prices in tables: `font-variant-numeric: tabular-nums` so A$ amounts line up.
+
 ## Checks that must still pass
 - weintervisa-site: `python3 tests/test_site.py` + `node tests/e2e.mjs` (phone + desktop). GetWec: `npm test`.
 - Phone screenshot of every page touched (390 px) — icons next to wrapped text align to the top line.
@@ -25,3 +30,4 @@ description: Use with the unslop skill (.claude/skills/unslop) on any weintervis
 
 ## Log
 - 27 Nov 2026: home A EN + TH, polish mode (emoji → line icons, sentence-case kicker, heading weight 600, no headline period). Suggestions left for the owner: a headline only we could say, door links that name the page, one "Talk to us" per screen.
+- 27 Nov 2026 (10:13 run): Working Holiday school pages (Charter, KCA, EN + TH), polish mode: form text muted→ink site-wide (class collision), section gaps, tabular prices; guard tests in `tests/test_site.py`. Suggestion left: the 6-row fee list on phones repeats "English needed / Tuition / Materials" in every row — a per-field group (Aged care / Hospital / Childcare) with the two ways in side by side would read faster.

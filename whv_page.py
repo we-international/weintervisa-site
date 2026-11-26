@@ -124,11 +124,11 @@ def detail(s, L=UI_EN, data=None):
 <ol class="steps">{steps}</ol>
 {L["visa_note"]}
 </section>
-<section class="wrap narrow" id="enrol">
+<section class="wrap narrow join" id="enrol">
 {form(s["slug"], L, s.get("option_labels"))}
 <p class="small">{L["qeac"]}</p>
 </section>
-<section class="wrap"><h2>{L["other_h"]}</h2><ul class="paths">{other(s["slug"], L, data)}</ul></section>"""
+<section class="wrap join"><h2>{L["other_h"]}</h2><ul class="paths">{other(s["slug"], L, data)}</ul></section>"""
 
 
 TH_DATA = json.loads((ROOT / "content/th/working-holiday.json").read_text())["schools"]

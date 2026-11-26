@@ -561,6 +561,15 @@ for _f in _tracked + [str(p.relative_to(ROOT)) for p in pages]:
             _leaks.append(_f)
 check(not _leaks, "no keys or tokens in repo files or built pages" + (f" — {sorted(set(_leaks))}" if _leaks else ""))
 
+# unslop polish (WEI-SKILL-UNSLOP-1126): forms carry class "lead" like the intro paragraph; the form must not inherit
+# the intro's muted colour and 19px size, and WHV prices use tabular figures
+_css = (ROOT / "assets/site.css").read_text()
+check("form.lead { color: var(--ink); font-size: 17px; }" in _css and "font-variant-numeric: tabular-nums" in _css,
+      "lead forms use ink text at body size (not the muted .lead intro style); fee prices use tabular figures")
+check(all('id="enrol"' in (SITE / f).read_text() and "wrap narrow join" in (SITE / f).read_text()
+          for f in ("working-holiday/charter.html", "working-holiday/kca.html", "th/working-holiday/charter.html", "th/working-holiday/kca.html")),
+      "Working Holiday school pages (EN + TH): enrol form joins the page without an extra section gap")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
