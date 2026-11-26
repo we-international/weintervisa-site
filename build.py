@@ -228,8 +228,8 @@ def build():
               f'<link rel="canonical" href="{target}"><meta name="robots" content="noindex">'
               f'<meta http-equiv="refresh" content="0; url={target}"><a href="{target}">{target}</a>')
 
-    import pages, content_pages, whv_page
-    for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES, **group_pages.PAGES, **whv_page.PAGES}.items():
+    import pages, content_pages, whv_page, already_page
+    for rel, (title, desc, body) in {**pages.PAGES, **content_pages.CONTENT_PAGES, **group_pages.PAGES, **whv_page.PAGES, **already_page.PAGES}.items():
         write(f"{rel}.html", page(title, body, path="/" + rel, description=desc, jsonld=content_pages.JSONLD.get(rel)))
         urls_extra.append("/" + rel)
 

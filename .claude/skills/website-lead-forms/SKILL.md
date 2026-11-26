@@ -42,3 +42,10 @@ description: Use when adding or changing a lead form on weintervisa.com (or any 
 - A form without a phone field must make email required in HTML; the browser check puts the "email or phone" error under the email field.
 - A fixed answer (e.g. everyone on a WHV page is in Australia) can be a hidden input (`location=australia`).
 - Add every new form page to the forms loop in `tests/e2e.mjs` (preview + contract) and to `urls` (not to `content`, which is also checked under /th/).
+
+## Visa-angle landing pages (26 Nov 2026, policy-wei-enrolment-focus item 6)
+- Example: `/already-in-australia` + `/th/already-in-australia` (`already_page.py`). The page is about courses; visa text is only general Home Affairs facts with the source link and the page's "last updated" date, plus the owner's exact line "Check your visa conditions on homeaffairs.gov.au or with a registered migration agent." Never answer "can I study on my visa" for one person.
+- Facts checked on the official page (work-conditions.aspx, updated 18 Nov 2026): **condition 8548 = Working Holiday study/training max 4 months on each visa** (8547 is the 6-months-with-one-employer work rule — don't swap them); online/correspondence courses from an overseas provider are not counted; workplace-based training counts as work. Re-check the page before reusing a fact.
+- Offers: write only "Ask us about current scholarships and offers" unless a school put the offer in writing (end date + conditions). No countdowns, no "% off". The test bans commission/guarantee/countdown/"you are eligible" words.
+- Reuse the existing form (`whv_page.form`) so GetWec makes the same case; when the page has no school yet, pre-select "Not sure yet" (e2e checks `Course: Not sure yet` in the payload) — GetWec counts it in the "no school yet" row.
+- `tests/test_site.py` prints its results at the very end: new checks go **above** the final `print(...)`/`sys.exit` lines, or they run but never show (and a failure would still be hidden from the log).

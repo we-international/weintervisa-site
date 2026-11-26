@@ -29,7 +29,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
 const content = ["/families", "/take-a-break", "/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
 const blogCats = JSON.parse(fs.readFileSync(path.join(root, "../content/blog-categories.json"), "utf8")).categories.map(c => `/blog/categories/${c.slug}`);
-const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", "/working-holiday/charter", "/working-holiday/kca", "/th/working-holiday/charter", "/th/working-holiday/kca", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", "/working-holiday/charter", "/working-holiday/kca", "/th/working-holiday/charter", "/th/working-holiday/kca", "/already-in-australia", "/th/already-in-australia", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {
@@ -64,6 +64,11 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
       await page.fill("#w-end", "2027-04"); }],
     ["/th/working-holiday/charter", async () => { await page.fill("#w-name", "ทดสอบ ตัวอย่าง"); await page.fill("#w-email", "whv.th.sample@example.com");
       await page.selectOption("#w-visa", { index: 2 }); await page.fill("#w-end", "2027-03"); await page.selectOption("#w-course", { index: 2 }); }],
+    // Already in Australia (26 Nov 2026): course left on "Not sure yet" → GetWec "no school yet" WHV case.
+    ["/already-in-australia", async () => { await page.fill("#w-name", "Test Sample"); await page.fill("#w-email", "already.sample@example.com");
+      await page.selectOption("#w-visa", { index: 3 }); await page.fill("#w-end", "2027-08"); }],
+    ["/th/already-in-australia", async () => { await page.fill("#w-name", "ทดสอบ ตัวอย่าง"); await page.fill("#w-email", "already.th.sample@example.com");
+      await page.selectOption("#w-visa", { index: 1 }); await page.fill("#w-end", "2027-05"); }],
   ]) {
     await page.goto(base + u, { waitUntil: "load" });
     const note = await page.textContent(".form-status");
@@ -77,6 +82,7 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     if (payload && payload.lang !== (u.startsWith("/th/") ? "th" : "en")) res.ok = false, res.errors = { lang: payload.lang };
     // GetWec reads the school + course code from the English option value (whv.js), on Thai pages too.
     if (payload && u.includes("/working-holiday/") && !/Course: (Charter|KCA): /.test(payload.interest)) res.ok = false, res.errors = { course: payload.interest };
+    if (payload && u.includes("already-in-australia") && !/Course: Not sure yet/.test(payload.interest)) res.ok = false, res.errors = { course: payload.interest };
     const ok = /Preview/.test(note) && errs >= 2 && res.ok && /Preview check passed/.test(await page.textContent(".form-status"));
     if (!ok) { fails++; console.log(`✗ ${name} form ${u} note=${note} errs=${errs} contract=${JSON.stringify(res.errors)}`); }
     await page.screenshot({ path: `${out}/${name}-form-${u.slice(1)}.png`, fullPage: true });

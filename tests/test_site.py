@@ -81,7 +81,8 @@ import pages as _p, content_pages as _cp
 import thai_pages as _tp
 import group_pages as _gp0
 import whv_page as _wv0
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + len(_wv0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
+import already_page as _ap0
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + len(_wv0.PAGES) + len(_ap0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
 n_static += len(json.loads((ROOT / "content/blog-categories.json").read_text())["categories"])  # /blog/categories/<slug>
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
@@ -279,7 +280,7 @@ tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/", "/already-in-australia")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
@@ -435,6 +436,29 @@ for k in ("charter", "kca"):
     check("เงื่อนไข 8548" in t_ and "QEAC No. 11964" in t_ and "ไม่ใช่ migration agent" in t_ and not re.search(r"commission|ค่าคอม|25%", t_, re.I),
           f"/th/working-holiday/{k}: 4-month rule, QEAC, not a migration agent, no commission")
 check("A$5,150" in (SITE / "th/working-holiday/kca.html").read_text() and "16 สัปดาห์ใกล้กับเพดานเรียน 4 เดือน" in (SITE / "th/working-holiday/kca.html").read_text(), "/th/working-holiday/kca: price + 16-week warning")
+
+
+# 26 Nov 2026 (policy-wei-enrolment-focus, item 6): "Already in Australia? Study alongside your visa" (EN + TH).
+# Only general Home Affairs facts with the source, the exact check line, no per-person visa answer,
+# no commission / countdown / promised job, visa or PR; Working Holiday form with "Not sure yet" first.
+_aa = (SITE / "already-in-australia.html").read_text()
+_at = (SITE / "th/already-in-australia.html").read_text()
+check("Check your visa conditions on" in _aa and "homeaffairs.gov.au" in _aa and "or with a registered migration agent" in _aa,
+      "/already-in-australia: 'Check your visa conditions on homeaffairs.gov.au or with a registered migration agent'")
+check("condition 8548" in _aa and "4 months on each visa" in _aa and "work-conditions.aspx" in _aa and "not advice about your visa" in _aa,
+      "/already-in-australia: 4-month rule (8548) with the Home Affairs source, general information only")
+check(_aa.count('data-lead-form="whv_enrol"') == 1 and 'name="visa"' in _aa and 'name="visa_end"' in _aa
+      and '<option selected>Not sure yet</option>' in _aa and 'name="consent"' in _aa,
+      "/already-in-australia: one Enrol with us form (visa, visa end, course starts on Not sure yet, consent)")
+check(_aa.index('href="/working-holiday/charter"') < _aa.index('href="/working-holiday/kca"'), "/already-in-australia: Charter first, then KCA")
+check("Ask us about current scholarships and offers" in _aa and not re.search(r"commission|guarantee|countdown|% off|you can study|you are eligible|\bPR\b", _aa, re.I),
+      "/already-in-australia: offers only on request; no commission, guarantee, countdown or per-person visa answer")
+check('<html lang="th"' in _at and 'hreflang="en"' in _at and "เงื่อนไข 8548" in _at and "registered migration agent" in _at
+      and 'value="Not sure yet" selected' in _at and "/th/privacy-policy" in _at and 'href="/th/working-holiday/charter"' in _at,
+      "/th/already-in-australia: Thai pair, 8548, migration agent line, English option values, Thai consent")
+check('href="/already-in-australia"' in (SITE / "fast-track-courses.html").read_text()
+      and 'href="/th/already-in-australia"' in (SITE / "th/fast-track-courses.html").read_text(),
+      "/fast-track-courses (EN + TH) link the Already in Australia page")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
