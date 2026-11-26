@@ -2,7 +2,7 @@
   "_source": "Live home page of www.weintervisa.com (Wix custom embed), text + markup saved by the workflow 'Live Wix vs new site' on 21 Nov 2026 (review/compare-44891215183, text/home.txt + home.html). Rebuilt from what visitors see now, not from the older CMS draft (read-only export 20 Nov 2026).",
   "_edits": "21 Nov 2026: 'Can I talk to you in my language?' keeps the owner's rule from 20 Nov 2026 (Mia, our AI assistant, answers in many languages; our team replies in Thai or English). Tracking parameters (utm_*) dropped: the site has no analytics. The Wix 'translate this page' widget is replaced by the EN/TH switch. Images are shown only once a local copy is in assets/img (tools/fetch_images.py).",
   "title": "Sydney education agency · Est. 2023",
-  "heading": "Study in Australia, your way.",
+  "heading": "Study in Australia, your way",
   "intro": "Whatever visa you're on, we help you find a course that fits, compare your options and settle in. Friendly, free advice from a QEAC-certified counsellor.",
   "seoTitle": "Study in Australia | We International Education & Visa",
   "seoDescription": "Whatever visa you're on, we help you find a course that fits, compare your options and settle in. Free advice from a QEAC-certified counsellor in Sydney.",

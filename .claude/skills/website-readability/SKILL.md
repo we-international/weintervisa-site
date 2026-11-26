@@ -42,3 +42,9 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Thai copy: the tests ban the word "ฟรี" inside `<main>` (promise rule) — write "ไม่มีค่าใช้จ่าย" or drop it; English "free games" is fine.
 - Link out only to URLs already confirmed in the repo or AI Office. No guessed YouTube/TPT links: leave the card out and ask in the report (Kindoza Kids videos, Solune walk clips).
 - One-way group rule: the visa site may link to the game studio and the kids' shop; those pages send nothing to GetWec and carry no student data (tested).
+
+## Lesson 27 Nov 2026: first unslop pass on home A (skill `unslop` + `unslop-we`)
+- Audit = light slop (polish mode, the owner's layout kept): emoji used as icons (trust line, "Already here" picks, the partner door), an UPPERCASE tracked kicker, 700-weight headings, a period at the end of the headline.
+- Fixed: one set of line icons drawn in `group_pages.py` (`icon(name)`, 24 viewBox, 1.5 stroke, colour = muted text role, `aria-hidden`), leading emoji stripped from `content/*/home.json` trust lines at render time (the JSON keeps its text), `.kicker` sentence case with no tracking, h1/h2 weight 600, no trailing period on the EN headline. Thai: no letter spacing anywhere (it splits vowel and tone marks).
+- Not changed (suggestions for the report, owner decides): the headline "Study in Australia, your way" passes the template check badly — it could sit on any agency's site; "See more →" ×4 could name the page; two "Talk to us" buttons on one screen.
+- Before/after image goes to the redesign Drive folder for Nora; never put the unslop credit on the page.

@@ -43,8 +43,8 @@ a { color: var(--brand); }
 
 main { min-height: 60vh; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px; }
-h1 { font-size: 30px; line-height: 1.2; letter-spacing: -.02em; margin: 8px 0 12px; }
-h2 { font-size: 23px; line-height: 1.25; margin: 28px 0 8px; }
+h1 { font-size: 30px; line-height: 1.2; letter-spacing: -.01em; font-weight: 600; margin: 8px 0 12px; }
+h2 { font-size: 23px; line-height: 1.25; font-weight: 600; margin: 28px 0 8px; }
 h3 { font-size: 19px; margin: 22px 0 6px; }
 .lead { font-size: 19px; color: var(--muted); margin: 0 0 16px; }
 
@@ -136,7 +136,7 @@ details.faq { border-bottom: 1px solid #e3e6ea; padding: .8rem 0; }
 details.faq summary { cursor: pointer; font-weight: 600; }
 details.faq p { margin: .5rem 0 0; }
 /* home */
-.kicker { text-transform: uppercase; letter-spacing: .08em; font-size: 14px; font-weight: 700; color: var(--brand); margin: 0; }
+.kicker { font-size: 15px; font-weight: 600; color: var(--brand); margin: 0; } /* sentence case, no tracking (unslop 27 Nov 2026) */
 html:lang(th) .kicker { letter-spacing: 0; } /* spacing splits Thai vowel and tone marks */
 .hero h1 { font-size: 32px; max-width: 18em; }
 .actions .btn { margin: 4px 6px 4px 0; }
@@ -273,14 +273,18 @@ nav.chips { margin: 16px 0 24px; }
   border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; text-decoration: none; color: var(--ink); min-height: 96px; }
 .door a:hover, .door a:focus-visible { border-color: var(--brand); }
 .door img, .door .door-ico { width: 96px; height: 96px; object-fit: cover; border-radius: 10px; }
-.door .door-ico { display: grid; place-items: center; background: #e9f2f1; font-size: 40px; color: var(--ink); }
+.door .door-ico { display: grid; place-items: center; background: #e9f2f1; color: var(--brand); }
+.door .ico-door { width: 44px; height: 44px; stroke-width: 1.25; }
 .door h3 { margin: 0 0 2px; font-size: 18px; }
 .door span { display: block; color: var(--muted); font-size: 15px; }
 .door b { color: var(--brand); font-size: 15px; }
 .pick { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 10px; }
 .pick a { display: flex; gap: 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 12px 14px; text-decoration: none; color: var(--ink); font-weight: 600; min-height: 56px; }
-.pick a span { font-size: 24px; }
+.ico { width: 18px; height: 18px; flex: none; color: var(--muted); vertical-align: -3px; }
+.pick a .ico { width: 20px; height: 20px; }
+.trust li { display: inline-flex; gap: 6px; align-items: flex-start; }
+.trust li .ico { margin-top: 2px; }
 .cta h2 { margin-top: 0; }
 .foot-links a { display: inline-block; padding: 4px 0; }
 .wide a.talk { background: var(--brand); color: #fff; border-radius: 999px; padding: 8px 14px; }
