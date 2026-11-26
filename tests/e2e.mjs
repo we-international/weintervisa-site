@@ -29,7 +29,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const slugs = JSON.parse(fs.readFileSync(path.join(root, "../tests/wix-post-slugs.json"), "utf8"));
 const content = ["/families", "/take-a-break", "/about-we-international", "/courses", "/courses/nursing-pathways-australia", "/fast-track-courses", "/english-practice", "/student-services", "/homestay", "/oshc", "/migration-support", "/referral-partners", "/frequently-asked-questions", "/privacy-policy", "/schools", ...JSON.parse(fs.readFileSync(path.join(root, "../content/schools.json"), "utf8")).schools.map(s => `/schools/${s.slug}`)];
 const blogCats = JSON.parse(fs.readFileSync(path.join(root, "../content/blog-categories.json"), "utf8")).categories.map(c => `/blog/categories/${c.slug}`);
-const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", "/working-holiday/charter", "/working-holiday/kca", "/th/working-holiday/charter", "/th/working-holiday/kca", "/already-in-australia", "/th/already-in-australia", "/courses/aged-care-certificate-iii", "/th/courses/aged-care-certificate-iii", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
+const urls = ["/", "/blog", ...blogCats, "/no-such-page", "/contact-us", "/charter-application", "/th/", "/th/contact-us", "/th/charter-application", "/working-holiday/charter", "/working-holiday/kca", "/th/working-holiday/charter", "/th/working-holiday/kca", "/already-in-australia", "/th/already-in-australia", "/courses/aged-care-certificate-iii", "/th/courses/aged-care-certificate-iii", "/courses/childcare-certificate-iii", "/th/courses/childcare-certificate-iii", ...content, "/th/blog", ...content.map(u => "/th" + u), ...slugs.map(s => `/post/${s}`)];
 const browser = await chromium.launch();
 let fails = 0;
 for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1280, height: 900 } }]]) {
@@ -73,6 +73,10 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     ["/courses/aged-care-certificate-iii", async () => { await page.fill("#a-name", "Test Sample"); await page.fill("#a-email", "agedcare.sample@example.com");
       await page.selectOption("#a-school", "KCA Education"); }],
     ["/th/courses/aged-care-certificate-iii", async () => { await page.fill("#a-name", "ทดสอบ ตัวอย่าง"); await page.fill("#a-email", "agedcare.th.sample@example.com"); }],
+    // Childcare comparison (26 Nov 2026): early childhood + Certificate III preset; School choice in the summary.
+    ["/courses/childcare-certificate-iii", async () => { await page.fill("#a-name", "Test Sample"); await page.fill("#a-email", "childcare.sample@example.com");
+      await page.selectOption("#a-school", "Alana Kaye College"); }],
+    ["/th/courses/childcare-certificate-iii", async () => { await page.fill("#a-name", "ทดสอบ ตัวอย่าง"); await page.fill("#a-email", "childcare.th.sample@example.com"); }],
   ]) {
     await page.goto(base + u, { waitUntil: "load" });
     const note = await page.textContent(".form-status");
@@ -89,6 +93,7 @@ for (const [name, opts] of [["phone", { viewport: { width: 375, height: 800 }, i
     if (payload && u.includes("already-in-australia") && !/Course: Not sure yet/.test(payload.interest)) res.ok = false, res.errors = { course: payload.interest };
     if (payload && u.includes("aged-care-certificate-iii") && !/Course area: (Aged care|งานดูแล).*Level: Certificate III/.test(payload.interest)
         || payload && u.includes("aged-care-certificate-iii") && !/School: (KCA Education|Not sure yet)/.test(payload.interest)) res.ok = false, res.errors = { summary: payload.interest };
+    if (payload && u.includes("childcare-certificate-iii") && !/^(?=.*School: (Alana Kaye College|Not sure yet))(?=.*Course area: (Early childhood|การศึกษาปฐมวัย))(?=.*Level: Certificate III)/.test(payload.interest)) res.ok = false, res.errors = { summary: payload.interest };
     const ok = /Preview/.test(note) && errs >= 2 && res.ok && /Preview check passed/.test(await page.textContent(".form-status"));
     if (!ok) { fails++; console.log(`✗ ${name} form ${u} note=${note} errs=${errs} contract=${JSON.stringify(res.errors)}`); }
     await page.screenshot({ path: `${out}/${name}-form-${u.slice(1)}.png`, fullPage: true });
