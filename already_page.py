@@ -45,6 +45,7 @@ UI = {
         "see": "Courses, fees and enrol →",
         "cmp": "Compare the aged care course CHC33021 at 4 schools →",
         "cmp2": "Compare the childcare course at 2 schools →",
+        "cmp3": "Compare the hospital course HLT33115: 2 ways to start →",
         "offers_h": "Scholarships and offers",
         "offers_p": ("Ask us about current scholarships and offers. We only tell you about an offer when the school "
                      "has put it in writing, with its end date and conditions."),
@@ -76,6 +77,7 @@ UI = {
         "see": "ดูคอร์ส ค่าเรียน และสมัคร →",
         "cmp": "เทียบคอร์สดูแลผู้สูงอายุ CHC33021 จาก 4 โรงเรียน →",
         "cmp2": "เทียบคอร์สดูแลเด็ก (childcare) จาก 2 โรงเรียน →",
+        "cmp3": "เทียบคอร์สผู้ช่วยโรงพยาบาล HLT33115 เริ่มได้ 2 แบบ →",
         "offers_h": "ทุนและข้อเสนอพิเศษ",
         "offers_p": ("ถามเราเรื่องทุนและข้อเสนอที่มีอยู่ตอนนี้ได้ เราบอกข้อเสนอเฉพาะเมื่อโรงเรียนแจ้งเป็นลายลักษณ์อักษร "
                      "พร้อมวันหมดเขตและเงื่อนไขเท่านั้น"),
@@ -119,6 +121,7 @@ def body(lang, consent, visa_note):
 <ul class="paths">{cards}</ul>
 <p><a href="{t["pre"]}/courses/aged-care-certificate-iii">{t["cmp"]}</a></p>
 <p><a href="{t["pre"]}/courses/childcare-certificate-iii">{t["cmp2"]}</a></p>
+<p><a href="{t["pre"]}/courses/health-services-assistance-certificate-iii">{t["cmp3"]}</a></p>
 </section>
 <section class="wrap narrow">
 <h2>{t["offers_h"]}</h2>

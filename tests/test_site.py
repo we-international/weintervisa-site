@@ -281,7 +281,7 @@ tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/", "/already-in-australia", "/courses/aged-care-certificate-iii", "/courses/childcare-certificate-iii")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/", "/already-in-australia", "/courses/")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
@@ -521,6 +521,32 @@ check(all('href="/courses/childcare-certificate-iii"' in (SITE / f).read_text() 
       and all('href="/th/courses/childcare-certificate-iii"' in (SITE / f).read_text() for f in ("th/fast-track-courses.html", "th/already-in-australia.html", "th/courses/aged-care-certificate-iii.html"))
       and 'href="/courses/aged-care-certificate-iii"' in _he,
       "/fast-track-courses, /already-in-australia and the aged care page link the childcare comparison (EN + TH), and back")
+
+# 17. /courses/health-services-assistance-certificate-iii (policy items 1-3): Charter HLT33115, 2 ways in
+_se = (SITE / "courses/health-services-assistance-certificate-iii.html").read_text()
+_st = (SITE / "th/courses/health-services-assistance-certificate-iii.html").read_text()
+_srows = _se.split("<tbody>")[1].split("</tbody>")[0]
+_srows_t = _st.split("<tbody>")[1].split("</tbody>")[0]
+check(_srows.count("<tr>") == 2 and _srows_t.count("<tr>") == 2 and _srows.index("IELTS 5.5") < _srows.index("IELTS 4.5")
+      and "KCA" not in _srows and "Alana" not in _srows and "Frontier" not in _srows,
+      "/courses/health-services-assistance-certificate-iii: Charter only, start HLT33115 (IELTS 5.5) then English first (IELTS 4.5)")
+_hl = [r for r in _whv["charter"]["fees"] if "HLT33115" in r[1]]
+_sneed = [a for r in _hl for a in [r[3]] + re.findall(r"A\$[\d,]+", r[4])]
+check(len(_hl) == 2 and all(a in _srows and a in _srows_t for a in _sneed) and "placement fee" in _srows and "ค่าฝึกงาน" in _srows_t,
+      "/courses/health-services-assistance-certificate-iii (EN + TH): every A$ (tuition, materials, placement) matches Charter's file")
+check(_se.count('data-lead-form="application"') == 1 and 'value="Not sure yet" selected' in _se and _se.count('value="Charter Australia"') == 1
+      and "<option selected>Health services assistance</option>" in _se and "<option selected>Certificate III</option>" in _se
+      and "<option selected>ผู้ช่วยงานบริการสุขภาพ</option>" in _st and 'value="Charter Australia"' in _st,
+      "/courses/health-services-assistance-certificate-iii: one application form set to health services + Cert III + one Charter choice")
+check("or with a registered migration agent" in _se and "หรือกับ registered migration agent" in _st and "8548" in _se and "8548" in _st
+      and not re.search(r"commission|guarantee|guaranteed|get a job|permanent residency|\bPR\b|countdown|% off", re.sub(r"<[^>]+>", " ", _se), re.I),
+      "/courses/health-services-assistance-certificate-iii: visa check line + 8548, no commission / job / PR / countdown")
+_sp = "courses/health-services-assistance-certificate-iii"
+check(all(f'href="/{_sp}"' in (SITE / f).read_text() for f in ("fast-track-courses.html", "already-in-australia.html", "courses/aged-care-certificate-iii.html", "courses/childcare-certificate-iii.html"))
+      and all(f'href="/th/{_sp}"' in (SITE / f).read_text() for f in ("th/fast-track-courses.html", "th/already-in-australia.html", "th/courses/childcare-certificate-iii.html"))
+      and 'href="/courses/aged-care-certificate-iii"' in _se and 'href="/courses/childcare-certificate-iii"' in _se
+      and '<html lang="th"' in _st and 'href="/th/working-holiday/charter"' in _st,
+      "hospital comparison linked from fast-track, already-in-australia and both other comparisons (EN + TH), and links back")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
