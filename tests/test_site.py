@@ -82,7 +82,8 @@ import thai_pages as _tp
 import group_pages as _gp0
 import whv_page as _wv0
 import already_page as _ap0
-n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + len(_wv0.PAGES) + len(_ap0.PAGES) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
+import compare_page as _cmp0
+n_static = len(_p.PAGES) + len(_cp.CONTENT_PAGES) + len(_gp0.PAGES) + len(_wv0.PAGES) + len(_ap0.PAGES) + len(_cmp0.PAGES_EN) + 2 + len(_tp.TH_PAGES)  # + Thai home, Thai blog and Thai pages
 n_static += len(json.loads((ROOT / "content/blog-categories.json").read_text())["categories"])  # /blog/categories/<slug>
 check((SITE / "sitemap.xml").read_text().count("<loc>") == len(slugs) + 2 + n_static, f"sitemap lists home, blog, {n_static} static pages (EN + TH) and every post")
 
@@ -280,7 +281,7 @@ tm = (SITE / "th/migration-support.html").read_text()
 check("ไม่ได้รับค่าคอมมิชชันหรือผลประโยชน์ใดๆ" in tm and _cp.PARTNER_FORM in tm and "ทะเบียนทางการ" in tm, "/th/migration-support: no commission, MARN check, partner form link")
 check("ภาษาไทยหรืออังกฤษ" in (SITE / "th/frequently-asked-questions.html").read_text() and '"FAQPage"' in (SITE / "th/frequently-asked-questions.html").read_text(), "/th/ FAQ: team replies in Thai or English + FAQPage data")
 check("Thai and English" in (SITE / "student-services.html").read_text(), "/student-services says our team speaks Thai and English")
-check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/", "/already-in-australia")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
+check(all('href="/th' + p_ + '"' in (SITE / "th/index.html").read_text() or p_.startswith(("/schools", "/working-holiday/", "/already-in-australia", "/courses/aged-care-certificate-iii")) or p_ in ("/about-we-international", "/homestay", "/oshc", "/migration-support", "/frequently-asked-questions", "/referral-partners")
           for p_ in _tp.TH_OF if p_ != "/" and p_ not in ("/contact-us", "/charter-application")), "Thai home links Thai pages where they exist")
 check(all('class="lang"' in s_ for p_, s_ in pages.items() if "http-equiv=\"refresh\"" not in s_), "every page has the language switch")
 check(all(f.count('data-lead-form="') == 1 for f in [(SITE / "th/contact-us.html").read_text(), (SITE / "th/charter-application.html").read_text()]), "Thai contact + application pages have the lead form")
@@ -459,6 +460,34 @@ check('<html lang="th"' in _at and 'hreflang="en"' in _at and "เงื่อ�
 check('href="/already-in-australia"' in (SITE / "fast-track-courses.html").read_text()
       and 'href="/th/already-in-australia"' in (SITE / "th/fast-track-courses.html").read_text(),
       "/fast-track-courses (EN + TH) link the Already in Australia page")
+
+# 15. /courses/aged-care-certificate-iii (policy-wei-enrolment-focus-20261126 items 1-3): one course, 4 schools
+_ce = (SITE / "courses/aged-care-certificate-iii.html").read_text()
+_ct = (SITE / "th/courses/aged-care-certificate-iii.html").read_text()
+_rows = _ce.split("<tbody>")[1].split("</tbody>")[0]
+_order = [n for n in ("KCA Education", "Charter Australia", "Alana Kaye College", "Frontier Education") if n in _rows]
+check(len(_order) == 4 and [_rows.index(n) for n in _order] == sorted(_rows.index(n) for n in _order),
+      "/courses/aged-care-certificate-iii: 4 schools, shortest first (KCA 16 weeks, Charter, then 52-week CRICOS courses)")
+_whv = {x["slug"]: x for x in json.loads((ROOT / "content/working-holiday.json").read_text())["schools"]}
+_sch = {x["slug"]: x for x in json.loads((ROOT / "content/schools.json").read_text())["schools"]}
+_need = [dict(_whv["kca"]["fees"])["Total"], next(r for r in _whv["charter"]["fees"] if r[1].startswith("CHC33021"))[3]]
+for _sl in ("alana-kaye-college", "frontier-education"):
+    _c = next(c for c in _sch[_sl]["courses"] if c["code"] == "CHC33021")
+    _need += [f"A${v:,}" for v in _c["fees"].values()]
+check(all(a in _rows for a in _need) and all(a in _ct for a in _need),
+      "/courses/aged-care-certificate-iii (EN + TH): every A$ amount matches the school data files")
+check(all(h in _ce for h in ('href="/working-holiday/kca"', 'href="/working-holiday/charter"', 'href="/schools/alana-kaye-college"', 'href="/schools/frontier-education"'))
+      and 'href="/th/schools/frontier-education"' in _ct, "/courses/aged-care-certificate-iii: each row links the school page (Thai links Thai)")
+check(_ce.count('data-lead-form="application"') == 1 and 'name="school"' in _ce and 'value="Not sure yet" selected' in _ce
+      and "<option selected>Aged care / individual support</option>" in _ce and 'name="consent"' in _ce
+      and _ct.count('data-lead-form="application"') == 1 and "<option selected>งานดูแลผู้สูงอายุ / Individual support</option>" in _ct,
+      "/courses/aged-care-certificate-iii: one application form set to aged care + School choice (Not sure yet) + consent")
+check("or with a registered migration agent" in _ce and "หรือกับ registered migration agent" in _ct and "8548" in _ce and "8548" in _ct
+      and not re.search(r"commission|guarantee|guaranteed|get a job|permanent residency|\bPR\b", re.sub(r"<[^>]+>", " ", _ce), re.I),
+      "/courses/aged-care-certificate-iii: visa check line + 8548, no commission / job / PR promises")
+check('href="/courses/aged-care-certificate-iii"' in (SITE / "fast-track-courses.html").read_text()
+      and 'href="/th/courses/aged-care-certificate-iii"' in (SITE / "th/fast-track-courses.html").read_text()
+      and 'href="/courses/aged-care-certificate-iii"' in _aa, "/fast-track-courses + /already-in-australia link the comparison (EN + TH)")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

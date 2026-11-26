@@ -31,3 +31,11 @@ description: Use when adding or changing a school page on weintervisa.com (/scho
 - Never copy commission lines (KCA's email states one) — test greps `commission|25%`.
 - A program the school lists as "up to 12 months" on a WHV page: show it as the school's wording, add the Home Affairs 4-month rule (condition 8548) + VEVO link, and warn when the course is close to the limit (KCA 16 weeks). No visa advice: registered migration agent.
 - Expired intake dates (KCA's 2026 dates ended 18 Nov) are not shown; say "ask us for the next start date".
+
+## One course, many schools: comparison pages (26 Nov 2026, policy-wei-enrolment-focus item 2)
+- When several schools sent fees for the same course code (CHC33021 at Charter, KCA, Alana Kaye, Frontier), build one comparison page (`compare_page.py`, `/courses/aged-care-certificate-iii` + `/th/...`) instead of a new data file: read every number from `working-holiday.json` and `schools.json`, so it can never disagree with the school pages. A test re-reads the JSON and checks every A$ amount is on the EN and TH page.
+- Use `schools.SCHOOLS` (owner-approved only in `--production`); WHV schools come from `working-holiday.json`. Order shortest first, then lowest fee; each row links the school page (Thai links Thai).
+- "Who it is for" is a fact, not visa advice: "Working Holiday 417/462 (Study and Work Program)" vs "International students (CRICOS course <code>)" + the 8548 4-month line + "Check your visa conditions on homeaffairs.gov.au or with a registered migration agent".
+- Form: reuse `pages.apply_form` / Thai `apply_form` (passed in, never imported from `thai_pages` → circular import), preset Course area + Certificate III, and add a "School you like" select (`data-summary="School"`, English values, "Not sure yet" selected) so staff see the school in the GetWec subject. e2e checks the summary.
+- Long text in a `.fees` table: add class `cmp` (`white-space: normal`); a link cell with no `data-col` must not show the phone `": "` label (`.fees td:not([data-col])::before { content: none }`).
+- Thai "mainly Thai" test: mark English proper names (school names, campuses, `<option>` school names) `lang="en"`; translate column labels like "Already in Australia" on the Thai page. Titles must be 15–60 characters.

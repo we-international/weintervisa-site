@@ -43,6 +43,7 @@ UI = {
         "fast_h": "Short courses that finish fast",
         "fast_p": "Two schools sent us their courses and fees for people already in Australia. Both include work placement.",
         "see": "Courses, fees and enrol →",
+        "cmp": "Compare the aged care course CHC33021 at 4 schools →",
         "offers_h": "Scholarships and offers",
         "offers_p": ("Ask us about current scholarships and offers. We only tell you about an offer when the school "
                      "has put it in writing, with its end date and conditions."),
@@ -72,6 +73,7 @@ UI = {
         "fast_h": "คอร์สสั้นที่จบไว",
         "fast_p": "2 โรงเรียนส่งคอร์สและค่าเรียนสำหรับคนที่อยู่ออสเตรเลียแล้วมาให้เรา ทั้งสองคอร์สมีฝึกงาน",
         "see": "ดูคอร์ส ค่าเรียน และสมัคร →",
+        "cmp": "เทียบคอร์สดูแลผู้สูงอายุ CHC33021 จาก 4 โรงเรียน →",
         "offers_h": "ทุนและข้อเสนอพิเศษ",
         "offers_p": ("ถามเราเรื่องทุนและข้อเสนอที่มีอยู่ตอนนี้ได้ เราบอกข้อเสนอเฉพาะเมื่อโรงเรียนแจ้งเป็นลายลักษณ์อักษร "
                      "พร้อมวันหมดเขตและเงื่อนไขเท่านั้น"),
@@ -113,6 +115,7 @@ def body(lang, consent, visa_note):
 <h2>{t["fast_h"]}</h2>
 <p>{t["fast_p"]}</p>
 <ul class="paths">{cards}</ul>
+<p><a href="{t["pre"]}/courses/aged-care-certificate-iii">{t["cmp"]}</a></p>
 </section>
 <section class="wrap narrow">
 <h2>{t["offers_h"]}</h2>

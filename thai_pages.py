@@ -21,8 +21,9 @@ import thai_more
 import group_pages
 import whv_page
 import already_page
+import compare_page
 
-TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS, **group_pages.PAIRS, **whv_page.PAIRS, **already_page.PAIRS}
+TH_OF = {"/": "/th/", "/contact-us": "/th/contact-us", "/charter-application": "/th/charter-application", **thai_content.PAIRS, **thai_more.PAIRS, **group_pages.PAIRS, **whv_page.PAIRS, **already_page.PAIRS, **compare_page.PAIRS}
 EN_OF = {v: k for k, v in TH_OF.items()}
 
 NAV_TH = group_pages.NAV["th"]  # owner 25 Nov 2026: 6 items (see group_pages.py)
@@ -189,6 +190,7 @@ TH_PAGES = {
     **group_pages.TH_PAGES,
     **whv_page.th_pages(CONSENT_TH, thai_content.VISA_NOTE_TH),
     **already_page.th_pages(CONSENT_TH, thai_content.VISA_NOTE_TH),
+    **compare_page.th_pages(apply_form, thai_content.VISA_NOTE_TH),
 }
 JSONLD = thai_content.JSONLD
 

@@ -143,11 +143,13 @@ def strip_html(th=False):
                           "ดูคอร์สและค่าเรียนจากไฟล์ที่โรงเรียนส่งให้เรา แล้วสมัครกับเรา เราส่งใบสมัครไปที่โรงเรียนให้",
                           "ดูคอร์ส ค่าเรียน และสมัคร →")
         more = "อยู่ออสเตรเลียแล้วด้วยวีซ่าอื่น? เรียนคู่กับวีซ่าที่มีอยู่ →"
+        cmp_ = "เทียบคอร์สดูแลผู้สูงอายุ CHC33021 จาก 4 โรงเรียน →"
     else:
         k, h2, p, link = ("Enrol with us", "Two schools for Working Holiday Makers",
                           "See the courses and fees each school sent us, then enrol with us. We send your application to the school.",
                           "Courses, fees and enrol →")
         more = "Already in Australia on another visa? Study alongside your visa →"
+        cmp_ = "Compare the aged care course CHC33021 at 4 schools →"
     cards = "".join(f'<li class="path"><h3 lang="en">{e(s["name"])}</h3><p>{e(TH_SUMMARY[s["slug"]] if th else s["summary"])}</p>'
                     f'<a href="{"/th" if th else ""}/working-holiday/{s["slug"]}">{link}</a></li>' for s in DATA)
     return f"""<section class="wrap" id="schools">
@@ -156,6 +158,7 @@ def strip_html(th=False):
 <p>{p}</p>
 <ul class="paths">{cards}</ul>
 <p><a href="{"/th" if th else ""}/already-in-australia">{more}</a></p>
+<p><a href="{"/th" if th else ""}/courses/aged-care-certificate-iii">{cmp_}</a></p>
 </section>"""
 
 

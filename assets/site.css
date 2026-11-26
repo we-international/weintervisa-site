@@ -292,3 +292,6 @@ nav.chips { margin: 16px 0 24px; }
   .pick { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 960px) { .wide a { padding: 10px 9px; font-size: 15px; } }
+/* /courses/aged-care-certificate-iii: long cells wrap; the link cell has no label on phones */
+.fees.cmp td { white-space: normal; min-width: 9em; }
+.fees td:not([data-col])::before { content: none; }
