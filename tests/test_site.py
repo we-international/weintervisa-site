@@ -673,6 +673,22 @@ for _f, _pre in (("fast-track-courses.html", ""), ("th/fast-track-courses.html",
 check(words_ft >= 1000, f"/fast-track-courses keeps every word in the HTML after folding ({words_ft})")
 check(".ft-fold { scroll-margin-top: 72px; }" in _css, "course folds land below the sticky header")
 
+# /homestay readability (28 Nov 2026, 08:13 run): 9.8 -> 8.5 phone screens, no words deleted; every price row,
+# both years, the matching fee, the "can change" note and the source stay visible; house-rule cards fold.
+for _f, _j in (("homestay.html", "content/homestay.json"), ("th/homestay.html", "content/th/homestay.json")):
+    _hd = json.loads((ROOT / _j).read_text())
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    _tb = _m[_m.index('<div class="fees all compact">'):]
+    _tb = _tb[:_tb.index("</table>")]
+    check(all(html.escape(v) in _tb for r in _hd["prices"]["rows"] for v in r) and html.escape(_hd["prices"]["note"]) in _m
+          and html.escape(_hd["prices"]["source"]) in _m and "<details" not in _tb,
+          f"{_f}: every price row and year visible (not folded), note + source kept")
+    check(_m.count('<li class="path"><details class="group-fold ft-fold">') == len(_hd["know"])
+          and all(html.escape(x) in _m for _t, items in _hd["know"] for x in items)
+          and all(html.escape(x) in _m for x in _hd["applyBox"]["items"]),
+          f"{_f}: good-to-know cards fold, every rule and apply reason kept")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

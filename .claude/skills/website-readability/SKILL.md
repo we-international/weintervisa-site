@@ -81,3 +81,9 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Small wins add up: Maya/Kenji bubbles `wide-only` (the picture stays), hero points without boxes on phones, the 3 "compare" links in one fold, "why in demand" sources and a dated news aside folded (summary names it: "Maya says: care worker visa news", not a repeat of the first words).
 - Kept visible on purpose: the 3 steps + Kenji's 4-month (condition 8548) tip and the mid-page plan box with "don't send passport numbers" — they stop wrong bookings and unsafe emails. Getting to ≤ 6 would mean folding those; ask the owner first.
 - Tests: fold ids = finder ids, photos `wide-only`, every settle/compare/source link still in the HTML, Thai page checked against `content/th/fast-track.json` (its links differ: `/th/...`).
+
+## Lesson 28 Nov 2026 (08:13 run, 2nd page): /homestay 9.8 → 8.5 phone screens (TH 8.2)
+- Money stays visible: the AHN price table, both years, the matching fee, the "prices can change" note and the source are never folded (tested: no `<details>` inside the table). Instead `.fees.compact`: on phones each row is the package line + one line with both years (`td { display: inline-block }`).
+- Folded: the 3 "good to know" cards (same `.ft-fold` card fold as /fast-track-courses) and the 3 "why apply through us" bullets in the apply box (the button and the "Education Provider" tip stay visible).
+- Kept visible: the scam warning + Kenji's tip (safety), the 6 steps.
+- Thai `ui` in `content/th/homestay.json` is one long line: add a key by string-replacing after `"contact": "/th/contact-us"`, never a regex that expects one key per line.

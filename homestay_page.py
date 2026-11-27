@@ -22,7 +22,7 @@ UI_EN = {
     "caption": "AHN homestay, Sydney, over 18 (AUD per week: private / shared)", "pkg": "Package (over 18)",
     "knowK": "Good to know", "knowH": "Living with a host family", "faqH": "Common questions",
     "endP": "Book your first home in Australia", "endS": "Apply through the button below — it only takes a few minutes.",
-    "ask": "Ask us a question", "endNote": "You'll be taken to AHN's website · Opens a new tab", "contact": "/contact-us",
+    "ask": "Ask us a question", "whyUs": "Why apply through us (3 reasons)", "endNote": "You'll be taken to AHN's website · Opens a new tab", "contact": "/contact-us",
 }
 
 
@@ -40,7 +40,8 @@ def render(d=None):
     abl = "".join(f"<li>{e(x)}</li>" for x in ab["items"])
     p = d["prices"]
     rows = "".join(f'<tr><th scope="row">{e(n)}</th><td data-col="2026">{e(x)}</td><td data-col="2027">{e(y)}</td></tr>' for n, x, y in p["rows"])
-    know = "".join(f'<li class="path"><h3>{e(t)}</h3><ul class="list">{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></li>' for t, items in d["know"])
+    # Readability (28 Nov 2026): each "good to know" card folds; the title is the summary.
+    know = "".join(f'<li class="path"><details class="group-fold ft-fold"><summary><div><h3>{e(t)}</h3></div></summary><ul class="list">{"".join(f"<li>{e(x)}</li>" for x in items)}</ul></details></li>' for t, items in d["know"])
     faq = "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{e(ans)}</p></details>' for q, ans in d["faq"])
     return f"""<section class="hero home-hero"><div class="wrap">
 <p class="kicker">{e(d["kicker"])}</p>
@@ -68,7 +69,7 @@ def render(d=None):
 <h2>{e(L["howH"])}</h2>
 <ol class="steps">{steps}</ol>
 <aside class="cta"><p>{e(L["applyP"])}</p><span class="small">{e(ab["body"])}</span>
-<ul class="list">{abl}</ul>
+<details class="faq why-us"><summary>{e(L["whyUs"])}</summary><ul class="list">{abl}</ul></details>
 {btn(L["start"])}
 <p class="small"><strong>{e(L["tip"])}</strong> {e(ab["tip"])}</p></aside>
 </section>
@@ -76,7 +77,7 @@ def render(d=None):
 <p class="kicker">{e(L["pricesK"])}</p>
 <h2>{e(L["pricesH"])}</h2>
 <p>{e(p["intro"])}</p>
-<div class="fees all"><table><caption>{e(L["caption"])}</caption>
+<div class="fees all compact"><table><caption>{e(L["caption"])}</caption>
 <thead><tr><th scope="col">{e(L["pkg"])}</th><th scope="col">2026</th><th scope="col">2027</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
 <p class="small">{e(p["note"])}</p>
