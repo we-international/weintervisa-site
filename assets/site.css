@@ -325,3 +325,8 @@ nav.chips { margin: 16px 0 24px; }
 .path .ico-path { width: 26px; height: 26px; color: var(--brand); display: block; margin-bottom: 6px; }
 .help .ico-help { width: 24px; height: 24px; color: var(--brand); margin-top: 2px; }
 .ico-ok { color: var(--brand); width: 18px; height: 18px; }
+/* Picture that only helps on wide screens (27 Nov 2026: nursing page was 9.6 phone screens). */
+@media (max-width: 759px) { .wide-only { display: none; } }
+details.notes summary { font-weight: 600; color: var(--muted); }
+.course-fold summary { min-height: 44px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.course-fold summary .small { font-weight: 400; color: var(--muted); }

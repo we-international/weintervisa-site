@@ -33,6 +33,7 @@ UI_EN = {
     "tellB": "What to tell us in your first message", "faqH": "Good questions, clear answers", "sources": "Official sources:",
     "visa": ('<strong>Visa questions?</strong> We are an education agency, not a migration agent. For advice about your visa,\n'
              'we refer you to a registered migration agent. No visa outcome is guaranteed.'),
+    "feesAll": "Fees and next dates: pick your course in the email list below", "notesS": "Sources and page notes",
     "ctaP": "Not sure where to start? Tell us your stage and we check the options with you.", "ctaSend": "Send a message",
     "contact": "/contact-us", "courses": "/courses",
 }
@@ -52,8 +53,11 @@ def render(d=None):
                      f'<a href="{h}">{e(l)} →</a></li>' for n, t, b, l, h in d["stages"])
     road = "".join(f'<li><strong>{e(t)}</strong><span>{e(b)} <a href="{e(u)}"{out}>{e(l)} ↗</a></span></li>'
                    for t, b, l, u in d["map"])
-    prep = "".join(f'<li class="path"><span class="small">{e(k)}</span><h3>{e(t)}</h3><p>{e(b)}</p>'
-                   f'<a href="{mail(i, L)}">{e(L["feesLink"])} →</a></li>' for k, t, b, i in d["prep"])
+    # One fees link under the cards (27 Nov 2026 readability pass): the same 4 email links sit in #enquire,
+    # so a link on every card only repeated them.
+    # Each course is a fold (name + type shown, detail on tap): the 4 cards were 1.7 phone screens.
+    prep = "".join(f'<details class="faq course-fold"><summary>{e(t)} <span class="small">· {e(k)}</span></summary>'
+                   f'<p>{e(b)}</p></details>' for k, t, b, i in d["prep"])
     interests = [L["notSure"]] + [p[3] for p in d["prep"]] + [L["study"]]
     mails = "".join(f'<li><a href="{mail(i, L)}">{e(i)}</a></li>' for i in interests)
     check = "".join(f"<li>{e(x)}</li>" for x in d["checklist"])
@@ -83,11 +87,12 @@ def render(d=None):
 <p class="kicker">{e(L["prepK"])}</p>
 <h2>{e(L["prepH"])}</h2>
 <p>{e(d["prepIntro"])}</p>
-<ul class="paths">{prep}</ul>
+<div class="folds">{prep}</div>
+<p><a href="#enquire">{e(L["feesAll"])} ↓</a></p>
 <p class="small">{e(d["prepNote"])}</p>
 </section>
 <section class="wrap narrow" id="study">
-{img(d["studyImage"], "hero-img", w=1536, h=1024)}
+{img(d["studyImage"], "hero-img wide-only", w=1536, h=1024)}
 <h2>{e(L["studyH"])}</h2>
 <p>{e(d["study"])}</p>
 <p class="note-box">{e(d["studyWarn"])}</p>
@@ -98,17 +103,18 @@ def render(d=None):
 <h2>{e(L["askH"])}</h2>
 <p>{L["askP"]}</p>
 <ul class="list">{mails}</ul>
-<p><strong>{e(L["tellB"])}</strong></p>
-<ul class="list">{check}</ul>
+<details class="faq"><summary>{e(L["tellB"])}</summary>
+<ul class="list">{check}</ul></details>
 <p class="small">{e(d["privacyNote"])}</p>
 </section>
 <section class="wrap narrow">
 <h2>{e(L["faqH"])}</h2>
 {faq}
-<p class="small">{e(L["sources"])} {links}</p>
 <p class="note-box">{L["visa"]}</p>
+<details class="faq notes"><summary>{e(L["notesS"])}</summary>
+<p class="small">{e(L["sources"])} {links}</p>
 <p class="small">{e(d["reviewed"])}</p>
-<p class="small">{e(d["disclaimer"])}</p>
+<p class="small">{e(d["disclaimer"])}</p></details>
 <aside class="cta"><p>{e(L["ctaP"])}</p>
 <a class="btn" href="{L["contact"]}">{e(L["ctaSend"])}</a> <a class="btn ghost" href="{L["courses"]}">{e(L["crumb"])}</a></aside>
 </section>"""

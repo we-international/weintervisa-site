@@ -186,6 +186,14 @@ nu, _ = _main_words("courses/nursing-pathways-australia")
 check(nu.count('href="https://www.nursingmidwiferyboard.gov.au/') >= 4 and "ahpra.gov.au" in nu, "/nursing: links the official NMBA/Ahpra steps")
 check("not an Australian nursing qualification, a registration approval or a visa pathway" in nu, "/nursing: a course is not registration or a visa pathway")
 check(nu.count("mailto:info@weintervisa.com?subject=Nursing") >= 5 and "<script" not in nu.split("<main")[1].split("</main>")[0], "/nursing: email enquiry links per course interest, no script")
+# Readability pass 27 Nov 2026 (9.6 → 7.9 phone screens): course detail and page notes fold, nothing deleted
+for _rel in ("courses/nursing-pathways-australia", "th/courses/nursing-pathways-australia"):
+    _nm = (SITE / f"{_rel}.html").read_text().split("<main")[1].split("</main>")[0]
+    check(_nm.count('class="faq course-fold"') == 4 and 'class="hero-img wide-only"' in _nm
+          and 'class="faq notes"' in _nm and _nm.count("nursingmidwiferyboard.gov.au") >= 4,
+          f"/{_rel}: 4 course folds, study picture wide screens only, sources folded but kept")
+    check(_nm.split('id="prep"')[1].split('id="study"')[0].count("mailto:") == 0,
+          f"/{_rel}: course list has no repeated email link (the email list is in #enquire)")
 os_, _ = _main_words("oshc")
 check(all(f"oshcstudents.com.au/client/{x}?affiliate=0JCJFK" in os_ for x in ("allianz", "bupa", "medibank", "ahm", "ovhc", "flywire")), "/oshc: same partner links as the live page")
 check("never take your payment" in os_ and "registered migration agent" in os_, "/oshc: we never take payment; visa questions → registered migration agent")
