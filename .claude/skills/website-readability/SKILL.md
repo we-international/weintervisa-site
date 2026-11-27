@@ -87,3 +87,10 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Folded: the 3 "good to know" cards (same `.ft-fold` card fold as /fast-track-courses) and the 3 "why apply through us" bullets in the apply box (the button and the "Education Provider" tip stay visible).
 - Kept visible: the scam warning + Kenji's tip (safety), the 6 steps.
 - Thai `ui` in `content/th/homestay.json` is one long line: add a key by string-replacing after `"contact": "/th/contact-us"`, never a regex that expects one key per line.
+
+## Lesson 28 Nov 2026 (10:13 run): /english-practice 10.2 → 6.5 phone screens (TH 10.1 → 6.4), no words deleted
+- A quiz of 8 cards (3.4 screens) = a taste + a fold: the first 3 questions open, the other 5 in one `<details class="group-fold quiz-more" id="more-questions">` titled "5 more questions" (count from the data, Thai key `moreQ`). The quiz's own answer `<details>` stay plain, so the "8 answers in `<details>`" test still counts them.
+- Three open cards in a 2-column grid leave a hole on desktop: give the open list 3 columns ≥ 1000 px (`#quiz > .quizzes`), the folded list keeps the old grid.
+- A shop block (6 product cards, 2.3 screens) folds behind "See the 6 printables"; the shop link, "opens Etsy" note and the fictional-characters line stay visible.
+- Every page that gets a fold with an id loads `/assets/reveal.js` and the fold gets `scroll-margin-top: 72px` — without it a deep link landed at top 0 under the sticky header (checked in Chromium: `#more-questions` open, top = 72 px).
+- Thai `ui` keys added in place with one string replace (the file is one-line JSON per key; never re-dump it).

@@ -27,7 +27,8 @@ UI_EN = {
     "studyP": "Want to study English in Australia?", "seeCourses": "See English courses", "talk": "Talk to our team",
     "studyNote": ("General English, academic English and IELTS or PTE preparation. On a visitor visa? We only look at English courses with no work placement.\n"
                   "Course length, visa conditions and entry rules are checked before you go ahead; for visa advice we refer you to a registered migration agent."),
-    "allKids": "See all kids' activities", "courses": "/courses", "contact": "/contact-us",
+    "allKids": "See all kids' activities",
+    "moreQ": "{} more questions", "kidsFold": "See the {} printables", "courses": "/courses", "contact": "/contact-us",
     "en": "",  # Thai copy: ' lang="en"' on the English sentences of the quiz
 }
 
@@ -49,7 +50,12 @@ def render(d=None):
     d = d or EP
     L = {**UI_EN, **d.get("ui", {})}
     points = "".join(f'<li>{icon(i)}{e(t)}</li>' for i, t in d["points"])
-    quiz = "".join(quiz_item(n, *q, L=L) for n, q in enumerate(d["quiz"]))
+    # Readability (28 Nov 2026): 3 questions open, the rest in one fold (every question stays in the HTML)
+    items = [quiz_item(n, *q, L=L) for n, q in enumerate(d["quiz"])]
+    SHOW = 3
+    quiz = "".join(items[:SHOW])
+    quiz_more = (f'<details class="group-fold quiz-more" id="more-questions"><summary><h3>{e(L["moreQ"].format(len(items) - SHOW))}</h3></summary>'
+                 f'<ol class="quizzes">{"".join(items[SHOW:])}</ol></details>') if len(items) > SHOW else ""
     chans = "".join(f"""<li class="path"><h3>{e(c['title'])}</h3><p>{e(c['body'])}</p>
 <a href="{e(c['youtube'])}" target="_blank" rel="noopener">{e(L["sub"])} ↗</a>
 <p class="small">{e(L['follow'])} {' · '.join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a>' for t, u in c['follow'])}</p></li>""" for c in d["channels"])
@@ -66,14 +72,15 @@ def render(d=None):
 <ul class="points">{points}</ul>
 <p class="actions"><a class="btn" href="#quiz">{e(L["quizBtn"])} →</a> <a class="btn ghost" href="#watch">{e(L["watchBtn"])}</a></p>
 </div><div class="hero-side">{img(d["heroImage"], "hero-img", lazy=False, w=1200, h=750)}
-<p class="bubble"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
-<p class="bubble alt"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
+<p class="bubble wide-only"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
+<p class="bubble alt wide-only"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
 </div></div></section>
 <section class="wrap" id="quiz">
 <p class="kicker">{e(L["gameK"])}</p>
 <h2>{e(L["gameH"])}</h2>
 <p>{e(L["gameP"])}</p>
 <ol class="quizzes">{quiz}</ol>
+{quiz_more}
 </section>
 <section class="wrap" id="watch">
 <p class="kicker">{L["watchK"]}</p>
@@ -96,8 +103,10 @@ def render(d=None):
 <p class="kicker">{e(k["kicker"])}</p>
 <h2>{e(k["h2"])}</h2>
 <p>{e(k["body"])}</p>
-<ul class="paths">{kids}</ul>
+<details class="group-fold kids-fold" id="kids-printables"><summary><h3>{e(L["kidsFold"].format(len(k["items"])))}</h3></summary>
+<ul class="paths">{kids}</ul></details>
 <p><a href="{e(k["shop"])}" target="_blank" rel="noopener">{e(L["allKids"])} ↗</a></p>
 <p class="small">{e(k["note"])}</p>
 <p class="small">{e(d["characters"])}</p>
-</section>"""
+</section>
+<script src="/assets/reveal.js" defer></script>"""
