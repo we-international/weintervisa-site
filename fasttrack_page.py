@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from home_page import img, ext
+from group_pages import icon
 
 ROOT = Path(__file__).resolve().parent
 e = html.escape
@@ -16,7 +17,7 @@ FT = json.loads((ROOT / "content/fast-track.json").read_text())
 
 # Fixed page words; a Thai copy (content/th/fast-track.json "ui") overrides them key by key.
 UI_EN = {
-    "plan": "Get a course plan", "find": "Find my course (30 seconds)", "watch": "▶ Watch the course video",
+    "plan": "Get a course plan", "find": "Find my course (30 seconds)", "watch": "Watch the course video",
     "finderK": "Course finder", "finderH": "Which course suits you?",
     "finderP": "No sign-up. Pick what sounds good and we'll show you the course. Then ask us for a free course plan.",
     "finderQ": "What kind of work sounds good to you?", "howK": "How it works", "howH": "From \"I'm curious\" to your first class",
@@ -26,7 +27,7 @@ UI_EN = {
     "coursesK": "Courses", "coursesH": "Three courses Working Holiday Makers love",
     "coursesP": "Each one has a fast-track option for Working Holiday visa holders. Weeks, placement and intakes vary by provider.",
     "feesNote": "Fees, materials and placement costs depend on the course, provider and intake. Ask us for a free written quote.",
-    "watchK": "Watch", "yt": "▶ Watch on YouTube", "guide": "Read the CHC33021 guide",
+    "watchK": "Watch", "yt": "Watch on YouTube", "guide": "Read the CHC33021 guide",
     "leadK": "Where it can lead", "leadH": "Skills that Australia needs", "rolesH": "Possible roles after Cert III",
     "mayaB": "Maya says", "summary": "Read our summary",
     "noPromise": "No course can promise a job, a visa or PR. Employers set their own requirements and checks.",
@@ -45,8 +46,8 @@ def render(d=None):
     d = d or FT
     L = {**UI_EN, **d.get("ui", {})}
     c_ = L["contact"]
-    points = "".join(f'<li><span aria-hidden="true">{i}</span>{e(t)}</li>' for i, t in d["points"])
-    finder = "".join(f'<li><a href="{e(h)}"><span class="ico" aria-hidden="true">{i}</span>{e(t)}</a></li>' for i, t, h in d["finder"])
+    points = "".join(f'<li>{icon(i)}{e(t)}</li>' for i, t in d["points"])
+    finder = "".join(f'<li><a href="{e(h)}">{icon(i)}{e(t)}</a></li>' for i, t, h in d["finder"])
     steps = "".join(f"<li><strong>{e(t)}</strong><span>{b}</span></li>" for t, b in d["steps"])
     courses = "".join(f"""<li class="course" id="{c['id']}">{img(c['img'], w=1536, h=1024)}<div>
 <span class="code">{e(c['code'])}</span><h3{L["en"]}>{e(c['title'])}</h3><p>{e(c['for'])}</p>
@@ -56,7 +57,7 @@ def render(d=None):
     leads = "".join(f'<li><strong>{e(t)}</strong><span>{e(b)} <a href="{e(u)}" target="_blank" rel="noopener">{e(l)}</a></span></li>'
                     for t, b, l, u in d["lead_to"])
     roles = "".join(f"<li>{e(r)}</li>" for r in d["roles"])
-    settle = "".join(f"""<li class="path"><span class="ico" aria-hidden="true">{i}</span><h3>{e(t)}</h3><p>{e(b)}</p>
+    settle = "".join(f"""<li class="path">{icon(i, "ico ico-path")}<h3>{e(t)}</h3><p>{e(b)}</p>
 <a href="{e(u)}"{ext(u)}>{e(l)}</a>{f'<a class="second" href="{e(u2)}">{e(l2)}</a>' if l2 else ''}</li>"""
                      for i, t, b, l, u, l2, u2 in d["settle"])
     faq = "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{a}</p></details>' for q, a in d["faq"])

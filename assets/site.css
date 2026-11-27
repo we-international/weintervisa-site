@@ -209,7 +209,7 @@ nav.chips { margin: 16px 0 24px; }
 .path > a, .area > a { margin-top: auto; font-weight: 700; text-decoration: none; }
 .tag, .code { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); margin-top: 6px; }
 .tip { margin: 16px 0 0; padding: 14px 16px; background: #e9f2f1; border-radius: var(--radius); }
-.tip strong { display: block; margin-bottom: 2px; }
+.tip > strong:first-child { display: block; margin-bottom: 2px; }  /* title only: a <strong> inside the text stays inline */
 .tip.maya { background: #fff3dc; }
 .course { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .course img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
@@ -318,3 +318,8 @@ nav.chips { margin: 16px 0 24px; }
   .fees.grouped tbody th[scope="row"] { min-width: 0; margin-bottom: 2px; }
   .fees.grouped td::before { content: attr(data-col) ": "; color: var(--muted); font-weight: 400; }
 }
+
+/* fast-track icons (27 Nov 2026, emoji → line icons) */
+.points li .ico { width: 20px; height: 20px; margin-top: 2px; color: var(--brand); }
+.finder a .ico { width: 24px; height: 24px; color: var(--brand); }
+.path .ico-path { width: 26px; height: 26px; color: var(--brand); display: block; margin-bottom: 6px; }
