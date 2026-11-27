@@ -76,8 +76,41 @@ def form(slug, L=UI_EN, labels=None):
 </form>"""
 
 
+def grouped(s):
+    """True when the first column repeats (Charter: Stream = Aged care / Hospital / Childcare)."""
+    first = [r[0] for r in s["fees"]]
+    return len(set(first)) < len(first)
+
+
+def group_id(name):
+    return "fees-" + "".join(c if c.isalnum() else "-" for c in name.lower()).strip("-")
+
+
 def fee_table(s, L=UI_EN):
     en = set(L["en_cols"])  # columns that stay English (course titles) on the Thai page
+    if grouped(s):
+        # One <tbody> per stream with a heading row; the course is the row header (27 Nov 2026:
+        # on a phone six blocks that each repeat the stream were hard to scan).
+        cols = s["fee_head"][1:]
+        groups = []
+        for r in s["fees"]:
+            if not groups or groups[-1][0] != r[0]:
+                groups.append((r[0], []))
+            groups[-1][1].append(r[1:])
+        lang = ' lang="en"' if 1 in en else ""
+        amt = next((i for i, v in enumerate(groups[0][1][0]) if v.startswith("A$")), -1)  # tuition = first A$ column
+        jump = "".join(f'<li><a href="#{group_id(g)}">{e(g)}</a></li>' for g, _ in groups)
+        head = "".join(f'<th scope="col">{e(h)}</th>' for h in cols)
+        body = "".join(
+            f'<tbody><tr class="grp" id="{group_id(g)}"><th colspan="{len(cols)}" scope="colgroup">{e(g)}</th></tr>'
+            + "".join("<tr>" + f'<th scope="row"{lang}>{e(r[0])}</th>'
+                      + "".join(f'<td data-col="{e(h)}"{" class=\"amt\"" if i == amt else ""}>{e(v)}</td>'
+                                for i, (h, v) in enumerate(zip(cols[1:], r[1:]), 1))
+                      + "</tr>" for r in rows)
+            + "</tbody>" for g, rows in groups)
+        return (f'<ul class="fee-jump">{jump}</ul>'
+                f'<div class="fees grouped"><table><caption>{L["caption"]}</caption><thead><tr>{head}</tr></thead>'
+                f"{body}</table></div>")
     head = "".join(f'<th scope="col">{e(h)}</th>' for h in s["fee_head"])
     rows = "".join("<tr>" + f'<th scope="row">{e(r[0])}</th>'
                    + "".join(f'<td data-col="{e(h)}"{' lang="en"' if i in en else ''}>{e(v)}</td>'
