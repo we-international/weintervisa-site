@@ -362,3 +362,6 @@ details.notes summary { font-weight: 600; color: var(--muted); }
 @media (max-width: 759px) { .ft-points li { background: none; border: 0; padding: 2px 0; } .ft-points { gap: 4px; } }
 .ft-fold > summary > div:has(> .ico-path) { display: flex; align-items: center; gap: 10px; }
 .ft-fold > summary > div > .ico-path { margin: 0; }
+/* /homestay readability (28 Nov 2026): on phones each price row is one package line + one line with both years */
+@media (max-width: 480px) { .fees.compact td { display: inline-block; margin-right: 14px; } }
+.why-us { border-bottom: 0; padding: .4rem 0; }
