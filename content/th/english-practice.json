@@ -55,7 +55,7 @@
 "chalB": "ภารกิจจาก Kenji", "gamesK": "เกม", "gamesH": "เล่นเกม ภาษาอังกฤษก็ดีขึ้น",
 "studyP": "อยากเรียนภาษาอังกฤษที่ออสเตรเลียไหม", "seeCourses": "ดูคอร์สภาษาอังกฤษ", "talk": "คุยกับทีมงาน",
 "studyNote": "General English, Academic English และเตรียมสอบ IELTS หรือ PTE ถือวีซ่าท่องเที่ยว? เราดูเฉพาะคอร์สภาษาอังกฤษที่ไม่มีการฝึกงาน\nระยะเวลาเรียน เงื่อนไขวีซ่า และเกณฑ์รับเข้า จะเช็กให้ก่อนคุณตัดสินใจ เราไม่ใช่ migration agent คำแนะนำเรื่องวีซ่า เราจะแนะนำเอเจนต์ด้านวีซ่าที่ขึ้นทะเบียน (registered migration agent) ให้",
-"allKids": "ดูกิจกรรมสำหรับเด็กทั้งหมด", "courses": "/th/courses", "contact": "/th/contact-us",
+"allKids": "ดูกิจกรรมสำหรับเด็กทั้งหมด", "moreQ": "อีก {} ข้อ", "kidsFold": "ดูใบกิจกรรมทั้ง {} แบบ", "courses": "/th/courses", "contact": "/th/contact-us",
 "en": " lang=\"en\""
 }
 }

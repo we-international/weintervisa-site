@@ -358,6 +358,9 @@ details.notes summary { font-weight: 600; color: var(--muted); }
 .ft-fold[open] > summary { margin-bottom: 8px; }
 .ft-fold > a { display: block; font-weight: 700; text-decoration: none; margin-top: 6px; }
 .ft-fold { scroll-margin-top: 72px; }
+.quiz-more, .kids-fold { scroll-margin-top: 72px; }
+.quiz-more > .quizzes { margin-top: 12px; }
+@media (min-width: 1000px) { #quiz > .quizzes { grid-template-columns: repeat(3, 1fr); } }
 .course:has(.ft-fold:target) { outline: 3px solid var(--accent); }
 @media (max-width: 759px) { .ft-points li { background: none; border: 0; padding: 2px 0; } .ft-points { gap: 4px; } }
 .ft-fold > summary > div:has(> .ico-path) { display: flex; align-items: center; gap: 10px; }

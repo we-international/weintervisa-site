@@ -689,6 +689,25 @@ for _f, _j in (("homestay.html", "content/homestay.json"), ("th/homestay.html", 
           and all(html.escape(x) in _m for x in _hd["applyBox"]["items"]),
           f"{_f}: good-to-know cards fold, every rule and apply reason kept")
 
+# /english-practice readability (28 Nov 2026, 10:13 run): 10.2 -> 6.5 phone screens, no words deleted;
+# 3 quiz questions open, the other 5 in one fold; kids' printables fold; Maya/Kenji bubbles wide screens only.
+for _f, _j in (("english-practice.html", "content/english-practice.json"), ("th/english-practice.html", "content/th/english-practice.json")):
+    _ed = json.loads((ROOT / _j).read_text())
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    _qs = _m[_m.index('id="quiz"'):_m.index('id="watch"')]
+    _open = _qs[:_qs.index('<details class="group-fold quiz-more" id="more-questions">')]
+    check(_open.count('<li class="quiz">') == 3 and _qs.count('<li class="quiz">') == len(_ed["quiz"]) == 8
+          and all(html.escape(q[0]) in _qs and html.escape(q[3]) in _qs for q in _ed["quiz"]),
+          f"{_f}: 3 quiz questions open, all 8 (with answers) still in the page")
+    _kf = _m[_m.index('<details class="group-fold kids-fold" id="kids-printables">'):]
+    check(all(html.escape(u) in _kf[:_kf.index("</details>")] for _a, _t, _b, u in _ed["kids"]["items"])
+          and html.escape(_ed["kids"]["shop"]) in _m and html.escape(_ed["kids"]["note"]) in _m and html.escape(_ed["characters"]) in _m,
+          f"{_f}: kids' printables fold, shop link + notes + fictional-characters line stay visible")
+    check(_m.count('class="bubble wide-only"') == 1 and _m.count('class="bubble alt wide-only"') == 1 and "/assets/reveal.js" in _h,
+          f"{_f}: Maya/Kenji bubbles wide screens only; reveal.js opens #more-questions links")
+check(".quiz-more, .kids-fold { scroll-margin-top: 72px; }" in _css, "english-practice folds land below the sticky header")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
