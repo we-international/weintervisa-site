@@ -348,3 +348,17 @@ details.notes summary { font-weight: 600; color: var(--muted); }
   padding: 10px 0; text-decoration: none; color: var(--ink); }
 .post-rows a:hover span:first-child { text-decoration: underline; }
 .post-rows .date { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
+/* /fast-track-courses readability (28 Nov 2026): courses and settle-in cards fold inside their card */
+.ft-fold > summary { border-bottom: 0; align-items: flex-start; }
+.ft-fold > summary > div { flex: 1; }
+.ft-fold > summary h3 { margin: 4px 0; }
+.ft-fold > summary p { margin: 0 0 4px; color: var(--muted); }
+.ft-fold > summary .ico-path { margin: 4px 0; }
+.ft-fold[open] > summary { margin-bottom: 8px; }
+.ft-fold > a { display: block; font-weight: 700; text-decoration: none; margin-top: 6px; }
+.ft-fold { scroll-margin-top: 72px; }
+.course:has(.ft-fold:target) { outline: 3px solid var(--accent); }
+@media (max-width: 759px) { .ft-points li { background: none; border: 0; padding: 2px 0; } .ft-points { gap: 4px; } }
+.ft-fold > summary > div:has(> .ico-path) { display: flex; align-items: center; gap: 10px; }
+.ft-fold > summary > div > .ico-path { margin: 0; }

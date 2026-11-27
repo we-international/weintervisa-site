@@ -179,6 +179,7 @@ def strip_html(th=False):
         cmp_ = "เทียบคอร์สดูแลผู้สูงอายุ CHC33021 จาก 4 โรงเรียน →"
         cmp2 = "เทียบคอร์สดูแลเด็ก (childcare) จาก 2 โรงเรียน →"
         cmp3 = "เทียบคอร์สผู้ช่วยโรงพยาบาล HLT33115 เริ่มได้ 2 แบบ →"
+        cmpS = "เทียบคอร์สระหว่างโรงเรียน (3 คอร์ส)"
     else:
         k, h2, p, link = ("Enrol with us", "Two schools for Working Holiday Makers",
                           "See the courses and fees each school sent us, then enrol with us. We send your application to the school.",
@@ -187,6 +188,7 @@ def strip_html(th=False):
         cmp_ = "Compare the aged care course CHC33021 at 4 schools →"
         cmp2 = "Compare the childcare course at 2 schools →"
         cmp3 = "Compare the hospital course HLT33115: 2 ways to start →"
+        cmpS = "Compare a course across schools (3 courses)"
     cards = "".join(f'<li class="path"><h3 lang="en">{e(s["name"])}</h3><p>{e(TH_SUMMARY[s["slug"]] if th else s["summary"])}</p>'
                     f'<a href="{"/th" if th else ""}/working-holiday/{s["slug"]}">{link}</a></li>' for s in DATA)
     return f"""<section class="wrap" id="schools">
@@ -195,9 +197,11 @@ def strip_html(th=False):
 <p>{p}</p>
 <ul class="paths">{cards}</ul>
 <p><a href="{"/th" if th else ""}/already-in-australia">{more}</a></p>
+<details class="faq"><summary>{cmpS}</summary>
 <p><a href="{"/th" if th else ""}/courses/aged-care-certificate-iii">{cmp_}</a></p>
 <p><a href="{"/th" if th else ""}/courses/childcare-certificate-iii">{cmp2}</a></p>
 <p><a href="{"/th" if th else ""}/courses/health-services-assistance-certificate-iii">{cmp3}</a></p>
+</details>
 </section>"""
 
 

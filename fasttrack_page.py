@@ -38,6 +38,7 @@ UI_EN = {
     "readyH": "Let's plan your course together", "tryFinder": "Try the course finder",
     "qeac": "QEAC-certified counsellor (PIER), QEAC No. 11964 · Based in Sydney, Australia",
     "mayaN": "Maya:", "kenjiN": "Kenji:", "contact": "/contact-us",
+    "inNews": "care worker visa news", "leadsS": "Why these jobs are in demand (2 official sources)",
     "en": "",  # Thai copy: ' lang="en"' on English course titles
 }
 
@@ -49,16 +50,18 @@ def render(d=None):
     points = "".join(f'<li>{icon(i)}{e(t)}</li>' for i, t in d["points"])
     finder = "".join(f'<li><a href="{e(h)}">{icon(i)}{e(t)}</a></li>' for i, t, h in d["finder"])
     steps = "".join(f"<li><strong>{e(t)}</strong><span>{b}</span></li>" for t, b in d["steps"])
-    courses = "".join(f"""<li class="course" id="{c['id']}">{img(c['img'], w=1536, h=1024)}<div>
-<span class="code">{e(c['code'])}</span><h3{L["en"]}>{e(c['title'])}</h3><p>{e(c['for'])}</p>
+    # Readability (28 Nov 2026): each course folds (code + title + who it suits in the summary); the photo shows on
+    # wide screens only. The id sits on the <details>, so a finder link (#chc33021) opens it (assets/reveal.js).
+    courses = "".join(f"""<li class="course">{img(c['img'], "wide-only", w=1536, h=1024)}<div>
+<details class="group-fold ft-fold" id="{c['id']}"><summary><div><span class="code">{e(c['code'])}</span><h3{L["en"]}>{e(c['title'])}</h3><p>{e(c['for'])}</p></div></summary>
 <ul class="list">{''.join(f'<li>{e(x)}</li>' for x in c['learn'])}</ul>
 <p class="links"><a class="btn ghost" href="{c_}">{e(L["plan"])}</a> <a href="{e(c['more'][1])}">{e(c['more'][0])}</a></p>
-</div></li>""" for c in d["courses"])
+</details></div></li>""" for c in d["courses"])
     leads = "".join(f'<li><strong>{e(t)}</strong><span>{e(b)} <a href="{e(u)}" target="_blank" rel="noopener">{e(l)}</a></span></li>'
                     for t, b, l, u in d["lead_to"])
     roles = "".join(f"<li>{e(r)}</li>" for r in d["roles"])
-    settle = "".join(f"""<li class="path">{icon(i, "ico ico-path")}<h3>{e(t)}</h3><p>{e(b)}</p>
-<a href="{e(u)}"{ext(u)}>{e(l)}</a>{f'<a class="second" href="{e(u2)}">{e(l2)}</a>' if l2 else ''}</li>"""
+    settle = "".join(f"""<li class="path"><details class="group-fold ft-fold"><summary><div>{icon(i, "ico ico-path")}<h3>{e(t)}</h3></div></summary><p>{e(b)}</p>
+<a href="{e(u)}"{ext(u)}>{e(l)}</a>{f'<a class="second" href="{e(u2)}">{e(l2)}</a>' if l2 else ''}</details></li>"""
                      for i, t, b, l, u, l2, u2 in d["settle"])
     faq = "".join(f'<details class="faq"><summary>{e(q)}</summary><p>{a}</p></details>' for q, a in d["faq"])
     n = d["whmNews"]
@@ -70,11 +73,11 @@ def render(d=None):
 <p class="kicker">{e(d["kicker"])}</p>
 <h1>{e(d["h1"])}</h1>
 <p class="lead">{e(d["lead"])}</p>
-<ul class="points">{points}</ul>
+<ul class="points ft-points">{points}</ul>
 <p class="actions"><a class="btn" href="#finder">{e(L["find"])} →</a> <a class="btn ghost" href="#video">{e(L["watch"])}</a></p>
 </div><div class="hero-side">{img(d["heroImage"], "hero-img", lazy=False, w=1200, h=750)}
-<p class="bubble"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
-<p class="bubble alt"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
+<p class="bubble wide-only"><strong>{e(L["mayaN"])}</strong> {e(d["maya"])}</p>
+<p class="bubble alt wide-only"><strong>{e(L["kenjiN"])}</strong> {e(d["kenji"])}</p>
 </div></div></section>
 {schools}<section class="wrap" id="finder">
 <p class="kicker">{e(L["finderK"])}</p>
@@ -108,10 +111,10 @@ def render(d=None):
 <section class="wrap">
 <p class="kicker">{e(L["leadK"])}</p>
 <h2>{e(L["leadH"])}</h2>
-<ul class="help leads">{leads}</ul>
+<details class="faq"><summary>{e(L["leadsS"])}</summary><ul class="help leads">{leads}</ul></details>
 <h3>{e(L["rolesH"])}</h3>
 <ul class="tags roles">{roles}</ul>
-<aside class="tip maya"><strong>{e(L["mayaB"])}</strong> {e(d["news"])} <a href="{e(d["newsPost"])}">{e(L["summary"])}</a></aside>
+<details class="faq maya-news"><summary>{e(L["mayaB"])}: {e(L["inNews"])}</summary><p>{e(d["news"])} <a href="{e(d["newsPost"])}">{e(L["summary"])}</a></p></details>
 <p class="small">{e(L["noPromise"])}</p>
 </section>
 <section class="wrap">
@@ -127,10 +130,11 @@ def render(d=None):
 <p class="small">{e(L["source"])} <a href="{e(n["source"])}" target="_blank" rel="noopener">{e(L["newsLink"])} ↗</a>. {e(L["checked"].format(n["checked"]))}</p></details>
 <details class="faq"><summary>{e(L["guidesS"])}</summary><ul class="list">{guides}</ul></details>
 </section>
-<section class="wrap ready">{img(d["readyImage"], "ready-img", w=900, h=563)}<div>
+<section class="wrap ready">{img(d["readyImage"], "ready-img wide-only", w=900, h=563)}<div>
 <h2>{e(L["readyH"])}</h2>
 <p>{e(d["ready"])}</p>
 <p class="actions"><a class="btn" href="{c_}">{e(L["getPlan"])}</a> <a class="btn ghost" href="#finder">{e(L["tryFinder"])}</a></p>
 <p class="small">{e(L["qeac"])} · <a href="mailto:info@weintervisa.com">info@weintervisa.com</a></p>
 <p class="small">{e(d["disclaimer"])}</p>
-</div></section>"""
+</div></section>
+<script src="/assets/reveal.js" defer></script>"""
