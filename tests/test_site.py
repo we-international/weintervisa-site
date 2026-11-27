@@ -654,6 +654,25 @@ for c_ in _bc:
           f"/blog/categories/{c_['slug']}: ≤6 cards, every topic post linked")
 check(".post-rows a {" in _css and "min-height: 44px" in _css.split(".post-rows a {")[1].split("}")[0], "blog rows are ≥44 px tap targets")
 
+# /fast-track-courses readability (28 Nov 2026, 08:13 run): 12.1 -> 9.0 phone screens, no words deleted.
+# Each course folds (id on the <details> so the finder opens it via reveal.js), photos wide screens only,
+# settle-in cards fold, the compare links and "why in demand" sources fold; every link stays in the HTML.
+for _f, _pre in (("fast-track-courses.html", ""), ("th/fast-track-courses.html", "/th")):
+    _fd = json.loads((ROOT / ("content/th/fast-track.json" if _pre else "content/fast-track.json")).read_text())
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    check(all(f'<details class="group-fold ft-fold" id="{c["id"]}">' in _m for c in ftd["courses"])
+          and _m.count('class="wide-only"') >= 3 and "/assets/reveal.js" in _h,
+          f"{_f}: courses fold with their finder id, course photos wide screens only, reveal.js loaded")
+    check(_m.count('<li class="path"><details class="group-fold ft-fold">') == len(_fd["settle"])
+          and all(f'href="{u}"' in _m.replace("&amp;", "&") for _i, _t, _b, _l, u, _l2, _u2 in _fd["settle"]),
+          f"{_f}: settle-in cards fold, every link kept")
+    check(all(f'href="{_pre}/courses/{_c}"' in _m for _c in ("aged-care-certificate-iii", "childcare-certificate-iii", "health-services-assistance-certificate-iii"))
+          and f'href="{_pre}/already-in-australia"' in _m and _m.count("jobsandskills") + _m.count("Jobs and Skills") >= 1,
+          f"{_f}: compare links + already-in-Australia + official job sources still linked")
+check(words_ft >= 1000, f"/fast-track-courses keeps every word in the HTML after folding ({words_ft})")
+check(".ft-fold { scroll-margin-top: 72px; }" in _css, "course folds land below the sticky header")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)

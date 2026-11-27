@@ -74,3 +74,10 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Topic folds carry `id="<category slug>"` + `assets/reveal.js`, so `/blog#life-in-australia` opens the fold.
 - Test the set of linked slugs (`re.findall(r'href="/post/([^"]+)"')`), not the number of cards — the old Thai test counted `<li class="card">` and broke when rows replaced cards.
 - Measuring with a tiny static server: `/blog` is also a folder (`blog/categories/`), so ask for `/blog.html` or the server serves a 404 and the page measures as 1.0 screen.
+
+## Lesson 28 Nov 2026 (08:13 run): /fast-track-courses 12.1 → 9.0 phone screens (TH 12.2 → 8.8), no words deleted
+- Picture cards that are also jump targets (finder `#chc33021`): keep the card, put the photo **outside** the fold with `wide-only`, and put the **id on the `<details>`** (`reveal.js` starts at the target itself, so a details target opens; an id on the parent `<li>` would not). Keep the outline with `.course:has(.ft-fold:target)`. Check in Chromium: every finder tap → fold open, top = 72 px; deep link `#hlt33115` the same.
+- Desktop keeps the 3-card grid with photos (folded body under each); phones get compact rows. One CSS class (`.ft-fold`, built on `.group-fold`) serves course cards and the settle-in cards.
+- Small wins add up: Maya/Kenji bubbles `wide-only` (the picture stays), hero points without boxes on phones, the 3 "compare" links in one fold, "why in demand" sources and a dated news aside folded (summary names it: "Maya says: care worker visa news", not a repeat of the first words).
+- Kept visible on purpose: the 3 steps + Kenji's 4-month (condition 8548) tip and the mid-page plan box with "don't send passport numbers" — they stop wrong bookings and unsafe emails. Getting to ≤ 6 would mean folding those; ask the owner first.
+- Tests: fold ids = finder ids, photos `wide-only`, every settle/compare/source link still in the HTML, Thai page checked against `content/th/fast-track.json` (its links differ: `/th/...`).
