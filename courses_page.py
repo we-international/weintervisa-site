@@ -10,6 +10,7 @@ import json
 import re
 from pathlib import Path
 
+from group_pages import icon
 from home_page import img
 
 ROOT = Path(__file__).resolve().parent
@@ -32,18 +33,18 @@ def th_missing():
 
 GROUP_ORDER = ["Care & Community", "English & Nursing Preparation", "Business & Technology", "Hospitality & Tourism",
                "Trades & Engineering", "Degrees & Research", "Short Courses"]
-INTERESTS = [("🤝", "Helping people", "care"), ("🧸", "Working with kids", "child"), ("🩺", "Health & nursing", "nursingprep"),
-             ("💼", "Business", "business"), ("🤖", "AI & tech", "ai"), ("🔐", "Cyber security", "cyberlead"),
-             ("🍳", "Cooking & food", "cookery"), ("🔨", "Building & trades", "carpentry"), ("🚗", "Cars", "auto-mechanical"),
-             ("💬", "English first", "english")]
-CITIES = [("🌉", "Sydney", "Biggest city, harbour lifestyle, lots of part-time work options"),
-          ("☕", "Melbourne", "Café culture, arts and sport, big student community"),
-          ("☀️", "Brisbane", "Sunny, relaxed and close to the beaches"),
-          ("🏄", "Gold Coast", "Beach life and a busy hospitality and tourism scene"),
-          ("🍷", "Adelaide", "Calm, friendly and easy to get around"),
-          ("🏔️", "Hobart", "Small, scenic and close to nature"),
-          ("🌾", "Wagga Wagga", "Regional New South Wales"),
-          ("💻", "Online", "Start some study online, depending on the course and your visa")]
+INTERESTS = [("care", "Helping people", "care"), ("blocks", "Working with kids", "child"), ("hospital", "Health & nursing", "nursingprep"),
+             ("work", "Business", "business"), ("chip", "AI & tech", "ai"), ("lock", "Cyber security", "cyberlead"),
+             ("meal", "Cooking & food", "cookery"), ("tool", "Building & trades", "carpentry"), ("car", "Cars", "auto-mechanical"),
+             ("talk", "English first", "english")]
+CITIES = [("pin", "Sydney", "Biggest city, harbour lifestyle, lots of part-time work options"),
+          ("pin", "Melbourne", "Café culture, arts and sport, big student community"),
+          ("pin", "Brisbane", "Sunny, relaxed and close to the beaches"),
+          ("pin", "Gold Coast", "Beach life and a busy hospitality and tourism scene"),
+          ("pin", "Adelaide", "Calm, friendly and easy to get around"),
+          ("pin", "Hobart", "Small, scenic and close to nature"),
+          ("pin", "Wagga Wagga", "Regional New South Wales"),
+          ("laptop", "Online", "Start some study online, depending on the course and your visa")]
 
 
 def slug(s):
@@ -113,7 +114,7 @@ def render(study_areas_html, schools_link="", th=False):
                 intro = ""
             cnt = U["n_courses"].format(n=n) if th else f"{n} courses"
             groups.append(f'<section class="wrap narrow"><h2 id="{slug(g)}">{e(G(g))} <span class="small">({cnt})</span></h2>{intro}{"".join(blocks)}</section>')
-    chips = "".join(f'<li><a href="#{topic_anchor(t)}"><span class="ico" aria-hidden="true">{i}</span>{e(TH["interests"][t] if th else lab)}</a></li>'
+    chips = "".join(f'<li><a href="#{topic_anchor(t)}">{icon(i)}{e(TH["interests"][t] if th else lab)}</a></li>'
                     for i, lab, t in INTERESTS if t in by_topic)
     group_nav = " · ".join(f'<a href="#{slug(g)}">{e(G(g))}</a>' for g in GROUP_ORDER)
     cities = []
@@ -124,7 +125,7 @@ def render(study_areas_html, schools_link="", th=False):
         la = ' lang="en"' if th else ""
         links = "".join(f'<li><a href="#{e(c["id"])}"{la}>{e(c["title"])}</a></li>' for c in cs)
         name, bl, cnt = (TH["city_names"][city], TH["cities"][city], U["n_courses"].format(n=len(cs))) if th else (city, blurb, f"{len(cs)} courses")
-        cities.append(f'<details class="faq"><summary><span aria-hidden="true">{ico}</span> <strong>{e(name)}</strong> '
+        cities.append(f'<details class="faq"><summary>{icon(ico)} <strong>{e(name)}</strong> '
                       f'<span class="small">· {cnt} · {e(bl)}</span></summary><ul class="list">{links}</ul></details>')
     total = len(COURSES)
     if th:
@@ -132,7 +133,7 @@ def render(study_areas_html, schools_link="", th=False):
 <p class="kicker">{U["kicker"]}</p>
 <h1>{U["h1"]}</h1>
 <p class="lead">{U["lead"]}</p>
-<ul class="points"><li><span aria-hidden="true">📚</span>{U["points_total"].format(n=total)}</li><li><span aria-hidden="true">🎓</span>{U["points_levels"]}</li></ul>
+<ul class="points"><li>{icon("book")}{U["points_total"].format(n=total)}</li><li>{icon("cap")}{U["points_levels"]}</li></ul>
 <p class="actions"><a class="btn" href="#interests">{U["find_btn"]}</a> <a class="btn ghost" href="#{slug("Degrees & Research")}">{U["degrees_btn"]}</a></p>
 </div></section>
 <section class="wrap" id="interests">
@@ -160,7 +161,7 @@ def render(study_areas_html, schools_link="", th=False):
 <p class="kicker">Explore your next chapter</p>
 <h1>Find a course. Picture your future.</h1>
 <p class="lead">Explore what you will learn, who each course suits and where it could take you. Start with your interests — we will help with the details.</p>
-<ul class="points"><li><span aria-hidden="true">📚</span>{total} courses to explore</li><li><span aria-hidden="true">🎓</span>Certificates to postgraduate study</li></ul>
+<ul class="points"><li>{icon("book")}{total} courses to explore</li><li>{icon("cap")}Certificates to postgraduate study</li></ul>
 <p class="actions"><a class="btn" href="#interests">Find my course ↓</a> <a class="btn ghost" href="#{slug("Degrees & Research")}">Explore degrees</a></p>
 </div></section>
 <section class="wrap" id="interests">

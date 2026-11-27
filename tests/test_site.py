@@ -592,6 +592,21 @@ for _f, _n in (("fast-track-courses.html", 10), ("th/fast-track-courses.html", 1
     _h = (SITE / _f).read_text()
     _m = _h[_h.index("<main"):_h.index("</main>")]
     check(not _EMO.findall(_m) and _m.count('<svg class="ico') >= _n, f"{_f}: no emoji in main, line icons instead (≥{_n})")
+for _f, _n in (("courses.html", 20), ("th/courses.html", 20), ("english-practice.html", 14), ("th/english-practice.html", 14),
+               ("take-a-break.html", 4), ("th/take-a-break.html", 4)):
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    check(_m.count('<svg class="ico') >= _n, f"{_f}: line icons in place of emoji (≥{_n})")
+# whole site (27 Nov 2026, 16:13 run): no emoji in any page's <main> (redesign mock-ups excluded)
+_EMO2 = _re.compile("[\U0001F0A0-\U0001F0FF\U0001F300-\U0001FAFF\u2600-\u27BF\u25B6]")
+_emo_pages = []
+for _p in SITE.rglob("*.html"):
+    if "redesign" in _p.parts:
+        continue
+    _h = _p.read_text()
+    if "<main" in _h and _EMO2.search(_h[_h.index("<main"):_h.index("</main>")]):
+        _emo_pages.append(str(_p.relative_to(SITE)))
+check(not _emo_pages, f"no emoji in <main> on any page (found: {_emo_pages[:5]})")
 check(".tip > strong:first-child { display: block" in _css and ".tip strong { display: block" not in _css,
       "tip title is the only block <strong> (\"up to 4 months\" stays in the sentence)")
 

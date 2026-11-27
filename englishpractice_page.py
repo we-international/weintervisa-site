@@ -6,6 +6,7 @@ import html
 import json
 from pathlib import Path
 
+from group_pages import icon
 from home_page import img
 
 ROOT = Path(__file__).resolve().parent
@@ -16,7 +17,7 @@ EP = json.loads((ROOT / "content/english-practice.json").read_text())
 # Fixed page words; a Thai copy (content/th/english-practice.json "ui") overrides them key by key.
 UI_EN = {
     "q": "Question {} of 8", "notQuite": "Not quite:", "which": "Which is correct?", "show": "Show the answer",
-    "sub": "▶ Subscribe on YouTube", "follow": "Follow:", "soon": "Coming soon", "etsy": "View on Etsy",
+    "sub": "Subscribe on YouTube", "follow": "Follow:", "soon": "Coming soon", "etsy": "View on Etsy",
     "quizBtn": "Try the 1-minute quiz", "watchBtn": "Watch the videos", "mayaN": "Maya:", "kenjiN": "Kenji:",
     "gameK": "Mini game", "gameH": "Say it right: 8 common mistakes",
     "gameP": "Pick the natural way to say it, then open the answer. No sign-up, no score saved, just practice.",
@@ -41,18 +42,18 @@ def quiz_item(n, wrong, options, answer, why, L=UI_EN):
     return f"""<li class="quiz"><p class="kicker">{e(L["q"].format(n + 1))}</p>
 <p class="wrong">{e(L["notQuite"])} <s{en}>{e(wrong)}</s></p><p><strong>{e(L["which"])}</strong></p>
 <ol type="A">{opts}</ol>
-<details><summary>{e(L["show"])}</summary><p><strong>✓ {letter}. <span{en}>{e(options[answer])}</span></strong></p><p class="small">{e(why)}</p></details></li>"""
+<details><summary>{e(L["show"])}</summary><p><strong>{icon("badge", "ico ico-ok")} {letter}. <span{en}>{e(options[answer])}</span></strong></p><p class="small">{e(why)}</p></details></li>"""
 
 
 def render(d=None):
     d = d or EP
     L = {**UI_EN, **d.get("ui", {})}
-    points = "".join(f'<li><span aria-hidden="true">{i}</span>{e(t)}</li>' for i, t in d["points"])
+    points = "".join(f'<li>{icon(i)}{e(t)}</li>' for i, t in d["points"])
     quiz = "".join(quiz_item(n, *q, L=L) for n, q in enumerate(d["quiz"]))
     chans = "".join(f"""<li class="path"><h3>{e(c['title'])}</h3><p>{e(c['body'])}</p>
 <a href="{e(c['youtube'])}" target="_blank" rel="noopener">{e(L["sub"])} ↗</a>
 <p class="small">{e(L['follow'])} {' · '.join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(t)}</a>' for t, u in c['follow'])}</p></li>""" for c in d["channels"])
-    games = "".join(f"""<li class="path"><span class="ico" aria-hidden="true">{i}</span><h3>{e(t)}</h3><p>{e(b)}</p>
+    games = "".join(f"""<li class="path">{icon(i, "ico ico-path")}<h3>{e(t)}</h3><p>{e(b)}</p>
 {f'<a href="{e(u)}"' + (' target="_blank" rel="noopener"' if u.startswith('http') else '') + f'>{e(l)}</a>' if l else f'<span class="tag">{e(L["soon"])}</span>'}</li>"""
                     for i, t, b, l, u in d["games"])
     k = d["kids"]
