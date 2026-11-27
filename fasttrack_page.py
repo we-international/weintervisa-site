@@ -52,7 +52,7 @@ def render(d=None):
     courses = "".join(f"""<li class="course" id="{c['id']}">{img(c['img'], w=1536, h=1024)}<div>
 <span class="code">{e(c['code'])}</span><h3{L["en"]}>{e(c['title'])}</h3><p>{e(c['for'])}</p>
 <ul class="list">{''.join(f'<li>{e(x)}</li>' for x in c['learn'])}</ul>
-<p class="links"><a class="btn" href="{c_}">{e(L["plan"])}</a> <a href="{e(c['more'][1])}">{e(c['more'][0])}</a></p>
+<p class="links"><a class="btn ghost" href="{c_}">{e(L["plan"])}</a> <a href="{e(c['more'][1])}">{e(c['more'][0])}</a></p>
 </div></li>""" for c in d["courses"])
     leads = "".join(f'<li><strong>{e(t)}</strong><span>{e(b)} <a href="{e(u)}" target="_blank" rel="noopener">{e(l)}</a></span></li>'
                     for t, b, l, u in d["lead_to"])
