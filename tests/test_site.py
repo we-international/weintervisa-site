@@ -610,6 +610,14 @@ check(not _emo_pages, f"no emoji in <main> on any page (found: {_emo_pages[:5]})
 check(".tip > strong:first-child { display: block" in _css and ".tip strong { display: block" not in _css,
       "tip title is the only block <strong> (\"up to 4 months\" stays in the sentence)")
 
+# one solid button per screen on /fast-track-courses (27 Nov 2026, 16:13 run): the three course cards use a ghost button
+for _f in ("fast-track-courses.html", "th/fast-track-courses.html"):
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    _links = _re.findall(r'<p class="links">(.*?)</p>', _m, _re.S)
+    check(len(_links) == 3 and all('class="btn ghost"' in l and 'class="btn"' not in l for l in _links),
+          f"{_f}: course cards use a ghost button (one solid button per screen)")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
