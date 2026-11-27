@@ -176,11 +176,19 @@ def build():
               description=p.get("seoDescription") or p.get("excerpt"), og_image=p.get("cover", ""), jsonld=ld))
 
     # Blog index + category pages (same URLs as the Wix blog: /blog/categories/<slug>)
+    # Readability (27 Nov 2026): 39 picture cards were 20 phone screens. Now the newest LATEST posts are
+    # picture cards and the rest are short title + date rows (folded by topic on /blog). Every post is
+    # still linked from /blog and from its topic page, so crawlers and the RSS feed lose nothing.
+    LATEST = 6
     def card_list(items):
         return "".join(f"""<li class="card"><a href="/post/{p['slug']}">
 {f'<img src="{esc(p["cover"])}" alt="" loading="lazy">' if p.get("cover") else '<div class="noimg"></div>'}
 <span class="date">{fmt_date(p["date"])}</span><strong>{esc(p["title"])}</strong>
 <span class="ex">{esc(p.get("excerpt"))}</span></a></li>""" for p in items)
+    def row_list(items):
+        return '<ul class="post-rows">' + "".join(
+            f'<li><a href="/post/{p["slug"]}"><span>{esc(p["title"])}</span>'
+            f'<span class="date">{fmt_date(p["date"])}</span></a></li>' for p in items) + "</ul>"
     blog_cats = json.loads((ROOT / "content/blog-categories.json").read_text())["categories"]
     def cat_nav(current=None):
         cur = ' aria-current="page"'
@@ -188,18 +196,28 @@ def build():
             f'<a href="/blog/categories/{c["slug"]}"{cur if current == c["slug"] else ""}>'
             f'{esc(c["label"])} <span>{len(c["posts"])}</span></a>' for c in blog_cats]
         return f'<nav class="chips" aria-label="Blog topics">{"".join(links)}</nav>'
-    write("blog.html", page("Blog | We International", f'<section class="wrap"><h1>Blog</h1>'
-          f'<p class="lead">Plain-English guides on courses, working holidays and life in Australia.</p>'
-          f'{cat_nav()}<ul class="cards">{card_list(posts)}</ul></section>', path="/blog",
-          description="Guides on courses, working holidays and student life in Australia."))
     by_slug = {p["slug"]: p for p in posts}
-    for c in blog_cats:
+    def cat_items(c):
         items = [by_slug[s] for s in c["posts"] if s in by_slug]
         items.sort(key=lambda p: p["date"], reverse=True)
+        return items
+    folds = "".join(
+        f'<details class="group-fold"><summary><h3 id="{c["slug"]}">{esc(c["label"])} ({len(cat_items(c))})</h3></summary>'
+        f'{row_list(cat_items(c))}<p><a href="/blog/categories/{c["slug"]}">Open the {esc(c["label"])} page</a></p></details>'
+        for c in blog_cats)
+    write("blog.html", page("Blog | We International", f'<section class="wrap"><h1>Blog</h1>'
+          f'<p class="lead">Plain-English guides on courses, working holidays and life in Australia.</p>'
+          f'{cat_nav()}<h2>Latest posts</h2><ul class="cards">{card_list(posts[:LATEST])}</ul>'
+          f'<h2 id="all-posts">All {len(posts)} posts by topic</h2>{folds}</section>'
+          f'<script src="/assets/reveal.js" defer></script>', path="/blog",
+          description="Guides on courses, working holidays and student life in Australia."))
+    for c in blog_cats:
+        items = cat_items(c)
+        more = f'<h2>More {esc(c["label"])} posts</h2>{row_list(items[LATEST:])}' if len(items) > LATEST else ""
         write(f"blog/categories/{c['slug']}.html", page(f"{html.unescape(c['label'])} | We International blog",
               f'<section class="wrap"><p class="meta"><a href="/blog">Blog</a></p><h1>{esc(c["label"])}</h1>'
               f'<p class="lead">{esc(c["description"])}</p>{cat_nav(c["slug"])}'
-              f'<ul class="cards">{card_list(items)}</ul></section>',
+              f'<ul class="cards">{card_list(items[:LATEST])}</ul>{more}</section>',
               path=f"/blog/categories/{c['slug']}", description=c["description"][:155]))
         urls_extra.append(f"/blog/categories/{c['slug']}")
 
@@ -240,7 +258,7 @@ def build():
           description=thai_pages.HOME_DESC, lang="th"))
     urls_extra.append("/th/")
     import thai_more
-    write("th/blog.html", page(thai_more.BLOG_TITLE, thai_more.blog_body(posts, fmt_date), path="/th/blog",
+    write("th/blog.html", page(thai_more.BLOG_TITLE, thai_more.blog_body(posts, fmt_date, blog_cats), path="/th/blog",
           description=thai_more.BLOG_DESC, lang="th"))
     urls_extra.append("/th/blog")
     for rel, (title, desc, body) in thai_pages.TH_PAGES.items():

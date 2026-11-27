@@ -282,7 +282,7 @@ tc = (SITE / "th/courses.html").read_text()
 check(tc.count('<ul class="areas">') == len(_tm.GROUP_TH) and all(f'id="{_tm.group_anchor(g)}"' in tc for g in _tm.GROUP_TH),
       "/th/courses has every study-area group with the same anchors as /courses")
 tb = (SITE / "th/blog.html").read_text()
-check(tb.count('<li class="card">') == len(slugs) and 'lang="en"' in tb, f"/th/blog lists all {len(slugs)} posts, titles marked lang=en")
+check(set(re.findall(r'href="/post/([^"]+)"', tb)) == set(slugs) and 'lang="en"' in tb, f"/th/blog links all {len(slugs)} posts, titles marked lang=en")
 check(("/th/schools" in _tp.EN_OF) == bool(_sc.SCHOOLS) and all(f"/th/schools/{s_['slug']}" in _tp.EN_OF for s_ in _sc.SCHOOLS),
       "Thai school pages exist exactly for the schools shown in English (none in production until approved)")
 for s_ in _sc.SCHOOLS:
@@ -637,6 +637,22 @@ for _f in ("fast-track-courses.html", "th/fast-track-courses.html"):
     _links = _re.findall(r'<p class="links">(.*?)</p>', _m, _re.S)
     check(len(_links) == 3 and all('class="btn ghost"' in l and 'class="btn"' not in l for l in _links),
           f"{_f}: course cards use a ghost button (one solid button per screen)")
+
+# /blog readability (27 Nov 2026, 22:13 run): 6 newest as picture cards, the rest as title + date rows folded by topic;
+# every post still linked from /blog, /th/blog and its topic page (crawl + old links)
+_bc = json.loads((ROOT / "content/blog-categories.json").read_text())["categories"]
+for _f in ("blog.html", "th/blog.html"):
+    _h = (SITE / _f).read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    check(_m.count('<li class="card">') == 6 and set(_re.findall(r'href="/post/([^"]+)"', _m)) == set(slugs)
+          and _m.count('<details class="group-fold">') == len(_bc) and all(f'id="{c_["slug"]}"' in _m for c_ in _bc)
+          and "/assets/reveal.js" in _h, f"{_f}: 6 latest cards + every post in a topic fold ({len(slugs)} posts)")
+for c_ in _bc:
+    _h = (SITE / f"blog/categories/{c_['slug']}.html").read_text()
+    _m = _h[_h.index("<main"):_h.index("</main>")]
+    check(set(_re.findall(r'href="/post/([^"]+)"', _m)) >= set(c_["posts"]) and _m.count('<li class="card">') == min(6, len(c_["posts"])),
+          f"/blog/categories/{c_['slug']}: ≤6 cards, every topic post linked")
+check(".post-rows a {" in _css and "min-height: 44px" in _css.split(".post-rows a {")[1].split("}")[0], "blog rows are ≥44 px tap targets")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

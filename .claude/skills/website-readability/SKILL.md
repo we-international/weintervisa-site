@@ -67,3 +67,10 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Links into closed folds: Chrome opens the folds round a #target by itself; older Safari/Firefox do not → `assets/reveal.js` (15 lines: on click of a `#` link, on `hashchange` and on load, open every ancestor `<details>` of the target). Page still works without it. Give targets `scroll-margin-top: 72px` or they hide under the sticky header (course rows landed at top 0 before).
 - Check in a real browser after the change: tap an interest chip, a city → course link, and deep links `/courses#<group>` / `#<study-area>`: fold open + target top = 72 px.
 - Playwright WebKit is not installed in the cloud box (only Chromium) — don't install it; test the fallback logic by reading it, Chromium for the rest.
+
+## Lesson 27 Nov 2026 (22:13 run): /blog 20.1 → 4.3 phone screens (TH 15.4 → 3.7), no post unlinked
+- A blog index of 39 picture cards = 20 phone screens. Now: the 6 newest as picture cards ("Latest posts"), then "All N posts by topic" = one `<details class="group-fold">` per blog category with short **title + date rows** (`.post-rows`, ≥44 px tap row, no image, no excerpt).
+- Every post stays linked from `/blog`, `/th/blog` and its topic page (crawl + old Wix links); the RSS feed and `/post/<slug>` URLs are untouched. Topic pages (`/blog/categories/<slug>`): 6 cards + "More … posts" rows (9.2 → 5.3 screens).
+- Topic folds carry `id="<category slug>"` + `assets/reveal.js`, so `/blog#life-in-australia` opens the fold.
+- Test the set of linked slugs (`re.findall(r'href="/post/([^"]+)"')`), not the number of cards — the old Thai test counted `<li class="card">` and broke when rows replaced cards.
+- Measuring with a tiny static server: `/blog` is also a folder (`blog/categories/`), so ask for `/blog.html` or the server serves a 404 and the page measures as 1.0 screen.
