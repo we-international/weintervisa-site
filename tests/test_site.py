@@ -419,7 +419,7 @@ check(_ftp.index('href="/working-holiday/charter"') < _ftp.index('href="/working
       "/fast-track-courses shows Charter first, then KCA, before the course finder")
 check('href="/th/working-holiday/charter"' in (SITE / "th/fast-track-courses.html").read_text(), "/th/fast-track-courses links the Thai Working Holiday school pages")
 # Thai school pages (26 Nov 2026): same facts as English, same form (option values English for GetWec), Thai words.
-import json as _json
+import json as _json, html
 _whe = _json.loads((ROOT / "content/working-holiday.json").read_text())["schools"]
 _wht = _json.loads((ROOT / "content/th/working-holiday.json").read_text())["schools"]
 check([s_["slug"] for s_ in _whe] == [s_["slug"] for s_ in _wht] and all(
@@ -569,6 +569,21 @@ check("form.lead { color: var(--ink); font-size: 17px; }" in _css and "font-vari
 check(all('id="enrol"' in (SITE / f).read_text() and "wrap narrow join" in (SITE / f).read_text()
           for f in ("working-holiday/charter.html", "working-holiday/kca.html", "th/working-holiday/charter.html", "th/working-holiday/kca.html")),
       "Working Holiday school pages (EN + TH): enrol form joins the page without an extra section gap")
+
+# Charter fee table grouped by stream (27 Nov 2026): one heading per stream, jump links, every fee row and amount kept
+import json as _json, html
+for _lang, _jf, _hf in (("EN", "content/working-holiday.json", "working-holiday/charter.html"), ("TH", "content/th/working-holiday.json", "th/working-holiday/charter.html")):
+    _cs = next(s for s in _json.loads((ROOT / _jf).read_text())["schools"] if s["slug"] == "charter")
+    _ch = (SITE / _hf).read_text()
+    _tb = _ch[_ch.index('<div class="fees grouped">'):]
+    _tb = _tb[:_tb.index("</table>")]
+    _streams = list(dict.fromkeys(r[0] for r in _cs["fees"]))
+    check(_tb.count('<tr class="grp"') == len(_streams) == _ch.count('<ul class="fee-jump">') * len(_streams)
+          and all(f'href="#{_wv0.group_id(g)}"' in _ch and f'id="{_wv0.group_id(g)}"' in _tb for g in _streams)
+          and _tb.count('<th scope="row"') == len(_cs["fees"]) and _tb.count('class="amt"') == len(_cs["fees"])
+          and all(html.escape(v) in _tb for r in _cs["fees"] for v in r[1:]),
+          f"Charter fees ({_lang}): grouped by stream ({len(_streams)} headings + jump links), all {len(_cs['fees'])} rows and every amount kept")
+check('<ul class="fee-jump">' not in (SITE / "working-holiday/kca.html").read_text(), "KCA fee table (no repeated stream) stays a plain table")
 
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")

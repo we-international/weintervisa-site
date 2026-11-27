@@ -302,3 +302,19 @@ nav.chips { margin: 16px 0 24px; }
 /* /courses/aged-care-certificate-iii: long cells wrap; the link cell has no label on phones */
 .fees.cmp td { white-space: normal; min-width: 9em; }
 .fees td:not([data-col])::before { content: none; }
+/* Working Holiday fee table grouped by stream (Charter: Aged care / Hospital / Childcare), 27 Nov 2026 */
+.fee-jump { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; padding: 0; }
+.fee-jump a { display: inline-block; min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.5; }
+.fees.grouped tr.grp { scroll-margin-top: 72px; }
+.fees.grouped tr.grp th { background: var(--bg); color: var(--brand); font-size: 13px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; padding: 10px 12px 6px; }
+.fees.grouped tbody th[scope="row"] { font-weight: 600; white-space: normal; min-width: 12em; }
+.fees.grouped td { white-space: normal; }
+.fees.grouped td.amt { font-weight: 700; }
+@media (max-width: 480px) {
+  .fees.grouped tr.grp { padding: 0; }
+  .fees.grouped tr.grp th { display: block; padding: 12px 12px 4px; }
+  .fees.grouped tbody th[scope="row"] { min-width: 0; margin-bottom: 2px; }
+  .fees.grouped td::before { content: attr(data-col) ": "; color: var(--muted); font-weight: 400; }
+}
