@@ -4,11 +4,11 @@
   "kicker": "Working Holiday visa 417 / 462",
   "h1": "Turn your Working Holiday into a new skill.",
   "lead": "Study a practical Certificate III while you travel. We help you pick a course that fits your visa dates, and sort homestay and health cover too.",
-  "points": [["🎓", "A Certificate III in care, health or childcare, recognised across Australia"], ["🤝", "Real work placement built into the course"], ["🏡", "Homestay and health cover sorted in one place"]],
+  "points": [["cap", "A Certificate III in care, health or childcare, recognised across Australia"], ["work", "Real work placement built into the course"], ["home", "Homestay and health cover sorted in one place"]],
   "heroImage": {"wix": "https://static.wixstatic.com/media/187087_5766fac30a8149dbab2b9742233e3198~mv2.png", "file": "187087_5766fac30a8149dbab2b9742233e3198-mv2.webp", "alt": "Maya the quokka and Kenji the koala, our guide characters, waving at Circular Quay in Sydney"},
-  "maya": "G'day! On a 417 or 462 visa? Let's turn your trip into a new skill. 🎒",
+  "maya": "G'day! On a 417 or 462 visa? Let's turn your trip into a new skill.",
   "kenji": "Pick what you enjoy and we'll point you to the right course.",
-  "finder": [["🧓", "Caring for older people or people with disability", "#chc33021"], ["🏥", "Helping nurses and patients in a hospital", "#hlt33115"], ["🧸", "Working with young children", "#chc30125"], ["🤔", "I'm not sure yet", "/contact-us"]],
+  "finder": [["care", "Caring for older people or people with disability", "#chc33021"], ["hospital", "Helping nurses and patients in a hospital", "#hlt33115"], ["blocks", "Working with young children", "#chc30125"], ["question", "I'm not sure yet", "/contact-us"]],
   "steps": [["Check your visa", "Look up your visa dates and conditions for free in <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>."],
             ["Pick a course", "Use the course finder above, or tell us what you enjoy and we'll suggest options."],
             ["Get your free course plan", "We send the provider's current timetable, intake dates and a written quote, so you can check them against your visa."]],
@@ -37,9 +37,9 @@
   "news": "In the news: aged care providers are calling for a visa for care workers (ABC News, 20 Oct 2026). It's a proposal only and visa law hasn't changed.",
   "newsPost": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
   "settle": [
-    ["🏡", "Live with a local host", "Our homestay partner, the Australian Homestay Network (AHN), screens hosts and supports you during your stay.", "Find a homestay with AHN ↗", "https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa", "How homestay works →", "/homestay"],
-    ["🩺", "Health cover", "Home Affairs strongly recommends private health insurance for visitors not covered by Medicare. Compare options for Working Holiday Makers.", "Compare cover options →", "/oshc", "", ""],
-    ["✅", "Your first-week checklist", "TFN, bank account, phone, super, VEVO and your work rights, step by step.", "Open the checklist →", "/post/first-week-on-a-working-holiday-visa-a-checklist", "", ""]
+    ["home", "Live with a local host", "Our homestay partner, the Australian Homestay Network (AHN), screens hosts and supports you during your stay.", "Find a homestay with AHN ↗", "https://au.homestaynetwork.org/guests/signup?affiliate=WeInternationalEducationAndVisa", "How homestay works →", "/homestay"],
+    ["shield", "Health cover", "Home Affairs strongly recommends private health insurance for visitors not covered by Medicare. Compare options for Working Holiday Makers.", "Compare cover options →", "/oshc", "", ""],
+    ["checklist", "Your first-week checklist", "TFN, bank account, phone, super, VEVO and your work rights, step by step.", "Open the checklist →", "/post/first-week-on-a-working-holiday-visa-a-checklist", "", ""]
   ],
   "faq": [
     ["Can I study on a working holiday visa?", "Yes. Home Affairs says Working Holiday Makers can study or train for up to 4 months on each visa (condition 8548). Check your own conditions in <a href=\"https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/check-conditions-online\" target=\"_blank\" rel=\"noopener\">VEVO ↗</a>."],

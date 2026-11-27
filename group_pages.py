@@ -72,6 +72,13 @@ _ICON_PATHS = {
     "talk": '<path d="M4 5h16v11H10l-6 4z"/><path d="M8 9h8M8 12h5"/>',
     "book": '<path d="M4 5.5c2.7-1.2 5.3-1 8 1 2.7-2 5.3-2.2 8-1V19c-2.7-1.2-5.3-1-8 1-2.7-2-5.3-2.2-8-1z"/><path d="M12 6.5V20"/>',
     "link": '<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>',
+    # fast-track page (27 Nov 2026, replaces its emoji)
+    "cap": '<path d="M2.5 9.5L12 5l9.5 4.5L12 14z"/><path d="M6.5 11.5v4c1.6 1.6 3.4 2.3 5.5 2.3s3.9-.7 5.5-2.3v-4"/><path d="M21.5 9.5V15"/>',
+    "work": '<rect x="3.5" y="7.5" width="17" height="12" rx="2"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5"/><path d="M3.5 12.5h17"/>',
+    "care": '<circle cx="12" cy="6" r="2.5"/><path d="M12 9.5c-2.5 0-4.5 2-4.5 4.5V16"/><path d="M12 9.5c2.5 0 4.5 2 4.5 4.5V16"/><path d="M5 20c2.5-2.6 4.8-3.5 7-3.5s4.5.9 7 3.5"/>',
+    "hospital": '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/>',
+    "question": '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7"/><path d="M12 17h.01"/>',
+    "checklist": '<path d="M4 6.5l1.5 1.5L8 5.5M4 12.5l1.5 1.5L8 11.5M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/>',
 }
 
 
