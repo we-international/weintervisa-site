@@ -85,6 +85,16 @@ _ICON_PATHS = {
     "meal": '<circle cx="12" cy="13" r="6"/><path d="M3.5 4v5a1.5 1.5 0 0 0 1.5 1.5V20M5 4v4.5M20.5 4c-1.5 1-2 2.8-2 5h2V20"/>',
     "receipt": '<path d="M6 3.5h12v17l-2-1.3-2 1.3-2-1.3-2 1.3-2-1.3-2 1.3z"/><path d="M9 8.5h6M9 12h6M9 15.5h3"/>',
     "map": '<path d="M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/>',
+    "chip": '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9.5 4v3M14.5 4v3M9.5 17v3M14.5 17v3M4 9.5h3M4 14.5h3M17 9.5h3M17 14.5h3"/>',
+    "lock": '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/>',
+    "tool": '<path d="M14.5 3.5l6 6-3 3-6-6z"/><path d="M12.5 8.5L4 17a2.1 2.1 0 0 0 3 3l8.5-8.5"/>',
+    "car": '<path d="M3.5 16v-3.5l2.2-5h12.6l2.2 5V16z"/><path d="M3.5 12.5h17"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/>',
+    "laptop": '<rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M3 19h18"/>',
+    "mic": '<rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M6 11.5a6 6 0 0 0 12 0M12 17.5v3M9 20.5h6"/>',
+    "pencil": '<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z"/><path d="M13.5 6.5l4 4"/>',
+    "cards": '<rect x="8" y="4" width="11" height="15" rx="1.5"/><path d="M8 7.5L5 8.4a1.5 1.5 0 0 0-1 1.8l2.6 9.3a1.5 1.5 0 0 0 1.8 1L12 19"/>',
+    "box": '<path d="M4 8l8-4 8 4v8.5l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8.5"/>',
+    "target": '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
     "checklist": '<path d="M4 6.5l1.5 1.5L8 5.5M4 12.5l1.5 1.5L8 11.5M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/>',
 }
 
@@ -182,13 +192,13 @@ def home(lang="en"):
 
 # ---------- /take-a-break ----------
 GAMES = [  # from weintergames.com (studio's own page); each card links to its section there
-    ("swapscape", "Swapscape", "🃏", "A picture cut into cards and shuffled. Swap the cards back.",
+    ("swapscape", "Swapscape", "cards", "A picture cut into cards and shuffled. Swap the cards back.",
      "ภาพถูกตัดเป็นการ์ดแล้วสลับกัน สลับกลับให้ครบภาพ"),
-    ("blockscape", "Blockscape", "🧱", "Drop wooden blocks, clear rows, and a hidden painting peeks through.",
+    ("blockscape", "Blockscape", "blocks", "Drop wooden blocks, clear rows, and a hidden painting peeks through.",
      "วางบล็อกไม้ เคลียร์แถว แล้วภาพที่ซ่อนอยู่จะค่อยๆ โผล่"),
-    ("haulers", "Tiny Haulers", "📦", "Tap a crate and tiny haulers carry it to the picture.",
+    ("haulers", "Tiny Haulers", "box", "Tap a crate and tiny haulers carry it to the picture.",
      "แตะกล่อง แล้วทีมขนของตัวจิ๋วจะขนไปเติมภาพ"),
-    ("brickbloom", "Brickbloom", "🎯", "Aim, let go, and break glazed tiles to show a painting.",
+    ("brickbloom", "Brickbloom", "target", "Aim, let go, and break glazed tiles to show a painting.",
      "เล็งแล้วปล่อยลูก ทุบกระเบื้องเพื่อเผยภาพวาด"),
 ]
 
@@ -221,7 +231,7 @@ BREAK_UI = {
 def take_a_break(lang="en"):
     L = BREAK_UI[lang]
     th = lang == "th"
-    cards = "".join(f"""<li class="path"><span class="ico" aria-hidden="true">{i}</span><h3 lang="en">{e(n)}</h3><p>{e(dth if th else den)}</p>
+    cards = "".join(f"""<li class="path">{icon(i, "ico ico-path")}<h3 lang="en">{e(n)}</h3><p>{e(dth if th else den)}</p>
 <a href="{STUDIO}#{gid}" target="_blank" rel="noopener">{e(L["see"])}</a></li>""" for gid, n, i, den, dth in GAMES)
     return f"""<section class="hero"><div class="wrap">
 <p class="kicker">{e(L["kicker"])}</p>

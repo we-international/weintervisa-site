@@ -4,9 +4,9 @@
   "kicker": "Free English practice",
   "h1": "Practise English. Have fun doing it.",
   "lead": "Short videos, a podcast-style show and quick games made by our team. Learn the English Australians really use, one small mistake at a time.",
-  "points": [["🎙️", "Say It Wrong with Maya & Kenji: real conversations, real mistakes"], ["✏️", "Wobbi Says: one everyday mistake fixed in under a minute"], ["🎮", "Mini games: test yourself right here on this page"]],
+  "points": [["mic", "Say It Wrong with Maya & Kenji: real conversations, real mistakes"], ["pencil", "Wobbi Says: one everyday mistake fixed in under a minute"], ["question", "Mini games: test yourself right here on this page"]],
   "heroImage": {"wix": "https://static.wixstatic.com/media/187087_f1d1a9d8c39441e9967f50dfad68ad5c~mv2.png", "file": "187087_f1d1a9d8c39441e9967f50dfad68ad5c-mv2.webp", "alt": "Maya the quokka and Kenji the koala chatting over coffee (AI-generated scene)"},
-  "maya": "Everyone makes mistakes in English. We just make ours on camera! 😄",
+  "maya": "Everyone makes mistakes in English. We just make ours on camera!",
   "kenji": "Watch, play, then comment your own sentence. We read them!",
   "quiz": [
     ["I am agree with you.", ["I agree with you.", "I am agreeing you.", "I agreed with you am."], 0, "\"Agree\" is a verb, so we don't add \"am\"."],
@@ -28,9 +28,9 @@
   ],
   "challenge": "After each video, type the correct sentence in the comments. Writing it once helps you remember it much longer!",
   "games": [
-    ["🧩", "Say it right", "8 everyday mistakes, instant answers. Perfect for a coffee break.", "Play now →", "#quiz"],
-    ["🎮", "Puzzle games from our game studio", "Relaxing puzzle games from WE International Game Studio, part of the We International group.", "See the games ↗", "https://weintergames.com/"],
-    ["✨", "More practice tools", "Phrase cards, listening games and more. Follow our channels to hear first.", "", ""]
+    ["checklist", "Say it right", "8 everyday mistakes, instant answers. Perfect for a coffee break.", "Play now →", "#quiz"],
+    ["blocks", "Puzzle games from our game studio", "Relaxing puzzle games from WE International Game Studio, part of the We International group.", "See the games ↗", "https://weintergames.com/"],
+    ["book", "More practice tools", "Phrase cards, listening games and more. Follow our channels to hear first.", "", ""]
   ],
   "study": "From General English to IELTS and PTE preparation, we help you compare courses, providers and intake dates. Free advice, no obligation.",
   "kids": {
