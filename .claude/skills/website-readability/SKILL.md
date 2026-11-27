@@ -50,3 +50,12 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Before/after image goes to the redesign Drive folder for Nora; never put the unslop credit on the page.
 
 - 27 Nov 2026 (16:13 run): one **solid** button per screen. On `/fast-track-courses` the three course cards each had a solid "Get a course plan" — on a phone two sit on one screen next to the section CTA. Cards now use `btn ghost` (same link, quieter); the solid button stays on the hero, "how it works" and the closing CTA. Test in `tests/test_site.py` (course cards: 3 × ghost, 0 × solid).
+
+## Lesson 27 Nov 2026 (18:13 run): nursing page 9.6 → 7.9 phone screens without deleting a word
+- Measure per section first (`main > section` heights ÷ 844) — it shows where the screens go (here: 4 course cards 1.7, map 1.6).
+- Course cards whose only action is "email us" → one `<details class="faq course-fold">` per course (name + type in the summary, ≥44 px tap row). A link on every card that repeats the email list further down is noise: one "pick your course in the email list below ↓" link instead.
+- A second illustration that adds nothing on a phone: `class="… wide-only"` (hidden < 760 px), the desktop keeps it.
+- Checklists and "sources / reviewed / disclaimer" small print fold into `<details>`; the visa referral box stays visible (rule), and the HTML still holds every official link (tests count them in the HTML, not visible text).
+- Words stay in the HTML, so the old "as full as Wix" word test still passes; Playwright `innerText` drops closed folds, so a visible-word count falls (817 → 742) — say which count you report.
+- Kept visible on purpose: the 4-step registration map + "Good to know" box (it stops people booking the wrong course). Next candidate if the owner wants ≤ 6: fold each map step's detail.
+- Thai copy: new UI keys go in `content/th/nursing.json` "ui" (one-line JSON style — don't re-dump the whole file, it rewrites 249 lines).
