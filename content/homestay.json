@@ -5,19 +5,19 @@
   "kicker": "Homestay · with our partner AHN",
   "h1": "New to Australia? Start with a homestay.",
   "lead": "Your first weeks are easier with a local host family. Australian Homestay Network (AHN) matches you with a screened host near your school, with meals, bills and 24/7 emergency support included.",
-  "points": [["🛡️", "Hosts screened with background checks, in-home interviews and home inspections"], ["🛏️", "Private furnished room, meals, Wi-Fi, utilities and laundry in one weekly price"], ["📞", "Staffed 24/7 emergency contact centre with interpreters"], ["🚌", "Up to 1 hour from your school by public transport, in 17 cities and regions"]],
+  "points": [["shield", "Hosts screened with background checks, in-home interviews and home inspections"], ["bed", "Private furnished room, meals, Wi-Fi, utilities and laundry in one weekly price"], ["phone", "Staffed 24/7 emergency contact centre with interpreters"], ["bus", "Up to 1 hour from your school by public transport, in 17 cities and regions"]],
   "applyNote": "You'll be taken to AHN's website to create your guest profile · Opens a new tab. AHN's website is in English. Need help with the form? Ask us — we're happy to help.",
   "scams": {"h2": "Don't pay a stranger for a room you've never seen",
     "body": "Some students send a bond or rent to someone online, then arrive in Australia and find there is no room. Booking a homestay through AHN helps you avoid this.",
     "items": ["You pay AHN, an established homestay organisation — not a private person you found online", "Your host and address are confirmed in a placement report before you fly", "You can add airport pickup, so someone takes you straight to your new home", "Stay for your first month, set up your bank account, phone and transport, and inspect rentals in person — then move out when you're ready"],
     "tip": "Planning to stay about 4 weeks? Tell AHN your plan when you apply and ask about the notice period."},
   "why": [
-    ["🏡", "Someone looks out for you", "Your host helps with local customs, transport and your first trip to school, so you are not on your own on day one."],
-    ["🛡️", "Checked hosts and homes", "AHN hosts pass background checks, an in-home interview and a home inspection, and complete host training. Hosts of under-18s are specially trained and certified."],
-    ["📞", "Help any time", "A professionally staffed 24/7 critical-incident line with interpreters, plus your local AHN office in business hours."],
-    ["🍽️", "Meals sorted", "Choose Complete (3 meals, 7 days), Traditional (2 meals weekdays, 3 on weekends), Dinner Only or No Meals. Special diets may cost extra."],
-    ["💡", "No surprise bills", "The weekly fee covers your room, meal plan, utilities, internet, laundry, insurance, emergency support and administration. No bond and no lock-in contract."],
-    ["🗺️", "Time to find your feet", "AHN recommends at least 4 weeks for new students. Most stay about 3 months, and you can extend while you look for your next place."]
+    ["home", "Someone looks out for you", "Your host helps with local customs, transport and your first trip to school, so you are not on your own on day one."],
+    ["shield", "Checked hosts and homes", "AHN hosts pass background checks, an in-home interview and a home inspection, and complete host training. Hosts of under-18s are specially trained and certified."],
+    ["phone", "Help any time", "A professionally staffed 24/7 critical-incident line with interpreters, plus your local AHN office in business hours."],
+    ["meal", "Meals sorted", "Choose Complete (3 meals, 7 days), Traditional (2 meals weekdays, 3 on weekends), Dinner Only or No Meals. Special diets may cost extra."],
+    ["receipt", "No surprise bills", "The weekly fee covers your room, meal plan, utilities, internet, laundry, insurance, emergency support and administration. No bond and no lock-in contract."],
+    ["map", "Time to find your feet", "AHN recommends at least 4 weeks for new students. Most stay about 3 months, and you can extend while you look for your next place."]
   ],
   "endorsed": "AHN says it was the first organisation endorsed under the Study NSW and NEAS Homestay Service Provider Standards (October 2023).",
   "steps": [

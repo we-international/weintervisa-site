@@ -323,3 +323,4 @@ nav.chips { margin: 16px 0 24px; }
 .points li .ico { width: 20px; height: 20px; margin-top: 2px; color: var(--brand); }
 .finder a .ico { width: 24px; height: 24px; color: var(--brand); }
 .path .ico-path { width: 26px; height: 26px; color: var(--brand); display: block; margin-bottom: 6px; }
+.help .ico-help { width: 24px; height: 24px; color: var(--brand); margin-top: 2px; }

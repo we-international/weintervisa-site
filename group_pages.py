@@ -78,6 +78,13 @@ _ICON_PATHS = {
     "care": '<circle cx="12" cy="6" r="2.5"/><path d="M12 9.5c-2.5 0-4.5 2-4.5 4.5V16"/><path d="M12 9.5c2.5 0 4.5 2 4.5 4.5V16"/><path d="M5 20c2.5-2.6 4.8-3.5 7-3.5s4.5.9 7 3.5"/>',
     "hospital": '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/>',
     "question": '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.7"/><path d="M12 17h.01"/>',
+    # homestay page (27 Nov 2026)
+    "bed": '<path d="M3 18V7"/><path d="M3 14h18v4"/><path d="M21 14v-2.5a2.5 2.5 0 0 0-2.5-2.5H11v5"/><circle cx="7" cy="11" r="1.8"/>',
+    "phone": '<path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"/>',
+    "bus": '<rect x="5" y="3.5" width="14" height="14" rx="2.5"/><path d="M5 11h14M8 20.5v-3M16 20.5v-3"/><circle cx="8.5" cy="14.2" r=".6"/><circle cx="15.5" cy="14.2" r=".6"/>',
+    "meal": '<circle cx="12" cy="13" r="6"/><path d="M3.5 4v5a1.5 1.5 0 0 0 1.5 1.5V20M5 4v4.5M20.5 4c-1.5 1-2 2.8-2 5h2V20"/>',
+    "receipt": '<path d="M6 3.5h12v17l-2-1.3-2 1.3-2-1.3-2 1.3-2-1.3-2 1.3z"/><path d="M9 8.5h6M9 12h6M9 15.5h3"/>',
+    "map": '<path d="M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/>',
     "checklist": '<path d="M4 6.5l1.5 1.5L8 5.5M4 12.5l1.5 1.5L8 11.5M4 18.5l1.5 1.5L8 17.5"/><path d="M11 7h9M11 13h9M11 19h9"/>',
 }
 

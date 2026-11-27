@@ -6,6 +6,8 @@ import html
 import json
 from pathlib import Path
 
+from group_pages import icon
+
 ROOT = Path(__file__).resolve().parent
 e = html.escape
 HS = json.loads((ROOT / "content/homestay.json").read_text())
@@ -29,10 +31,10 @@ def render(d=None):
     L = {**UI_EN, **d.get("ui", {})}
     a = e(d["apply"])
     btn = lambda t: f'<a class="btn" href="{a}" target="_blank" rel="noopener">{e(t)} ↗</a>'
-    points = "".join(f'<li><span aria-hidden="true">{i}</span>{e(t)}</li>' for i, t in d["points"])
+    points = "".join(f'<li>{icon(i)}{e(t)}</li>' for i, t in d["points"])
     s = d["scams"]
     scam = "".join(f"<li>{e(x)}</li>" for x in s["items"])
-    why = "".join(f'<li><span class="ico" aria-hidden="true">{i}</span><strong>{e(t)}</strong><span>{e(b)}</span></li>' for i, t, b in d["why"])
+    why = "".join(f'<li>{icon(i, "ico ico-help")}<strong>{e(t)}</strong><span>{e(b)}</span></li>' for i, t, b in d["why"])
     steps = "".join(f"<li>{e(x)}</li>" for x in d["steps"])
     ab = d["applyBox"]
     abl = "".join(f"<li>{e(x)}</li>" for x in ab["items"])
