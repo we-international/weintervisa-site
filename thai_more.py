@@ -121,16 +121,35 @@ def courses_body():
     return courses_page.render(areas_html, school_link, th=True)
 
 
-def blog_body(posts, fmt_date):
+BLOG_CAT_TH = {"working-holiday-guides": "Working Holiday และวีซ่า", "courses-study": "คอร์สและการเรียน",
+               "life-in-australia": "ชีวิตในออสเตรเลีย"}
+
+
+def blog_body(posts, fmt_date, cats=()):
+    # Same layout as /blog (27 Nov 2026): 6 newest as picture cards, the rest as title + date rows folded by topic.
     cards = "".join(f"""<li class="card"><a href="/post/{p['slug']}" lang="en">
 {f'<img src="{e(p["cover"])}" alt="" loading="lazy">' if p.get("cover") else '<div class="noimg"></div>'}
-<span class="date">{fmt_date(p["date"])}</span><strong>{e(p["title"])}</strong></a></li>""" for p in posts)
+<span class="date">{fmt_date(p["date"])}</span><strong>{e(p["title"])}</strong></a></li>""" for p in posts[:6])
+    by_slug = {p["slug"]: p for p in posts}
+    folds = ""
+    for c in cats:
+        if c["slug"] not in BLOG_CAT_TH:
+            raise SystemExit(f"thai_more: add the Thai label for blog topic {c['slug']}")
+        items = sorted((by_slug[s] for s in c["posts"] if s in by_slug), key=lambda p: p["date"], reverse=True)
+        rows = "".join(f'<li><a href="/post/{p["slug"]}"><span lang="en">{e(p["title"])}</span>'
+                       f'<span class="date">{fmt_date(p["date"])}</span></a></li>' for p in items)
+        folds += (f'<details class="group-fold"><summary><h3 id="{c["slug"]}">{BLOG_CAT_TH[c["slug"]]} ({len(items)})</h3></summary>'
+                  f'<ul class="post-rows">{rows}</ul></details>')
+    rest = f'<h2 id="all-posts">บทความทั้งหมด {len(posts)} เรื่อง ตามหัวข้อ</h2>{folds}' if folds else ""
     return f"""<section class="wrap"><h1>บทความ</h1>
 <p class="lead">คู่มือเรื่องคอร์สเรียน Working Holiday และชีวิตในออสเตรเลีย ตอนนี้บทความเป็นภาษาอังกฤษ มีคำถามเป็นภาษาไทย ส่งมาถามทีมงานได้เลย</p>
+<h2>บทความล่าสุด</h2>
 <ul class="cards">{cards}</ul>
+{rest}
 {VISA_NOTE_TH}
 <aside class="cta"><p>อ่านแล้วมีคำถาม ทีมงานตอบเป็นภาษาไทยหรืออังกฤษ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
-</section>"""
+</section>
+<script src="/assets/reveal.js" defer></script>"""
 
 
 SCHOOL_NOTE_TH = ("<p class=\"note-box\"><strong>เกี่ยวกับข้อมูลนี้</strong> มาจากไฟล์ของสถาบันเอง ค่าเรียนและวันเริ่มเรียนเปลี่ยนได้ "

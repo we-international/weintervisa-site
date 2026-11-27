@@ -333,9 +333,18 @@ details.notes summary { font-weight: 600; color: var(--muted); }
 /* /courses readability (27 Nov 2026): each study-area group folds; the h2 sits inside the summary */
 .group-fold > summary, .area-fold > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; list-style: none; border-bottom: 1px solid #e3e6ea; }
 .group-fold > summary::-webkit-details-marker, .area-fold > summary::-webkit-details-marker { display: none; }
-.group-fold > summary h2, .area-fold > summary h2 { margin: 12px 0; flex: 1; scroll-margin-top: 72px; }
+.group-fold > summary h2, .group-fold > summary h3, .area-fold > summary h2 { margin: 12px 0; flex: 1; scroll-margin-top: 72px; }
 .group-fold > summary::after, .area-fold > summary::after { content: "+"; font-size: 1.5rem; font-weight: 400; color: var(--muted); padding-left: 12px; }
 .group-fold[open] > summary::after, .area-fold[open] > summary::after { content: "−"; }
 .group-wrap { padding-top: 0; padding-bottom: 0; }
 .topic { scroll-margin-top: 72px; }
 .course-item { scroll-margin-top: 72px; }
+
+/* Blog: older posts as short rows (27 Nov 2026 readability) */
+.group-fold > summary h3 { font-size: 1.1rem; }
+.post-rows { list-style: none; padding: 0; margin: 4px 0 12px; }
+.post-rows li { border-bottom: 1px solid var(--line); }
+.post-rows a { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; min-height: 44px;
+  padding: 10px 0; text-decoration: none; color: var(--ink); }
+.post-rows a:hover span:first-child { text-decoration: underline; }
+.post-rows .date { color: var(--muted); font-size: 14px; white-space: nowrap; }
