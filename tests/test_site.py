@@ -588,10 +588,10 @@ check('<ul class="fee-jump">' not in (SITE / "working-holiday/kca.html").read_te
 # unslop polish of /fast-track-courses (27 Nov 2026): no emoji in <main> (line icons instead), and a <strong> inside a tip stays inline
 import re as _re
 _EMO = _re.compile("[\U0001F300-\U0001FAFF\u2600-\u27BF\u25B6]")
-for _f in ("fast-track-courses.html", "th/fast-track-courses.html"):
+for _f, _n in (("fast-track-courses.html", 10), ("th/fast-track-courses.html", 10), ("homestay.html", 10), ("th/homestay.html", 10)):
     _h = (SITE / _f).read_text()
     _m = _h[_h.index("<main"):_h.index("</main>")]
-    check(not _EMO.findall(_m) and _m.count('<svg class="ico') >= 10, f"{_f}: no emoji in main, line icons for points, finder and settle-in cards")
+    check(not _EMO.findall(_m) and _m.count('<svg class="ico') >= _n, f"{_f}: no emoji in main, line icons instead (≥{_n})")
 check(".tip > strong:first-child { display: block" in _css and ".tip strong { display: block" not in _css,
       "tip title is the only block <strong> (\"up to 4 months\" stays in the sentence)")
 
