@@ -1,6 +1,7 @@
 """/courses — rebuilt on 22 Nov 2026 from the LIVE Wix course catalogue (content/courses.json, 97 courses,
-made by tools/courses_from_live.py from the embed's inline data). No script: interest chips jump to a
-group, city lists link to courses, each course opens with <details>. Neutral listing — no college names;
+made by tools/courses_from_live.py from the embed's inline data). Interest chips jump to a topic, city lists
+link to courses, each study-area group and each course opens with <details> (27 Nov 2026: 49 → ~10 phone
+screens; assets/reveal.js opens the folds round a #link where the browser does not do it itself). Neutral listing — no college names;
 we compare colleges with the student. Durations are approximate; nothing is promised.
 render(..., th=True) builds /th/courses from the same catalogue with the Thai words in content/th/courses.json
 (22 Nov 2026): same groups, topics, courses and anchors; course titles and codes stay English (lang="en").
@@ -96,7 +97,8 @@ def render(study_areas_html, schools_link="", th=False):
                 continue
             cs = by_topic[t]
             ti = TH["topics"][t] if th else info
-            pic = img(IMAGES.get(info.get("image") or ""), w=1536, h=1024) if not t.startswith("short-") else ""
+            pic = (f'<div class="wide-only">{img(IMAGES.get(info.get("image") or ""), w=1536, h=1024)}</div>'
+                   if not t.startswith("short-") else "")  # the topic picture adds nothing on a phone (readability 27 Nov 2026)
             labs = ((U["suit"], "suit"), (U["skills"], "skills"), (U["use"], "use"), (U["jobs"], "jobs")) if th else \
                 (("Who it suits:", "suit"), ("Skills:", "skills"), ("Where you can use it:", "use"), ("Jobs it can lead to:", "jobs"))
             facts = "".join(f"<li><strong>{lab}</strong> {e(ti[k])}</li>" for lab, k in labs if info.get(k))
@@ -113,7 +115,8 @@ def render(study_areas_html, schools_link="", th=False):
             else:
                 intro = ""
             cnt = U["n_courses"].format(n=n) if th else f"{n} courses"
-            groups.append(f'<section class="wrap narrow"><h2 id="{slug(g)}">{e(G(g))} <span class="small">({cnt})</span></h2>{intro}{"".join(blocks)}</section>')
+            groups.append(f'<section class="wrap narrow group-wrap"><details class="group-fold"><summary><h2 id="{slug(g)}">{e(G(g))} '
+                          f'<span class="small">({cnt})</span></h2></summary>{intro}{"".join(blocks)}</details></section>')
     chips = "".join(f'<li><a href="#{topic_anchor(t)}">{icon(i)}{e(TH["interests"][t] if th else lab)}</a></li>'
                     for i, lab, t in INTERESTS if t in by_topic)
     group_nav = " · ".join(f'<a href="#{slug(g)}">{e(G(g))}</a>' for g in GROUP_ORDER)
@@ -191,4 +194,5 @@ We confirm the college, campus, intake, fees and full schedule with you before y
 {bottom}
 {schools_link}
 </section>
-{study_areas_html}"""
+{study_areas_html}
+<script src="/assets/reveal.js" defer></script>"""

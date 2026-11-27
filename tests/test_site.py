@@ -209,6 +209,18 @@ _cj = json.loads((ROOT / "content/courses.json").read_text())
 check(len(_cj["courses"]) >= 97 and co.count('<details class="faq course-item"') == len(_cj["courses"]), f"/courses lists every course from the live catalogue ({len(_cj['courses'])}), each opens with <details>")
 check(n_co >= 950, f"/courses is as full as the live Wix page ({n_co} words, live ≈ 950)")
 check(all(f'id="{a}"' in co for a in re.findall(r'href="#([\w-]+)"', co)), "/courses: every in-page link (interests, cities, groups) has a target")
+# /courses readability (27 Nov 2026): 49 → ~7 phone screens without deleting a word — each study-area group and each
+# study area list folds; topic pictures are wide-screen only; reveal.js opens the folds round a #link (older Safari/Firefox)
+for _cf in ("courses", "th/courses"):
+    _cm = (SITE / f"{_cf}.html").read_text().split('<main id="main">')[1].split("</main>")[0]
+    check(_cm.count('<details class="group-fold"><summary><h2 id="c-') == 7 and '<script src="/assets/reveal.js" defer></script>' in _cm,
+          f"/{_cf}: 7 course groups fold, h2 kept inside the summary, reveal.js loaded")
+    check(len(re.findall(r'<details class="area-fold"><summary><h2 id="', _cm)) == _cm.count('<ul class="areas">') > 0,
+          f"/{_cf}: every study-area list folds under its h2")
+    check('<div class="topic"' in _cm and not re.search(r'<div class="topic" id="[^"]+"><img', _cm),
+          f"/{_cf}: topic pictures are wide-screen only (wrapped in .wide-only)")
+_rv = (ROOT / "assets/reveal.js").read_text()
+check("DETAILS" in _rv and "hashchange" in _rv and "fetch" not in _rv and "localStorage" not in _rv, "assets/reveal.js only opens folds (no network, no storage)")
 check(not re.search(r"Charter Australia|Rosehill|KCA Education|Danford|Britts College|Brighton College|VIA Education", co), "/courses: neutral listing, no college names (owner rule 26 Oct 2026)")
 # 11. Migration agents (WEI-MIG-FORM-1120): cards only from GetWec "listed" data; rules stated
 ms = (SITE / "migration-support.html").read_text()
