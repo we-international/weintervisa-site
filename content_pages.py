@@ -39,9 +39,10 @@ groups = {}
 for a in areas:
     groups.setdefault(a["group"], []).append(a)
 area_html = "".join(
-    f'<h2 id="{e(g.lower().replace(" & ", "-").replace(" ", "-"))}">{e(g)}</h2><ul class="areas">'
+    f'<details class="area-fold"><summary><h2 id="{e(g.lower().replace(" & ", "-").replace(" ", "-"))}">{e(g)} '
+    f'<span class="small">({len(items)})</span></h2></summary><ul class="areas">'
     + "".join(f'<li><strong>{e(a["title"])}</strong><span>{e(a.get("description") or "")}</span></li>' for a in items)
-    + "</ul>" for g, items in groups.items())
+    + "</ul></details>" for g, items in groups.items())
 import courses_page  # noqa: E402 — /courses rebuilt from the live Wix catalogue (22 Nov 2026)
 courses_body = courses_page.render(
     f"""<section class="wrap">

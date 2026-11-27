@@ -59,3 +59,11 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - Words stay in the HTML, so the old "as full as Wix" word test still passes; Playwright `innerText` drops closed folds, so a visible-word count falls (817 → 742) — say which count you report.
 - Kept visible on purpose: the 4-step registration map + "Good to know" box (it stops people booking the wrong course). Next candidate if the owner wants ≤ 6: fold each map step's detail.
 - Thai copy: new UI keys go in `content/th/nursing.json` "ui" (one-line JSON style — don't re-dump the whole file, it rewrites 249 lines).
+
+## Lesson 27 Nov 2026 (20:13 run): /courses 49.4 → 6.6 phone screens (TH 46.2 → 6.7), no words deleted
+- Measure every page first (58 non-redirect pages, phone 390×844): /courses was the outlier at 49 screens; next are /blog 20, /fast-track-courses 12, /english-practice 10, /homestay 9.8.
+- A long catalogue = fold by group: `<details class="group-fold"><summary><h2 id="…">Group (n courses)</h2></summary>…</details>`. A heading inside `<summary>` is valid HTML, keeps the h2 outline for SEO and keeps the old anchor id, so home-page and in-page links still land.
+- Topic pictures in a list → `.wide-only` (hidden < 760 px; lazy images that are `display:none` are not downloaded on phones).
+- Links into closed folds: Chrome opens the folds round a #target by itself; older Safari/Firefox do not → `assets/reveal.js` (15 lines: on click of a `#` link, on `hashchange` and on load, open every ancestor `<details>` of the target). Page still works without it. Give targets `scroll-margin-top: 72px` or they hide under the sticky header (course rows landed at top 0 before).
+- Check in a real browser after the change: tap an interest chip, a city → course link, and deep links `/courses#<group>` / `#<study-area>`: fold open + target top = 72 px.
+- Playwright WebKit is not installed in the cloud box (only Chromium) — don't install it; test the fallback logic by reading it, Chromium for the rest.

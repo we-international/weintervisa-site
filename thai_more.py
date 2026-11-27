@@ -96,9 +96,10 @@ def courses_body():
     for a in areas:
         groups.setdefault(a["group"], []).append(a)
     area_html = "".join(
-        f'<h2 id="{e(group_anchor(g))}">{e(GROUP_TH[g])}</h2><ul class="areas">'
+        f'<details class="area-fold"><summary><h2 id="{e(group_anchor(g))}">{e(GROUP_TH[g])} '
+        f'<span class="small">({len(items)})</span></h2></summary><ul class="areas">'
         + "".join(f'<li><strong>{e(AREA_TH[a["slug"]][0])}</strong><span>{e(AREA_TH[a["slug"]][1])}</span></li>' for a in items)
-        + "</ul>" for g, items in groups.items())
+        + "</ul></details>" for g, items in groups.items())
     school_link = ('<p>ดูคอร์สและค่าเรียนจาก<a href="/th/schools">สถาบันที่ส่งข้อมูลให้เรา</a></p>' if schools.SCHOOLS else "")
     # 22 Nov 2026: the top of the page is the 97-course catalogue (same layout and anchors as /courses, Thai words in
     # content/th/courses.json); the study areas follow, as on the English page.
