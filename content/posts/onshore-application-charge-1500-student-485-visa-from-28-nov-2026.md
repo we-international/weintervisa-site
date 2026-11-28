@@ -7,7 +7,7 @@
  "excerpt": "From 28 November 2026, some visa applications made in Australia include a new $1,500 onshore application charge. Which visas, who is exempt (including Thai student visa applicants), and what to check. English and Thai.",
  "seoTitle": "$1,500 Onshore Application Charge from 28 Nov 2026: FAQ",
  "seoDescription": "From 28 Nov 2026, applying in Australia for a 500, 590 or 485 visa (and some family visas) adds a $1,500 charge. Who is exempt and what to check. EN + TH.",
- "cover": "/assets/img/187087_df8e3c61b873495f80205717e99d1bd6-mv2.jpg",
+ "cover": "/assets/img/187087_8485f03ed6204d2fb6e41f0aaf140849-mv2.jpg",
  "minutesToRead": 3
 }
 meta-->
