@@ -1,0 +1,26 @@
+name: Wix drift (daily)
+# Read-only, once a day: is every URL in the live Wix sitemap also in the new build?
+# Other teams still publish posts straight to the live Wix blog until the DNS day. A red run
+# means a new Wix URL must be copied into the new site (skill wix-to-static-migration,
+# "Posts other teams publish on Wix"). No screenshots, no pushes, nothing written anywhere.
+on:
+  schedule:
+    - cron: "17 19 * * *"   # 06:17 Sydney (AEDT), before the first team run
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown==3.7
+      - run: python3 build.py
+      - name: Live sitemap vs new build (fails on a missing URL)
+        run: |
+          set -o pipefail
+          python3 tools/live_urls.py --strict | tee -a "$GITHUB_STEP_SUMMARY"
