@@ -94,3 +94,8 @@ Playwright from a script outside the repo: `createRequire('/opt/npm-tools/node_m
 - A shop block (6 product cards, 2.3 screens) folds behind "See the 6 printables"; the shop link, "opens Etsy" note and the fictional-characters line stay visible.
 - Every page that gets a fold with an id loads `/assets/reveal.js` and the fold gets `scroll-margin-top: 72px` — without it a deep link landed at top 0 under the sticky header (checked in Chromium: `#more-questions` open, top = 72 px).
 - Thai `ui` keys added in place with one string replace (the file is one-line JSON per key; never re-dump it).
+
+## Lesson 28 Nov 2026 (12:13 run): the 3 course-compare pages under 6 phone screens (aged care 6.2 → 5.9, TH 6.1 → 5.8; childcare 5.4, hospital 5.6)
+- One template (`compare_page.py`) serves all three, so one fold fixes all: "What the course is" (3 bullets) → `<details class="group-fold" id="about-course"><summary><h2>…</h2></summary>`.
+- Stay visible on purpose: the fee table, "Which one fits your visa?" + 8548, the visa-check and not-a-migration-agent boxes, and the childcare Diploma line (it carries a fee: money is never folded). Test checks the fold holds no table and no A$.
+- A quick measure script without the repo tool: static server + Playwright, `main > section` heights ÷ 844 per section; the form is 2.3 of the 6 screens and is not folded (it is the page's job).
