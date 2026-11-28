@@ -1,0 +1,312 @@
+(()=>{
+'use strict';
+const dictionaries={"ja": {"Explore courses": "コースを探す", "Careful coordination": "丁寧な連絡調整", "Your goals, circumstances and understanding should guide the conversation.": "あなたの目標、状況、理解を中心に話を進めます。", "Home": "ホーム", "FAQs": "よくある質問", "About We International Education & Visa": "We International Education & Visa について", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "次のステップを理解できるよう、情報を確認し、不確かな点を説明します。選択はあなた自身のものです。", "Your tomorrow matters. ♥": "あなたの明日を大切に。♥", "Your next step starts with a conversation.": "次の一歩は、会話から。", "A student-first approach to finding your next chapter in Australia.": "学生を第一に、オーストラリアでの次の一歩を考えます。", "Main navigation": "メインメニュー", "English practice — Coming soon": "英語練習 — 準備中", "Professional": "専門性", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI は調査、事務、連絡を補助する場合があります。専門的な判断や権限を要する決定は、適切な人間の担当者が行います。", "Support that listens": "話を聞くサポート", "We International homepage": "We International ホーム", "Migration support": "移民専門家への紹介サポート", "Contact": "お問い合わせ", "Talk to our team": "チームに相談する", "An online service": "オンラインのサービス", "More pages": "その他のページ", "Student First.": "学生を第一に。", "Student First": "学生を第一に", "Our service is coordinated online. Contact the team to arrange a conversation.": "サービスはオンラインで調整します。チームに連絡して相談の機会を設けましょう。", "Honest support. A choice that is yours.": "誠実なサポート。選ぶのはあなた。", "Tell us what you want to study. We’ll help you understand the options.": "学びたいことを教えてください。一緒に選択肢を整理します。", "Student services": "学生サポート", "People and AI support": "人と AI のサポート", "Trusted, professional and approachable": "信頼できて、丁寧で、相談しやすい", "Approachable": "親しみやすさ", "Clear information": "明確な情報", "OUR FIRST PRINCIPLE": "私たちの基本", "Trusted": "信頼", "About us": "私たちについて"}, "ko": {"Explore courses": "과정 둘러보기", "Careful coordination": "세심한 조율", "Your goals, circumstances and understanding should guide the conversation.": "목표, 개인 상황, 이해도를 중심으로 대화해요.", "Home": "홈", "FAQs": "자주 묻는 질문", "About We International Education & Visa": "We International Education & Visa 소개", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "다음 단계를 이해하기 쉽게 돕고 싶어요. 정보를 확인하고 불확실한 부분은 설명하며, 선택은 여러분께 남겨둬요.", "Your tomorrow matters. ♥": "여러분의 내일을 소중히 여겨요. ♥", "Your next step starts with a conversation.": "다음 단계는 대화에서 시작돼요.", "A student-first approach to finding your next chapter in Australia.": "학생을 먼저 생각하며 호주에서의 다음 이야기를 함께해요.", "Main navigation": "주 메뉴", "English practice — Coming soon": "영어 연습 — 준비 중", "Professional": "전문성", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI가 조사, 행정, 소통을 보조할 수 있어요. 전문적 판단과 특정 권한이 필요한 결정은 적합한 사람이 맡아요.", "Support that listens": "귀 기울이는 지원", "We International homepage": "We International 홈", "Migration support": "이민 전문가 연결 지원", "Contact": "문의하기", "Talk to our team": "팀에 문의하기", "An online service": "온라인 서비스", "More pages": "다른 페이지", "Student First.": "학생을 먼저.", "Student First": "학생을 먼저", "Our service is coordinated online. Contact the team to arrange a conversation.": "서비스는 온라인으로 진행해요. 팀에 연락해 대화 시간을 잡아주세요.", "Honest support. A choice that is yours.": "정직한 지원, 선택은 여러분의 몫.", "Tell us what you want to study. We’ll help you understand the options.": "공부하고 싶은 것을 알려주세요. 선택지를 이해하도록 도와드려요.", "Student services": "학생 서비스", "People and AI support": "사람과 AI의 협업", "Trusted, professional and approachable": "믿을 수 있고, 전문적이고, 편안하게", "Approachable": "친근함", "Clear information": "명확한 정보", "OUR FIRST PRINCIPLE": "우리의 첫 원칙", "Trusted": "신뢰", "About us": "회사 소개"}, "zh-Hans": {"Explore courses": "探索课程", "Careful coordination": "细致协调", "Your goals, circumstances and understanding should guide the conversation.": "沟通应围绕你的目标、实际情况和理解程度展开。", "Home": "首页", "FAQs": "常见问题", "About We International Education & Visa": "关于 We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "我们希望你看懂下一步。核实信息，说明不确定之处，把决定权留给你。", "Your tomorrow matters. ♥": "你的明天，我们在意。♥", "Your next step starts with a conversation.": "下一步，从聊一聊开始。", "A student-first approach to finding your next chapter in Australia.": "以学生为先，规划在澳大利亚的新篇章。", "Main navigation": "主菜单", "English practice — Coming soon": "英语练习 — 敬请期待", "Professional": "专业", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI 可辅助资料研究、行政和沟通。专业决策及依法保留的决定仍由相应的人类负责人作出。", "Support that listens": "愿意倾听的支持", "We International homepage": "We International 首页", "Migration support": "移民专业人士转介", "Contact": "联系我们", "Talk to our team": "联系团队", "An online service": "线上服务", "More pages": "更多页面", "Student First.": "学生优先。", "Student First": "学生优先", "Our service is coordinated online. Contact the team to arrange a conversation.": "我们的服务在线上协调。联系团队安排沟通即可。", "Honest support. A choice that is yours.": "真诚支持，选择在你。", "Tell us what you want to study. We’ll help you understand the options.": "告诉我们你想学什么，一起了解选择。", "Student services": "学生服务", "People and AI support": "人与 AI 协作", "Trusted, professional and approachable": "可信、专业、好沟通", "Approachable": "亲切", "Clear information": "清楚的信息", "OUR FIRST PRINCIPLE": "我们的首要原则", "Trusted": "值得信赖", "About us": "关于我们"}, "vi": {"Explore courses": "Khám phá khóa học", "Careful coordination": "Điều phối cẩn thận", "Your goals, circumstances and understanding should guide the conversation.": "Mục tiêu, hoàn cảnh và mức độ hiểu của bạn là trọng tâm cuộc trò chuyện.", "Home": "Trang chủ", "FAQs": "Câu hỏi thường gặp", "About We International Education & Visa": "Về We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "Chúng tôi muốn bước tiếp theo dễ hiểu hơn. Thông tin được kiểm tra, điều chưa chắc được giải thích, còn lựa chọn vẫn là của bạn.", "Your tomorrow matters. ♥": "Ngày mai của bạn rất quan trọng. ♥", "Your next step starts with a conversation.": "Bước tiếp theo bắt đầu từ trò chuyện.", "A student-first approach to finding your next chapter in Australia.": "Lấy sinh viên làm trọng tâm khi tìm chặng đường tiếp theo tại Úc.", "Main navigation": "Menu chính", "English practice — Coming soon": "Luyện tiếng Anh — Sắp ra mắt", "Professional": "Chuyên nghiệp", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI có thể hỗ trợ nghiên cứu, hành chính và giao tiếp. Quyết định chuyên môn và việc cần thẩm quyền vẫn do người phụ trách phù hợp thực hiện.", "Support that listens": "Hỗ trợ biết lắng nghe", "We International homepage": "Trang chủ We International", "Migration support": "Kết nối chuyên gia di trú", "Contact": "Liên hệ", "Talk to our team": "Liên hệ đội ngũ", "An online service": "Dịch vụ online", "More pages": "Trang khác", "Student First.": "Sinh viên là ưu tiên.", "Student First": "Sinh viên là ưu tiên", "Our service is coordinated online. Contact the team to arrange a conversation.": "Dịch vụ được điều phối online. Liên hệ đội ngũ để sắp xếp trò chuyện.", "Honest support. A choice that is yours.": "Hỗ trợ chân thành. Quyết định là của bạn.", "Tell us what you want to study. We’ll help you understand the options.": "Cho biết bạn muốn học gì. Chúng tôi giúp bạn hiểu các lựa chọn.", "Student services": "Dịch vụ sinh viên", "People and AI support": "Con người với hỗ trợ từ AI", "Trusted, professional and approachable": "Đáng tin, chuyên nghiệp và gần gũi", "Approachable": "Thân thiện", "Clear information": "Thông tin rõ ràng", "OUR FIRST PRINCIPLE": "NGUYÊN TẮC ĐẦU TIÊN", "Trusted": "Đáng tin cậy", "About us": "Về chúng tôi"}, "es": {"Explore courses": "Explorar cursos", "Careful coordination": "Coordinación cuidadosa", "Your goals, circumstances and understanding should guide the conversation.": "Tus metas, tu situación y lo que entiendes deben guiar la conversación.", "Home": "Inicio", "FAQs": "Preguntas frecuentes", "About We International Education & Visa": "Sobre We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "Buscamos que entiendas el siguiente paso. Verificamos la información, explicamos las dudas y tú decides.", "Your tomorrow matters. ♥": "Tu futuro nos importa. ♥", "Your next step starts with a conversation.": "Tu siguiente paso empieza con una conversación.", "A student-first approach to finding your next chapter in Australia.": "Un enfoque centrado en el estudiante para tu próxima etapa en Australia.", "Main navigation": "Navegación principal", "English practice — Coming soon": "Práctica de inglés — Próximamente", "Professional": "Profesionalismo", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "La IA puede ayudar en investigación, administración y comunicación. Las decisiones profesionales y reservadas quedan con la persona competente.", "Support that listens": "Apoyo que escucha", "We International homepage": "Inicio de We International", "Migration support": "Orientación hacia profesionales de migración", "Contact": "Contacto", "Talk to our team": "Habla con nuestro equipo", "An online service": "Un servicio online", "More pages": "Más páginas", "Student First.": "El estudiante primero.", "Student First": "El estudiante primero", "Our service is coordinated online. Contact the team to arrange a conversation.": "Coordinamos el servicio online. Contacta al equipo para conversar.", "Honest support. A choice that is yours.": "Apoyo honesto. La decisión es tuya.", "Tell us what you want to study. We’ll help you understand the options.": "Cuéntanos qué quieres estudiar. Te ayudamos a entender tus opciones.", "Student services": "Servicios para estudiantes", "People and AI support": "Personas con apoyo de IA", "Trusted, professional and approachable": "Confianza, profesionalismo y cercanía", "Approachable": "Cercanía", "Clear information": "Información clara", "OUR FIRST PRINCIPLE": "NUESTRO PRINCIPIO", "Trusted": "Confianza", "About us": "Sobre nosotros"}, "pt-BR": {"Explore courses": "Explorar cursos", "Careful coordination": "Coordenação cuidadosa", "Your goals, circumstances and understanding should guide the conversation.": "Seus objetivos, sua situação e seu entendimento devem guiar a conversa.", "Home": "Início", "FAQs": "Perguntas frequentes", "About We International Education & Visa": "Sobre We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "Queremos tornar o próximo passo compreensível. Checamos as informações, explicamos as incertezas e a escolha continua sendo sua.", "Your tomorrow matters. ♥": "Seu futuro importa para nós. ♥", "Your next step starts with a conversation.": "Seu próximo passo começa com uma conversa.", "A student-first approach to finding your next chapter in Australia.": "Uma abordagem centrada no estudante para seu próximo capítulo na Austrália.", "Main navigation": "Menu principal", "English practice — Coming soon": "Prática de inglês — Em breve", "Professional": "Profissionalismo", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "A IA pode auxiliar em pesquisa, administração e comunicação. Decisões profissionais e reservadas ficam com a pessoa competente.", "Support that listens": "Apoio que escuta", "We International homepage": "Início da We International", "Migration support": "Encaminhamento migratório", "Contact": "Contato", "Talk to our team": "Fale com a nossa equipe", "An online service": "Um serviço online", "More pages": "Mais páginas", "Student First.": "O estudante em primeiro lugar.", "Student First": "O estudante em primeiro lugar", "Our service is coordinated online. Contact the team to arrange a conversation.": "Coordenamos o atendimento online. Entre em contato para conversar.", "Honest support. A choice that is yours.": "Apoio honesto. A escolha é sua.", "Tell us what you want to study. We’ll help you understand the options.": "Conte o que quer estudar. Ajudamos você a entender as opções.", "Student services": "Serviços para estudantes", "People and AI support": "Pessoas com apoio de IA", "Trusted, professional and approachable": "Confiança, profissionalismo e proximidade", "Approachable": "Proximidade", "Clear information": "Informação clara", "OUR FIRST PRINCIPLE": "NOSSO PRINCÍPIO", "Trusted": "Confiança", "About us": "Sobre nós"}, "id": {"Explore courses": "Jelajahi kursus", "Careful coordination": "Koordinasi teliti", "Your goals, circumstances and understanding should guide the conversation.": "Tujuan, kondisi, dan pemahamanmu menjadi dasar percakapan.", "Home": "Beranda", "FAQs": "Pertanyaan umum", "About We International Education & Visa": "Tentang We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "Kami ingin langkah berikutnya mudah dipahami. Informasi dicek, ketidakpastian dijelaskan, dan keputusan tetap milikmu.", "Your tomorrow matters. ♥": "Masa depanmu berarti bagi kami. ♥", "Your next step starts with a conversation.": "Langkah berikutnya dimulai dengan percakapan.", "A student-first approach to finding your next chapter in Australia.": "Mengutamakan pelajar dalam merencanakan babak baru di Australia.", "Main navigation": "Navigasi utama", "English practice — Coming soon": "Latihan bahasa Inggris — Segera hadir", "Professional": "Profesional", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI dapat membantu riset, administrasi, dan komunikasi. Keputusan profesional dan yang memiliki kewenangan khusus tetap dipegang manusia yang sesuai.", "Support that listens": "Dukungan yang mendengarkan", "We International homepage": "Beranda We International", "Migration support": "Rujukan profesional migrasi", "Contact": "Kontak", "Talk to our team": "Hubungi tim kami", "An online service": "Layanan online", "More pages": "Halaman lainnya", "Student First.": "Pelajar diutamakan.", "Student First": "Pelajar diutamakan", "Our service is coordinated online. Contact the team to arrange a conversation.": "Layanan kami dikoordinasikan online. Hubungi tim untuk mengatur percakapan.", "Honest support. A choice that is yours.": "Dukungan jujur. Pilihan tetap milikmu.", "Tell us what you want to study. We’ll help you understand the options.": "Ceritakan yang ingin kamu pelajari. Kami bantu memahami pilihannya.", "Student services": "Layanan pelajar", "People and AI support": "Tim manusia dengan bantuan AI", "Trusted, professional and approachable": "Terpercaya, profesional, dan ramah", "Approachable": "Ramah", "Clear information": "Informasi jelas", "OUR FIRST PRINCIPLE": "PRINSIP KAMI", "Trusted": "Terpercaya", "About us": "Tentang kami"}, "th": {"Explore courses": "ค้นหาคอร์ส", "Careful coordination": "ประสานงานรอบคอบ", "Your goals, circumstances and understanding should guide the conversation.": "เริ่มจากเป้าหมาย สถานการณ์ และความเข้าใจของคุณ", "Home": "หน้าแรก", "FAQs": "คำถามที่พบบ่อย", "About We International Education & Visa": "เกี่ยวกับ We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "เราอยากให้คุณเข้าใจก้าวต่อไป ตรวจข้อมูลให้ บอกสิ่งที่ยังไม่แน่ใจ และให้คุณเป็นคนตัดสินใจ", "Your tomorrow matters. ♥": "วันพรุ่งนี้ของคุณสำคัญกับเรา ♥", "Your next step starts with a conversation.": "ก้าวต่อไปเริ่มจากคุยกัน", "A student-first approach to finding your next chapter in Australia.": "เริ่มก้าวใหม่ในออสเตรเลีย โดยให้นักเรียนมาก่อน", "Main navigation": "เมนูหลัก", "English practice — Coming soon": "ฝึกภาษาอังกฤษ — Coming Soon", "Professional": "ทำงานอย่างใส่ใจ", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI อาจช่วยทีมค้นข้อมูล งานธุรการ และการสื่อสาร ส่วนการตัดสินใจของผู้เชี่ยวชาญหรือที่มีกฎหมายกำหนด ยังคงเป็นหน้าที่ของบุคคลที่เหมาะสม", "Support that listens": "พร้อมรับฟัง", "We International homepage": "หน้าแรก We International", "Migration support": "ประสานผู้เชี่ยวชาญ Migration", "Contact": "ติดต่อเรา", "Talk to our team": "คุยกับทีมเรา", "An online service": "บริการผ่านออนไลน์", "More pages": "หน้าอื่น ๆ", "Student First.": "นักเรียนมาก่อน", "Student First": "นักเรียนมาก่อน", "Our service is coordinated online. Contact the team to arrange a conversation.": "เราประสานงานผ่านออนไลน์ ติดต่อทีมเพื่อนัดคุยได้เลย", "Honest support. A choice that is yours.": "ดูแลอย่างตรงไปตรงมา คุณเป็นคนเลือก", "Tell us what you want to study. We’ll help you understand the options.": "เล่าเรื่องที่อยากเรียน เราช่วยให้เข้าใจตัวเลือกได้", "Student services": "บริการนักเรียน", "People and AI support": "ทีมงานและ AI", "Trusted, professional and approachable": "ตรงไปตรงมา ใส่ใจ และเข้าถึงง่าย", "Approachable": "คุยง่าย", "Clear information": "ข้อมูลชัดเจน", "OUR FIRST PRINCIPLE": "หลักที่เรายึดถือ", "Trusted": "ไว้ใจได้", "About us": "เกี่ยวกับเรา"}, "zh-Hant": {"Explore courses": "探索課程", "Careful coordination": "細緻協調", "Your goals, circumstances and understanding should guide the conversation.": "溝通應圍繞你的目標、實際情況和理解程度展開。", "Home": "首頁", "FAQs": "常見問題", "About We International Education & Visa": "關於 We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "我們希望你看懂下一步。核實資訊，說明不確定之處，把決定權留給你。", "Your tomorrow matters. ♥": "你的明天，我們在意。♥", "Your next step starts with a conversation.": "下一步，從聊一聊開始。", "A student-first approach to finding your next chapter in Australia.": "以學生為先，規劃在澳洲的新篇章。", "Main navigation": "主選單", "English practice — Coming soon": "英文練習 — 敬請期待", "Professional": "專業", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI 可輔助資料研究、行政和溝通。專業決策及依法保留的決定仍由相應的人類負責人作出。", "Support that listens": "願意傾聽的支援", "We International homepage": "We International 首頁", "Migration support": "移民專業人士轉介", "Contact": "聯絡我們", "Talk to our team": "聯絡團隊", "An online service": "線上服務", "More pages": "更多頁面", "Student First.": "學生優先。", "Student First": "學生優先", "Our service is coordinated online. Contact the team to arrange a conversation.": "我們的服務線上上協調。聯絡團隊安排溝通即可。", "Honest support. A choice that is yours.": "真誠支援，選擇在你。", "Tell us what you want to study. We’ll help you understand the options.": "告訴我們你想學什麼，一起了解選擇。", "Student services": "學生服務", "People and AI support": "人與 AI 協作", "Trusted, professional and approachable": "可信、專業、好溝通", "Approachable": "親切", "Clear information": "清楚的資訊", "OUR FIRST PRINCIPLE": "我們的首要原則", "Trusted": "值得信賴", "About us": "關於我們"}, "en": {"Explore courses": "Explore courses", "Careful coordination": "Careful coordination", "Your goals, circumstances and understanding should guide the conversation.": "Your goals, circumstances and understanding should guide the conversation.", "Home": "Home", "FAQs": "FAQs", "About We International Education & Visa": "About We International Education & Visa", "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.": "We aim to make the next step understandable. Information is checked, uncertainty is explained and choices remain yours.", "Your tomorrow matters. ♥": "Your tomorrow matters. ♥", "Your next step starts with a conversation.": "Your next step starts with a conversation.", "A student-first approach to finding your next chapter in Australia.": "A student-first approach to finding your next chapter in Australia.", "Main navigation": "Main navigation", "English practice — Coming soon": "English practice — Coming soon", "Professional": "Professional", "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.": "AI may assist our team with research, administration and communication. Professional and reserved decisions remain with the appropriate human decision-maker.", "Support that listens": "Support that listens", "We International homepage": "We International homepage", "Migration support": "Migration support", "Contact": "Contact", "Talk to our team": "Talk to our team", "An online service": "An online service", "More pages": "More pages", "Student First.": "Student First.", "Student First": "Student First", "Our service is coordinated online. Contact the team to arrange a conversation.": "Our service is coordinated online. Contact the team to arrange a conversation.", "Honest support. A choice that is yours.": "Honest support. A choice that is yours.", "Tell us what you want to study. We’ll help you understand the options.": "Tell us what you want to study. We’ll help you understand the options.", "Student services": "Student services", "People and AI support": "People and AI support", "Trusted, professional and approachable": "Trusted, professional and approachable", "Approachable": "Approachable", "Clear information": "Clear information", "OUR FIRST PRINCIPLE": "OUR FIRST PRINCIPLE", "Trusted": "Trusted", "About us": "About us"}};
+const select=document.getElementById('site-language');
+const records=new WeakMap(),attributeRecords=new WeakMap(),blocks=new WeakMap();
+let lang='en';try{lang=localStorage.getItem('weinternational-language')||'en'}catch(e){}
+if(!dictionaries[lang])lang='en';
+const norm=s=>s.trim().replace(/\s+/g,' ');
+const t=key=>(dictionaries[lang]||{})[key]||key;
+const countLabels={en:['study areas','Page','of'],th:['สายเรียน','หน้า','จาก'],ja:['分野','ページ','/'],ko:['개 분야','페이지','/'],'zh-Hans':['个领域','第','/'],'zh-Hant':['個領域','第','/'],vi:['lĩnh vực','Trang','/'],es:['áreas','Página','de'],'pt-BR':['áreas','Página','de'],id:['bidang','Halaman','dari']};
+const countText=k=>{const m=k.match(/^(\d+) study areas · Page (\d+) of (\d+)$/);if(!m)return null;const a=countLabels[lang];return `${m[1]} ${a[0]} · ${a[1]} ${m[2]} ${a[2]} ${m[3]}`;};
+function translate(){
+ observer.disconnect();
+ document.querySelectorAll('[data-i18n-block]').forEach(el=>{
+  if(!blocks.has(el))blocks.set(el,el.innerHTML);
+  if(lang==='en')el.innerHTML=blocks.get(el);else el.textContent=t(el.dataset.i18nBlock);
+ });
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+ while(walker.nextNode()){
+  const n=walker.currentNode;
+  if(n.parentElement.closest('script,style,.language-switch,svg,[data-i18n-block]'))continue;
+  let r=records.get(n);
+  if(!r||n.nodeValue!==r.output)r={source:n.nodeValue};
+  const k=norm(r.source),v=countText(k)||t(k);
+  r.output=r.source.replace(r.source.trim(),v);n.nodeValue=r.output;records.set(n,r);
+ }
+ document.querySelectorAll('[aria-label],[placeholder],[alt],[title]').forEach(el=>{
+  if(el.closest('.language-switch'))return;
+  let r=attributeRecords.get(el)||{};
+  for(const a of ['aria-label','placeholder','alt','title']){
+   if(!el.hasAttribute(a))continue;
+   if(!r[a]||el.getAttribute(a)!==r[a].output)r[a]={source:el.getAttribute(a)};
+   r[a].output=t(r[a].source);el.setAttribute(a,r[a].output);
+  }attributeRecords.set(el,r);
+ });
+ document.documentElement.lang=lang;select.value=lang;
+ observer.observe(document.body,{childList:true,subtree:true,characterData:true});
+}
+const observer=new MutationObserver(translate);
+select.addEventListener('change',()=>{lang=select.value;try{localStorage.setItem('weinternational-language',lang)}catch(e){}translate();});
+translate();
+})();
+
+;
+(()=>{const h=document.querySelector('.site-header'),b=document.querySelector('.menu-toggle');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');h.dataset.menuOpen=String(open)});h.addEventListener('keydown',e=>{if(e.key==='Escape'){h.dataset.menuOpen='false';b.setAttribute('aria-expanded','false');b.focus()}})})();
+;
+/* ================= We International — student application form =================
+   Shared by the public "Study Application" page and the Partner Portal.
+   AF.mount(el, {mode:'public'|'partner', lang:'en'|'th', partner:{name,code}, quoteNo, prefill:{}, options:[{provider,course,code,campus}],
+                 courses:[{p,c,code,city}], submit: async rec => ({ref}), onLang: l => {}})
+   Documents are NOT uploaded here: after sending, the applicant emails them to info@weintervisa.com with the reference. */
+(function(){
+const AFT={
+ en:{title:'Student application',steps:['Course','About you','Contact','Visa & study history','Check & send'],
+  next:'Next',back:'Back',send:'Send application',sending:'Sending…',req:'Required',fix:'Please check the highlighted fields.',
+  s1:'What would you like to study?',s1l:'Tell us the school and course if you know them. Not sure yet? Tick the box and we will help you choose.',
+  appType:'Type of application',tStudent:'Student visa course',tWhv:'Working Holiday / short course',tOther:'Other / not sure',
+  provider:'School / college',course:'Course',campus:'City or campus',intake:'Preferred start date',intakeH:'For example: February 2027',notSure:'I am not sure yet — please suggest options for me',
+  fromQuote:'Course from the quote',pickOpt:'Choose one option',
+  extras:'Extra services I would like help with',oshc:'Health insurance (OSHC)',homestay:'Homestay / accommodation',pickup:'Airport pickup',visaHelp:'Visa application support',
+  s2:'About you',s2l:'Write your name exactly as it appears in your passport.',
+  given:'Given name(s)',family:'Family name / surname',dob:'Date of birth',gender:'Gender',gF:'Female',gM:'Male',gX:'Other / prefer not to say',
+  nat:'Nationality (passport country)',birth:'Country of birth',ppNo:'Passport number',ppExp:'Passport expiry date',ppH:'Your passport number is only shared with the school you apply to.',
+  s3:'Contact details',s3l:'We will contact you about your application using these details.',
+  email:'Email',phone:'Mobile phone (with country code)',msgr:'Also contact me on',msgrId:'LINE / WhatsApp / WeChat ID',
+  ctry:'Country you live in now',city:'City',addr:'Current address',
+  emer:'Emergency contact',eName:'Full name',eRel:'Relationship',ePhone:'Phone',eEmail:'Email (optional)',
+  s4:'Visa & study history',s4l:'Schools ask these questions in their application. Honest answers help avoid delays.',
+  onshore:'Are you in Australia now?',yes:'Yes',no:'No',curVisa:'Current visa type',curVisaO:'Student visa (500)|Working Holiday (417)|Work and Holiday (462)|Visitor visa|Graduate visa (485)|Bridging visa|Other',visaExp:'Current visa expiry date',
+  refused:'Have you ever had a visa refused or cancelled, for any country?',refusedD:'Please give brief details (country, visa, year)',
+  edu:'Highest education completed',eduO:'High school (Year 12 or equal)|Certificate / vocational|Diploma|Bachelor degree|Master degree or higher|Other',inst:'School / university name',yr:'Year completed',
+  eng:'English test',engO:'No test yet|IELTS|PTE Academic|TOEFL iBT|Cambridge|Other',engScore:'Overall score',engDate:'Test date',
+  work:'Work experience (optional)',workH:'Job titles and years, for example: Sales assistant, 2 years',notes:'Anything else we should know? (optional)',heard:'How did you hear about us? (optional)',
+  s5:'Check and send',s5l:'Please check your details. You can go back and change anything.',
+  edit:'Edit',cShare:'I agree that We International can share my details with the schools and service providers I apply to, so they can process my application.',
+  cTrue:'The information I have given is true and complete.',cPartner:'The student has agreed to this application and to their details being shared with the school.',
+  privacy:'How we use your information: see our Privacy Policy.',
+  noGuar:'Sending this form starts your application with our team. It does not guarantee an offer from a school or a visa.',
+  done:'Thank you — your application has been sent',doneL:'Your reference number is:',docsT:'Next step: email your documents',
+  docsL:'Please email clear scans or photos of these documents to info@weintervisa.com and write your reference number in the subject line:',
+  docs:['Passport (photo page)','Current Australian visa grant notice (if you are in Australia)','Highest education certificate and transcript','English test result (if you have one)','CV / resume','Visa refusal letter (if you have had a refusal)'],
+  mail:'Email my documents',mailH:'If the button does not open your email app, send the documents to info@weintervisa.com with this subject:',copy:'Copy subject',copied:'Copied',
+  safe:'We will never ask you to send documents or money through social media or to a personal bank account.',again:'Start another application',
+  partnerBar:'Applying on behalf of a student as partner',partnerDocs:'Please email the student\'s documents to info@weintervisa.com with this reference in the subject line.',
+  fail:'Sorry, the application could not be sent. Please check your connection and try again, or email info@weintervisa.com.',
+  revCourse:'Course',revYou:'About you',revContact:'Contact',revVisa:'Visa & study history',subj:'Documents'},
+ th:{title:'ใบสมัครเรียน',steps:['คอร์ส','ข้อมูลส่วนตัว','ติดต่อ','วีซ่าและการศึกษา','ตรวจและส่ง'],
+  next:'ถัดไป',back:'ย้อนกลับ',send:'ส่งใบสมัคร',sending:'กำลังส่ง…',req:'จำเป็น',fix:'กรุณาตรวจช่องที่ไฮไลต์',
+  s1:'อยากเรียนอะไร',s1l:'ใส่ชื่อโรงเรียนและคอร์สถ้ารู้แล้ว ถ้ายังไม่แน่ใจ ติ๊กช่องด้านล่าง ทีมงานจะช่วยแนะนำ',
+  appType:'ประเภทการสมัคร',tStudent:'คอร์สวีซ่านักเรียน',tWhv:'Working Holiday / คอร์สระยะสั้น',tOther:'อื่น ๆ / ยังไม่แน่ใจ',
+  provider:'โรงเรียน / วิทยาลัย',course:'คอร์ส',campus:'เมืองหรือแคมปัส',intake:'อยากเริ่มเรียนเมื่อไร',intakeH:'เช่น กุมภาพันธ์ 2027',notSure:'ยังไม่แน่ใจ — ช่วยแนะนำตัวเลือกให้หน่อย',
+  fromQuote:'คอร์สจากใบเสนอราคา',pickOpt:'เลือก 1 ตัวเลือก',
+  extras:'บริการเสริมที่อยากให้ช่วย',oshc:'ประกันสุขภาพ (OSHC)',homestay:'โฮมสเตย์ / ที่พัก',pickup:'รับที่สนามบิน',visaHelp:'ช่วยยื่นวีซ่า',
+  s2:'ข้อมูลส่วนตัว',s2l:'กรอกชื่อภาษาอังกฤษให้ตรงกับพาสปอร์ต',
+  given:'ชื่อจริง (Given name)',family:'นามสกุล (Family name)',dob:'วันเกิด',gender:'เพศ',gF:'หญิง',gM:'ชาย',gX:'อื่น ๆ / ไม่ระบุ',
+  nat:'สัญชาติ (ตามพาสปอร์ต)',birth:'ประเทศที่เกิด',ppNo:'เลขพาสปอร์ต',ppExp:'วันหมดอายุพาสปอร์ต',ppH:'เลขพาสปอร์ตจะส่งให้เฉพาะโรงเรียนที่สมัครเท่านั้น',
+  s3:'ข้อมูลติดต่อ',s3l:'ทีมงานจะติดต่อเรื่องใบสมัครผ่านช่องทางนี้',
+  email:'อีเมล',phone:'เบอร์มือถือ (ใส่รหัสประเทศ)',msgr:'ติดต่อทางนี้ได้ด้วย',msgrId:'LINE / WhatsApp / WeChat ID',
+  ctry:'ประเทศที่อยู่ตอนนี้',city:'เมือง',addr:'ที่อยู่ปัจจุบัน',
+  emer:'ผู้ติดต่อกรณีฉุกเฉิน',eName:'ชื่อ-นามสกุล',eRel:'ความสัมพันธ์',ePhone:'เบอร์โทร',eEmail:'อีเมล (ไม่บังคับ)',
+  s4:'วีซ่าและประวัติการศึกษา',s4l:'โรงเรียนถามคำถามเหล่านี้ในใบสมัคร ตอบตามจริงช่วยให้ไม่ล่าช้า',
+  onshore:'ตอนนี้อยู่ในออสเตรเลียไหม',yes:'ใช่',no:'ไม่ใช่',curVisa:'วีซ่าปัจจุบัน',curVisaO:'Student visa (500)|Working Holiday (417)|Work and Holiday (462)|Visitor visa|Graduate visa (485)|Bridging visa|Other',visaExp:'วันหมดอายุวีซ่าปัจจุบัน',
+  refused:'เคยถูกปฏิเสธหรือยกเลิกวีซ่า ของประเทศใดก็ตาม ไหม',refusedD:'เล่าสั้น ๆ (ประเทศ วีซ่า ปี)',
+  edu:'วุฒิการศึกษาสูงสุด',eduO:'มัธยมปลาย (ม.6 หรือเทียบเท่า)|ปวช. / ประกาศนียบัตร|ปวส. / Diploma|ปริญญาตรี|ปริญญาโทขึ้นไป|อื่น ๆ',inst:'ชื่อโรงเรียน / มหาวิทยาลัย',yr:'ปีที่จบ (ค.ศ.)',
+  eng:'ผลสอบภาษาอังกฤษ',engO:'ยังไม่มีผลสอบ|IELTS|PTE Academic|TOEFL iBT|Cambridge|อื่น ๆ',engScore:'คะแนนรวม',engDate:'วันที่สอบ',
+  work:'ประสบการณ์ทำงาน (ไม่บังคับ)',workH:'ตำแหน่งและจำนวนปี เช่น พนักงานขาย 2 ปี',notes:'มีอะไรอยากแจ้งเพิ่มไหม (ไม่บังคับ)',heard:'รู้จักเราจากที่ไหน (ไม่บังคับ)',
+  s5:'ตรวจและส่ง',s5l:'ตรวจข้อมูลอีกครั้ง กดแก้ไขย้อนกลับได้ทุกส่วน',
+  edit:'แก้ไข',cShare:'ยินยอมให้ We International ส่งข้อมูลของฉันให้โรงเรียนและผู้ให้บริการที่ฉันสมัคร เพื่อดำเนินการใบสมัคร',
+  cTrue:'ข้อมูลที่กรอกเป็นความจริงและครบถ้วน',cPartner:'นักเรียนยินยอมให้สมัครและให้ส่งข้อมูลให้โรงเรียนแล้ว',
+  privacy:'การใช้ข้อมูลส่วนบุคคล: ดูนโยบายความเป็นส่วนตัว',
+  noGuar:'การส่งฟอร์มนี้คือการเริ่มใบสมัครกับทีมงาน ไม่ได้รับประกันว่าจะได้ Offer จากโรงเรียนหรือได้วีซ่า',
+  done:'ขอบคุณค่ะ ส่งใบสมัครเรียบร้อยแล้ว',doneL:'เลขอ้างอิงของคุณคือ',docsT:'ขั้นต่อไป: ส่งเอกสารทางอีเมล',
+  docsL:'ส่งไฟล์สแกนหรือรูปถ่ายเอกสารที่ชัดเจนไปที่ info@weintervisa.com และใส่เลขอ้างอิงในหัวข้ออีเมล',
+  docs:['พาสปอร์ต (หน้าที่มีรูป)','วีซ่าออสเตรเลียปัจจุบัน (ถ้าอยู่ในออสเตรเลีย)','วุฒิการศึกษาสูงสุดและใบเกรด','ผลสอบภาษาอังกฤษ (ถ้ามี)','CV / ประวัติย่อ','จดหมายปฏิเสธวีซ่า (ถ้าเคยถูกปฏิเสธ)'],
+  mail:'ส่งเอกสารทางอีเมล',mailH:'ถ้ากดแล้วแอปอีเมลไม่เปิด ส่งเอกสารไปที่ info@weintervisa.com และใช้หัวข้อนี้',copy:'คัดลอกหัวข้อ',copied:'คัดลอกแล้ว',
+  safe:'เราจะไม่ขอให้ส่งเอกสารหรือโอนเงินผ่านโซเชียลมีเดีย หรือเข้าบัญชีส่วนตัวเด็ดขาด',again:'สมัครใบใหม่',
+  partnerBar:'สมัครแทนนักเรียนในนามพาร์ทเนอร์',partnerDocs:'ส่งเอกสารของนักเรียนไปที่ info@weintervisa.com และใส่เลขอ้างอิงนี้ในหัวข้ออีเมล',
+  fail:'ขออภัย ส่งใบสมัครไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วลองใหม่ หรืออีเมลมาที่ info@weintervisa.com',
+  revCourse:'คอร์ส',revYou:'ข้อมูลส่วนตัว',revContact:'ติดต่อ',revVisa:'วีซ่าและการศึกษา',subj:'Documents'}
+};
+const COUNTRIES='Thailand|Nepal|Philippines|Vietnam|Indonesia|Malaysia|Cambodia|Myanmar|Laos|India|Sri Lanka|Bangladesh|Pakistan|Bhutan|China|Hong Kong|Taiwan|Japan|South Korea|Mongolia|Colombia|Brazil|Chile|Peru|Argentina|Mexico|Ecuador|Spain|Italy|France|Germany|United Kingdom|Ireland|Australia|New Zealand'.split('|');
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function mount(root,cfg){
+  cfg=Object.assign({mode:'public',lang:'en'},cfg||{});
+  let L=cfg.lang==='th'?'th':'en', step=0, sent=null, busy=false;
+  const P=cfg.prefill||{};
+  const D={appType:P.appType||'',provider:P.provider||'',course:P.course||'',code:P.code||'',campus:P.campus||'',intake:P.intake||'',notSure:false,optIdx:'',
+    oshc:false,homestay:false,pickup:false,visaHelp:false,
+    givenNames:P.givenNames||'',familyName:P.familyName||'',dob:'',gender:'',nationality:P.nationality||'',birthCountry:'',passportNo:'',passportExpiry:'',
+    email:P.email||'',phone:'',messenger:'',messengerId:'',country:'',city:'',address:'',eName:'',eRel:'',ePhone:'',eEmail:'',
+    onshore:P.onshore||'',currentVisa:'',visaExpiry:'',refused:'',refusedDetails:'',education:'',institution:'',yearCompleted:'',englishTest:'',englishScore:'',englishDate:'',work:'',notes:'',heard:'',
+    cShare:false,cTrue:false,cPartner:false};
+  const opts=cfg.options||[];
+  if(opts.length===1){D.optIdx='0';Object.assign(D,{provider:opts[0].provider||'',course:opts[0].course||'',code:opts[0].code||'',campus:opts[0].campus||''})}
+  const t=k=>AFT[L][k]!=null?AFT[L][k]:(AFT.en[k]!=null?AFT.en[k]:k);
+  const lst=k=>t(k).split('|');
+  const lstEn=k=>AFT.en[k].split('|');
+  const isP=cfg.mode==='partner';
+  const uid='af'+Math.random().toString(36).slice(2,7);
+
+  const req=(k)=>`<i aria-hidden="true">*</i><span class="sr" style="position:absolute;left:-9999px">${esc(t('req'))}</span>`;
+  const inp=(k,lab,o={})=>`<div class="af-f ${o.w?'w':''}" data-k="${k}"><label for="${uid}-${k}">${esc(lab)} ${o.r?req():''}</label>
+    <input id="${uid}-${k}" type="${o.type||'text'}" data-f="${k}" value="${esc(D[k])}" ${o.list?`list="${uid}-${o.list}"`:''} ${o.ac?`autocomplete="${o.ac}"`:''} ${o.ph?`placeholder="${esc(o.ph)}"`:''} ${o.r?'aria-required="true"':''}>
+    ${o.h?`<small>${esc(o.h)}</small>`:''}<span class="af-err" aria-live="polite"></span></div>`;
+  const sel=(k,lab,values,labels,o={})=>`<div class="af-f ${o.w?'w':''}" data-k="${k}"><label for="${uid}-${k}">${esc(lab)} ${o.r?req():''}</label>
+    <select id="${uid}-${k}" data-f="${k}" ${o.r?'aria-required="true"':''}><option value="">—</option>${values.map((v,i)=>`<option value="${esc(v)}" ${D[k]===v?'selected':''}>${esc(labels[i])}</option>`).join('')}</select><span class="af-err" aria-live="polite"></span></div>`;
+  const radios=(k,lab,values,labels,o={})=>`<div class="af-f ${o.w?'w':''}" data-k="${k}" role="radiogroup" aria-labelledby="${uid}-${k}-l"><span class="af-l" id="${uid}-${k}-l">${esc(lab)} ${o.r?req():''}</span>
+    <div class="af-opts">${values.map((v,i)=>`<label><input type="radio" name="${uid}-${k}" data-f="${k}" value="${esc(v)}" ${D[k]===v?'checked':''}>${esc(labels[i])}</label>`).join('')}</div><span class="af-err" aria-live="polite"></span></div>`;
+  const chk=(k,lab)=>`<label class="af-check" data-k="${k}"><input type="checkbox" data-f="${k}" ${D[k]?'checked':''}><span>${esc(lab)}</span></label>`;
+  const area=(k,lab,o={})=>`<div class="af-f w" data-k="${k}"><label for="${uid}-${k}">${esc(lab)} ${o.r?req():''}</label><textarea id="${uid}-${k}" data-f="${k}" ${o.ph?`placeholder="${esc(o.ph)}"`:''}>${esc(D[k])}</textarea><span class="af-err" aria-live="polite"></span></div>`;
+
+  function s1(){
+    const provs=[...new Set((cfg.courses||[]).map(c=>c.p))].sort();
+    const crs=[...new Set((cfg.courses||[]).filter(c=>!D.provider||c.p===D.provider).map(c=>c.c))].sort();
+    return `<h3>${esc(t('s1'))}</h3><p class="af-lead">${esc(t('s1l'))}</p><div class="af-grid">
+     ${radios('appType',t('appType'),['Student visa course','Working Holiday / short course','Other / not sure'],[t('tStudent'),t('tWhv'),t('tOther')],{r:1,w:1})}
+     ${opts.length>1?`<div class="af-f w" data-k="optIdx" role="radiogroup"><span class="af-l">${esc(t('fromQuote'))} — ${esc(t('pickOpt'))}</span><div class="af-opts">${opts.map((o,i)=>`<label><input type="radio" name="${uid}-opt" data-opt="${i}" ${D.optIdx===String(i)?'checked':''}>${esc(o.provider)} · ${esc(o.course)}</label>`).join('')}</div></div>`:''}
+     ${inp('provider',t('provider'),{list:'prov'})}${inp('course',t('course'),{list:'crs'})}
+     ${inp('campus',t('campus'))}${inp('intake',t('intake'),{ph:t('intakeH'),r:1})}
+     <div class="af-f w">${chk('notSure',t('notSure'))}</div>
+     <div class="af-sub">${esc(t('extras'))}</div>
+     <div class="af-f w"><div class="af-opts" style="gap:8px">${['oshc','homestay','pickup','visaHelp'].map(k=>`<label><input type="checkbox" data-f="${k}" ${D[k]?'checked':''}>${esc(t(k))}</label>`).join('')}</div></div>
+    </div><datalist id="${uid}-prov">${provs.map(p=>`<option value="${esc(p)}">`).join('')}</datalist><datalist id="${uid}-crs">${crs.slice(0,300).map(p=>`<option value="${esc(p)}">`).join('')}</datalist>`;
+  }
+  function s2(){
+    return `<h3>${esc(t('s2'))}</h3><p class="af-lead">${esc(t('s2l'))}</p><div class="af-grid">
+     ${inp('givenNames',t('given'),{r:1,ac:isP?'off':'given-name'})}${inp('familyName',t('family'),{r:1,ac:isP?'off':'family-name'})}
+     ${inp('dob',t('dob'),{r:1,type:'date',ac:isP?'off':'bday'})}${radios('gender',t('gender'),['Female','Male','Other / prefer not to say'],[t('gF'),t('gM'),t('gX')],{r:1})}
+     ${inp('nationality',t('nat'),{r:1,list:'ctry'})}${inp('birthCountry',t('birth'),{list:'ctry'})}
+     ${inp('passportNo',t('ppNo'),{r:1,ac:'off',h:t('ppH')})}${inp('passportExpiry',t('ppExp'),{r:1,type:'date'})}
+    </div>`;
+  }
+  function s3(){
+    return `<h3>${esc(t('s3'))}</h3><p class="af-lead">${esc(t('s3l'))}</p><div class="af-grid">
+     ${inp('email',t('email'),{r:1,type:'email',ac:isP?'off':'email'})}${inp('phone',t('phone'),{r:1,type:'tel',ac:isP?'off':'tel',ph:'+66 …'})}
+     ${sel('messenger',t('msgr'),['LINE','WhatsApp','WeChat','Facebook Messenger'],['LINE','WhatsApp','WeChat','Facebook Messenger'])}${inp('messengerId',t('msgrId'))}
+     ${inp('country',t('ctry'),{r:1,list:'ctry',ac:isP?'off':'country-name'})}${inp('city',t('city'),{r:1})}
+     ${area('address',t('addr'),{r:1})}
+     <div class="af-sub">${esc(t('emer'))}</div>
+     ${inp('eName',t('eName'),{r:1})}${inp('eRel',t('eRel'),{r:1})}${inp('ePhone',t('ePhone'),{r:1,type:'tel'})}${inp('eEmail',t('eEmail'),{type:'email'})}
+    </div>`;
+  }
+  function s4(){
+    const cv=lst('curVisaO'), cvE=lstEn('curVisaO');
+    return `<h3>${esc(t('s4'))}</h3><p class="af-lead">${esc(t('s4l'))}</p><div class="af-grid">
+     ${radios('onshore',t('onshore'),['Yes','No'],[t('yes'),t('no')],{r:1,w:1})}
+     <div class="af-f" data-k="currentVisa" ${D.onshore==='Yes'?'':'hidden'}><label for="${uid}-currentVisa">${esc(t('curVisa'))} ${req()}</label><select id="${uid}-currentVisa" data-f="currentVisa"><option value="">—</option>${cvE.map((v,i)=>`<option value="${esc(v)}" ${D.currentVisa===v?'selected':''}>${esc(cv[i])}</option>`).join('')}</select><span class="af-err"></span></div>
+     <div class="af-f" data-k="visaExpiry" ${D.onshore==='Yes'?'':'hidden'}><label for="${uid}-visaExpiry">${esc(t('visaExp'))} ${req()}</label><input id="${uid}-visaExpiry" type="date" data-f="visaExpiry" value="${esc(D.visaExpiry)}"><span class="af-err"></span></div>
+     ${radios('refused',t('refused'),['Yes','No'],[t('yes'),t('no')],{r:1,w:1})}
+     <div class="af-f w" data-k="refusedDetails" ${D.refused==='Yes'?'':'hidden'}><label for="${uid}-refusedDetails">${esc(t('refusedD'))} ${req()}</label><textarea id="${uid}-refusedDetails" data-f="refusedDetails">${esc(D.refusedDetails)}</textarea><span class="af-err"></span></div>
+     <div class="af-sub">${esc(t('edu'))}</div>
+     ${sel('education',t('edu'),lstEn('eduO'),lst('eduO'),{r:1})}${inp('institution',t('inst'))}
+     ${inp('yearCompleted',t('yr'),{ph:'2022'})}
+     ${sel('englishTest',t('eng'),lstEn('engO'),lst('engO'),{r:1})}
+     <div class="af-f" data-k="englishScore" ${D.englishTest&&D.englishTest!=='No test yet'?'':'hidden'}><label for="${uid}-englishScore">${esc(t('engScore'))}</label><input id="${uid}-englishScore" type="text" data-f="englishScore" value="${esc(D.englishScore)}"><span class="af-err"></span></div>
+     <div class="af-f" data-k="englishDate" ${D.englishTest&&D.englishTest!=='No test yet'?'':'hidden'}><label for="${uid}-englishDate">${esc(t('engDate'))}</label><input id="${uid}-englishDate" type="date" data-f="englishDate" value="${esc(D.englishDate)}"><span class="af-err"></span></div>
+     ${area('work',t('work'),{ph:t('workH')})}${area('notes',t('notes'))}
+     ${isP?'':inp('heard',t('heard'),{w:1})}
+    </div>`;
+  }
+  function revRows(rows){return `<dl>${rows.filter(r=>r[1]).map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl>`}
+  function s5(){
+    const ex=['oshc','homestay','pickup','visaHelp'].filter(k=>D[k]).map(t).join(', ');
+    const sec=(i,h,rows)=>`<section><h4>${esc(h)}<button type="button" data-goto="${i}">${esc(t('edit'))}</button></h4>${revRows(rows)}</section>`;
+    return `<h3>${esc(t('s5'))}</h3><p class="af-lead">${esc(t('s5l'))}</p><div class="af-rev">
+     ${sec(0,t('revCourse'),[[t('appType'),D.appType],[t('provider'),D.provider],[t('course'),D.course],[t('campus'),D.campus],[t('intake'),D.intake],[t('notSure'),D.notSure?'✓':''],[t('extras'),ex]])}
+     ${sec(1,t('revYou'),[[t('given'),D.givenNames],[t('family'),D.familyName],[t('dob'),D.dob],[t('gender'),D.gender],[t('nat'),D.nationality],[t('birth'),D.birthCountry],[t('ppNo'),D.passportNo],[t('ppExp'),D.passportExpiry]])}
+     ${sec(2,t('revContact'),[[t('email'),D.email],[t('phone'),D.phone],[t('msgr'),D.messenger?D.messenger+' '+D.messengerId:''],[t('addr'),[D.address,D.city,D.country].filter(Boolean).join(', ')],[t('emer'),[D.eName,D.eRel,D.ePhone,D.eEmail].filter(Boolean).join(' · ')]])}
+     ${sec(3,t('revVisa'),[[t('onshore'),D.onshore],[t('curVisa'),D.onshore==='Yes'?D.currentVisa+(D.visaExpiry?' → '+D.visaExpiry:''):''],[t('refused'),D.refused+(D.refused==='Yes'?' — '+D.refusedDetails:'')],[t('edu'),[D.education,D.institution,D.yearCompleted].filter(Boolean).join(' · ')],[t('eng'),[D.englishTest,D.englishScore,D.englishDate].filter(Boolean).join(' · ')],[t('work'),D.work],[t('notes'),D.notes]])}
+     </div>
+     <div class="af-grid" style="margin-top:16px">
+      <div class="af-f w">${chk('cShare',t('cShare'))}<span class="af-err"></span></div>
+      <div class="af-f w">${chk('cTrue',t('cTrue'))}<span class="af-err"></span></div>
+      ${isP?`<div class="af-f w">${chk('cPartner',t('cPartner'))}<span class="af-err"></span></div>`:''}
+      <p class="af-note w" style="grid-column:1/-1;margin:0">${esc(t('noGuar'))} <a href="https://www.weintervisa.com/privacy-policy" target="_blank" rel="noopener" style="color:var(--af-navy);text-decoration:underline">${esc(t('privacy'))}</a></p>
+     </div>`;
+  }
+  function doneView(){
+    const subj=`${t('subj')} — ${sent.ref} — ${D.givenNames} ${D.familyName}`.trim();
+    const body=(L==='th'?'เอกสารประกอบใบสมัคร':'Documents for my application')+` ${sent.ref}\n\n`+AFT[L].docs.map(d=>'- '+d).join('\n')+'\n';
+    const href=`mailto:info@weintervisa.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+    return `<div class="af-card af-done" role="status"><h3>✓ ${esc(t('done'))}</h3><p style="margin:10px 0 0">${esc(t('doneL'))}</p><div class="af-ref">${esc(sent.ref)}</div>
+     <h3 style="font-size:18px;margin-top:6px">${esc(t('docsT'))}</h3><p>${esc(isP?t('partnerDocs'):t('docsL'))}</p>
+     <ol>${AFT[L].docs.map(d=>`<li>${esc(d)}</li>`).join('')}</ol>
+     <div class="af-nav" style="justify-content:flex-start"><a class="af-btn pri" href="${esc(href)}" target="_top">✉ ${esc(t('mail'))}</a><button type="button" class="af-btn" data-copy="${esc(subj)}">${esc(t('copy'))}</button></div>
+     <p class="af-note" style="margin-top:14px">${esc(t('mailH'))}<br><b style="word-break:break-word">${esc(subj)}</b></p>
+     <p style="font-size:14px;color:var(--af-muted)">🔒 ${esc(t('safe'))}</p>
+     <button type="button" class="af-btn" data-again="1" style="margin-top:6px">${esc(t('again'))}</button></div>`;
+  }
+
+  function render(){
+    root.lang=L;
+    if(sent){root.innerHTML=`<div class="af">${top()}${doneView()}</div>`;return}
+    const views=[s1,s2,s3,s4,s5];
+    root.innerHTML=`<div class="af">${top()}
+     ${isP?`<div class="af-pbar"><span>${esc(t('partnerBar'))}:</span><b>${esc((cfg.partner||{}).name||'')}</b><span class="num">${esc((cfg.partner||{}).code||'')}</span>${cfg.quoteNo?`<span>· ${esc(cfg.quoteNo)}</span>`:''}</div>`:''}
+     <ol class="af-prog">${AFT[L].steps.map((s,i)=>`<li class="${i===step?'on':i<step?'done':''}" ${i===step?'aria-current="step"':''}>${esc(s)}</li>`).join('')}</ol>
+     <form class="af-card" novalidate>${views[step]()}
+      <div class="af-nav">${step>0?`<button type="button" class="af-btn" data-back="1">← ${esc(t('back'))}</button>`:'<span></span>'}
+       ${step<4?`<button type="submit" class="af-btn navy">${esc(t('next'))} →</button>`:`<button type="submit" class="af-btn pri" ${busy?'disabled':''}>${esc(busy?t('sending'):t('send'))}</button>`}</div>
+      <div class="af-msg" aria-live="assertive"></div></form>
+     <datalist id="${uid}-ctry">${COUNTRIES.map(c=>`<option value="${esc(c)}">`).join('')}</datalist></div>`;
+  }
+  const top=()=>`<div class="af-top"><h2>${esc(t('title'))}</h2><div class="af-lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="${L==='en'}">EN</button><button type="button" data-lang="th" aria-pressed="${L==='th'}">ไทย</button></div></div>`;
+
+  const REQ=[
+    ()=>['appType',...(D.notSure?[]:['provider','course']),'intake'],
+    ()=>['givenNames','familyName','dob','gender','nationality','passportNo','passportExpiry'],
+    ()=>['email','phone','country','city','address','eName','eRel','ePhone'],
+    ()=>['onshore',...(D.onshore==='Yes'?['currentVisa','visaExpiry']:[]),'refused',...(D.refused==='Yes'?['refusedDetails']:[]),'education','englishTest'],
+    ()=>['cShare','cTrue',...(isP?['cPartner']:[])]
+  ];
+  function validate(){
+    let bad=[];
+    root.querySelectorAll('.bad').forEach(e=>{e.classList.remove('bad');const er=e.querySelector('.af-err');if(er)er.textContent=''});
+    for(const k of REQ[step]()){
+      const v=D[k]; let ok=typeof v==='boolean'?v:String(v||'').trim().length>0;
+      if(ok&&k==='email') ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+      if(ok&&k==='phone') ok=v.replace(/\D/g,'').length>=8;
+      if(ok&&(k==='dob')) ok=v<new Date().toISOString().slice(0,10)&&v>'1940';
+      if(!ok){bad.push(k); const box=root.querySelector(`[data-k="${k}"]`)||(root.querySelector(`[data-f="${k}"]`)||{}).closest?.('.af-f');
+        const f=box&&(box.classList.contains('af-check')?box.parentElement:box); if(f){f.classList.add('bad'); const er=f.querySelector('.af-err'); if(er) er.textContent=t('req')}}
+    }
+    const msg=root.querySelector('.af-msg');
+    if(bad.length){msg.className='af-msg e';msg.textContent=t('fix'); const first=root.querySelector(`[data-f="${bad[0]}"]`); if(first) first.focus({preventScroll:false}); return false}
+    msg.textContent=''; return true;
+  }
+  function record(){
+    return {source:isP?'partner':'website',lang:L,appType:D.appType,quoteNo:cfg.quoteNo||'',partner:isP?(cfg.partner||{}):null,
+      course:{provider:D.provider,course:D.course,code:D.code,campus:D.campus,intake:D.intake,notSure:D.notSure},
+      extras:{oshc:D.oshc,homestay:D.homestay,pickup:D.pickup,visaHelp:D.visaHelp},
+      personal:{givenNames:D.givenNames.trim(),familyName:D.familyName.trim(),dob:D.dob,gender:D.gender,nationality:D.nationality,birthCountry:D.birthCountry,passportNo:D.passportNo.trim().toUpperCase(),passportExpiry:D.passportExpiry},
+      contact:{email:D.email.trim(),phone:D.phone.trim(),messenger:D.messenger,messengerId:D.messengerId,country:D.country,city:D.city,address:D.address},
+      emergency:{name:D.eName,relation:D.eRel,phone:D.ePhone,email:D.eEmail},
+      visa:{onshore:D.onshore,currentVisa:D.onshore==='Yes'?D.currentVisa:'',visaExpiry:D.onshore==='Yes'?D.visaExpiry:'',refused:D.refused,refusedDetails:D.refused==='Yes'?D.refusedDetails:''},
+      background:{education:D.education,institution:D.institution,yearCompleted:D.yearCompleted,englishTest:D.englishTest,englishScore:D.englishScore,englishDate:D.englishDate,work:D.work},
+      notes:D.notes,heard:D.heard,consent:{share:D.cShare,truthful:D.cTrue,partnerConfirms:isP?D.cPartner:null,at:new Date().toISOString()}};
+  }
+  function onField(el){const f=el.dataset.f; if(!f) return;
+    if(el.type==='checkbox') D[f]=el.checked; else if(el.type==='radio'){ if(el.checked) D[f]=el.value } else D[f]=el.value;
+    const box=el.closest('.bad'); if(box){box.classList.remove('bad'); const er=box.querySelector('.af-err'); if(er) er.textContent=''; if(!root.querySelector('.bad')){const m=root.querySelector('.af-msg'); if(m) m.textContent=''}}
+    if(['onshore','refused','englishTest','provider'].includes(f)) { if(f==='provider'){const dl=root.querySelector(`#${uid}-crs`); if(dl){const crs=[...new Set((cfg.courses||[]).filter(c=>!D.provider||c.p===D.provider).map(c=>c.c))].sort(); dl.innerHTML=crs.slice(0,300).map(p=>`<option value="${esc(p)}">`).join('')}} else keepRender() }
+  }
+  root.addEventListener('input',e=>onField(e.target));
+  root.addEventListener('change',e=>{ if(e.target.dataset.opt!=null){const o=opts[+e.target.dataset.opt]; D.optIdx=e.target.dataset.opt; Object.assign(D,{provider:o.provider||'',course:o.course||'',code:o.code||'',campus:o.campus||''}); keepRender()} else if(e.target.dataset.f) onField(e.target) });
+  function keepRender(){const a=document.activeElement; const id=a&&a.id; render(); if(id){const n=document.getElementById(id); if(n) n.focus()}}
+  root.addEventListener('click',async e=>{
+    const lb=e.target.closest('[data-lang]'); if(lb){L=lb.dataset.lang; render(); cfg.onLang&&cfg.onLang(L); return}
+    if(e.target.closest('[data-back]')){step=Math.max(0,step-1); render(); scrollTop(); return}
+    const g=e.target.closest('[data-goto]'); if(g){step=+g.dataset.goto; render(); scrollTop(); return}
+    const c=e.target.closest('[data-copy]'); if(c){try{await navigator.clipboard.writeText(c.dataset.copy); c.textContent=t('copied')}catch(err){const r=document.createRange(); const b=c.parentElement.parentElement.querySelector('.af-note b'); if(b){r.selectNodeContents(b); const s=getSelection(); s.removeAllRanges(); s.addRange(r)}} return}
+    if(e.target.closest('[data-again]')){sent=null; step=0; ['givenNames','familyName','dob','gender','nationality','birthCountry','passportNo','passportExpiry','email','phone','messengerId','address','eName','eRel','ePhone','eEmail','visaExpiry','refusedDetails','englishScore','englishDate','work','notes'].forEach(k=>D[k]=''); D.cShare=D.cTrue=D.cPartner=false; render(); scrollTop(); return}
+  });
+  root.addEventListener('submit',async e=>{e.preventDefault(); if(busy||!validate()) return;
+    if(step<4){step++; render(); scrollTop(); return}
+    busy=true; render();
+    try{ const r=await cfg.submit(record()); sent={ref:(r&&r.ref)||'—'}; busy=false; render(); scrollTop() }
+    catch(err){ busy=false; render(); const m=root.querySelector('.af-msg'); m.className='af-msg e'; m.textContent=t('fail') }
+  });
+  function scrollTop(){try{root.scrollIntoView({behavior:'smooth',block:'start'})}catch(e){} try{cfg.onStep&&cfg.onStep(step)}catch(e){}}
+  render();
+  return {setLang(l){L=l==='th'?'th':'en';render()},get data(){return D}};
+}
+window.AF={mount,T:AFT};
+})();
+
+;
+(function(){var seq=0,pend={};function send(type,payload){return new Promise(function(res,rej){var id=++seq;pend[id]={res:res,rej:rej};try{parent.postMessage({wei:1,type:type,id:id,payload:payload},'*')}catch(e){rej(e)}setTimeout(function(){if(pend[id]){delete pend[id];rej(new Error('timeout'))}},30000)})}
+addEventListener('message',function(e){var m=e.data;if(!m||!m.wei||!m.re)return;var p=pend[m.re];if(!p)return;delete pend[m.re];m.ok?p.res(m.payload):p.rej(new Error(m.error||'failed'))});
+var lang=/^th/i.test(navigator.language||'')?'th':'en';AF.mount(document.getElementById('apply-form'),{mode:'public',lang:lang,onStep:function(){try{parent.postMessage({wei:1,type:'scrollTo',payload:{y:document.getElementById('apply').offsetTop}},'*')}catch(e){}},submit:function(rec){return send('submitApp',rec)}});
+document.querySelectorAll('a[href="#apply"]').forEach(function(l){l.addEventListener('click',function(ev){ev.preventDefault();document.getElementById('apply').scrollIntoView({behavior:'smooth'})})});})();

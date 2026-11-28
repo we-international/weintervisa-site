@@ -1,0 +1,7 @@
+
+(function(){var h=document.querySelector('.weh');if(!h)return;var cur=h.getAttribute('data-current');
+h.querySelectorAll('a[href]').forEach(function(a){if(a.classList.contains('weh-brand'))return;var p=a.getAttribute('href').replace('https://www.weintervisa.com','')||'/';if(p===cur){a.setAttribute('aria-current','page');var d=a.closest('.weh-more');if(d)d.classList.add('is-cur');}});
+var b=h.querySelector('.weh-toggle');b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));h.setAttribute('data-open',String(o));});
+var m=h.querySelector('.weh-more');document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')m.open=false;});})();
+

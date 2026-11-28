@@ -1,0 +1,96 @@
+<body><!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/oshc">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top" aria-current="page">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top" aria-current="page">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<!--WEI-HSBAR--><style>.wei-hsbar{background:#0e3e6a;text-align:center;padding:10px 14px;font:600 14px/1.3 Arial,Helvetica,sans-serif}.wei-hsbar a{color:#fff;text-decoration:none}.wei-hsbar u{color:#ffd7d9}@media(max-width:640px){.wei-hsbar{font-size:13px;padding:9px 10px}.wei-hsbar .wl{display:none}}</style><div class="wei-hsbar"><a href="https://www.weintervisa.com/homestay" target="_top">🏡 New to Australia? <span class="wl">Stay with a screened host family first — </span><u>Find a homestay →</u></a></div><!--/WEI-HSBAR-->
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true" class="site-header"><div class="wrap header-inner"><a aria-label="We International homepage" class="brand" href="https://www.weintervisa.com/" target="_top"><img alt="We International Education and Visa" src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png"><strong>We International<small>Education &amp; Visa</small></strong></a><nav aria-label="Main navigation" class="site-nav"><a href="https://www.weintervisa.com/" target="_top"><span>Home</span></a><a href="https://www.weintervisa.com/student-services" target="_top"><span>Student services</span></a><a aria-current="page" class="active" href="#options">OSHC</a><a href="https://www.weintervisa.com/contact-us" target="_top"><span>Contact</span></a><a href="https://www.weintervisa.com/blog" target="_top"><span>Blog</span></a></nav><a class="btn red" href="https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>Explore OSHC plans ↗</span></a><div class="language-switch"><label for="site-language"><span aria-hidden="true">🌐</span><select aria-label="Language / ภาษา / 言語 / 언어 / 语言 / Ngôn ngữ / Idioma / Bahasa" id="site-language"><option lang="en" value="en">English</option><option lang="th" value="th">ไทย</option><option lang="ja" value="ja">日本語</option><option lang="ko" value="ko">한국어</option><option lang="zh-Hans" value="zh-Hans">简体中文</option><option lang="zh-Hant" value="zh-Hant">繁體中文</option><option lang="vi" value="vi">Tiếng Việt</option><option lang="es" value="es">Español</option><option lang="pt-BR" value="pt-BR">Português</option><option lang="id" value="id">Bahasa Indonesia</option></select></label></div></div></header><main>
+<section class="hero"><img alt="Student with a backpack by Sydney Harbour" class="photo" fetchpriority="high" src="https://static.wixstatic.com/media/187087_5e10c6d559e94568b22c8404a2fedb65~mv2.png"><div class="wrap"><div class="hero-copy"><!--WEI-PILLS--><style>.wl-pills{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 16px}.wl-pills .gl{font-size:18px}.wl-pills button{font:700 13px/1 Arial,Helvetica,sans-serif;border:1.5px solid #dce6ee;background:#fff;color:#0e3e6a;border-radius:999px;padding:8px 13px;cursor:pointer;min-height:36px}.wl-pills button[aria-pressed="true"]{background:#0e3e6a;border-color:#0e3e6a;color:#fff}</style><div class="wl-pills" role="group" aria-label="Language"><span class="gl" aria-hidden="true">🌐</span><button type="button" data-l="en" lang="en" aria-pressed="true">English</button><button type="button" data-l="th" lang="th" aria-pressed="false">ไทย</button><button type="button" data-l="ja" lang="ja" aria-pressed="false">日本語</button><button type="button" data-l="id" lang="id" aria-pressed="false">Bahasa Indonesia</button><button type="button" data-l="vi" lang="vi" aria-pressed="false">Tiếng Việt</button></div><!--/WEI-PILLS--><div class="eyebrow"><span>OSHC / STUDENT HEALTH COVER</span></div><h1><span>Your cover.</span><br><span>Your student journey.</span></h1><p><span>Browse student health cover and buy directly through our partner’s website.</span></p><a aria-label="Explore OSHC plans (opens partner website in a new tab)" class="btn red" href="https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>Explore OSHC plans</span><span aria-hidden="true">↗</span></a><small><span>Continue to our partner website · Opens a new tab</span></small></div></div></section>
+<div class="wrap"><div class="steps"><a class="step" href="#options"><span class="bubble blue"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></span><div><b><span>1 Choose a provider</span></b><p><span>Explore your OSHC options</span></p></div></a><a class="step" href="https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span class="bubble blue"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5Z M14 3v5h5 M8 12h8 M8 16h6"></path></svg></span><div><b><span>2 Review the policy</span></b><p><span>Check cover and details</span></p></div></a><a class="step" href="https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span class="bubble blue"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 3h7v7 M21 3 11 13 M10 5H4v16h16v-6"></path></svg></span><div><b><span>3 Continue with our partner</span></b><p><span>Go to the partner website</span></p></div></a></div></div>
+<section aria-labelledby="options" class="section wrap"><div class="section-title"><h2 id="options"><span>Find your OSHC option</span></h2><p><span>Choose a provider to explore the details.</span></p></div><div class="cards"><article class="card"><div class="bubble blue"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/allianz?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">Allianz OSHC</a></h3><p><span>Explore plans, cover and details with our partner.</span></p><a aria-label="View Allianz plans (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/allianz?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>View Allianz plans</span><span aria-hidden="true">↗</span></a></div></article><article class="card"><div class="bubble green"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/bupa?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">Bupa OSHC</a></h3><p><span>Explore plans, cover and details with our partner.</span></p><a aria-label="View Bupa plans (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/bupa?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>View Bupa plans</span><span aria-hidden="true">↗</span></a></div></article><article class="card"><div class="bubble pink"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"></path><path d="M3 12h5l2-4 3 8 2-4h6"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/medibank?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">Medibank OSHC</a></h3><p><span>Explore plans, cover and details with our partner.</span></p><a aria-label="View Medibank plans (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/medibank?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>View Medibank plans</span><span aria-hidden="true">↗</span></a></div></article><article class="card"><div class="bubble yellow"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/ahm?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">AHM OSHC</a></h3><p><span>Explore plans, cover and details with our partner.</span></p><a aria-label="View AHM plans (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/ahm?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>View AHM plans</span><span aria-hidden="true">↗</span></a></div></article></div><div class="all"><a aria-label="View all partner services (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>View all partner services</span><span aria-hidden="true">↗</span></a></div></section>
+<div class="wrap page-end"><section aria-labelledby="others" class="extras"><div class="section-title"><h2 id="others"><span>Looking for something else?</span></h2></div><div class="cards"><article class="card"><div class="bubble blue"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="m3 10 7 2 6 9 2-1-3-9 6-6c2-2 0-4-2-2l-6 6-9-3-1 2 6 4Z"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/ovhc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">OVHC</a></h3><p><span>Explore visitor health cover</span></p><a aria-label="Explore OVHC (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/ovhc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>Explore OVHC</span><span aria-hidden="true">↗</span></a></div></article><article class="card"><div class="bubble purple"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5Z M14 3v5h5 M8 12h8 M8 16h6"></path></svg></div><div><h3><a href="https://oshcstudents.com.au/client/flywire?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank">Flywire</a></h3><p><span>International payments</span></p><a aria-label="Visit Flywire (opens partner website in a new tab)" class="btn outline" href="https://oshcstudents.com.au/client/flywire?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>Visit Flywire</span><span aria-hidden="true">↗</span></a></div></article></div><div class="disclosure"><div><strong><span>Partner links</span></strong><p><span>You’ll continue to our insurance partner’s website. Check cover, exclusions and policy terms there before buying. For insurance questions, contact the partner directly.</span></p></div></div></section></div>
+</main><footer class="site-footer"><div class="wrap"><p>We International Education &amp; Visa<br><a href="mailto:info@weintervisa.com" target="_top">info@weintervisa.com</a></p><p class="tagline"><span>Your tomorrow matters.</span><span style="color:var(--red)">♥</span></p></div><!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer><!--WEI-PILLSJS--><!--/WEI-PILLSJS--></body>

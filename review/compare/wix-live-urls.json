@@ -1,0 +1,257 @@
+{
+ "_note": "Paths in the live Wix sitemap (read by CI, tools/live_urls.py). Every one must be a page or a redirect in the new site.",
+ "paths": [
+  {
+   "path": "/",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/about-we-international",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/blog",
+   "sitemap": "blog-categories-sitemap.xml"
+  },
+  {
+   "path": "/blog/categories/courses-study",
+   "sitemap": "blog-categories-sitemap.xml"
+  },
+  {
+   "path": "/blog/categories/life-in-australia",
+   "sitemap": "blog-categories-sitemap.xml"
+  },
+  {
+   "path": "/blog/categories/working-holiday-guides",
+   "sitemap": "blog-categories-sitemap.xml"
+  },
+  {
+   "path": "/contact-us",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/courses",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/courses/nursing-pathways-australia",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/english-practice",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/fast-track-courses",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/file-share",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/frequently-asked-questions",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/games",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/homestay",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/members",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/migration-support",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/oshc",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/post/aged-care-needs-more-workers-what-the-latest-news-says",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/blue-mountains-day-trip-from-sydney-by-train-a-budget-guide",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/can-i-switch-from-a-visitor-visa-to-a-student-visa-in-australia",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/can-you-study-on-a-working-holiday-visa-417-462-the-4-month-rule-explained",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/chc30125-early-childhood-education-plain-english-guide",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/chc33021-ageing-vs-disability-which-specialisation",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/chc33021-certificate-iii-in-individual-support-what-you-ll-learn-and-who-it-suits",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/cheap-eats-in-adelaide-cbd-4-budget-lunch-picks",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/cheap-eats-in-brisbane-cbd-3-lunches-under-16",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/cheap-eats-in-melbourne-cbd-3-lunches-under-15",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/cheap-eats-in-perth-cbd-3-lunches-around-10",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/cheap-eats-in-sydney-s-thaitown-3-favourites-near-central",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/christmas-in-sydney-2026-free-tree-lighting-fair-markets",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/dandenong-ranges-day-trip-from-melbourne-by-train",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/fast-track-courses-for-working-holiday-makers-how-it-works",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/first-week-on-a-working-holiday-visa-a-checklist",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/free-events-mid-november-adelaide-pageant-donut-festival",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/free-in-sydney-powerhouse-parramatta-head-on-2026",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/free-weekend-festivals-20-22-nov-melbourne-sydney",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/hlt33115-health-services-assistance-a-plain-english-guide",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/hlt33115-operating-theatre-vs-acute-care-streams",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/homestay-in-australia-what-to-know-before-you-book",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/how-to-check-your-australian-visa-for-free-with-vevo",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/how-to-find-a-course-on-our-website-a-quick-tour",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/medicare-for-working-holiday-makers-reciprocal-deals",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/oshc-ovhc-or-travel-insurance-health-cover-basics",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/rottnest-island-day-trip-from-perth-a-budget-guide",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/royal-national-park-day-trip-from-sydney-by-train-ferry",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/short-courses-vs-a-cert-iii-what-whms-should-know",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/straddie-day-trip-from-brisbane-by-public-transport",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/student-visa-changes-from-2-october-2026-what-whms-need-to-know",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/student-visa-reforms-home-affairs-opens-consultation-nov-2026",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/training-visa-407-apply-from-outside-australia-from-12-nov-2026",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/visa-questions-when-to-talk-to-a-registered-migration-agent",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/visitor-visas-no-further-stay-condition-8503-from-28-nov-2026",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/which-care-course-should-you-explore-in-australia",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/working-holiday-417-462-second-third-year-invitation-2027",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/working-holiday-tax-in-australia-tfn-15-rate-dasp",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/working-holiday-visa-ballot-for-years-2-and-3-what-we-know",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/working-holiday-visa-new-registration-for-2nd-and-3rd-visas-from-1-dec-2026",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/post/working-holiday-visa-the-6-month-employer-limit-explained",
+   "sitemap": "blog-posts-sitemap.xml"
+  },
+  {
+   "path": "/privacy-policy",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/referral-partners",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/student-services",
+   "sitemap": "pages-sitemap.xml"
+  },
+  {
+   "path": "/videos",
+   "sitemap": "pages-sitemap.xml"
+  }
+ ]
+}

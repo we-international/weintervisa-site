@@ -1,0 +1,50 @@
+
+(function(){var h=document.querySelector('.weh');if(!h)return;var cur=h.getAttribute('data-current');
+h.querySelectorAll('a[href]').forEach(function(a){if(a.classList.contains('weh-brand'))return;var p=a.getAttribute('href').replace('https://www.weintervisa.com','')||'/';if(p===cur){a.setAttribute('aria-current','page');var d=a.closest('.weh-more');if(d)d.classList.add('is-cur');}});
+var b=h.querySelector('.weh-toggle');b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));h.setAttribute('data-open',String(o));});
+var m=h.querySelector('.weh-more');document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')m.open=false;});})();
+
+;
+
+(function(){
+  var h=document.querySelector('.site-header'),b=document.querySelector('.menu-toggle');
+  b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));h.dataset.menuOpen=String(o);});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var t=document.querySelector(a.getAttribute('href'));if(!t)return;e.preventDefault();try{t.scrollIntoView({behavior:'smooth',block:'start'});}catch(x){t.scrollIntoView();}});
+  /* Videos: load YouTube only when clicked */
+  document.querySelectorAll('.vbox').forEach(function(box){box.querySelector('.vplay').addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/videoseries?list='+box.dataset.list+'&autoplay=1&rel=0';f.title=box.dataset.title;f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;box.replaceChildren(f);});});
+  /* Mini game */
+  var Q=[
+    {w:'I am agree with you.',o:['I agree with you.','I am agreeing you.','I agreed with you am.'],a:0,e:'"Agree" is a verb, so we don\'t need "am": I agree with you.'},
+    {w:'She said me the answer.',o:['She said to me answer.','She told me the answer.','She told the answer me.'],a:1,e:'Use "tell" + person: She told me the answer. Use "say" without a person: She said the answer.'},
+    {w:'I have 25 years.',o:['I have 25 years old.','I am 25 years.','I am 25 years old.'],a:2,e:'In English we use "be" for age: I am 25 (years old).'},
+    {w:'Can you borrow me your pen?',o:['Can you lend me your pen?','Can you borrow your pen to me?','Can you lent me your pen?'],a:0,e:'You lend something to someone. You borrow something from someone.'},
+    {w:'I am boring in this class.',o:['I am bore in this class.','I am bored in this class.','I am boredom in this class.'],a:1,e:'"Bored" is how you feel. "Boring" describes the class, so "I am boring" means you are not interesting!'},
+    {w:'Where you live?',o:['Where you are live?','Where do you live?','Where living you?'],a:1,e:'Questions with most verbs need "do" or "does": Where do you live?'},
+    {w:'I didn\'t went to work yesterday.',o:['I didn\'t go to work yesterday.','I didn\'t gone to work yesterday.','I not went to work yesterday.'],a:0,e:'After "didn\'t", use the base verb: didn\'t go, didn\'t eat, didn\'t see.'},
+    {w:'My English is very well.',o:['My English is very good.','My English is very goodly.','My English very well is.'],a:0,e:'"Good" describes a noun (your English). "Well" describes a verb: I speak English well.'}
+  ];
+  var st=0,score=0,stage=document.getElementById('pqStage'),bar=document.getElementById('pqBar');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function render(){
+    bar.style.width=(st/Q.length*100)+'%';
+    if(st<Q.length){
+      var q=Q[st];
+      var html='<p class="small">Question '+(st+1)+' of '+Q.length+'</p><p class="qwrong">Not quite: <s>'+esc(q.w)+'</s></p><h3>Which is correct?</h3><div class="qopts">';
+      q.o.forEach(function(t,i){html+='<button type="button" class="qopt" data-i="'+i+'">'+esc(t)+'</button>';});
+      stage.innerHTML=html+'</div>';
+      stage.querySelectorAll('.qopt').forEach(function(btn){btn.addEventListener('click',function(){
+        if(stage.querySelector('.qexp'))return;var i=+btn.dataset.i,ok=i===q.a;if(ok)score++;
+        btn.classList.add(ok?'right':'wrong');stage.querySelectorAll('.qopt')[q.a].classList.add('right');
+        var p=document.createElement('p');p.className='qexp';p.textContent=(ok?'Nice one! ':'Good try. ')+q.e;stage.appendChild(p);
+        var n=document.createElement('button');n.type='button';n.className='btn primary qnext';n.textContent=st<Q.length-1?'Next question →':'See my result →';n.addEventListener('click',function(){st++;render();});stage.appendChild(n);n.focus();
+      });});
+    } else {
+      var msg=score>=7?'Amazing! You could teach Wobbi a thing or two.':score>=4?'Good job! A few more videos and you\'ll nail them all.':'Great start! Watch our videos and try again.';
+      stage.innerHTML='<h3>You got '+score+' out of '+Q.length+'</h3><p>'+esc(msg)+'</p><div class="btn-row"><a class="btn primary" href="#watch">Watch the videos →</a><button type="button" class="btn" id="pqAgain">↺ Play again</button></div>';
+      document.getElementById('pqAgain').addEventListener('click',function(){st=0;score=0;render();});
+    }
+  }
+  render();
+})();
+

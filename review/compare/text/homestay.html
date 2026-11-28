@@ -1,0 +1,232 @@
+<body><!--WEH-->
+<style>
+/*WEH-ZOOM: Wix mobile lays pages out at 320px and scales them up; shrink so text reads at normal phone size*/
+@media(max-width:480px){html{zoom:.68}}
+.weh{background:#fff;border-bottom:1px solid #d7e1ea;position:relative;z-index:50;font:15px/1.4 Arial,Helvetica,sans-serif;color:#14212e;text-align:left}
+.weh *{box-sizing:border-box}
+.weh-in{max-width:1240px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:16px;min-height:72px}
+.weh-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#0E3E6A;margin-right:auto;flex:none}
+.weh-brand img{width:52px;height:43px;object-fit:contain;display:block;overflow:hidden}
+.weh-brand strong{display:flex;flex-direction:column;font-size:15px;line-height:1.15}
+.weh-brand small{font-size:11px;font-weight:400;color:#4a5a6a}
+.weh-nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 16px}
+.weh a{color:#14212e;text-decoration:none}
+.weh-nav>a,.weh-more>summary{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.weh-nav>a:hover,.weh-more>summary:hover{color:#0E3E6A;border-bottom-color:#d7e1ea}
+.weh a[aria-current=page],.weh-more.is-cur>summary{color:#0E3E6A;font-weight:700;border-bottom-color:#ED1C24}
+.weh-more{position:relative;border:0!important;background:none!important;padding:0!important;margin:0!important;box-shadow:none!important;border-radius:0!important}
+.weh-nav{margin:0;padding:0;background:none}
+.weh-more>summary{list-style:none;cursor:pointer;background:none!important;border:0;border-bottom:2px solid transparent;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:6px 0!important;font:inherit!important;color:#14212e;display:block;min-height:0}
+.weh-more>summary::before{content:none!important;display:none!important}
+.weh-more>summary::-webkit-details-marker{display:none}
+.weh-more>summary::after{content:" \25BE"!important;font-size:12px;position:static!important;display:inline!important;transform:none!important;background:none!important;border:0!important;width:auto!important;height:auto!important;margin:0!important;color:inherit}
+.weh-drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #d7e1ea;border-radius:12px;box-shadow:0 12px 30px rgba(14,62,106,.14);padding:8px;min-width:220px;display:flex;flex-direction:column}
+.weh-drop a{padding:10px 12px;border-radius:8px}
+.weh-drop a:hover{background:#f3f7fb}
+.weh-cta{flex:none;background:#ED1C24;color:#fff!important;padding:10px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.weh-cta:hover{background:#c3121a}
+.weh-cta[aria-current=page]{border:0;color:#fff}
+.weh-toggle{display:none;font:inherit;min-height:44px;padding:8px 14px;border:1px solid #d7e1ea;border-radius:8px;background:#fff;color:#0E3E6A;cursor:pointer}
+.weh-mob{display:none}
+@media(max-width:1100px){
+ .weh-nav,.weh-cta{display:none}
+ .weh-toggle{display:inline-flex;align-items:center}
+ .weh[data-open=true] .weh-mob{display:grid}
+ .weh .weh-mob{grid-template-columns:1fr 1fr;gap:4px 12px;max-width:1240px;margin:0 auto;padding:4px 20px 18px}
+ .weh-mob a{padding:11px 4px;font-size:16px;border-bottom:1px solid #eaf1f8}
+ .weh-mob a[aria-current=page]{color:#0E3E6A;font-weight:700;border-bottom-color:#eaf1f8;box-shadow:inset 3px 0 0 #ED1C24;padding-left:10px}
+ .weh .weh-mob a.weh-cta{display:block;grid-column:1/-1;text-align:center;margin-top:8px;border:0}
+}
+@media(max-width:340px){.weh-mob{grid-template-columns:1fr}}
+</style>
+<div class="weh" role="banner" data-current="/homestay">
+ <div class="weh-in">
+  <a class="weh-brand" href="https://www.weintervisa.com/" target="_top" aria-label="We International homepage">
+   <img src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png" alt="We International Education and Visa" width="52" height="43">
+   <strong>We International<small>Education &amp; Visa</small></strong>
+  </a>
+  <nav class="weh-nav" aria-label="Main navigation">
+   <a href="https://www.weintervisa.com/" target="_top">Home</a>
+   <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+   <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+   <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+   <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+   <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+   <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+   <details class="weh-more">
+    <summary>More</summary>
+    <div class="weh-drop">
+     <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+     <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+     <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+     <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+     <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+    </div>
+   </details>
+  </nav>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+  <button type="button" class="weh-toggle" aria-expanded="false" aria-controls="wehMob">Menu ☰</button>
+ </div>
+ <nav class="weh-mob" id="wehMob" aria-label="Main navigation">
+  <a href="https://www.weintervisa.com/" target="_top">Home</a>
+  <a href="https://www.weintervisa.com/courses" target="_top">Courses</a>
+  <a href="https://www.weintervisa.com/fast-track-courses" target="_top">Working Holiday</a>
+  <a href="https://www.weintervisa.com/oshc" target="_top">Health cover</a>
+  <a href="https://www.weintervisa.com/student-services" target="_top">Student services</a>
+  <a href="https://www.weintervisa.com/english-practice" target="_top">English practice</a>
+  <a href="https://www.weintervisa.com/courses/nursing-pathways-australia" target="_top">Nursing pathways</a>
+  <a href="https://www.weintervisa.com/migration-support" target="_top">Migration support</a>
+  <a href="https://www.weintervisa.com/blog" target="_top">Guides</a>
+  <a href="https://www.weintervisa.com/videos" target="_top">Videos</a>
+  <a href="https://www.weintervisa.com/about-we-international" target="_top">About us</a>
+  <a href="https://www.weintervisa.com/frequently-asked-questions" target="_top">FAQs</a>
+  <a class="weh-cta" href="https://www.weintervisa.com/contact-us" target="_top">Contact</a>
+ </nav>
+</div>
+
+<!--/WEH-->
+
+
+<!--WEI-HSBAR--><style>.wei-hsbar{background:#0e3e6a;text-align:center;padding:10px 14px;font:600 14px/1.3 Arial,Helvetica,sans-serif}.wei-hsbar a{color:#fff;text-decoration:none}.wei-hsbar u{color:#ffd7d9}@media(max-width:640px){.wei-hsbar{font-size:13px;padding:9px 10px}.wei-hsbar .wl{display:none}}</style><div class="wei-hsbar"><a href="https://www.weintervisa.com/homestay" target="_top">🏡 New to Australia? <span class="wl">Stay with a screened host family first — </span><u>Find a homestay →</u></a></div><!--/WEI-HSBAR-->
+
+<header data-old-header="" hidden="" style="display:none!important" aria-hidden="true" class="site-header"><div class="wrap header-inner"><a aria-label="We International homepage" class="brand" href="https://www.weintervisa.com/" target="_top"><img alt="We International Education and Visa" src="https://static.wixstatic.com/media/187087_27b4dde6f0d14de59d63758f4ef536ba~mv2.png"><strong>We International<small>Education &amp; Visa</small></strong></a><nav aria-label="Main navigation" class="site-nav"><a href="https://www.weintervisa.com/" target="_top"><span>Home</span></a><a href="https://www.weintervisa.com/student-services" target="_top"><span>Student services</span></a><a class="active" href="#options">OSHC</a><a href="https://www.weintervisa.com/contact-us" target="_top"><span>Contact</span></a><a href="https://www.weintervisa.com/blog" target="_top"><span>Blog</span></a></nav><a class="btn red" href="https://oshcstudents.com.au/client/oshc?affiliate=0JCJFK&amp;uuid=26ed007c-3e1a-454e-9449-7df860f1ce09" rel="noopener sponsored" target="_blank"><span>Explore OSHC plans ↗</span></a><div class="language-switch"><label for="site-language"><span aria-hidden="true">🌐</span><select aria-label="Language / ภาษา / 言語 / 언어 / 语言 / Ngôn ngữ / Idioma / Bahasa" id="site-language"><option lang="en" value="en">English</option><option lang="th" value="th">ไทย</option><option lang="ja" value="ja">日本語</option><option lang="ko" value="ko">한국어</option><option lang="zh-Hans" value="zh-Hans">简体中文</option><option lang="zh-Hant" value="zh-Hant">繁體中文</option><option lang="vi" value="vi">Tiếng Việt</option><option lang="es" value="es">Español</option><option lang="pt-BR" value="pt-BR">Português</option><option lang="id" value="id">Bahasa Indonesia</option></select></label></div></div></header><main>
+<!--WEI-HSI18N--><style>
+.hs{--hn:#0e3e6a;--hi:#152c41;--hr:#d81925;--hm:#526c82;--hp:#f0f5fa;--hl:#dce6ee;color:var(--hi);font:16px/1.6 Arial,Helvetica,sans-serif}
+.hs *{box-sizing:border-box}
+.hs .w{max-width:1120px;margin:0 auto;padding:0 20px}
+.hs .hs-sec{padding:56px 0}
+.hs .hs-alt{background:var(--hp)}
+.hs h1{font-size:clamp(34px,5vw,56px);line-height:1.1;letter-spacing:-.03em;color:var(--hn);margin:12px 0 16px;font-weight:800}
+.hs h2{font-size:clamp(26px,3.4vw,36px);line-height:1.15;letter-spacing:-.03em;color:var(--hn);margin:0 0 14px}
+.hs h3{font-size:19px;color:var(--hn);margin:0 0 6px}
+.hs p{color:var(--hm);margin:0 0 12px}
+.hs .eb{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hr)}
+.hs .hs-hero{background:linear-gradient(180deg,#fff 0%,#eef5fb 100%);padding:64px 0 52px}
+.hs .hs-hero .lead{font-size:19px;max-width:720px;color:var(--hi)}
+.hs .ticks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:8px}
+.hs .ticks li{padding-left:30px;position:relative;color:var(--hi)}
+.hs .ticks li:before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--hn);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.hs .hs-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:15px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid var(--hn);color:var(--hn);background:#fff;transition:transform .15s,box-shadow .15s}
+.hs .hs-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px #0e3e6a22}
+.hs .hs-btn.hs-red{background:var(--hr);border-color:var(--hr);color:#fff}
+.hs .hs-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hs small{display:block;color:var(--hm);font-size:13px;margin-top:8px}
+.hs .hs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.hs .hs-card{background:#fff;border:1px solid var(--hl);border-radius:18px;padding:20px}
+.hs .hs-card .ic{font-size:26px;display:block;margin-bottom:8px}
+.hs .hs-card ul{margin:6px 0 0;padding-left:18px;color:var(--hm)}
+.hs .hs-steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs .hs-steps li{counter-increment:s;background:#fff;border:1px solid var(--hl);border-radius:14px;padding:14px 16px 14px 60px;position:relative;color:var(--hi)}
+.hs .hs-steps li:before{content:counter(s);position:absolute;left:16px;top:13px;width:30px;height:30px;border-radius:50%;background:var(--hr);color:#fff;font-weight:700;display:grid;place-items:center}
+.hs table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:15px}
+.hs th,.hs td{padding:10px 12px;border-bottom:1px solid var(--hl);text-align:left}
+.hs th{background:var(--hn);color:#fff;font-weight:700}
+.hs .tw{overflow-x:auto;border:1px solid var(--hl);border-radius:14px}
+.hs .hs-note{background:#fff6e6;border-left:4px solid #f0a020;border-radius:10px;padding:12px 16px;color:var(--hi);font-size:15px}
+.hs details{background:#fff;border:1px solid var(--hl);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+.hs summary{cursor:pointer;font-weight:700;color:var(--hn)}
+.hs details p{margin:8px 0 0}
+.hs .hs-cta{background:var(--hn);color:#fff;text-align:center}
+.hs .hs-cta h2{color:#fff}.hs .hs-cta p{color:#dbe7f2}
+.hs .src{font-size:13px;color:var(--hm)}
+.hs .src a{color:var(--hn)}
+@media(max-width:820px){.hs .hs-grid{grid-template-columns:1fr}.hs .hs-sec{padding:40px 0}}
+
+.hs .hs-lang{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 18px}
+.hs .hs-lang .gl{font-size:18px;margin-right:2px}
+.hs .hs-lang button{font:700 13px/1 Arial,Helvetica,sans-serif;border:1.5px solid var(--hl);background:#fff;color:var(--hn);border-radius:999px;padding:8px 13px;cursor:pointer;min-height:36px}
+.hs .hs-lang button[aria-pressed="true"]{background:var(--hn);border-color:var(--hn);color:#fff}
+.hs .hs-scam{background:#fff;border:2px solid #f3c9cc;border-radius:20px;padding:24px}
+.hs .hs-scam .ticks li:before{background:var(--hr)}
+.hs .hs-help a{color:var(--hn);font-weight:700}
+.hs .hs-apply{background:#fff;border:2px solid var(--hn);border-radius:20px;padding:22px 22px 24px}
+.hs .hs-apply .ticks{margin:12px 0 18px}
+.hs:not([lang="en"]) .eb{letter-spacing:.02em}
+.hs:not([lang="en"]) h1,.hs:not([lang="en"]) h2{letter-spacing:0;line-height:1.3}
+.hs[lang="th"]{line-height:1.75}
+.hs .hs-hgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center}
+.hs .hs-sgrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px;align-items:center}
+.hs .hs-fig{margin:0}
+.hs .hs-fig img{width:100%;height:auto;display:block;border-radius:20px;aspect-ratio:4/3;object-fit:cover;box-shadow:0 14px 34px #0e3e6a26;background:#e9f1f8}
+.hs .hs-wide{margin:0 0 22px}
+.hs .hs-wide img{aspect-ratio:21/9}
+.hs .hs-fig figcaption{font-size:12px;color:var(--hm);margin-top:7px}
+@media(max-width:900px){.hs .hs-hgrid,.hs .hs-sgrid{grid-template-columns:1fr;gap:20px}.hs .hs-wide img{aspect-ratio:16/9}}
+</style>
+<div class="hs" lang="en">
+<div class="hs-sec hs-hero"><div class="w">
+<div class="hs-lang" role="group" aria-label="Language"><span class="gl" aria-hidden="true">🌐</span><button type="button" data-l="en" lang="en" aria-pressed="true">English</button><button type="button" data-l="th" lang="th" aria-pressed="false">ไทย</button><button type="button" data-l="ja" lang="ja" aria-pressed="false">日本語</button><button type="button" data-l="id" lang="id" aria-pressed="false">Bahasa Indonesia</button><button type="button" data-l="vi" lang="vi" aria-pressed="false">Tiếng Việt</button></div>
+<div class="hs-hgrid"><div>
+<span class="eb" data-t="h_eb">Homestay · with our partner AHN</span>
+<h1 data-t="h_h1">New to Australia? Start with a homestay.</h1>
+<p class="lead" data-t="h_lead">Your first weeks are easier with a local host family. Australian Homestay Network (AHN) matches you with a screened host near your school, with meals, bills and 24/7 emergency support included.</p>
+<ul class="ticks"><li data-t="t1">Hosts screened with background checks, in-home interviews and home inspections</li><li data-t="t2">Private furnished room, meals, Wi-Fi, utilities and laundry in one weekly price</li><li data-t="t3">Staffed 24/7 emergency contact centre with interpreters</li><li data-t="t4">Up to 1 hour from your school by public transport, in 17 cities and regions</li></ul>
+<div class="hs-row"><a class="hs-btn hs-red" href="https://www.homestaynetwork.org/partners/weinternationaleducationandvisa-agents" target="_blank" rel="noopener sponsored"><span data-t="b_find">Find a homestay with AHN</span> <span aria-hidden="true">↗</span></a><a class="hs-btn" href="#how"><span data-t="b_how">How it works</span></a></div>
+<small data-t="h_small">You'll be taken to AHN's website to create your guest profile · Opens a new tab</small>
+<small class="hs-help" data-t="h_help">AHN's website is in English. Need help with the form? <a href="https://www.weintervisa.com/contact-us" target="_top">Ask us</a> — we're happy to help.</small>
+</div><figure class="hs-fig"><img src="https://static.wixstatic.com/media/187087_7afe18a8a129459384ee9d30d80c5970~mv2.png/v1/fill/w_1200,h_670,al_c,q_82,enc_auto/homestay-arrival.png" alt="Maya the quokka and Kenji the koala arriving at a host family home in Australia" loading="lazy" width="1600" height="900"><figcaption data-t="img_ai">Maya &amp; Kenji · characters created with AI</figcaption></figure></div>
+</div></div>
+
+<div class="hs-sec" id="scam" style="padding-bottom:0"><div class="w"><div class="hs-scam"><div class="hs-sgrid"><div>
+<span class="eb" data-t="s_eb">Avoid accommodation scams</span>
+<h2 data-t="s_h2">Don't pay a stranger for a room you've never seen</h2>
+<p data-t="s_p">Some students send a bond or rent to someone online, then arrive in Australia and find there is no room. Booking a homestay through AHN helps you avoid this.</p>
+<ul class="ticks"><li data-t="s_t1">You pay AHN, an established homestay organisation — not a private person you found online</li><li data-t="s_t2">Your host and address are confirmed in a placement report before you fly</li><li data-t="s_t3">You can add airport pickup, so someone takes you straight to your new home</li><li data-t="s_t4">Stay for your first month, set up your bank account, phone and transport, and inspect rentals in person — then move out when you're ready</li></ul>
+<p class="hs-note" data-t="s_note">Planning to stay about 4 weeks? Tell AHN your plan when you apply and ask about the notice period.</p>
+</div><figure class="hs-fig"><img src="https://static.wixstatic.com/media/187087_06fae628d71c4e4faee178b9a0e78cec~mv2.png/v1/fill/w_1200,h_670,al_c,q_82,enc_auto/homestay-airport-pickup.png" alt="A host waits at the airport with a Welcome Maya and Kenji sign" loading="lazy" width="1600" height="900"><figcaption data-t="img_ai">Maya &amp; Kenji · characters created with AI</figcaption></figure></div></div></div></div>
+
+<div class="hs-sec"><div class="w">
+<span class="eb" data-t="w_eb">Why homestay first</span>
+<h2 data-t="w_h2">A safe, simple landing in a new country</h2>
+<figure class="hs-fig hs-wide"><img src="https://static.wixstatic.com/media/187087_76bbbfd439c94f329aa4cd0fb8e2340a~mv2.png/v1/fill/w_1200,h_670,al_c,q_82,enc_auto/homestay-dinner.png" alt="Maya and Kenji having dinner with their host family" loading="lazy" width="1600" height="900"><figcaption data-t="img_ai">Maya &amp; Kenji · characters created with AI</figcaption></figure>
+<div class="hs-grid"><div class="hs-card"><span class="ic" aria-hidden="true">🏡</span><h3 data-t="c1h">Someone looks out for you</h3><p data-t="c1p">Your host helps with local customs, transport and your first trip to school, so you are not on your own on day one.</p></div><div class="hs-card"><span class="ic" aria-hidden="true">🛡️</span><h3 data-t="c2h">Checked hosts and homes</h3><p data-t="c2p">AHN hosts pass background checks, an in-home interview and a home inspection, and complete host training. Hosts of under-18s are specially trained and certified.</p></div><div class="hs-card"><span class="ic" aria-hidden="true">📞</span><h3 data-t="c3h">Help any time</h3><p data-t="c3p">A professionally staffed 24/7 critical-incident line with interpreters, plus your local AHN office in business hours.</p></div><div class="hs-card"><span class="ic" aria-hidden="true">🍽️</span><h3 data-t="c4h">Meals sorted</h3><p data-t="c4p">Choose Complete (3 meals, 7 days), Traditional (2 meals weekdays, 3 on weekends), Dinner Only or No Meals. Special diets may cost extra.</p></div><div class="hs-card"><span class="ic" aria-hidden="true">💡</span><h3 data-t="c5h">No surprise bills</h3><p data-t="c5p">The weekly fee covers your room, meal plan, utilities, internet, laundry, insurance, emergency support and administration. No bond and no lock-in contract.</p></div><div class="hs-card"><span class="ic" aria-hidden="true">🗺️</span><h3 data-t="c6h">Time to find your feet</h3><p data-t="c6p">AHN recommends at least 4 weeks for new students. Most stay about 3 months, and you can extend while you look for your next place.</p></div></div>
+<p class="hs-note" style="margin-top:18px" data-t="w_note">AHN says it was the first organisation endorsed under the Study NSW and NEAS Homestay Service Provider Standards (October 2023).</p>
+</div></div>
+
+<div class="hs-sec hs-alt" id="how"><div class="w">
+<span class="eb" data-t="o_eb">How it works</span>
+<h2 data-t="o_h2">From sign-up to your first night</h2>
+<ol class="hs-steps"><li data-t="o1"><b>Get your details ready:</b> your school name and campus, study dates and flight details.</li><li data-t="o2"><b>Create your guest profile</b> through the button on this page, with your preferences and dietary needs. Apply 2–4 weeks before you arrive (earlier gives you hosts closer to school).</li><li data-t="o3"><b>Pay your first invoice</b>: the matching fee plus your first 4 weeks. Pay at least 3 weeks before arrival, because AHN can only match you once payment is received.</li><li data-t="o4"><b>AHN finds your host</b> and sends you and your host a placement report. You can contact your host before you fly.</li><li data-t="o5"><b>Confirm your arrival</b>. Add airport pickup if you want someone waiting for you.</li><li data-t="o6"><b>Settle in.</b> After that, AHN invoices every 4 weeks.</li></ol>
+<div class="hs-apply" style="margin-top:20px"><h3 data-t="k_h">Apply through the button on this page</h3><p data-t="k_p">The button opens AHN's guest application through our partner link. You fill in your details and send your request, then AHN's team matches you with a host family that suits you. Matching takes a little time, so apply 2–4 weeks before you arrive.</p><ul class="ticks"><li data-t="k_t1">AHN knows you applied through us, so we can follow up with AHN for you</li><li data-t="k_t2">You pay AHN directly — no money goes to a private person</li><li data-t="k_t3">No need to sign up separately on AHN's own website — use the button here so we can look after you</li></ul><a class="hs-btn hs-red" href="https://www.homestaynetwork.org/partners/weinternationaleducationandvisa-agents" target="_blank" rel="noopener sponsored"><span data-t="b_start">Start my homestay application</span> <span aria-hidden="true">↗</span></a></div>
+<small data-t="o_tip">Tip: in "Education Provider", type your school name and campus exactly (e.g. "School name – Sydney CBD campus"). AHN uses it to choose a host near you.</small>
+</div></div>
+
+<div class="hs-sec"><div class="w">
+<span class="eb" data-t="p_eb">Prices</span>
+<h2 data-t="p_h2">What it costs (Sydney example)</h2>
+<p data-t="p_p">Weekly price per person, in AUD, private room / shared room. One-off matching fee: <b>$350 (2026)</b> or <b>$370 (2027)</b>.</p>
+<div class="tw"><table>
+<thead><tr><th data-t="th_pkg">Package (over 18)</th><th>2026</th><th>2027</th></tr></thead>
+<tbody><tr><td data-t="r1">Complete — 3 meals, 7 days</td><td>$445 / $415</td><td>$460 / $430</td></tr><tr><td data-t="r2">Traditional — 2 meals weekdays, 3 weekends</td><td>$410 / $380</td><td>$425 / $395</td></tr><tr><td data-t="r3">Dinner Only</td><td>$380 / $350</td><td>$395 / $365</td></tr><tr><td data-t="r4">No Meals</td><td>$340 / $310</td><td>$355 / $325</td></tr><tr><td data-t="r5">VIP add-on (private bathroom, if available)</td><td>+$60</td><td>+$70</td></tr><tr><td data-t="r6">Airport pickup (one-off)</td><td>$195</td><td>$200</td></tr></tbody></table></div>
+<p class="hs-note" style="margin-top:16px" data-t="p_note">Prices are as shown on AHN's website on 26 October 2026 and can change. They differ by city, age (under 18s pay more) and year. Your exact price is confirmed in AHN's quote after you apply. 2027 weekly ranges for other cities: Melbourne $355–$460, Brisbane $330–$430, Perth $330–$430, Adelaide $325–$415, Gold Coast $385–$440, Canberra $330–$425, Hobart $315–$415.</p>
+<p class="src" data-t="p_src">Source: AHN's published prices (homestaynetwork.org), checked 26 October 2026.</p>
+</div></div>
+
+<div class="hs-sec hs-alt"><div class="w">
+<span class="eb" data-t="g_eb">Good to know</span>
+<h2 data-t="g_h2">Living with a host family</h2>
+<figure class="hs-fig hs-wide"><img src="https://static.wixstatic.com/media/187087_af69e04dccef4419a39766c1f977be20~mv2.png/v1/fill/w_1200,h_670,al_c,q_82,enc_auto/homestay-bedroom.png" alt="Maya unpacking in a private homestay bedroom while Kenji checks the train map" loading="lazy" width="1600" height="900"><figcaption data-t="img_ai">Maya &amp; Kenji · characters created with AI</figcaption></figure>
+<div class="hs-grid">
+<div class="hs-card"><h3 data-t="g1h">Your stay</h3><ul><li data-t="g1a">Minimum stay 4 weeks (28 nights)</li><li data-t="g1b">After the first 4 weeks, give 2 weeks' written notice to AHN and your host</li><li data-t="g1c">Pay by card, PayPal, AliPay or bank transfer</li></ul></div>
+<div class="hs-card"><h3 data-t="g2h">House etiquette</h3><ul><li data-t="g2a">Tell your host when you go out, when you'll be back and if you'll miss a meal</li><li data-t="g2b">Keep your room and bathroom tidy; showers 5–10 minutes</li><li data-t="g2c">Ask before inviting visitors; quiet after 10pm</li><li data-t="g2d">No charging e-bikes or power banks in the home</li></ul></div>
+<div class="hs-card"><h3 data-t="g3h">Under 18?</h3><ul><li data-t="g3a">Specially trained and certified hosts</li><li data-t="g3b">Home for dinner every night, no overnight stays away</li><li data-t="g3c">Under-18 prices and a code of conduct apply</li><li data-t="g3d">Guardianship is a separate package on request</li></ul></div>
+</div>
+</div></div>
+
+<div class="hs-sec"><div class="w">
+<span class="eb" data-t="f_eb">FAQ</span>
+<h2 data-t="f_h2">Common questions</h2>
+<details><summary data-t="q1">What does the weekly fee include?</summary><p data-t="a1">Your room, your meal plan, utilities, internet, laundry, insurance, 24/7 emergency support and administration. Internet data limits vary by household, so check with your host before streaming a lot.</p></details><details><summary data-t="q2">Is there a one-off fee?</summary><p data-t="a2">Yes, a matching fee: $350 in 2026 and $370 in 2027 (high school students may pay more where extra services are provided). It covers matching, host selection and training, home inspection and vetting.</p></details><details><summary data-t="q3">Can I get a refund?</summary><p data-t="a3">AHN refunds all fees if your visa is denied. Otherwise the matching fee is non-refundable once placement work has started. Read AHN's refund policy before you pay.</p></details><details><summary data-t="q4">Will I have my own room?</summary><p data-t="a4">Yes, a private furnished room with a bed, study area and wardrobe. Shared rooms cost less, and VIP homestay adds a private bathroom when available.</p></details><details><summary data-t="q5">How far will I live from school?</summary><p data-t="a5">AHN places students up to 1 hour from their education provider by public transport, and your host helps with your first trip.</p></details><details><summary data-t="q6">Which cities are covered?</summary><p data-t="a6">Adelaide, Brisbane, Canberra, Coffs Harbour, Darwin, Gold Coast, Hobart, Lismore, Melbourne, Newcastle &amp; Central Coast, North Queensland, Perth, Regional WA, Sunshine Coast, Sydney, Toowoomba and Wollongong.</p></details><details><summary data-t="q7">Can my partner or parents stay with me?</summary><p data-t="a7">Parents can't stay in the homestay. Partners apply separately, ideally 2–3 months ahead.</p></details><details><summary data-t="q8">Who do I contact once I'm placed?</summary><p data-t="a8">AHN directly: 1300 024 628 or info@homestaynetwork.org. Their 24/7 emergency line details are given to you after registration. For help choosing a course or school, contact us.</p></details>
+<p class="src" data-t="f_src">Information from AHN's website (homestaynetwork.org), checked 26 October 2026. AHN sets its own prices, terms and policies — please read them on AHN's site before you pay.</p>
+</div></div>
+
+<div class="hs-sec hs-cta"><div class="w">
+<h2 data-t="c_h2">Book your first home in Australia</h2>
+<p data-t="c_p">Apply through the button below — it only takes a few minutes.</p>
+<div class="hs-row" style="justify-content:center"><a class="hs-btn hs-red" href="https://www.homestaynetwork.org/partners/weinternationaleducationandvisa-agents" target="_blank" rel="noopener sponsored"><span data-t="b_find">Find a homestay with AHN</span> <span aria-hidden="true">↗</span></a><a class="hs-btn" href="https://www.weintervisa.com/contact-us" target="_top"><span data-t="b_ask">Ask us a question</span></a></div>
+<small style="color:#dbe7f2" data-t="c_small">You'll be taken to AHN's website · Opens a new tab</small>
+</div></div>
+</div>
+<!--/WEI-HSI18N-->
+
+</main><footer class="site-footer"><div class="wrap"><p>We International Education &amp; Visa<br><a href="mailto:info@weintervisa.com" target="_top">info@weintervisa.com</a></p><p class="tagline"><span>Your tomorrow matters.</span><span style="color:var(--red)">♥</span></p></div><!--WEP-FOOT--><div class="wrap wei-partner-foot" style="padding-top:10px;padding-bottom:6px;font-size:13px;opacity:.9">For partners: <a target="_top" href="https://www.weintervisa.com/referral-partners">Become a partner</a> · <a target="_top" href="https://www.weintervisa.com/partner-portal">Partner login</a></div><!--/WEP-FOOT--></footer></body>
