@@ -162,7 +162,7 @@ HOME_UI = {
 
 def home(lang="en"):
     L, h = HOME_UI[lang], (HOME_TH if lang == "th" else HOME)
-    doors = "".join(f'<li class="door"><a href="{href}">{_img(f)}<div><h3>{e(t)}</h3><span>{e(b)}</span><b>{e(L["more"])}</b></div></a></li>'
+    doors = "".join(f'<li class="door"><a href="{href}">{_img(f)}<div><h2>{e(t)}</h2><span>{e(b)}</span><b>{e(L["more"])}</b></div></a></li>'
                     for href, f, t, b in DOORS[lang])
     trust = "".join(f"<li>{icon(TRUST_ICONS[n % 3])}{e(_LEAD_EMOJI.sub('', x))}</li>" for n, x in enumerate(h["trust"]))
     steps = "".join(f"<li><strong>{e(a)}</strong><span>{e(b)}</span></li>" for a, b in h["steps"])
@@ -186,7 +186,7 @@ def home(lang="en"):
 <p>{e(L["hereP"])}</p>
 <ul class="pick">{pick}</ul>
 <p class="note-box">{L["visa"]}</p>
-<aside class="cta"><h2>{e(L["ctaH"])}</h2><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a>{replies}</aside>
+<div class="cta"><h2>{e(L["ctaH"])}</h2><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a>{replies}</div>
 </section>"""
 
 
@@ -250,7 +250,7 @@ def take_a_break(lang="en"):
 <p>{e(L["engP"])}</p>
 <p class="actions"><a class="btn" href="{L["eng"]}">{e(L["engB"])}</a></p>
 </section>
-<section class="wrap"><aside class="cta"><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a></aside></section>"""
+<section class="wrap"><div class="cta"><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a></div></section>"""
 
 
 # ---------- /families ----------
@@ -329,7 +329,7 @@ def families(lang="en"):
 <h2>{e(L["planH"])}</h2>
 <p>{e(L["planP"])}</p>
 <p class="note-box">{L["visa"]}</p>
-<aside class="cta"><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a></aside>
+<div class="cta"><p>{e(L["ctaP"])}</p><a class="btn" href="{L["contact"]}">{e(L["ctaB"])}</a></div>
 </section>"""
 
 

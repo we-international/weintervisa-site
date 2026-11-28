@@ -35,7 +35,7 @@ VISA_NOTE_TH = """<p class="note-box"><strong>มีคำถามเรื่�
 
 def cta(text, second=None):
     extra = f' <a class="btn ghost" href="{second[1]}">{second[0]}</a>' if second else ""
-    return f'<aside class="cta"><p>{text}</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a>{extra}</aside>'
+    return f'<div class="cta"><p>{text}</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a>{extra}</div>'
 
 
 def simple(h1, lead, items, *, note=False, cta_text="มีคำถามไหม ทีมงานอ่านทุกข้อความ", second=None):

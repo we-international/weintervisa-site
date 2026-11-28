@@ -76,6 +76,6 @@ def render(d=None):
 <h2>{e(L["faqH"])}</h2>
 {faq}
 <p class="small"><strong>{e(L["partnerB"])}</strong> {e(d["partnerNote"])}</p>
-<aside class="cta"><p>{e(L["ctaP"])}</p>
-<a class="btn" href="{L["contact"]}">{e(L["ctaSend"])}</a> <a class="btn ghost" href="{L["homestay"]}">{e(L["ctaHome"])}</a></aside>
+<div class="cta"><p>{e(L["ctaP"])}</p>
+<a class="btn" href="{L["contact"]}">{e(L["ctaSend"])}</a> <a class="btn ghost" href="{L["homestay"]}">{e(L["ctaHome"])}</a></div>
 </section>"""

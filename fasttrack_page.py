@@ -90,10 +90,10 @@ def render(d=None):
 <p class="kicker">{e(L["howK"])}</p>
 <h2>{e(L["howH"])}</h2>
 <ol class="flow flow3">{steps}</ol>
-<aside class="tip"><strong>{e(L["tipB"])}</strong> {d["tip"]}</aside>
-<aside class="cta"><p>{e(L["readyP"])}</p><span class="small">{e(d["plan"])}</span><br>
+<div class="tip"><strong>{e(L["tipB"])}</strong> {d["tip"]}</div>
+<div class="cta"><p>{e(L["readyP"])}</p><span class="small">{e(d["plan"])}</span><br>
 <a class="btn" href="{c_}">{e(L["getPlan"])}</a> <a class="btn ghost" href="mailto:info@weintervisa.com?subject={L["mailSubject"]}">{e(L["email"])}</a>
-<p class="small">{e(L["noIds"])}</p></aside>
+<p class="small">{e(L["noIds"])}</p></div>
 </section>
 <section class="wrap">
 <p class="kicker">{e(L["coursesK"])}</p>

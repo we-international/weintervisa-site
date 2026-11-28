@@ -21,7 +21,7 @@ For advice about your visa, we refer you to a registered migration agent. No vis
 
 def cta(text="Ask our team", href="/contact-us", second=None):
     extra = f' <a class="btn ghost" href="{second[1]}">{second[0]}</a>' if second else ""
-    return f'<aside class="cta"><p>{text}</p><a class="btn" href="{href}">Send a message</a>{extra}</aside>'
+    return f'<div class="cta"><p>{text}</p><a class="btn" href="{href}">Send a message</a>{extra}</div>'
 
 
 def sections(items):

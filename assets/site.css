@@ -169,7 +169,7 @@ nav.chips { margin: 16px 0 24px; }
 /* Registered migration agents (from GetWec, MARN-checked) */
 .agents { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 14px; }
 .agent { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
-.agent h3 { margin: 0 0 6px; font-size: 19px; }
+.agent h3, .agent h2 { margin: 0 0 6px; font-size: 19px; }
 .agent p { margin: 0 0 8px; }
 .agent dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 12px; margin: 0 0 12px; font-size: 15px; }
 .agent dt { color: var(--muted); }
@@ -278,7 +278,7 @@ nav.chips { margin: 16px 0 24px; }
 .door img, .door .door-ico { width: 96px; height: 96px; object-fit: cover; border-radius: 10px; }
 .door .door-ico { display: grid; place-items: center; background: #e9f2f1; color: var(--brand); }
 .door .ico-door { width: 44px; height: 44px; stroke-width: 1.25; }
-.door h3 { margin: 0 0 2px; font-size: 18px; }
+.door h3, .door h2 { margin: 0 0 2px; font-size: 18px; }
 .door span { display: block; color: var(--muted); font-size: 15px; }
 .door b { color: var(--brand); font-size: 15px; }
 .pick { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 10px; }
@@ -368,3 +368,8 @@ details.notes summary { font-weight: 600; color: var(--muted); }
 /* /homestay readability (28 Nov 2026): on phones each price row is one package line + one line with both years */
 @media (max-width: 480px) { .fees.compact td { display: inline-block; margin-right: 14px; } }
 .why-us { border-bottom: 0; padding: .4rem 0; }
+
+/* Cards whose title became h2 for heading order keep the old h3 look. */
+.door h2, .agent h2 { font-weight: bold; line-height: normal; }
+/* Text for screen readers only (empty table header cells, a11y check). */
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

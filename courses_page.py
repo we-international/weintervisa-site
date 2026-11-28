@@ -154,11 +154,11 @@ def render(study_areas_html, schools_link="", th=False):
 <h2>{U["cities_h2"]}</h2>
 <p>{U["cities_p"]}</p>
 {"".join(cities)}
-<aside class="tip">{U["wally"]}</aside>
+<div class="tip">{U["wally"]}</div>
 </section>"""
         bottom = f"""<p class="note-box">{U["about_list"]}</p>
-<aside class="cta"><p>{U["nurse_q"]}</p><span class="small">{U["nurse_p"]}</span><br>
-<a class="btn" href="/th/courses/nursing-pathways-australia">{U["nurse_btn"]}</a></aside>"""
+<div class="cta"><p>{U["nurse_q"]}</p><span class="small">{U["nurse_p"]}</span><br>
+<a class="btn" href="/th/courses/nursing-pathways-australia">{U["nurse_btn"]}</a></div>"""
     else:
         top = f"""<section class="hero home-hero"><div class="wrap">
 <p class="kicker">Explore your next chapter</p>
@@ -182,12 +182,12 @@ def render(study_areas_html, schools_link="", th=False):
 <h2>Each city feels different</h2>
 <p>Open a city to see the courses there.</p>
 {"".join(cities)}
-<aside class="tip"><strong>Wally's tip</strong> Rent and living costs change a lot between cities. Ask us for a simple cost check before you choose.</aside>
+<div class="tip"><strong>Wally's tip</strong> Rent and living costs change a lot between cities. Ask us for a simple cost check before you choose.</div>
 </section>"""
         bottom = """<p class="note-box"><strong>About this list.</strong> Durations are approximate and depend on your study plan, credit and delivery mode.
 We confirm the college, campus, intake, fees and full schedule with you before you apply. No place, visa or job is promised.</p>
-<aside class="cta"><p>Already qualified as a nurse overseas?</p><span class="small">Explore English, NCLEX-RN and OSCE preparation and understand your next step.</span><br>
-<a class="btn" href="/courses/nursing-pathways-australia">Explore nursing pathways →</a></aside>"""
+<div class="cta"><p>Already qualified as a nurse overseas?</p><span class="small">Explore English, NCLEX-RN and OSCE preparation and understand your next step.</span><br>
+<a class="btn" href="/courses/nursing-pathways-australia">Explore nursing pathways →</a></div>"""
     return f"""{top}
 {"".join(groups)}
 <section class="wrap narrow">

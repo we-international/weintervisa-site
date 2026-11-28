@@ -122,7 +122,7 @@ def render(posts, fmt_date, h=None, group_label=lambda g: g):
 <h2>{e(L["startH"])}</h2>
 <p>{e(L["startP"])}</p>
 <ul class="paths">{paths}</ul>
-<aside class="tip"><strong>{e(L["tipB"])}</strong> {L["tip"].format(e(h["vevo"]))}</aside>
+<div class="tip"><strong>{e(L["tipB"])}</strong> {L["tip"].format(e(h["vevo"]))}</div>
 </section>
 <section class="wrap">
 <p class="kicker">{e(L["popK"])}</p>
@@ -169,7 +169,7 @@ def render(posts, fmt_date, h=None, group_label=lambda g: g):
 <p class="kicker">{e(L["howK"])}</p>
 <h2>{e(L["howH"])}</h2>
 <ol class="flow flow3">{steps}</ol>
-<aside class="tip maya"><strong>{e(L["mayaB"])}</strong> {e(h["maya"])}</aside>
+<div class="tip maya"><strong>{e(L["mayaB"])}</strong> {e(h["maya"])}</div>
 </section>
 <section class="wrap narrow">
 <h2>{e(L["faqH"])}</h2>

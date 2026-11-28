@@ -34,7 +34,7 @@ def facts(s):
 
 
 def card(s):
-    return (f'<li class="agent school"><h3>{e(s["name"])}</h3><p>{e(s["summary"])}</p>{facts(s)}'
+    return (f'<li class="agent school"><h2>{e(s["name"])}</h2><p>{e(s["summary"])}</p>{facts(s)}'
             f'<a class="btn" href="/schools/{e(s["slug"])}">{"Courses and fees" if s["courses"] else "School details"}</a></li>')
 
 
@@ -61,8 +61,8 @@ def detail(s):
 <h2>Courses and fees</h2>{fee_table(s)}<p>{e(s["fee_note"])}</p>
 <p class="small">Source: {e(src["file"])}, sent to us by the school ({e(src["received"])}).
 School website: <a href="{e(s["website"])}" target="_blank" rel="noopener">{e(s["website"].split("//")[1])}</a></p>
-{NOTE}<aside class="cta"><p>Want to study at {e(s["name"])}? Tell us the course, campus and when you want to start.</p>
-<a class="btn" href="/charter-application">Apply to study</a> <a class="btn ghost" href="/contact-us">Ask a question</a></aside></section>"""
+{NOTE}<div class="cta"><p>Want to study at {e(s["name"])}? Tell us the course, campus and when you want to start.</p>
+<a class="btn" href="/charter-application">Apply to study</a> <a class="btn ghost" href="/contact-us">Ask a question</a></div></section>"""
 
 
 index_body = f"""<section class="wrap narrow"><h1>Schools</h1>
