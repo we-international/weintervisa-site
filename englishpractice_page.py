@@ -87,7 +87,7 @@ def render(d=None):
 <h2>{e(L["watchH"])}</h2>
 <p>{e(L["watchP"])}</p>
 <ul class="paths two">{chans}</ul>
-<aside class="tip"><strong>{e(L["chalB"])}</strong> {e(d["challenge"])}</aside>
+<div class="tip"><strong>{e(L["chalB"])}</strong> {e(d["challenge"])}</div>
 </section>
 <section class="wrap">
 <p class="kicker">{e(L["gamesK"])}</p>
@@ -95,9 +95,9 @@ def render(d=None):
 <ul class="paths">{games}</ul>
 </section>
 <section class="wrap">
-<aside class="cta"><p>{e(L["studyP"])}</p><span class="small">{e(d["study"])}</span><br>
+<div class="cta"><p>{e(L["studyP"])}</p><span class="small">{e(d["study"])}</span><br>
 <a class="btn" href="{L["courses"]}#english-pathways">{e(L["seeCourses"])} →</a> <a class="btn ghost" href="{L["contact"]}">{e(L["talk"])}</a>
-<p class="small">{L["studyNote"]}</p></aside>
+<p class="small">{L["studyNote"]}</p></div>
 </section>
 <section class="wrap">
 <p class="kicker">{e(k["kicker"])}</p>

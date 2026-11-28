@@ -166,7 +166,7 @@ def build():
 <h1>{esc(p["title"])}</h1>
 {cover}
 <div class="prose">{render_md(p["body"])}</div>
-<aside class="cta"><p>Questions about studying in Australia?</p><a class="btn" href="/contact-us">Talk to our team</a></aside>
+<div class="cta"><p>Questions about studying in Australia?</p><a class="btn" href="/contact-us">Talk to our team</a></div>
 </article>"""
         ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"],
               "datePublished": p["date"], "dateModified": p.get("updated") or p["date"],

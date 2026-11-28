@@ -115,6 +115,6 @@ def render(d=None):
 <p class="small">{e(L["sources"])} {links}</p>
 <p class="small">{e(d["reviewed"])}</p>
 <p class="small">{e(d["disclaimer"])}</p></details>
-<aside class="cta"><p>{e(L["ctaP"])}</p>
-<a class="btn" href="{L["contact"]}">{e(L["ctaSend"])}</a> <a class="btn ghost" href="{L["courses"]}">{e(L["crumb"])}</a></aside>
+<div class="cta"><p>{e(L["ctaP"])}</p>
+<a class="btn" href="{L["contact"]}">{e(L["ctaSend"])}</a> <a class="btn ghost" href="{L["courses"]}">{e(L["crumb"])}</a></div>
 </section>"""

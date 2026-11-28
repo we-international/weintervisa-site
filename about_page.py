@@ -85,8 +85,8 @@ def about(d=None):
 <p>{e(d["people"])}</p>
 <p>{e(L["follow"])} {social}</p>
 <p class="small">{e(d["disclaimer"])}</p>
-<aside class="cta"><p>{e(L["ctaP"])}</p><span class="small">{e(L["ctaS"])}</span><br>
-<a class="btn" href="{L["contact"]}">{e(L["talk"])}</a> <a class="btn ghost" href="{L["courses"]}">{e(L["explore"])}</a></aside>
+<div class="cta"><p>{e(L["ctaP"])}</p><span class="small">{e(L["ctaS"])}</span><br>
+<a class="btn" href="{L["contact"]}">{e(L["talk"])}</a> <a class="btn ghost" href="{L["courses"]}">{e(L["explore"])}</a></div>
 </section>"""
 
 

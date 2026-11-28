@@ -156,9 +156,9 @@ def render(lang="en", visa_note="", cta=None):
             f'<nav id="topics" aria-label="{e(ui["jump"])}"><p class="small"><strong>{e(ui["jump"])}</strong></p>'
             f'<ul class="chips">{jump}</ul></nav>'
             + "".join(blocks) + visa_note
-            + f'<aside class="cta"><p>{e(ui["still"])}</p><a class="btn" href="{_href("/contact-us", lang)}">'
+            + f'<div class="cta"><p>{e(ui["still"])}</p><a class="btn" href="{_href("/contact-us", lang)}">'
             + ("ส่งข้อความ" if lang == "th" else "Send a message")
-            + f'</a> <a class="btn ghost" href="{ui["bookHref"]}">{e(ui["book"])}</a></aside></section>')
+            + f'</a> <a class="btn ghost" href="{ui["bookHref"]}">{e(ui["book"])}</a></div></section>')
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": _text(ans)}}
         for _, _, _, _, items in ts for q, ans in items]}

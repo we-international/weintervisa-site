@@ -333,7 +333,7 @@ def rows(spec, lang):
 
 def table(spec, lang):
     t = spec[lang]
-    head = "".join(f'<th scope="col">{e(h)}</th>' for h in t["th"])
+    head = "".join(f'<th scope="col">{e(h)}</th>' if h else f'<th scope="col"><span class="vh">{e(t["more"].rstrip(" →"))}</span></th>' for h in t["th"])
     body = "".join(
         f'<tr><th scope="row" lang="en">{e(r["name"])}</th>'
         + "".join(f'<td data-col="{e(h)}"{' lang="en"' if h == t["th"][3] and lang == "th" else ""}>{e(v)}</td>'

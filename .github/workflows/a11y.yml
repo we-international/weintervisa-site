@@ -1,0 +1,25 @@
+name: Accessibility (axe)
+# Every page of the new build, phone + desktop, WCAG 2.1 A/AA + axe best practice.
+# Free (public repo). Read-only: builds the site in the runner, nothing is deployed or pushed.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  axe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown==3.7
+      - run: python3 build.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
+      - run: node tests/a11y.mjs

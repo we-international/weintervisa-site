@@ -56,7 +56,7 @@ def render(d=None):
 <h2>{e(s["h2"])}</h2>
 <p>{e(s["body"])}</p>
 <ul class="list">{scam}</ul>
-<aside class="tip"><strong>{e(L["tipB"])}</strong> {e(s["tip"])}</aside>
+<div class="tip"><strong>{e(L["tipB"])}</strong> {e(s["tip"])}</div>
 </section>
 <section class="wrap">
 <p class="kicker">{e(L["whyK"])}</p>
@@ -68,10 +68,10 @@ def render(d=None):
 <p class="kicker">{e(L["how"])}</p>
 <h2>{e(L["howH"])}</h2>
 <ol class="steps">{steps}</ol>
-<aside class="cta"><p>{e(L["applyP"])}</p><span class="small">{e(ab["body"])}</span>
+<div class="cta"><p>{e(L["applyP"])}</p><span class="small">{e(ab["body"])}</span>
 <details class="faq why-us"><summary>{e(L["whyUs"])}</summary><ul class="list">{abl}</ul></details>
 {btn(L["start"])}
-<p class="small"><strong>{e(L["tip"])}</strong> {e(ab["tip"])}</p></aside>
+<p class="small"><strong>{e(L["tip"])}</strong> {e(ab["tip"])}</p></div>
 </section>
 <section class="wrap narrow">
 <p class="kicker">{e(L["pricesK"])}</p>
@@ -94,7 +94,7 @@ def render(d=None):
 <p class="small">{e(d["faqNote"])}</p>
 </section>
 <section class="wrap narrow">
-<aside class="cta"><p>{e(L["endP"])}</p><span class="small">{e(L["endS"])}</span><br>
+<div class="cta"><p>{e(L["endP"])}</p><span class="small">{e(L["endS"])}</span><br>
 {btn(L["find"])} <a class="btn ghost" href="{L["contact"]}">{e(L["ask"])}</a>
-<p class="small">{e(L["endNote"])}</p></aside>
+<p class="small">{e(L["endNote"])}</p></div>
 </section>"""

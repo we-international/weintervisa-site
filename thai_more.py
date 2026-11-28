@@ -116,7 +116,7 @@ def courses_body():
 </ul>
 {area_html}
 {VISA_NOTE_TH}
-<aside class="cta"><p>ยังไม่แน่ใจว่าสาขาไหนเหมาะ บอกเราเรื่องความสนใจ สิ่งที่เรียนมา เมืองที่อยากอยู่ และงบประมาณ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
+<div class="cta"><p>ยังไม่แน่ใจว่าสาขาไหนเหมาะ บอกเราเรื่องความสนใจ สิ่งที่เรียนมา เมืองที่อยากอยู่ และงบประมาณ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></div>
 </section>"""
     return courses_page.render(areas_html, school_link, th=True)
 
@@ -147,7 +147,7 @@ def blog_body(posts, fmt_date, cats=()):
 <ul class="cards">{cards}</ul>
 {rest}
 {VISA_NOTE_TH}
-<aside class="cta"><p>อ่านแล้วมีคำถาม ทีมงานตอบเป็นภาษาไทยหรืออังกฤษ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></aside>
+<div class="cta"><p>อ่านแล้วมีคำถาม ทีมงานตอบเป็นภาษาไทยหรืออังกฤษ</p><a class="btn" href="/th/contact-us">ส่งข้อความ</a></div>
 </section>
 <script src="/assets/reveal.js" defer></script>"""
 
@@ -187,7 +187,7 @@ def facts(s):
 
 
 def card(s):
-    return (f'<li class="agent school"><h3 lang="en">{e(s["name"])}</h3><p>{e(school_th(s, SUMMARY_TH, "summary"))}</p>{facts(s)}'
+    return (f'<li class="agent school"><h2 lang="en">{e(s["name"])}</h2><p>{e(school_th(s, SUMMARY_TH, "summary"))}</p>{facts(s)}'
             f'<a class="btn" href="/th/schools/{e(s["slug"])}">{"คอร์สและค่าเรียน" if s["courses"] else "ข้อมูลสถาบัน"}</a></li>')
 
 
@@ -214,8 +214,8 @@ def detail(s):
 <h2>คอร์สและค่าเรียน</h2>{fee_table(s)}<p>{e(school_th(s, FEE_NOTE_TH, "fee note"))}</p>
 <p class="small">ที่มา: <span lang="en">{e(src["file"])}</span> สถาบันส่งให้เรา ({e(src["received"])})
 เว็บไซต์สถาบัน: <a href="{e(s["website"])}" target="_blank" rel="noopener">{e(s["website"].split("//")[1])}</a></p>
-{SCHOOL_NOTE_TH}<aside class="cta"><p>อยากเรียนที่ <span lang="en">{e(s["name"])}</span>? บอกเราว่าอยากเรียนคอร์สไหน วิทยาเขตไหน และอยากเริ่มเมื่อไหร่</p>
-<a class="btn" href="/th/charter-application">สมัครเรียน</a> <a class="btn ghost" href="/th/contact-us">ถามคำถาม</a></aside></section>"""
+{SCHOOL_NOTE_TH}<div class="cta"><p>อยากเรียนที่ <span lang="en">{e(s["name"])}</span>? บอกเราว่าอยากเรียนคอร์สไหน วิทยาเขตไหน และอยากเริ่มเมื่อไหร่</p>
+<a class="btn" href="/th/charter-application">สมัครเรียน</a> <a class="btn ghost" href="/th/contact-us">ถามคำถาม</a></div></section>"""
 
 
 def schools_index():
