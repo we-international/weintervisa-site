@@ -2,10 +2,12 @@
 """List every URL the live Wix site publishes in its sitemap and check the new build has it.
 
 Run where www.weintervisa.com is reachable (the CI runner; the cloud team's sandbox is blocked):
-    python3 build.py && python3 tools/live_urls.py [--write tests/wix-live-urls.json]
+    python3 build.py && python3 tools/live_urls.py [--write tests/wix-live-urls.json] [--strict]
 
 Read-only: only GETs the public sitemap files. Prints a Markdown report (for the job summary)
 and exits 0; the offline test (tests/test_site.py) enforces the committed snapshot.
+--strict exits 1 when a live URL is missing from the new build (daily workflow "Wix drift"),
+so a post another team publishes on Wix shows up as a red run the same day.
 """
 import json, pathlib, re, sys, urllib.request
 from urllib.parse import urlparse
@@ -63,6 +65,8 @@ def main():
         out.write_text(json.dumps({"_note": "Paths in the live Wix sitemap (read by CI, tools/live_urls.py). "
                                    "Every one must be a page or a redirect in the new site.",
                                    "paths": [{"path": p, "sitemap": s} for p, s in rows]}, indent=1) + "\n")
+    if "--strict" in sys.argv and missing:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
