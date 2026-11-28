@@ -716,6 +716,25 @@ for _f, _j in (("english-practice.html", "content/english-practice.json"), ("th/
           f"{_f}: Maya/Kenji bubbles wide screens only; reveal.js opens #more-questions links")
 check(".quiz-more, .kids-fold { scroll-margin-top: 72px; }" in _css, "english-practice folds land below the sticky header")
 
+# Link previews (Facebook, LINE, WhatsApp): one absolute JPEG/PNG og:image per page, file in the build, Thai pages get the Thai card
+_og_bad, _og_th = [], []
+for _p, _s in pages.items():
+    _rel = _p.relative_to(SITE).as_posix()
+    if 'http-equiv="refresh"' in _s or _rel.startswith("redesign/"):
+        continue
+    _im = re.findall(r'<meta property="og:image" content="([^"]+)"', _s)
+    if (len(_im) != 1 or not re.match(r"https://www\.weintervisa\.com/assets/.+\.(jpe?g|png)$", _im[0])
+            or not (SITE / _im[0].split("weintervisa.com/", 1)[1]).exists()
+            or _s.count('name="twitter:card" content="summary_large_image"') != 1 or _s.count('property="og:type"') != 1):
+        _og_bad.append(_rel)
+    if _rel.startswith("th/") and "share-en.png" in _s:
+        _og_th.append(_rel)
+check(not _og_bad, "every page has one absolute JPEG/PNG og:image that exists + og:type + twitter card" + (f" — {_og_bad[:8]}" if _og_bad else ""))
+check(not _og_th, "Thai pages never use the English share card" + (f" — {_og_th[:8]}" if _og_th else ""))
+check('og:image" content="https://www.weintervisa.com/assets/share-en.png"' in home and 'og:type" content="website"' in home, "home previews with the brand card")
+_png_size = lambda f: (int.from_bytes(f[16:20], "big"), int.from_bytes(f[20:24], "big"))  # PNG IHDR, no Pillow in CI
+check(all(_png_size((ROOT / "assets" / f).read_bytes()) == (1200, 630) for f in ("share-en.png", "share-th.png")), "share cards are 1200x630")
+
 print("\n".join(notes + fails))
 print(f"\n{len(notes) - 1} passed, {len(fails)} failed")
 sys.exit(1 if fails else 0)
