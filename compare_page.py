@@ -389,8 +389,9 @@ def body(spec, lang, apply_form, visa_note):
 {codes}
 </section>
 <section class="wrap narrow">
-<h2>{t["why_h"]}</h2>
+<details class="group-fold" id="about-course"><summary><h2>{t["why_h"]}</h2></summary>
 <ul class="list">{why}</ul>
+</details>
 {further(spec, lang)}
 <h2>{t["fit_h"]}</h2>
 <p>{e(t["fit"])}</p>

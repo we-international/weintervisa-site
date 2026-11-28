@@ -505,6 +505,14 @@ check(_ce.count('data-lead-form="application"') == 1 and 'name="school"' in _ce 
 check("or with a registered migration agent" in _ce and "หรือกับ registered migration agent" in _ct and "8548" in _ce and "8548" in _ct
       and not re.search(r"commission|guarantee|guaranteed|get a job|permanent residency|\bPR\b", re.sub(r"<[^>]+>", " ", _ce), re.I),
       "/courses/aged-care-certificate-iii: visa check line + 8548, no commission / job / PR promises")
+# readability 28 Nov 2026: "What the course is" folds (h2 kept in <summary>); fee table, visa referral box and Diploma fact stay outside any fold
+for _cp in ("courses/aged-care-certificate-iii.html", "th/courses/aged-care-certificate-iii.html", "courses/childcare-certificate-iii.html", "th/courses/childcare-certificate-iii.html", "courses/health-services-assistance-certificate-iii.html"):
+    _h = (SITE / _cp).read_text()
+    _fold = re.search(r'<details class="group-fold" id="about-course"><summary><h2>[^<]+</h2></summary>(.*?)</details>', _h, re.S)
+    _rest = _h.replace(_fold.group(0), "") if _fold else _h
+    check(_fold is not None and '<ul class="list">' in _fold.group(1) and "<table" in _rest and "migration agent" in _rest
+          and "<table" not in _fold.group(1) and "A$" not in _fold.group(1),
+          f"/{_cp}: course description folds; fees, table and the not-a-migration-agent box stay visible")
 check('href="/courses/aged-care-certificate-iii"' in (SITE / "fast-track-courses.html").read_text()
       and 'href="/th/courses/aged-care-certificate-iii"' in (SITE / "th/fast-track-courses.html").read_text()
       and 'href="/courses/aged-care-certificate-iii"' in _aa, "/fast-track-courses + /already-in-australia link the comparison (EN + TH)")
