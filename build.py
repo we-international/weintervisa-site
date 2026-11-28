@@ -82,6 +82,23 @@ def lang_links(path, lang):
     return head, switch
 
 
+def share_meta(og_image, body, lang, is_post=False):
+    """Link preview (Facebook, LINE, WhatsApp, X): every page gets an absolute og:image.
+    Own picture first (post cover / first site image in the page), else the default card (tools/share_image.mjs).
+    JPEG/PNG only: WebP previews are not shown by every chat app, so a WebP picture falls back to the card."""
+    img = og_image if re.search(r"\.(jpe?g|png)$", og_image or "", re.I) else ""
+    if not img:
+        m = re.search(r'<img[^>]+src="(/assets/img/[^"]+\.(?:jpe?g|png))"', body)
+        img = m.group(1) if m else f"/assets/share-{'th' if lang == 'th' else 'en'}.png"
+    if img.startswith("/"):
+        img = SITE + img
+    return (f'<meta property="og:image" content="{esc(img)}">'
+            f'<meta property="og:type" content="{"article" if is_post else "website"}">'
+            f'<meta property="og:site_name" content="We International">'
+            f'<meta property="og:locale" content="{"th_TH" if lang == "th" else "en_AU"}">'
+            f'<meta name="twitter:card" content="summary_large_image">')
+
+
 def page(title, body, *, path, description="", og_image="", jsonld=None, extra_head="", lang="en"):
     if 'data-lead-form' in body:  # lead forms → GetWec; connected only in production with the public key
         if not PREVIEW and CONFIG.get("getwec_endpoint") and CONFIG.get("getwec_anon_key"):
@@ -101,7 +118,7 @@ def page(title, body, *, path, description="", og_image="", jsonld=None, extra_h
     th = lang == "th"
     home_href = "/th/" if th else "/"
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
-    og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
+    og = share_meta(og_image, body, lang, is_post=path.startswith("/post/"))
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
